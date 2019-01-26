@@ -1,0 +1,10 @@
+.wvu-breadcrumbs {
+  a, a:link, a:visited, a:hover {
+    color: white;
+  }
+  .text-wvu-neutral--light-gray {
+    a, a:link, a:visited, a:hover {
+      color: $wvu-neutral--light-gray;
+    }
+  }
+}

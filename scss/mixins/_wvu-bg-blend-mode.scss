@@ -1,0 +1,6 @@
+@mixin wvu-bg-blend-mode($blend-mode) {
+  @if $blend-mode == 'lighten' {
+    background-blend-mode: lighten !important;
+    background-color: $wvu-blue !important;
+  }
+}

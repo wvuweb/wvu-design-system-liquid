@@ -1,0 +1,162 @@
+@mixin wvu-bg-pattern($pattern-type) {
+  @if $pattern-type == 'wvu-blue' {
+    background-color: $wvu-blue !important;
+    background-image: url($wvu-white-pattern) !important;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+  @if $pattern-type == 'wvu-gold' {
+    background-color: $wvu-gold !important;
+    background-image: url($wvu-gold-pattern) !important;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+  @if $pattern-type == 'wvu-transparent' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      background-image: url($wvu-white-pattern);
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+  @if $pattern-type == 'confetti-gold-blue' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      background-image: url($wvu-confetti-gold-blue);
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+  @if $pattern-type == 'confetti-gold-blue-white' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      background-image: url($wvu-confetti-gold-blue-white);
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      top: 0;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+  @if $pattern-type == 'confetti-animated' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      animation: animStar 90s ease-in-out infinite;
+      background-image: url($wvu-confetti-gold-blue-animated), url($wvu-confetti-gold-blue-white-animated);
+      background-size: cover, 50%;
+      content: '';
+      height: 100%;
+      opacity: .25;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+  @if $pattern-type == 'grid' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      background-image: url($wvu-grid-pattern);
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+  @if $pattern-type == 'grid-transparent' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      background-image: url($wvu-grid-pattern-transparent);
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+  @if $pattern-type == 'grid-zoomed' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      background-image: url($wvu-grid-pattern-zoomed);
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+  @if $pattern-type == 'grid-zoomed-transparent' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      background-image: url($wvu-grid-pattern-zoomed-transparent);
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+}
+
+// @keyframes animStar {
+//   from {
+//     transform: translateY(0px)
+//   }
+//   to {
+//     transform: translateY(-2000px)
+//   }
+// }
+
+$wvu-confetti-gold-blue-starting-x-position: 0 0;
+$wvu-confetti-gold-blue-white-starting-x-position: 0 0;
+
+$angle-multiplier: 1.664;
+
+@keyframes animStar {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  50% {
+    background-position: -500px 832px, -1000px 1664px;
+  }
+  100% {
+    background-position: 0 0, 0 0;
+  }
+}

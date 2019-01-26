@@ -1,0 +1,11 @@
+.wvu-height-vw16x9 {
+  min-height: 56.25vw !important;
+}
+
+$i: 100;
+@while $i > 0 {
+  &.wvu-height-vw-#{$i} {
+    min-height: $i * 1vw !important;
+  }
+  $i: $i - 10;
+}

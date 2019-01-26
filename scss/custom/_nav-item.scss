@@ -1,0 +1,11 @@
+.nav-item {
+  ul {
+    list-style-type: none;
+  }
+}
+
+.nav-link {
+  &.active {
+    background-color: $gray-100;
+  }
+}

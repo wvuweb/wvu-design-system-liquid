@@ -1,0 +1,29 @@
+@mixin wvu-slash() {
+  position: relative !important;
+  z-index: 0 !important;
+  &:before {
+    background-color: $wvu-gold;
+    content: '' !important;
+    position: absolute !important;
+    right: 0;
+    left: -.5em;
+    height: $wvu-slash-height;
+    top: -25%;
+    width: $wvu-slash-width;
+    opacity: 1 !important;
+    z-index: $wvu-z-index-slash !important;
+    -ms-transform: skewX(149deg) !important; /* IE 9 */
+    -webkit-transform: skewX(149deg) !important; /* Safari */
+    transform: skewX(149deg) !important;
+  }
+}
+
+@mixin wvu-ul-slashes__li() {
+  display: block !important;
+  &:before {
+    height: 1em !important;
+    width: .5em !important;
+    left: -1.5rem !important;
+    top: .25em !important;
+  }
+}

@@ -1,0 +1,10 @@
+.wvu-co-branding {
+  border-left: 1px solid !important;
+  font-family: $helvetica-neue-font-stack !important;
+  font-size: .8rem !important;
+  font-weight: bold;
+  line-height: 1em;
+  @include media-breakpoint-up(sm) {
+    font-size: 1.5rem !important;
+  }
+}

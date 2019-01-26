@@ -1,0 +1,16 @@
+@mixin wvu-angle-container() {
+  &:before {
+    background-color: $wvu-blue;
+    content: '';
+    position: absolute;
+    right: 0;
+    height: 200vh;
+    top: -100vh;
+    width: 200vw;
+    opacity: 1;
+    z-index: $wvu-z-index-angle-container;
+    -ms-transform: skewX(146.25deg); /* IE 9 */
+    -webkit-transform: skewX(146.25deg); /* Safari */
+    transform: skewX(146.25deg);
+  }
+}

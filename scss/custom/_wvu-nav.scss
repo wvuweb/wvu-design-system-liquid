@@ -1,0 +1,10 @@
+.wvu-nav__items {
+  margin-left: 0;
+  @include mq($bp-medium) {
+    margin-left: 0;
+  }
+}
+
+.wvu-nav__container {
+  padding: 0 15px;
+}

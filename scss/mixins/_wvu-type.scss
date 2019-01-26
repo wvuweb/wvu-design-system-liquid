@@ -1,0 +1,47 @@
+@mixin helvetica-neue() {
+  font-family: $helvetica-neue-font-stack !important;
+}
+
+@mixin helvetica-neue-bold() {
+  font-family: $helvetica-neue-bold !important;
+  font-weight: bold !important;
+}
+
+@mixin helvetica-neue-light() {
+  font-family: $helvetica-neue-light !important;
+  font-weight: normal !important;
+  line-height: 1em !important;
+  -webkit-font-smoothing: antialiased !important;
+  .fonts-loaded & {
+    font-family: $helvetica-neue-light !important;
+  }
+}
+
+// NOTE: You must include the fonts.com script for the Iowan web font to use Iowan as you see here.
+@mixin iowan-old-style() {
+  font-family: $iowan-old-style !important;
+  font-weight: normal;
+  line-height: $wvu-traditional-audience-line-height !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+@mixin iowan-old-style-italic() {
+  font-family: $iowan-old-style-italic !important;
+  font-weight: normal !important;
+  line-height: $wvu-traditional-audience-line-height !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+@mixin iowan-old-style-black() {
+  font-family: $iowan-old-style-black !important;
+  font-weight: normal;
+  line-height: $wvu-traditional-audience-line-height !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+@mixin iowan-old-style-black-italic() {
+  font-family: $iowan-old-style-black-italic !important;
+  font-weight: normal !important;
+  line-height: $wvu-traditional-audience-line-height !important;
+  -webkit-font-smoothing: antialiased !important;
+}

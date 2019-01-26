@@ -1,0 +1,19 @@
+.wvu-z-index-0 {
+  position: relative;
+  z-index: 0;
+}
+
+.wvu-z-index-breadcrumbs {
+  position: relative;
+  z-index: $wvu-z-index-breadcrumbs;
+}
+
+.wvu-z-index-content {
+  // why does this need to be position: relative? Messes up on featurettes.
+  position: relative;
+  z-index: $wvu-z-index-content;
+}
+
+.wvu-z-index-max {
+  z-index: 9999;
+}

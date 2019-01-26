@@ -1,0 +1,24 @@
+.wvu-logo-lockup {
+  background-image: url($wvu-flying-wv-w-signature) !important;
+  background-repeat: no-repeat !important;
+  background-position: 0 -0.09em !important;
+  background-size: 22.25em 3.5em !important;
+  color: white !important;
+  display: inline-block !important;
+  font-family: $helvetica-neue-font-stack !important;
+  font-size: .5rem !important;
+  font-weight: normal !important;
+  line-height: 1.4em !important;
+  max-width: 27em !important;
+  min-width: 22.2em !important;
+  padding-top: 3em !important;
+  padding-left: 4em !important;
+  text-transform: uppercase !important;
+  @include media-breakpoint-up(sm) {
+    font-size: .8rem !important;
+  }
+  &.wvu-logo-lockup--blue {
+    background-image: url($wvu-flying-wv-w-signature--blue) !important;
+    color: $wvu-blue !important;
+  }
+}

@@ -1,0 +1,122 @@
+.wvu-bg-position-center {
+  background-position: 50% 50% !important;
+}
+.wvu-bg-position-bottom {
+  background-position: bottom !important;
+}
+.wvu-bg-position-top {
+  background-position: top !important;
+}
+.wvu-bg-position-left {
+  background-position: left !important;
+}
+.wvu-bg-position-right {
+  background-position: right !important;
+}
+
+@each $breakpoint in (sm, md, lg, xl) {
+  .wvu-bg-position-#{$breakpoint}-center {
+    background-position: center !important;
+  }
+  .wvu-bg-position-#{$breakpoint}-bottom {
+    background-position: bottom !important;
+  }
+  .wvu-bg-position-#{$breakpoint}-top {
+    background-position: top !important;
+  }
+  .wvu-bg-position-#{$breakpoint}-left {
+    background-position: left !important;
+  }
+  .wvu-bg-position-#{$breakpoint}-right {
+    background-position: right !important;
+  }
+  @include media-breakpoint-up($breakpoint) {
+    .wvu-bg-position-#{$breakpoint}-center {
+      background-position: center !important;
+    }
+    .wvu-bg-position-#{$breakpoint}-bottom {
+      background-position: bottom !important;
+    }
+    .wvu-bg-position-#{$breakpoint}-top {
+      background-position: top !important;
+    }
+    .wvu-bg-position-#{$breakpoint}-left {
+      background-position: left !important;
+    }
+    .wvu-bg-position-#{$breakpoint}-right {
+      background-position: right !important;
+    }
+  }
+}
+
+$i: 100;
+
+@while $i >= 0 {
+  @each $bg-class, $bg-property in (center-left, center left),
+           (center-right, center right),
+           (top-left, top left),
+           (top-right, top right),
+           (bottom-left, bottom left),
+           (bottom-right, bottom right) {
+    .wvu-bg-position-#{$bg-class}--#{$i} {
+      background-position: $bg-property round(percentage($i/100)) !important;
+    }
+    @each $breakpoint in (sm, md, lg, xl) {
+      .wvu-bg-position-#{$breakpoint}-#{$bg-class}--#{$i} {
+        @include media-breakpoint-up($breakpoint) {
+          background-position: $bg-property round(percentage($i/100)) !important;
+        }
+      }
+    }
+  }
+  $i: $i - 5;
+}
+
+@each $bg-class, $bg-property in (center-left, center left),
+         (center-right, center right),
+         (top-left, top left),
+         (top-right, top right),
+         (bottom-left, bottom left),
+         (bottom-right, bottom right),
+         (top, top), {
+  .wvu-bg-position-#{$bg-class} {
+    background-position: $bg-property !important;
+  }
+  @each $breakpoint in (sm, md, lg, xl) {
+    .wvu-bg-position-#{$breakpoint}-#{$bg-class} {
+      @include media-breakpoint-up($breakpoint) {
+        background-position: $bg-property !important;
+      }
+    }
+  }
+}
+
+// need options for bg-top, bg-bottom for various ratios for mobile
+
+.wvu-bg-position-spacer-top {
+  @include media-breakpoint-down(sm) {
+    background-repeat: no-repeat !important;
+    padding-top: 24rem !important;
+  }
+}
+
+.wvu-bg-position-spacer-md-top {
+  @include media-breakpoint-down(md) {
+    background-repeat: no-repeat !important;
+    padding-top: 24rem !important;
+  }
+}
+
+.wvu-bg-position-spacer-bottom {
+  @include media-breakpoint-down(sm) {
+    background-repeat: no-repeat !important;
+    padding-bottom: 24rem !important;
+  }
+}
+
+.wvu-bg-position-spacer-md-bottom {
+  @include media-breakpoint-down(md) {
+    background-repeat: no-repeat !important;
+    padding-bottom: 24rem !important;
+  }
+}

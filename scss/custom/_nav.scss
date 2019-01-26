@@ -1,0 +1,7 @@
+.nav-secondary--open {
+  ul {
+    @include list-unstyled;
+    font-size: $small-font-size;
+    font-weight: $font-weight-normal;
+  }
+}

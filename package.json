@@ -1,0 +1,20 @@
+{
+  "name": "wvu-design-system-base",
+  "version": "1.0.0",
+  "description": "WVU Design System Base",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/wvudigital/wvu-design-system-base"
+  },
+  "author": "May Day <may.day@mail.wvu.edu>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-ruby-sass": "^4.0.0",
+    "gulp-sass": "^4.0.1"
+  }
+}

@@ -1,0 +1,132 @@
+.wvu-text-first-line-gold {
+  &:first-line {
+    color: $wvu-gold !important;
+  }
+}
+
+.lead {
+  font-family: $wvu-lead-font-family !important;
+  line-height: $wvu-lead-line-height !important;
+}
+
+.wvu-quote {
+  &:before {
+    @include wvu-shout();
+    color: $wvu-gold;
+    content: '“';
+    display: block;
+    font-size: 3rem;
+  }
+}
+
+@each $quote-color, $text-color in (accent-dark-blue, $wvu-accent--dark-blue),
+                       (accent-blue, $wvu-accent--blue),
+                       (accent-light-blue, $wvu-accent--light-blue),
+                       (accent-green, $wvu-accent--green),
+                       (accent-dark-green, $wvu-accent--dark-green),
+                       (accent-green, $wvu-accent--green),
+                       (accent-light-green, $wvu-accent--light-green) {
+  .wvu-quote--#{$quote-color} {
+    &:before {
+      color: $text-color;
+    }
+  }
+}
+
+// NOTE: You must include the fonts.com script for the web fonts you see here.
+
+.wvu-shout {
+  @include wvu-shout();
+}
+
+.helvetica-neue {
+  @include helvetica-neue();
+}
+
+.helvetica-neue-bold {
+  @include helvetica-neue-bold();
+}
+
+.helvetica-neue-light {
+  @include helvetica-neue-light();
+}
+
+.helvetica-neue-condensed-black {
+  @include wvu-shout();
+}
+
+.iowan-old-style {
+  @include iowan-old-style();
+}
+
+.iowan-old-style-italic {
+  @include iowan-old-style-italic();
+}
+
+.iowan-old-style-black {
+  @include iowan-old-style-black();
+}
+
+.iowan-old-style-black-italic {
+  @include iowan-old-style-black-italic();
+}
+
+.display-1 {
+  font-size: 3rem !important;
+}
+
+.display-2 {
+  font-size: 3rem !important;
+}
+
+.display-3 {
+  font-size: 3rem !important;
+}
+.display-4 {
+  font-size: 3rem !important;
+}
+
+@include media-breakpoint-up(sm) {
+  .display-1 {
+    font-size: 4.5rem !important;
+  }
+  .display-2 {
+    font-size: 3rem !important;
+  }
+  .display-3 {
+    font-size: 3rem !important;
+  }
+  .display-4 {
+    font-size: 3rem !important;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .display-1 {
+    font-size: 5rem !important;
+  }
+  .display-2 {
+    font-size: 3rem !important;
+  }
+  .display-3 {
+    font-size: 3rem !important;
+  }
+  .display-4 {
+    font-size: 3rem !important;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .display-1 {
+    font-size: $display1-size !important;
+  }
+  .display-2 {
+    font-size: $display2-size !important;
+  }
+  .display-3 {
+    font-size: $display3-size !important;
+  }
+  .display-4 {
+    font-size: $display4-size !important;
+  }
+}

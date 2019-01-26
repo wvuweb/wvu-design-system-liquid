@@ -1,0 +1,39 @@
+.wvu-bg-pattern-blue {
+  @include wvu-bg-pattern(wvu-blue);
+}
+
+.wvu-bg-pattern-gold {
+  @include wvu-bg-pattern(wvu-gold);
+}
+
+.wvu-bg-pattern-transparent {
+  @include wvu-bg-pattern(wvu-transparent);
+}
+
+.wvu-bg-pattern-confetti-gold-blue, .wvu-bg-pattern-slashes-gold-blue {
+  @include wvu-bg-pattern(confetti-gold-blue);
+}
+
+.wvu-bg-pattern-confetti-gold-blue-white, .wvu-bg-pattern-slashes-gold-blue-white {
+  @include wvu-bg-pattern(confetti-gold-blue-white);
+}
+
+.wvu-bg-pattern-confetti-animated {
+  @include wvu-bg-pattern(confetti-animated);
+}
+
+.wvu-bg-pattern-grid {
+  @include wvu-bg-pattern(grid);
+}
+
+.wvu-bg-pattern-grid-zoomed {
+  @include wvu-bg-pattern(grid-zoomed);
+}
+
+.wvu-bg-pattern-grid-transparent {
+  @include wvu-bg-pattern(grid-transparent);
+}
+
+.wvu-bg-pattern-grid-zoomed-transparent {
+  @include wvu-bg-pattern(grid-zoomed-transparent);
+}

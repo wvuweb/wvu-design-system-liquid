@@ -1,0 +1,13 @@
+@mixin wvu-slash-list() {
+  li {
+    display: inline-block;
+    &:before {
+      content: ' / '
+    }
+    &:first-child {
+      &:before {
+        content: '';
+      }
+    }
+  }
+}
