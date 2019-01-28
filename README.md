@@ -13,7 +13,7 @@ WVU Design System
 
 
 
-## Gulp & WVU Design System Base
+## Gulp & WVU Design System
 
 **Requirements**
 * [NodeJS](https://nodejs.org)
