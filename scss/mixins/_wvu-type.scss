@@ -10,7 +10,6 @@
 @mixin helvetica-neue-light() {
   font-family: $helvetica-neue-light !important;
   font-weight: normal !important;
-  line-height: 1em !important;
   -webkit-font-smoothing: antialiased !important;
   .fonts-loaded & {
     font-family: $helvetica-neue-light !important;
