@@ -27,3 +27,7 @@ You will need to install Node ^8.9.4.
   1. Run Gulp by typing `gulp`.
 
 **Note:** the `gulpfile.js` in its base form will only compile your Sass.
+
+## Testing
+
+If you are building a theme for [CleanSlate](https://cleanslatecms.wvu.edu/), test your themes locally using [Hammer VM](https://bitbucket.org/wvudigital/hammer-vm/src/master/).
