@@ -55,6 +55,22 @@
   }
 }
 
+$i: 0;
+
+@while $i < 10 {
+  .wvu-slash--#{$i}-left {
+    &:before {
+      left: -($i * 1em) !important;
+    }
+  }
+  .wvu-slash--#{$i}-right {
+    &:before {
+      right: -($i * 1em) !important;
+    }
+  }
+  $i: $i + 1;
+}
+
 .wvu-ul-slashes {
   list-style-type: none;
   li {
