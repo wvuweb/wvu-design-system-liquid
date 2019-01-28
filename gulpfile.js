@@ -9,7 +9,8 @@ gulp.task('sass', function () {
   return gulp.src(['./scss/*.scss', '!./scss/_*.scss'])
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('./stylesheets'))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public/css'))
+    .pipe(gulp.dest('../cleanslate_themes/wvu-design-system-components/stylesheets'));
 });
 
 gulp.task('default', ['sass'], function () {

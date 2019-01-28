@@ -3,7 +3,6 @@
 //    Variables & Utilities (mixins) should almost always come before Vendor & Partial files.
 
 // Variables
-@import '4-custom/variables';
 @import 'wvu-variables';
 
 // Plugins
@@ -71,5 +70,6 @@ $sizes: map-merge((
 @import 'custom/fas';
 @import 'custom/wvu-base';
 @import 'custom/wvu-breadcrumbs';
+@import 'custom/wvu-type';
 @import 'custom/nav-item';
 @import 'custom/text';
