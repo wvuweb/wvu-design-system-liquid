@@ -2,11 +2,11 @@
 //    Pay attention to how you order your Sass files.
 //    Variables & Utilities (mixins) should almost always come before Vendor & Partial files.
 
-// Variables
-@import 'wvu-variables';
-
 // Plugins
 @import './bootstrap/scss/bootstrap';
+
+// Variables
+@import 'wvu-variables';
 
 // Bootstrap Overrides
 
