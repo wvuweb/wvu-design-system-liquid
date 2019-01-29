@@ -110,12 +110,6 @@ $wvu-z-index-vignetting: 1 !default;
 // Bootstrap Overrides
 //==================================================
 
-//
-// Color system
-//
-
-// stylelint-disable
-
 $theme-colors: (
   "wvu-blue": #002855,
   "wvu-gold": #EAAA00,
@@ -155,37 +149,13 @@ $container-max-widths: (
   xl: 1360px
 );
 
-// This variable affects the `.h-*` and `.w-*` classes.
-$sizes: map-merge((
-  5: 5%,
-  10: 10%,
-  20: 20%,
-  25: 25%,
-  30: 30%,
-  35: 35%,
-  40: 40%,
-  45: 45%,
-  50: 50%,
-  55: 55%,
-  60: 60%,
-  65: 65%,
-  70: 70%,
-  75: 75%,
-  80: 80%,
-  85: 85%,
-  90: 90%,
-  95: 95%,
-  100: 100%,
-  auto: auto
-), $sizes);
-// stylelint-enable
-
 $blue: #006FE6;
 $card-border-radius: 0;
 $card-border-width: 0;
 $card-bg: transparent;
 $dark: $wvu-neutral--black;
 $display1-size: 7rem;
+$font-size-base: 1rem;
 $emphasized-link-hover-darken-percentage: 0%;
 $font-family-sans-serif: $helvetica-neue-font-stack;
 $jumbotron-bg: transparent;
