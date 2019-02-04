@@ -4,7 +4,7 @@
 
 $i: 100;
 @while $i > 0 {
-  &.wvu-height-vw-#{$i} {
+  .wvu-height-vw-#{$i} {
     min-height: $i * 1vw !important;
   }
   $i: $i - 10;

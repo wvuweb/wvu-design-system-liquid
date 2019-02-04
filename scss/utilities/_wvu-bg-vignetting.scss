@@ -8,7 +8,7 @@
 
 $i: 90;
 @while $i > 0 {
-  &.wvu-bg-vignetting--#{$i} {
+  .wvu-bg-vignetting--#{$i} {
     @include wvu-bg-vignetting($wvu-vignetting-opacity, left);
     &:before {
       opacity: $i * .01 !important;
@@ -19,7 +19,7 @@ $i: 90;
 
 $i: 90;
 @while $i > 0 {
-  &.wvu-bg-vignetting-right--#{$i} {
+  .wvu-bg-vignetting-right--#{$i} {
     @include wvu-bg-vignetting($wvu-vignetting-opacity, right);
     &:before {
       opacity: $i * .01 !important;

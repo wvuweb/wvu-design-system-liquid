@@ -5,7 +5,7 @@
 
 $i: 90;
 @while $i > 0 {
-  &.wvu-bg-blend-mode-luminosity-#{$i} {
+  .wvu-bg-blend-mode-luminosity-#{$i} {
     background-blend-mode: luminosity !important;
     background-size: cover !important;
     position: relative;
@@ -25,7 +25,7 @@ $i: 90;
 
 $i: 90;
 @while $i > 0 {
-  &.wvu-bg-blend-mode-luminosity--#{$i} {
+  .wvu-bg-blend-mode-luminosity--#{$i} {
     background-blend-mode: luminosity !important;
     background-size: cover !important;
     position: relative;
