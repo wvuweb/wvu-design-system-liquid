@@ -57,22 +57,6 @@
       z-index: $wvu-z-index-grid;
     }
   }
-  @if $pattern-type == 'confetti-animated' {
-    background-size: cover;
-    position: relative;
-    &:before {
-      animation: animStar 90s ease-in-out infinite;
-      background-image: url($wvu-confetti-gold-blue-animated), url($wvu-confetti-gold-blue-white-animated);
-      background-size: cover, 50%;
-      content: '';
-      height: 100%;
-      opacity: .25;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: $wvu-z-index-grid;
-    }
-  }
   @if $pattern-type == 'grid' {
     background-size: cover;
     position: relative;
@@ -132,31 +116,5 @@
       top: 0;
       z-index: $wvu-z-index-grid;
     }
-  }
-}
-
-// @keyframes animStar {
-//   from {
-//     transform: translateY(0px)
-//   }
-//   to {
-//     transform: translateY(-2000px)
-//   }
-// }
-
-$wvu-confetti-gold-blue-starting-x-position: 0 0;
-$wvu-confetti-gold-blue-white-starting-x-position: 0 0;
-
-$angle-multiplier: 1.664;
-
-@keyframes animStar {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-  50% {
-    background-position: -500px 832px, -1000px 1664px;
-  }
-  100% {
-    background-position: 0 0, 0 0;
   }
 }
