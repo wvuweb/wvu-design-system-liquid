@@ -69,7 +69,7 @@ $i: 100;
       }
     }
   }
-  $i: $i - 5;
+  $i: $i - 10;
 }
 
 @each $bg-class, $bg-property in (center-left, center left),
