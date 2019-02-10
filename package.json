@@ -12,8 +12,6 @@
   },
   "author": "May Day <may.day@mail.wvu.edu>",
   "license": "MIT",
-  "author": "May Day <may.day@mail.wvu.edu>",
-  "license": "MIT",
   "dependencies": {
     "bootstrap": "~4.2"
   },

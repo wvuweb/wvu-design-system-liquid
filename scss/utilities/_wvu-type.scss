@@ -1,4 +1,9 @@
-p, li, blockquote, h1, h2, h3, h4, h5, h6, pre, a { max-width: $wvu-typography-line-length; }
+// Add some basic styles for line length so you don’t have to add utility classes to every header
+p, li, blockquote, h1, h2, h3, h4, h5, h6, pre, a, .lead { max-width: $wvu-typography-line-length; }
+
+.lead {
+  font-family: $wvu-lead-font-family !important;
+}
 
 .wvu-backpage-main {
   h2,
@@ -20,10 +25,6 @@ p, li, blockquote, h1, h2, h3, h4, h5, h6, pre, a { max-width: $wvu-typography-l
   &:first-line {
     color: $wvu-gold !important;
   }
-}
-
-.lead {
-  font-family: $wvu-lead-font-family !important;
 }
 
 .wvu-quote {
