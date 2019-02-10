@@ -75,7 +75,7 @@ $i: 0;
   }
   .wvu-slash--#{$i}-down {
     &:before {
-      bottom: -($i * 1em) !important;
+      top: ($i * 1em) !important;
     }
   }
   $i: $i + 1;
