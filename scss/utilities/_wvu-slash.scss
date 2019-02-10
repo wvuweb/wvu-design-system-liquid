@@ -60,22 +60,22 @@ $i: 0;
 @while $i < 5 {
   .wvu-slash--#{$i}-left {
     &:before {
-      left: -($i * 1em) !important;
+      left: -($i * $spacer) !important;
     }
   }
   .wvu-slash--#{$i}-right {
     &:before {
-      right: -($i * 1em) !important;
+      right: -($i * $spacer) !important;
     }
   }
   .wvu-slash--#{$i}-up {
     &:before {
-      top: -($i * 1em) !important;
+      top: -($i * $spacer) !important;
     }
   }
   .wvu-slash--#{$i}-down {
     &:before {
-      top: ($i * 1em) !important;
+      top: ($i * $spacer) !important;
     }
   }
   $i: $i + 1;
