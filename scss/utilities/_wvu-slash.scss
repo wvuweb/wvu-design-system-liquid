@@ -70,12 +70,12 @@ $i: 1;
   }
   .wvu-slash--#{$i}-up {
     &:before {
-      top: calc(-25% + -($i * $spacer)) !important;
+      top: calc(-25% + -(#{$i} * #{$spacer})) !important;
     }
   }
   .wvu-slash--#{$i}-down {
     &:before {
-      top: calc(-25% + $i * $spacer) !important;
+      top: calc(-25% + (#{$i} * #{$spacer})) !important;
     }
   }
   $i: $i + 1;
