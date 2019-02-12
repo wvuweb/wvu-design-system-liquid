@@ -1,59 +1,71 @@
 @mixin wvu-bg-vignetting($wvu-vignetting-opacity, $wvu-vignetting-alignment) {
   background-size: cover !important;
   position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: radial-gradient(farthest-side at 90% 55%, transparent, #000 131%);
-    opacity: $wvu-vignetting-opacity;
-    z-index: $wvu-z-index-vignetting;
-  }
-  &.wvu-bg-pattern-grid {
+  @if $wvu-vignetting-alignment == 'left' {
     &:before {
-      background-image: url($wvu-grid-pattern), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: radial-gradient(farthest-side at 90% 55%, transparent, #000 131%);
+      opacity: $wvu-vignetting-opacity;
+      z-index: $wvu-z-index-vignetting;
     }
-  }
-  &.wvu-bg-pattern-grid-transparent {
-    &:before {
-      background-image: url($wvu-grid-pattern-transparent), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+    &.wvu-bg-pattern-grid {
+      &:before {
+        background-image: url($wvu-grid-pattern), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+      }
     }
-  }
-  &.wvu-bg-pattern-grid-zoomed {
-    &:before {
-      background-image: url($wvu-grid-pattern-zoomed), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+    &.wvu-bg-pattern-grid-transparent {
+      &:before {
+        background-image: url($wvu-grid-pattern-transparent), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+      }
     }
-  }
-  &.wvu-bg-pattern-grid-zoomed-transparent {
-    &:before {
-      background-image: url($wvu-grid-pattern-zoomed-transparent), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+    &.wvu-bg-pattern-grid-zoomed {
+      &:before {
+        background-image: url($wvu-grid-pattern-zoomed), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+      }
     }
-  }
-  &.wvu-bg-pattern-confetti-gold-blue {
-    &:before {
-      background-image: url($wvu-confetti-gold-blue), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+    &.wvu-bg-pattern-grid-zoomed-transparent {
+      &:before {
+        background-image: url($wvu-grid-pattern-zoomed-transparent), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+      }
     }
-  }
-  &.wvu-bg-pattern-confetti-gold-blue-white {
-    &:before {
-      background-image: url($wvu-confetti-gold-blue-white), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+    &.wvu-bg-pattern-confetti-gold-blue {
+      &:before {
+        background-image: url($wvu-confetti-gold-blue), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+      }
+    }
+    &.wvu-bg-pattern-confetti-gold-blue-white {
+      &:before {
+        background-image: url($wvu-confetti-gold-blue-white), radial-gradient(farthest-side at 90% 55%, transparent, #000 131%) !important;
+      }
     }
   }
   @if $wvu-vignetting-alignment == 'right' {
     &:before {
-      background: radial-gradient(farthest-side at 30% 55%, transparent, #000 131%);
+      background: radial-gradient(farthest-side at 30% 55%, transparent, #000 131%) !important;
     }
     &.wvu-bg-pattern-grid {
       &:before {
         background-image: url($wvu-grid-pattern), radial-gradient(farthest-side at 30% 55%, transparent, #000 131%) !important;
       }
     }
+    &.wvu-bg-pattern-grid-transparent {
+      &:before {
+        background-image: url($wvu-grid-pattern-transparent), radial-gradient(farthest-side at 30% 55%, transparent, #000 131%) !important;
+      }
+    }
     &.wvu-bg-pattern-grid-zoomed {
       &:before {
         background-image: url($wvu-grid-pattern-zoomed), radial-gradient(farthest-side at 30% 55%, transparent, #000 131%) !important;
+      }
+    }
+    &.wvu-bg-pattern-grid-zoomed-transparent {
+      &:before {
+        background-image: url($wvu-grid-pattern-zoomed-transparent), radial-gradient(farthest-side at 30% 55%, transparent, #000 131%) !important;
       }
     }
     &.wvu-bg-pattern-confetti-gold-blue {

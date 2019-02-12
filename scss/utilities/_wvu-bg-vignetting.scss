@@ -2,10 +2,6 @@
   @include wvu-bg-vignetting($wvu-vignetting-opacity, left);
 }
 
-.wvu-bg-vignetting--right {
-  @include wvu-bg-vignetting($wvu-vignetting-opacity, right);
-}
-
 $i: 90;
 @while $i > 0 {
   .wvu-bg-vignetting--#{$i} {
@@ -15,4 +11,8 @@ $i: 90;
     }
   }
   $i: $i - 10;
+}
+
+.wvu-bg-vignetting--right {
+  @include wvu-bg-vignetting($wvu-vignetting-opacity, right);
 }
