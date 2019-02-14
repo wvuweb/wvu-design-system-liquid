@@ -44,3 +44,26 @@
   line-height: $wvu-traditional-audience-line-height !important;
   -webkit-font-smoothing: antialiased !important;
 }
+
+@mixin wvu-shout() {
+  font-family: $wvu-shout-font-family !important;
+  line-height: $wvu-shout-line-height !important;
+  text-transform: uppercase !important;
+  word-break: break-word !important;
+}
+
+@mixin wvu-first-line-gold() {
+  &:first-line {
+    color: $wvu-gold !important;
+  }
+}
+
+@mixin wvu-quote() {
+  &:before {
+    @include wvu-shout();
+    color: $wvu-gold;
+    content: '“';
+    display: block;
+    font-size: 3rem;
+  }
+}

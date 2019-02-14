@@ -1,11 +1,71 @@
+.lead {
+  font-family: $wvu-lead-font-family !important;
+}
+
 .text-white {
   a:link {
     color: white;
   }
 }
 
-blockquote {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  font-size: .8;
+// NOTE: These override Bootstrap’s .display classes. If you are using a framework other than Bootstrap, you can delete these.
+
+.display-1 {
+  font-size: 3rem !important;
+}
+
+.display-2 {
+  font-size: 3rem !important;
+}
+
+.display-3 {
+  font-size: 3rem !important;
+}
+.display-4 {
+  font-size: 3rem !important;
+}
+
+@include media-breakpoint-up(sm) {
+  .display-1 {
+    font-size: 4.5rem !important;
+  }
+  .display-2 {
+    font-size: 3rem !important;
+  }
+  .display-3 {
+    font-size: 3rem !important;
+  }
+  .display-4 {
+    font-size: 3rem !important;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .display-1 {
+    font-size: 5rem !important;
+  }
+  .display-2 {
+    font-size: 3rem !important;
+  }
+  .display-3 {
+    font-size: 3rem !important;
+  }
+  .display-4 {
+    font-size: 3rem !important;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .display-1 {
+    font-size: $display1-size !important;
+  }
+  .display-2 {
+    font-size: $display2-size !important;
+  }
+  .display-3 {
+    font-size: $display3-size !important;
+  }
+  .display-4 {
+    font-size: $display4-size !important;
+  }
 }

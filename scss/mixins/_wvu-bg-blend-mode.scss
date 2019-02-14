@@ -2,5 +2,21 @@
   @if $blend-mode == 'lighten' {
     background-blend-mode: lighten !important;
     background-color: $wvu-blue !important;
+    background-size: cover !important;
+  }
+  @if $blend-mode == 'luminosity' {
+    background-blend-mode: luminosity !important;
+    background-size: cover !important;
+    position: relative;
+    &:before {
+      background-color: inherit !important;
+      bottom: 0 !important;
+      content: '' !important;
+      left: 0 !important;
+      opacity: .8 !important;
+      position: absolute !important;
+      right: 0 !important;
+      top: 0 !important;
+    }
   }
 }

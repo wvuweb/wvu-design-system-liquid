@@ -26,11 +26,11 @@
       z-index: $wvu-z-index-grid;
     }
   }
-  @if $pattern-type == 'confetti-gold-blue' {
+  @if $pattern-type == 'slashes-gold-blue' {
     background-size: cover;
     position: relative;
     &:before {
-      background-image: url($wvu-confetti-gold-blue);
+      background-image: url($wvu-slashes-gold-blue);
       background-size: cover;
       bottom: 0;
       content: '';
@@ -41,11 +41,11 @@
       z-index: $wvu-z-index-grid;
     }
   }
-  @if $pattern-type == 'confetti-gold-blue-white' {
+  @if $pattern-type == 'slashes-gold-blue-white' {
     background-size: cover;
     position: relative;
     &:before {
-      background-image: url($wvu-confetti-gold-blue-white);
+      background-image: url($wvu-slashes-gold-blue-white);
       background-size: cover;
       bottom: 0;
       content: '';

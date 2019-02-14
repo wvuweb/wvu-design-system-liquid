@@ -1,20 +1,5 @@
-.wvu-slash {
+.wvu-slash, %wvu-slash {
   @include wvu-slash();
-  &.wvu-slash--blue {
-    &:before {
-      background-color: $wvu-blue !important;
-    }
-  }
-  &.wvu-slash--gold {
-    &:before {
-      background-color: $wvu-gold !important;
-    }
-  }
-  &.wvu-slash--white {
-    &:before {
-      background-color: $wvu-neutral--white !important;
-    }
-  }
   &.wvu-slash--skinny {
     &:before {
       left: -.25em !important;
@@ -55,6 +40,24 @@
   }
 }
 
+.wvu-slash--gold {
+  @include wvu-slash();
+}
+
+.wvu-slash--blue {
+  @extend %wvu-slash;
+  &:before {
+    background-color: $wvu-blue !important;
+  }
+}
+
+.wvu-slash--white {
+  @extend %wvu-slash;
+  &:before {
+    background-color: $wvu-neutral--white !important;
+  }
+}
+
 $i: 1;
 
 @while $i < 5 {
@@ -81,15 +84,16 @@ $i: 1;
   $i: $i + 1;
 }
 
-.wvu-ul-slashes {
-  list-style-type: none;
-  li {
-    @include wvu-slash();
-    @include wvu-ul-slashes__li();
-  }
+.wvu-ul-slashes, %wvu-ul-slashes {
+  @include wvu-slashes();
+}
+
+.wvu-ul-slashes--gold {
+  @include wvu-slashes();
 }
 
 .wvu-ul-slashes--blue {
+  @extend %wvu-ul-slashes;
   li {
     &:before {
       background-color: $wvu-blue !important;
@@ -97,18 +101,15 @@ $i: 1;
   }
 }
 
-.wvu-ul-slashes--gold {
-  li {
-    &:before {
-      background-color: $wvu-gold !important;
-    }
-  }
-}
-
 .wvu-ul-slashes--white {
+  @extend %wvu-ul-slashes;
   li {
     &:before {
       background-color: $wvu-neutral--white !important;
     }
   }
+}
+
+.wvu-slash-list {
+  @include wvu-slash-list();
 }

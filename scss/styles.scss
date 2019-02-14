@@ -8,58 +8,25 @@
 // Plugins
 @import './node_modules/bootstrap/scss/bootstrap';
 
-// Bootstrap Overrides
-
-// This variable affects the `.h-*` and `.w-*` classes.
-$sizes: map-merge((
-  5: 5%,
-  10: 10%,
-  20: 20%,
-  25: 25%,
-  30: 30%,
-  35: 35%,
-  40: 40%,
-  45: 45%,
-  50: 50%,
-  55: 55%,
-  60: 60%,
-  65: 65%,
-  70: 70%,
-  75: 75%,
-  80: 80%,
-  85: 85%,
-  90: 90%,
-  95: 95%,
-  100: 100%,
-  auto: auto
-), $sizes);
-// stylelint-enable
-
 // WVU Components
-@import 'mixins/wvu-angle-container';
 @import 'mixins/wvu-bg-blend-mode';
 @import 'mixins/wvu-bg-pattern';
 @import 'mixins/wvu-bg-vignetting';
-@import 'mixins/wvu-shout';
+@import 'mixins/wvu-co-branding';
+@import 'mixins/wvu-logo-lockup';
 @import 'mixins/wvu-slash';
-@import 'mixins/wvu-slash-list';
 @import 'mixins/wvu-type';
 @import 'mixins/wvu-vignetting';
 @import 'utilities/wvu-active-nav-link';
-@import 'utilities/wvu-background';
 @import 'utilities/wvu-bg';
 @import 'utilities/wvu-bg-blend-mode';
 @import 'utilities/wvu-bg-pattern';
 @import 'utilities/wvu-bg-position';
 @import 'utilities/wvu-bg-vignetting';
 @import 'utilities/wvu-co-branding';
-@import 'utilities/wvu-first-line-gold';
-@import 'utilities/wvu-font-size-vw';
-@import 'utilities/wvu-height-vw';
 @import 'utilities/wvu-logo-lockup';
 @import 'utilities/wvu-overflow';
 @import 'utilities/wvu-slash';
-@import 'utilities/wvu-slash-list';
 @import 'utilities/wvu-type';
 @import 'utilities/wvu-z-index';
 
@@ -70,5 +37,5 @@ $sizes: map-merge((
 @import 'custom/wvu-base';
 @import 'custom/wvu-breadcrumbs';
 @import 'custom/wvu-type';
-@import 'custom/nav-item';
+@import 'custom/nav';
 @import 'custom/text';

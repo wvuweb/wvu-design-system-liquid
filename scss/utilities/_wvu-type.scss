@@ -1,47 +1,14 @@
-.lead {
-  font-family: $wvu-lead-font-family !important;
-}
-
-.wvu-backpage-main {
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 0;
-  }
-  a + h2, button + h2, img + h2, ol + h2, ul + h2, div + h2, p + h2, pre + h2, table + h2, blockquote + h2, fieldset + h2, h1 + h2 { margin-top: $spacer * 2; }
-  a + h3, button + h3, img + h3, ol + h3, ul + h3, div + h3, p + h3, pre + h3, table + h3, blockquote + h3, fieldset + h3, h2 + h3 { margin-top: $spacer * 2; }
-  a + h4, button + h4, img + h4, ol + h4, ul + h4, div + h4, p + h4, pre + h4, table + h4, blockquote + h4, fieldset + h3, h3 + h4 { margin-top: $spacer * 2; }
-  a + h5, button + h5, img + h5, ol + h5, ul + h5, div + h5, p + h5, pre + h5, table + h5, blockquote + h5, fieldset + h5, h4 + h5 { margin-top: $spacer * 2; }
-  a + h6, button + h6, img + h6, ol + h6, ul + h6, div + h6, p + h6, pre + h6, table + h6, blockquote + h6, fieldset + h6, h5 + h6 { margin-top: $spacer * 2; }
-  a + .lead, button + .lead, ol + .lead, ul + .lead, div + .lead, p + .lead, pre + .lead, table + .lead, blockquote + .lead, fieldset + .lead, h1 .lead, h2 .lead, h3 .lead, h4 .lead, h5 .lead, h6 .lead { margin-top: $spacer * 1.5;}
-}
-
 .wvu-text-first-line-gold {
-  &:first-line {
-    color: $wvu-gold !important;
-  }
+  @include wvu-first-line-gold();
 }
 
-.wvu-quote {
-  &:before {
-    @include wvu-shout();
-    color: $wvu-gold;
-    content: '“';
-    display: block;
-    font-size: 3rem;
-  }
+.wvu-quote, %wvu-quote {
+  @include wvu-quote();
 }
 
-@each $quote-color, $text-color in (accent-dark-blue, $wvu-accent--dark-blue),
-                       (accent-blue, $wvu-accent--blue),
-                       (accent-light-blue, $wvu-accent--light-blue),
-                       (accent-green, $wvu-accent--green),
-                       (accent-dark-green, $wvu-accent--dark-green),
-                       (accent-green, $wvu-accent--green),
-                       (accent-light-green, $wvu-accent--light-green) {
+@each $quote-color, $text-color in $theme-colors {
   .wvu-quote--#{$quote-color} {
+    @extend %wvu-quote;
     &:before {
       color: $text-color;
     }
@@ -84,64 +51,4 @@
 
 .iowan-old-style-black-italic {
   @include iowan-old-style-black-italic();
-}
-
-.display-1 {
-  font-size: 3rem !important;
-}
-
-.display-2 {
-  font-size: 3rem !important;
-}
-
-.display-3 {
-  font-size: 3rem !important;
-}
-.display-4 {
-  font-size: 3rem !important;
-}
-
-@include media-breakpoint-up(sm) {
-  .display-1 {
-    font-size: 4.5rem !important;
-  }
-  .display-2 {
-    font-size: 3rem !important;
-  }
-  .display-3 {
-    font-size: 3rem !important;
-  }
-  .display-4 {
-    font-size: 3rem !important;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .display-1 {
-    font-size: 5rem !important;
-  }
-  .display-2 {
-    font-size: 3rem !important;
-  }
-  .display-3 {
-    font-size: 3rem !important;
-  }
-  .display-4 {
-    font-size: 3rem !important;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  .display-1 {
-    font-size: $display1-size !important;
-  }
-  .display-2 {
-    font-size: $display2-size !important;
-  }
-  .display-3 {
-    font-size: $display3-size !important;
-  }
-  .display-4 {
-    font-size: $display4-size !important;
-  }
 }

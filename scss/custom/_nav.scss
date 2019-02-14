@@ -1,3 +1,17 @@
+// NOTE: These are temporary until I get Nathan to allow us to add Bootstrap’s classes to our nav and sub-nav.
+
+.nav-item {
+  ul {
+    list-style-type: none;
+  }
+}
+
+.nav-link {
+  &.active {
+    background-color: $gray-100;
+  }
+}
+
 .nav-secondary--open {
   ul {
     @include list-unstyled;

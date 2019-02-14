@@ -1,9 +1,0 @@
-$i: 7;
-@include media-breakpoint-up(sm) {
-  @while $i > 1 {
-    &.wvu-font-size-vw-#{$i} {
-      font-size: $i * 1vw !important;
-    }
-    $i: $i - 1;
-  }
-}

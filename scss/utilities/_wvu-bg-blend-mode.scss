@@ -1,23 +1,17 @@
 .wvu-bg-blend-mode-lighten {
-  background-size: cover !important;
   @include wvu-bg-blend-mode(lighten);
+}
+
+.wvu-bg-blend-mode-luminosity, %wvu-bg-blend-mode-luminosity {
+  @include wvu-bg-blend-mode(luminosity);
 }
 
 $i: 90;
 @while $i > 0 {
   .wvu-bg-blend-mode-luminosity--#{$i} {
-    background-blend-mode: luminosity !important;
-    background-size: cover !important;
-    position: relative;
+    @extend %wvu-bg-blend-mode-luminosity;
     &:before {
-      background-color: inherit !important;
-      bottom: 0 !important;
-      content: '' !important;
-      left: 0 !important;
       opacity: $i * .01 !important;
-      position: absolute !important;
-      right: 0 !important;
-      top: 0 !important;
     }
   }
   $i: $i - 10;
