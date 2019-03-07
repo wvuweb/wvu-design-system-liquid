@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+    <r:comment><!-- meta charset gets set automatically by CleanSlate --></r:comment>
+    <r:page:if_site_default>
+      <title><r:site:name /> at West Virginia University</title>
+      <link rel="canonical" href="https://<r:site:domain />">
+    </r:page:if_site_default>
+    <r:page:unless_site_default>
+      <title><r:page:first_non_blank_attr names="alternate_name, name" /> | <r:site_name /> | West Virginia University</title>
+      <link rel="canonical" href="<r:page:url />" >
+    </r:page:unless_site_default>
+    <meta name="description" content="<r:page:meta_description />" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="<r:site:data name="google_site_verification" />" />
+
+    <meta property="og:title" content="<r:site_name /> | <r:page:first_non_blank_attr names="alternate_name, name" />" />
+    <meta property="og:description" content="<r:page:meta_description />" />
+    <r:set_var name="thumbnailurl">
+      <r:page:slug />-thumbnail
+    </r:set_var>
+    <r:files:each limit="1" labels="{$thumbnailurl}" types="image" random="true">
+      <meta property="og:image" content="http://<r:site:domain /><r:file:image_url size="1200x630" />" />
+      <meta name="twitter:image" content="http://<r:site:domain /><r:file:image_url size="1200x630" />" />
+    </r:files:each>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="<r:page:url />" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<r:site_name />">
+    <meta name="twitter:creator" content="<r:site:data name="twitter_handle" />">
+    <meta name="twitter:title" content="<r:page:first_non_blank_attr names="alternate_name, name" />">
+    <meta name="twitter:description" content="<r:page:meta_description />">
+
+    <r:include_stylesheet name="styles" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  </head>
+
+  <body class="<r:page:template:name /> page--<r:page:id /> page--<r:page:slug /> <r:edit_mode_only>page--edit-mode page--hide-instructions-<r:site:data name="hide_instructions" /></r:edit_mode_only>">
+
+    <header>
+
+      <a class="sr-only sr-only-focusable" href="#wvu-main-content">Skip to main content</a>
+
+      <r:if expr="{{ NOT(BLANK(slot_00_masthead)) }}">
+        <r:set_var name="patternNameMasthead">
+          patterns/wvu-<r:site:data name="slot_00_masthead" />
+        </r:set_var>
+        <r:partial name="{$patternNameMasthead}" />
+      </r:if>
+
+    </header>
+
+    <r:if expr="{{ NOT(BLANK(slot_00_nav)) }}">
+      <r:set_var name="patternNameNav">
+        patterns/wvu-<r:site:data name="slot_00_nav" />
+      </r:set_var>
+      <r:partial name="{$patternNameNav}" />
+    </r:if>
+
+    <main id="wvu-main-content">
+
+      <r:comment><!-- What are layouts and <r:yield />? http://goo.gl/DFAsPv --></r:comment>
+      <r:yield />
+
+      <r:partial name="patterns/wvu-slots--sitewide" />
+
+    </main>
+
+    <r:if value1="{$has_standard_footer}" value2="false" operator="!=">
+      <r:partial name="patterns/wvu-footer-1" />
+    </r:if>
+
+    <script type="text/javascript" src="/javascripts/vendor/clipboard.min.js"></script>
+    <script type="text/javascript" src="//fast.fonts.net/jsapi/36d8cd92-7cc7-499b-b169-0eed9d670283.js"></script> <r:comment><!-- Helvetica Neue Light & Bold Condensed web font, valid for *.wvu.edu, *.wvutech.edu, & localhost --></r:comment>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <r:include_javascript name="vendor/responsive-nav-dropdown, responsive-nav-dropdown--custom" />
+
+    <r:yield name="page_js">
+      <r:content />
+    </r:yield>
+
+    <script>
+
+      $('.fa-question-circle').popover({
+        trigger: 'focus'
+      })
+
+      $('button').popover({
+        trigger: 'focus'
+      })
+
+    </script>
+
+  </body>
+</html>

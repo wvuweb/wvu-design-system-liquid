@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<r:partial name="patterns/wvu-backpage-partials--top" />
+
+<div class="wvu-container">
+
+  <main id="maincontent" class="main main--wide">
+
+    <r:edit_mode_only>
+      <strong>Start Time:</strong><br>
+    </r:edit_mode_only>
+    <r:editable_region name="start-time">
+      8:00 a.m.
+    </r:editable_region>
+    <r:edit_mode_only>
+      <strong>End Time:</strong><br>
+    </r:edit_mode_only>
+    <r:editable_region name="end-time">
+      10:00 a.m.
+    </r:editable_region>
+    <r:edit_mode_only>
+      <strong>Description:</strong><br>
+    </r:edit_mode_only>
+    <r:editable_region name="description">
+      Event Description.
+    </r:editable_region>
+  </main>
+
+</div> <!-- /.wvu-container -->

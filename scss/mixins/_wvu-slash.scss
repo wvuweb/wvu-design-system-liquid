@@ -1,8 +1,8 @@
-@mixin wvu-slash() {
+@mixin wvu-slash($color, $width, $position) {
   position: relative !important;
   z-index: 0 !important;
   &:before {
-    background-color: $wvu-gold;
+    background-color: $color;
     content: '' !important;
     position: absolute !important;
     right: 0;
@@ -17,14 +17,62 @@
     -webkit-transform: skewX(149deg) !important; /* Safari */
     transform: skewX(149deg) !important;
   }
+  @if $color == 'white' {
+    &:before {
+      background-color: $wvu-neutral--white !important;
+    }
+  }
+  @if $color == 'blue' {
+    &:before {
+      background-color: $wvu-blue !important;
+    }
+  }
+  @if $width == 'skinny' {
+    &:before {
+      left: -.25em !important;
+      width: $wvu-slash-width * .5 !important;
+    }
+  }
+  @if $position == 'center' {
+    display: inline-block !important;
+    &:before {
+      left: auto !important;
+      right: calc(50% - .5em) !important;
+    }
+  }
+  @if $position == 'center-bottom' {
+    display: inline-block !important;
+    &:before {
+      bottom: 0 !important;
+      left: auto !important;
+      right: calc(50% - .5em) !important;
+      top: auto !important;
+    }
+  }
+  @if $position == 'right' {
+    display: inline-block !important;
+    &:before {
+      left: auto !important;
+      right: -1em !important;
+    }
+  }
+  @if $position == 'right-bottom' {
+    display: inline-block !important;
+    &:before {
+      bottom: 0 !important;
+      left: auto !important;
+      right: -1em !important;
+      top: auto !important;
+    }
+  }
 }
 
-@mixin wvu-slashes {
+@mixin wvu-slashes($color) {
   list-style-type: none;
   li {
     display: block !important;
     &:before {
-      color: $wvu-gold !important;
+      color: $color !important;
       height: 1em !important;
       width: .5em !important;
       left: -1.5rem !important;

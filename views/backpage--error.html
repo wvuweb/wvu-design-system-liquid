@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<r:partial name="patterns/wvu-backpage-header" />
+
+<div class="wvu-container">
+
+  <main id="maincontent" class="<r:page:data name="bgcolor_backpage" /> background main <r:if v1="{$backpage_has_sidebar}" v2="false" op="=">main--wide</r:if> <r:edit_mode_only>main--edit-mode</r:edit_mode_only>">
+
+    <r:edit_mode_only>
+      <p><strong>Main body text:</strong></p>
+    </r:edit_mode_only>
+
+    <r:editable_region name="main">
+      <p>Let's see if we can help you find what you're looking for:</p>
+
+      <ul>
+        <li>Check that the web address you entered doesn't contain a typo.</li>
+        <li>Try searching this site for the page you're looking for or enter your search terms on Search.wvu.edu.</li>
+        <li><a href="http://www.google.com/">Google it</a>.</li>
+      </ul>
+    </r:editable_region>
+  </main>
+
+  <r:partial name="patterns/wvu-sidebar" />
+
+</div> <!-- /.wvu-container -->

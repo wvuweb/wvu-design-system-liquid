@@ -1,3 +1,7 @@
+.wvu-p-max-width {
+  max-width: $wvu-p-measure !important;
+}
+
 .wvu-text-first-line-gold {
   @include wvu-first-line-gold();
 }

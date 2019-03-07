@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+
+<!-- Slots 01 - 03 -->
+
+<r:set_var name="backpage_header" value="{$backpage_header}" default="true">
+  <r:page:data name="backpage_header" />
+</r:set_var>
+
+<r:if v1="{$backpage_header}" v2="0" op="!=">
+  <r:partial name="patterns/wvu-backpage-header" />
+</r:if>
+
+<r:partial name="patterns/wvu-profiles-index" />
+
+<!-- Slots 04 - 10 -->
+
+<r:partial name="patterns/wvu-backpage-partials--bottom" />

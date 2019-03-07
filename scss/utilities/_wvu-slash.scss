@@ -1,60 +1,59 @@
-.wvu-slash, %wvu-slash {
-  @include wvu-slash();
-  &.wvu-slash--skinny {
-    &:before {
-      left: -.25em !important;
-      width: $wvu-slash-width * .5 !important;
-    }
-  }
-  &.wvu-slash--center {
-    display: inline-block !important;
-    &:before {
-      left: auto !important;
-      right: calc(50% - .5em) !important;
-    }
-  }
-  &.wvu-slash--center-bottom {
-    display: inline-block !important;
-    &:before {
-      bottom: 0 !important;
-      left: auto !important;
-      right: calc(50% - .5em) !important;
-      top: auto !important;
-    }
-  }
-  &.wvu-slash--right {
-    display: inline-block !important;
-    &:before {
-      left: auto !important;
-      right: -1em !important;
-    }
-  }
-  &.wvu-slash--right-bottom {
-    display: inline-block !important;
-    &:before {
-      bottom: 0 !important;
-      left: auto !important;
-      right: -1em !important;
-      top: auto !important;
-    }
-  }
-}
-
-.wvu-slash--gold {
-  @include wvu-slash();
+.wvu-slash {
+  @include wvu-slash($wvu-gold, normal, left);
 }
 
 .wvu-slash--blue {
-  @extend %wvu-slash;
   &:before {
     background-color: $wvu-blue !important;
   }
 }
 
 .wvu-slash--white {
-  @extend %wvu-slash;
   &:before {
     background-color: $wvu-neutral--white !important;
+  }
+}
+
+.wvu-slash--skinny {
+  &:before {
+    left: -.25em !important;
+    width: $wvu-slash-width * .5 !important;
+  }
+}
+
+.wvu-slash--center {
+  display: inline-block !important;
+  &:before {
+    left: auto !important;
+    right: calc(50% - .5em) !important;
+  }
+}
+
+.wvu-slash--center-bottom {
+  display: inline-block !important;
+  &:before {
+    bottom: 0 !important;
+    left: auto !important;
+    right: calc(50% - .5em) !important;
+    top: auto !important;
+  }
+}
+
+.wvu-slash--right {
+  display: inline-block !important;
+  &:before {
+    left: auto !important;
+    right: -1em !important;
+  }
+}
+
+.wvu-slash--right-bottom {
+  display: inline-block !important;
+  &:before {
+    bottom: 0 !important;
+    left: auto !important;
+    right: -1em !important;
+    top: auto !important;
   }
 }
 
@@ -84,30 +83,20 @@ $i: 1;
   $i: $i + 1;
 }
 
-.wvu-ul-slashes, %wvu-ul-slashes {
-  @include wvu-slashes();
+.wvu-ul-slashes {
+  @include wvu-slashes($wvu-gold);
 }
 
 .wvu-ul-slashes--gold {
-  @include wvu-slashes();
+  @include wvu-slashes($wvu-gold);
 }
 
 .wvu-ul-slashes--blue {
-  @extend %wvu-ul-slashes;
-  li {
-    &:before {
-      background-color: $wvu-blue !important;
-    }
-  }
+  @include wvu-slashes($wvu-blue);
 }
 
 .wvu-ul-slashes--white {
-  @extend %wvu-ul-slashes;
-  li {
-    &:before {
-      background-color: $wvu-neutral--white !important;
-    }
-  }
+  @include wvu-slashes($wvu-neutral--white);
 }
 
 .wvu-slash-list {

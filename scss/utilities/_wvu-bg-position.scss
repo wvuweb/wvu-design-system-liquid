@@ -85,28 +85,28 @@ $i: 100;
 // need options for bg-top, bg-bottom for various ratios for mobile
 
 .wvu-bg-position-spacer-top {
-  @media(max-width: $wvu-bp-sm) {
+  @media (max-width: $wvu-bp-sm) {
     background-repeat: no-repeat !important;
     padding-top: 24rem !important;
   }
 }
 
 .wvu-bg-position-spacer-md-top {
-  @media(max-width: $wvu-bp-md) {
+  @media (max-width: $wvu-bp-md) {
     background-repeat: no-repeat !important;
     padding-top: 24rem !important;
   }
 }
 
 .wvu-bg-position-spacer-bottom {
-  @media(max-width: $wvu-bp-sm) {
+  @media (max-width: $wvu-bp-sm) {
     background-repeat: no-repeat !important;
     padding-bottom: 24rem !important;
   }
 }
 
 .wvu-bg-position-spacer-md-bottom {
-  @media(max-width: $wvu-bp-md) {
+  @media (max-width: $wvu-bp-md) {
     background-repeat: no-repeat !important;
     padding-bottom: 24rem !important;
   }

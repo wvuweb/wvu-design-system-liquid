@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<r:set_var name="backpage_header" value="{$backpage_header}" default="true">
+  <r:page:data name="backpage_header" />
+</r:set_var>
+
+<r:if v1="{$backpage_header}" v2="true" op="=">
+  <r:partial name="patterns/wvu-backpage-header" />
+</r:if>
+
+<div class="wvu-container">
+
+  <div class="main main--wide">
+    <r:editable_region name="main">
+      <p>Well this is embarrassing. We couldn't find what you were looking for. Double check the URL to make sure there are no typos. Perhaps try searching for the page or file on this site via the search box in the upper right or via Google. If you still can't find it, we'd appreciate a heads up. Email CleanSlate@mail.wvu.edu for help, and please include the URL of the page you were looking for.</p>
+    </r:editable_region>
+  </div>
+
+</div> <!-- /.wvu-container -->

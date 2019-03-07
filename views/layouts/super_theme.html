@@ -1,0 +1,852 @@
+---
+layout: default
+custom_data_attributes:
+  - agenda_id
+  - alternate_url
+  - alternating_tiles_text_color
+  - backpage_has_sidebar
+  - backpage_has_subnav
+  - backpage_header:
+    type: checkbox
+    title: Remove header?
+  - backpage_header_badge
+  - breadcrumbs:
+    type: checkbox
+    title: Remove breadcrumbs?
+  - calendar_url_page
+  - cards_id
+  - description:
+    type: text
+    rows: 4
+    tile: Description
+    required: false
+    maxlength: 255
+  - directory_id
+  - directory_2_levels:
+    type: checkbox
+    title: Is directory 2 levels deep?
+  - featurettes_id
+  - featurettes_1_id
+  - hero_has_video
+  - hero_text_alignment:
+    type: checkbox
+    title: Shift hero text to the right
+  - is_profile
+  - link_text
+  - polyptych_items
+  - polyptych_1_items
+  - polyptych_2_items
+  - polyptych-card-columns_1_items
+  - profile_quote
+  - profile_quote_author
+  - profiles_id
+  - search_action
+  - search_index_id
+  - show_instructions:
+    type: checkbox
+    title: Hide instructions
+  - sidebar_sticky_page
+  - slot_01:
+    type: select
+    title: Slot 1
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: false
+    default: backpage
+  - slot_01_number:
+    type: select
+    title: Slot 1 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+    default: 1
+  - slot_01_loop_by:
+    type: select
+    title: Slot 1 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_01_loop_labels_match:
+    type: select
+    title: Slot 1 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_01_loop_order:
+    type: select
+    title: Slot 1 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_01_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_01_show_hidden:
+    type: checkbox
+    title: Show hidden content?
+  - slot_02:
+    type: select
+    title: Slot 2
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+  - slot_02_number:
+    type: select
+    title: Slot 2 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_02_loop_by:
+    type: select
+    title: Slot 2 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_02_loop_labels_match:
+    type: select
+    title: Slot 2 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_02_loop_order:
+    type: select
+    title: Slot 2 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_02_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_03:
+    type: select
+    title: Slot 3
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+    default: backpage-1
+  - slot_03_number:
+    type: select
+    title: Slot 3 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_03_loop_by:
+    type: select
+    title: Slot 3 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_03_loop_labels_match:
+    type: select
+    title: Slot 3 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_03_loop_order:
+    type: select
+    title: Slot 3 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_03_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_04:
+    type: select
+    title: Slot 4
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+  - slot_04_number:
+    type: select
+    title: Slot 4 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_04_loop_by:
+    type: select
+    title: Slot 4 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_04_loop_labels_match:
+    type: select
+    title: Slot 4 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_04_loop_order:
+    type: select
+    title: Slot 4 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_04_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_05:
+    type: select
+    title: Slot 5
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+  - slot_05_number:
+    type: select
+    title: Slot 5 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_05_loop_by:
+    type: select
+    title: Slot 5 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_05_loop_labels_match:
+    type: select
+    title: Slot 5 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_05_loop_order:
+    type: select
+    title: Slot 5 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_05_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_06:
+    type: select
+    title: Slot 6
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+  - slot_06_number:
+    type: select
+    title: Slot 6 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_06_loop_by:
+    type: select
+    title: Slot 6 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_06_loop_labels_match:
+    type: select
+    title: Slot 6 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_06_loop_order:
+    type: select
+    title: Slot 6 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_06_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_07:
+    type: select
+    title: Slot 7
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+  - slot_07_number:
+    type: select
+    title: Slot 7 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_07_loop_by:
+    type: select
+    title: Slot 7 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_07_loop_labels_match:
+    type: select
+    title: Slot 7 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_07_loop_order:
+    type: select
+    title: Slot 7 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_07_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_08:
+    type: select
+    title: Slot 8
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+  - slot_08_number:
+    type: select
+    title: Slot 8 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_08_loop_by:
+    type: select
+    title: Slot 8 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_08_loop_labels_match:
+    type: select
+    title: Slot 8 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_08_loop_order:
+    type: select
+    title: Slot 8 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_08_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_09:
+    type: select
+    title: Slot 9
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+  - slot_09_number:
+    type: select
+    title: Slot 9 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_09_loop_by:
+    type: select
+    title: Slot 9 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_09_loop_labels_match:
+    type: select
+    title: Slot 9 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_09_loop_order:
+    type: select
+    title: Slot 9 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_09_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_10:
+    type: select
+    title: Slot 10
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+  - slot_10_number:
+    type: select
+    title: Slot 10 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_10_loop_by:
+    type: select
+    title: Slot 10 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_10_loop_labels_match:
+    type: select
+    title: Slot 10 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_10_loop_order:
+    type: select
+    title: Slot 10 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_10_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_11:
+    type: select
+    title: Slot 11
+    options:
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Back Page, backpage]
+      - [Cards, cards]
+      - [Cards w/Overlay, cards-w-overlay]
+      - [Directory, directory]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Gallery Card Columns, gallery-card-columns]
+      - [Hero, hero]
+      - [Hero Test, hero]
+      - [Polyptych, polyptych]
+      - [Polyptych Card Columns, polyptych-card-columns]
+      - [Profile, profile]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+    include_blank: true
+  - slot_11_custom:
+      - title: If custom, type name
+  - slot_11_is_main:
+    type: checkbox
+    title: Is Main?
+  - slot_11_limit:
+      - title: Slot 11 Limit
+  - slot_11_number:
+    type: select
+    title: Slot 11 Instance
+    options:
+      - [1, 1]
+      - [2, 2]
+      - [3, 3]
+      - [4, 4]
+      - [5, 5]
+      - [6, 6]
+      - [7, 7]
+      - [8, 8]
+      - [9, 9]
+      - [10, 10]
+    include_blank: false
+  - slot_11_loop_by:
+    type: select
+    title: Slot 11 Loop By
+    options:
+      - [Sort Order, sort_order]
+      - [Alternate Name, alternate_name]
+      - [Content Updated At, content_updated_at]
+      - [Created At, none]
+      - [Slug, slug]
+      - [Meta Description, meta_description]
+      - [Name, name]
+      - [Published At, published_at]
+      - [Template Name, template_name]
+      - [Updated At, updated_at]
+    include_blank: false
+    default: sort_order
+  - slot_11_loop_labels_match:
+    type: select
+    title: Slot 11 Loop Labels Match
+    options:
+      - [All, all]
+      - [Any, any]
+      - [None, none]
+    include_blank: false
+    default: all
+  - slot_11_loop_order:
+    type: select
+    title: Slot 11 Loop Order
+    options:
+      - [ASC, asc]
+      - [DESC, desc]
+    include_blank: false
+    default: asc
+  - slot_11_scope:
+    type: checkbox
+    title: Sitewide
+  - slot_11_show_hidden:
+    type: checkbox
+    title: Show hidden?
+  - staff_directory_id
+  - testimonials_id
+  - thumbnail_alt
+  - thumbnail_url
+  - thumbnail_url_sq
+---

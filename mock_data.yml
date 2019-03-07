@@ -1,0 +1,424 @@
+edit_mode: true
+
+shared_themes:
+  "Code":
+    "layouts/browser-update-org--v2": "code"
+    "layouts/footer__contact--v1": "code"
+    "layouts/footer__credits--v2": "code"
+    "layouts/footer__icons--v2": "code"
+
+editable_region:
+
+  hero-1__content: |
+    <h1 class="wvu-shout wvu-slash wvu-slash--gold display-1">It Starts Now</h1>
+    <p><%= Faker::Hacker.say_something_smart %></p>
+    <a href="#" class="btn btn-primary">Call to Action</a>
+
+  action-hero-1__content: |
+    <h2 class="display-3 wvu-shout">Action Hero Header</h2>
+    <p><%= Faker::Hacker.say_something_smart %></p>
+    <a href="#" class="btn btn-primary">Call to Action</a>
+
+  main: "This content comes from the mock_data.yml file in your project's root. Open the file to edit this content."
+
+  sidebar: "This is an editable region in the sidebar."
+
+  wvu-masthead__title:
+    "Department of English"
+
+  news: |
+    <ul>
+      <li><a href="#"><%= Faker::Business.credit_card_number %></a></li>
+      <li><a href="#">Some Article link</a></li>
+      <li><a href="#">Another Article link</a></li>
+      <li><a href="#">An Amazing story</a></li>
+    </ul>
+
+  long-paragraph:
+    "<%= Faker::Lorem.paragraph(7) %>"
+
+  wvu-action-hero__button-text:
+    "Action Item"
+
+  wvu-action-hero__header: |
+    <h2 class="display-2 wvu-shout">Action Hero Header</h2>
+    <p class="lead">
+      Here is where you explain what is going on.
+    </p>
+
+  wvu-action-hero__postscript:
+    "<%= Faker::Lorem.paragraph(1) %>"
+
+  wvu-action-hero__url: "#"
+
+  wvu-hero-title-top:
+    "It Starts"
+
+  wvu-hero-title-bottom:
+    "Now."
+
+  wvu-hero-text: |
+    <p>So let&rsquo;s go. Release the Mountaineer spirit inside of you. Reach the limits of what you can do and then keep on going.</p><a href="" class="button button--white">Learn More</a>
+
+  wvu-header__title:
+    "Benjamin M. Statler College of <br>Engineering and Mineral Resources"
+
+  wvu-masthead__college-link:
+    <a href="#">Eberly College of Arts & Sciences</a>
+
+  wvu-hero__photo:
+    <img src="https://patterns.wvu.edu/images/coopers-rock.jpg" />
+
+  wvu-hero__text:
+    "So let&rsquo;s go. Release the Mountaineer spirit inside of you. Reach the limits of what you can do and then keep on going."
+
+  wvu-hero__button-text:
+    <a href="" class="button button--white">Continue Reading</a>
+
+  wvu-hero__title-top:
+    "It Starts"
+
+  wvu-hero__title-bottom:
+    "Now."
+
+  wvu-landing-page-header:
+    "Landing Page<br>Header"
+
+  wvu-triptych__image-1:
+    <img src="https://patterns.wvu.edu/images/coopers-rock.jpg" />
+
+  wvu-triptych__image-2:
+    <img src="https://patterns.wvu.edu/images/dance-header.jpg" />
+
+  wvu-triptych__image-3:
+    <img src="https://patterns.wvu.edu/images/girl-pointing.jpg" />
+
+  wvu-triptych__header-1:
+    "Header 1"
+
+  wvu-triptych__header-2:
+    "Header 2"
+
+  wvu-triptych__header-3:
+    "Header 3"
+
+  wvu-triptych__button-1:
+    <a href="#" class="button">Button</a>
+
+  wvu-triptych__button-2:
+    <a href="#" class="button">Button</a>
+
+  wvu-triptych__button-3:
+    <a href="#" class="button">Button</a>
+
+  wvu-quadtych__content-1: |
+    <ul>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+    </ul>
+
+  wvu-quadtych__content-2: |
+    <ul>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+    </ul>
+
+  wvu-quadtych__content-3: |
+    <ul>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+    </ul>
+
+  wvu-quadtych__content-4: |
+    <ul>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+      <li><a href="#">List Item</a></li>
+    </ul>
+
+  wvu-diptych__image-1: |
+    <img src="https://patterns.wvu.edu/images/kids-sitting-by-tulips.jpg" alt="Kids sitting by tulips" />
+
+  wvu-diptych__image-2: |
+    <img src="https://patterns.wvu.edu/images/kids-sitting-by-tulips.jpg" alt="Kids sitting by tulips" />
+
+  wvu-diptych__header-1:
+    "Header 1"
+
+  wvu-diptych__header-2:
+    "Header 2"
+
+  wvu-diptych__description-1:
+    "<%= Faker::Lorem.paragraph(3) %>"
+
+  wvu-diptych__description-2:
+    "<%= Faker::Lorem.paragraph(3) %>"
+
+  wvu-diptych__button-1: |
+    <a href="#" class="button">Button</a>
+
+  wvu-diptych__button-2: |
+    <a href="#" class="button">Button</a>
+
+  wvu-triptych__description-1:
+    "<%= Faker::Lorem.paragraph(3) %>"
+
+  wvu-triptych__description-2:
+    "<%= Faker::Lorem.paragraph(3) %>"
+
+  wvu-triptych__description-3:
+    "<%= Faker::Lorem.paragraph(3) %>"
+
+  wvu-quicklinks: |
+    <ul>
+      <li><a href="#">Quicklink 1</a></li>
+      <li><a href="#">Quicklink 2</a></li>
+      <li><a href="#">Quicklink 3</a></li>
+      <li><a href="#">Quicklink 4</a></li>
+      <li><a href="#">Quicklink 5</a></li>
+      <li><a href="#">Quicklink 6</a></li>
+      <li><a href="#">Quicklink 7</a></li>
+    </ul>
+
+  wvu-social-media-icons: |
+    <ul>
+      <li><a href="#"><img src="https://patterns.wvu.edu/images/1426291895/social-media-icons/facebook.png" alt="Facebook"></a></li>
+      <li><a href="#"><img src="https://patterns.wvu.edu/images/1426291895/social-media-icons/googleplus.png" alt="Google Plus"></a></li>
+      <li><a href="#"><img src="https://patterns.wvu.edu/images/1426291895/social-media-icons/instagram.png" alt="Instagram"></a></li>
+      <li><a href="#"><img src="https://patterns.wvu.edu/images/1426291895/social-media-icons/linkedin.png" alt="LinkedIn"></a></li>
+      <li><a href="#"><img src="https://patterns.wvu.edu/images/1426291895/social-media-icons/pinterest.png" alt="Pinterest"></a></li>
+      <li><a href="#"><img src="https://patterns.wvu.edu/images/1426291895/social-media-icons/twitter.png" alt="Twitter"></a></li>
+      <li><a href="#"><img src="https://patterns.wvu.edu/images/1426291895/social-media-icons/youtube.png" alt="YouTube"></a></li>
+      <li><a href="#"><img src="https://patterns.wvu.edu/images/1426291895/social-media-icons/rss.png" alt="RSS"></a></li>
+    </ul>
+
+  article-body: |
+    <p><%= Faker::Lorem.paragraph(15) %></p>
+
+  wvu-profile__name:
+    "<%= Faker::Name.name %>"
+
+  wvu-profile__job-title:
+    "<%= Faker::Name.title %>"
+
+  wvu-profile__phone:
+    "<%= Faker::PhoneNumber.cell_phone %>"
+
+  wvu-profile__email: |
+    <a href="mailto:<%= Faker::Internet.email %>"><%= Faker::Internet.email %></a>
+
+  wvu-profile__short-description:
+    "This is a short description for this profile. <%= Faker::Hacker.say_something_smart %>"
+
+  wvu-profile__photo: |
+    <img src="<%= Faker::Avatar.image %>" alt=" " />
+
+  contact: |
+    <p><strong>Department of the Department</strong></p>
+    <p>1234 Van Voorhis Road | P.O. Box 5555</p>
+    <p>Morgantown, WV 26506-5555</p>
+    <p><strong>Phone:</strong> 304.293.5555 | <strong>Fax:</strong> 304.293.5555</p>
+    <p><strong>Email:</strong> <a href="mailto:first.last@mail.wvu.edu">first.last@mail.wvu.edu</a></p>
+
+  wvu-profile__photo: |
+    <img src="<%= Faker::Avatar.image %>" alt=" " />
+
+  wvu-hero__header: |
+    It starts now.
+
+  wvu-hero__action-item-text: "More About Now"
+
+  wvu-hero__action-item-url: "#"
+
+  wvu-lede-text: |
+    <%= Faker::Lorem.paragraph(3) %>
+
+  wvu-polyptych__header: |
+    <h2>Polyptych Header</h2><p>Stuff.</p>
+
+  wvu-triptych__copy--1: |
+    <p><%= Faker::Lorem.paragraph(1) %></p>
+
+  wvu-triptych__copy--2: |
+    <p><%= Faker::Lorem.paragraph(1) %></p>
+
+  wvu-triptych__copy--3: |
+    <p><%= Faker::Lorem.paragraph(1) %></p>
+
+  wvu-triptych__photo--1: |
+    <img src="<%= Faker::Avatar.image %>" alt=" " />
+
+  wvu-triptych__photo--2: |
+    <img src="<%= Faker::Avatar.image %>" alt=" " />
+
+  wvu-triptych__photo--3: |
+    <img src="<%= Faker::Avatar.image %>" alt=" " />
+
+site:
+  name: "Brand Patterns"
+  data:
+    apply_link_1: APPLY NOW
+    apply_link_1_url: #
+    apply_link_2: GIVE
+    apply_link_2_url: #
+    apply_link_3: VISIT
+    apply_link_3_url: #
+    google_site_verification: "meta-tag-content-goes-here"
+    org_name: "Your Org Name Here"
+    masthead_college_link_title: "Your College Title Here"
+    masthead_color: "gold"
+    masthead_link_2_address: #
+    masthead_link_2_title: "Eberly College of Arts & Sciences"
+    masthead_title: "Your Site Title Here"
+    hide_instructions: "true"
+    slot_00_masthead: masthead
+    slot_00_nav: nav--test
+
+page:
+  id: 1
+  name: "Test Page 2"
+  slug: "test_page_2"
+  meta_description: "<%= Faker::Lorem.paragraph(5) %>"
+  title: "Home"
+  alternate_name: "Some other name"
+  depth: 1
+  description: |
+    <p><%= Faker::Lorem.paragraph(1) %></p>
+  updated_at: "now"
+  content:
+    wvu-hero-1-classes: "bg-wvu-neutral--black text-white wvu-bg-vignetting--80"
+    wvu-action-hero-1-classes: "bg-wvu-pattern-gold text-wvu-blue text-center"
+    polyptych_items: 4
+    wvu-profile__name: "<%= Faker::Name.name %>"
+    wvu-profile__job-title: "<%= Faker::Name.title %>"
+    wvu-profile__phone: "<%= Faker::PhoneNumber.cell_phone %>"
+    wvu-profile__email: |
+      <a href="mailto:<%= Faker::Internet.email %>"><%= Faker::Internet.email %></a>
+    wvu-profile__short-description: "This is a short description for this profile. <%= Faker::Hacker.say_something_smart %>"
+  data:
+    slot_01: "hero"
+    slot_01_number: 1
+    slot_02: "action-hero"
+    slot_02_number: 1
+    slot_03: "polyptych"
+    slot_03_number: 1
+    slot_04: "action-hero--option-2"
+    slot_05: "action-hero"
+    slot_06: "action-hero"
+    slot_07: "action-hero"
+    slot_08: "action-hero"
+    slot_09: "action-hero"
+    slot_10: "action-hero"
+    slot_11: "action-hero"
+    slot_12: "action-hero"
+    slot_13: "action-hero"
+    slot_14: "action-hero"
+    slot_15: "action-hero"
+    slot_16: "action-hero"
+    slot_17: "action-hero"
+    slot_18: "action-hero"
+    slot_19: "action-hero"
+    slot_20: "action-hero"
+    show_instructions: "false"
+
+pages:
+  - id: 2
+    name: "Profile Index"
+    updated_at: "now"
+    content:
+      wvu-profile__name: "<%= Faker::Name.name %>"
+      wvu-profile__job-title: "<%= Faker::Name.title %>"
+      wvu-profile__phone: "<%= Faker::PhoneNumber.cell_phone %>"
+      wvu-profile__email: |
+        <a href="mailto:<%= Faker::Internet.email %>"><%= Faker::Internet.email %></a>
+      wvu-profile__short-description: "This is a short description for this profile. <%= Faker::Lorem.paragraph(4) %>"
+      wvu-profile__photo: |
+        <img src="<%= Faker::Avatar.image %>" alt=" " />
+  - id: 3
+    name: "Profile Index"
+    updated_at: "now"
+    content:
+      wvu-profile__name: "<%= Faker::Name.name %>"
+      wvu-profile__job-title: "<%= Faker::Name.title %>"
+      wvu-profile__phone: "<%= Faker::PhoneNumber.cell_phone %>"
+      wvu-profile__email: |
+        <a href="mailto:<%= Faker::Internet.email %>"><%= Faker::Internet.email %></a>
+      wvu-profile__short-description: "This is a short description for this profile. <%= Faker::Lorem.paragraph(2) %>"
+      wvu-profile__photo: |
+        <img src="<%= Faker::Avatar.image %>" alt=" " />
+
+if_page_depth_eq: 1
+if_page_depth_gt: 1
+
+site_menu: |
+  <ul class="wvu-nav__items nav-collapse">
+    <li class="active"><a href="#">Hello</a></li>
+    <li><a href="#">World</a></li>
+    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+  </ul>
+
+sub_menu: |
+  <ul>
+    <li class="active"><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+  </ul>
+
+ancestor_menu: |
+  <% pages = %w(Page1 Page2 Page3 Page4 Page5) %>
+  <ul class="nav-secondary">
+    <% pages.each do |page| %>
+      <li><a href="#"><%= page %></a></li>
+    <% end %>
+  </ul>
+
+blog:
+  name: "Blog Name"
+  articles:
+    - article:
+      name: "<%= Faker::Lorem.sentence(1) %>"
+      title: "<%= Faker::Lorem.sentence(1) %>"
+      created_by:
+        first_name: "<%= Faker::Name.first_name %>"
+        last_name: "<%= Faker::Name.last_name %>"
+      content:
+        article-body: |
+          <p><%= Faker::Lorem.paragraph(2) %></p>
+          <p><%= Faker::Lorem.paragraph(5) %></p>
+          <p><%= Faker::Lorem.paragraph(3) %></p>
+      published_at: "2 days ago"
+    - article:
+      name: "<%= Faker::Lorem.sentence(1) %>"
+      title: "<%= Faker::Lorem.sentence(1) %>"
+      created_by:
+        first_name: "<%= Faker::Name.first_name %>"
+        last_name: "<%= Faker::Name.last_name %>"
+      content:
+        article-body: |
+          <p><%= Faker::Lorem.paragraph(2) %></p>
+          <p><%= Faker::Lorem.paragraph(5) %></p>
+          <p><%= Faker::Lorem.paragraph(3) %></p>
+      published_at: "4 days ago"
+    - article:
+      name: "<%= Faker::Lorem.sentence(1) %>"
+      title: "<%= Faker::Lorem.sentence(1) %>"
+      created_by:
+        first_name: "<%= Faker::Name.first_name %>"
+        last_name: "<%= Faker::Name.last_name %>"
+      content:
+        article-body: |
+          <p><%= Faker::Lorem.paragraph(2) %></p>
+          <p><%= Faker::Lorem.paragraph(5) %></p>
+          <p><%= Faker::Lorem.paragraph(3) %></p>
+      published_at: "5 days ago"
