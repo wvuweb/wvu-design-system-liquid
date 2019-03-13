@@ -1,0 +1,15 @@
+.wvu-fade-in {
+  @include fadeIn();
+}
+
+.wvu-fade-in-down {
+  @include fadeInDown();
+}
+
+.wvu-grow-shadow {
+  @include grow-shadow();
+}
+
+.wvu-slide-in-down {
+  @include slideInDown();
+}

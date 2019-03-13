@@ -13,7 +13,9 @@
   "author": "May Day <may.day@mail.wvu.edu>",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "~4.2"
+    "bootstrap": "~4.2",
+    "animatewithsass": "3.2.1",
+    "hover.css": "2.3.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

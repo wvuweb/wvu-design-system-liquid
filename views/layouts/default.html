@@ -47,18 +47,18 @@
 
       <r:if expr="{{ NOT(BLANK(slot_00_masthead)) }}">
         <r:set_var name="patternNameMasthead">
-          patterns/wvu-<r:site:data name="slot_00_masthead" />
+          components/wvu-<r:site:data name="slot_00_masthead" />
         </r:set_var>
-        <r:partial name="{$patternNameMasthead}" />
+        <r:partial name="{$patternNameMasthead}" theme="University Relations: WVU Design System Components" />
       </r:if>
 
     </header>
 
     <r:if expr="{{ NOT(BLANK(slot_00_nav)) }}">
       <r:set_var name="patternNameNav">
-        patterns/wvu-<r:site:data name="slot_00_nav" />
+        components/wvu-<r:site:data name="slot_00_nav" />
       </r:set_var>
-      <r:partial name="{$patternNameNav}" />
+      <r:partial name="{$patternNameNav}" theme="University Relations: WVU Design System Components" />
     </r:if>
 
     <main id="wvu-main-content">
@@ -66,15 +66,14 @@
       <r:comment><!-- What are layouts and <r:yield />? http://goo.gl/DFAsPv --></r:comment>
       <r:yield />
 
-      <r:partial name="patterns/wvu-slots--sitewide" />
+      <r:partial name="components/wvu-slots--sitewide" />
 
     </main>
 
     <r:if value1="{$has_standard_footer}" value2="false" operator="!=">
-      <r:partial name="patterns/wvu-footer-1" />
+      <r:partial name="components/wvu-footer-1" theme="University Relations: WVU Design System Components" />
     </r:if>
 
-    <script type="text/javascript" src="/javascripts/vendor/clipboard.min.js"></script>
     <script type="text/javascript" src="//fast.fonts.net/jsapi/36d8cd92-7cc7-499b-b169-0eed9d670283.js"></script> <r:comment><!-- Helvetica Neue Light & Bold Condensed web font, valid for *.wvu.edu, *.wvutech.edu, & localhost --></r:comment>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
