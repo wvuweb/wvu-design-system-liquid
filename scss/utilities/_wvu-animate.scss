@@ -6,6 +6,10 @@
   @include fadeInDown();
 }
 
+.wvu-grow {
+  @include grow();
+}
+
 .wvu-grow-shadow {
   @include grow-shadow();
 }
