@@ -46,7 +46,7 @@
   }
   @if $wvu-vignetting-alignment == 'right' {
     &:before {
-      background: radial-gradient(farthest-side at 30% 55%, transparent, #000 131%) !important;
+      background-image: radial-gradient(farthest-side at 30% 55%, transparent, #000 131%) !important;
     }
     &.wvu-bg-pattern-grid {
       &:before {
