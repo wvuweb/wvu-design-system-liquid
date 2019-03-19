@@ -1,3 +1,7 @@
+@mixin wvu-header-max-width() {
+  max-width: 9em !important;
+}
+
 @mixin helvetica-neue() {
   font-family: $helvetica-neue-font-stack !important;
 }

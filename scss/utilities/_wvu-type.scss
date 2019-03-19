@@ -19,6 +19,10 @@
   }
 }
 
+.wvu-header-max-width {
+  @include wvu-header-max-width();
+}
+
 // NOTE: You must include the fonts.com script for the web fonts you see here.
 
 .wvu-shout {
