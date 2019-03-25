@@ -182,6 +182,18 @@ $container-max-widths: (
   xl: 1360px
 );
 
+$spacer: 2rem;
+
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 6)
+);
+
 $blue: #006FE6;
 $card-border-radius: 0;
 $card-border-width: 0;
@@ -196,5 +208,4 @@ $jumbotron-padding: 4rem;
 $lead-font-size: ($font-size-base * 1.5);
 $pink: #E01A76;
 $small-font-size: 80%;
-$spacer: 2rem;
 $nameSpace: 'wvu';
