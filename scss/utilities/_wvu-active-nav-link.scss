@@ -1,13 +1,15 @@
 .wvu-nav {
-  .active {
-    background-color: transparent !important;
-    position: relative;
-    &:before {
-      border-top: 3px solid $wvu-gold;
-      content: '';
-      left: 0;
-      position: absolute;
-      width: 100%;
+  > li {
+    .active {
+      background-color: transparent !important;
+      position: relative;
+      &:before {
+        border-top: 3px solid $wvu-gold;
+        content: '';
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
     }
   }
 }
