@@ -19,7 +19,7 @@ var navigation = responsiveNav(".nav-collapse", {
     customToggle.innerHTML = '<img class="wvu-nav__menu-icon" src="https://static.wvu.edu/global/images/icons/wvu/hamburger-menu--1.0.0.svg" alt="" />Open Menu';
   },
   resizeMobile: function () {
-    customToggle.setAttribute( 'aria-controls', 'nav' );
+    customToggle.setAttribute( 'aria-controls', 'wvu-nav' );
   },
   resizeDesktop: function () {
     customToggle.removeAttribute( 'aria-controls' );
