@@ -1,0 +1,11 @@
+<r:comment><!-- Provide a base name for this component. We can use this later to dynamically create things like editable region names --></r:comment>
+<r:set_var name="baseComponentName" value="editable-region" />
+
+<r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+
+<r:comment><!-- Define editable region names --></r:comment>
+<r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
+
+<r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Editable Region</span></r:edit_mode_only>
+<r:editable_region name="{$componentMain}" />

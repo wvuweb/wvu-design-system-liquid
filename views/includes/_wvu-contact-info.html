@@ -1,0 +1,61 @@
+<span class="d-block position-relative">
+  <r:page:if_has_content_for region="{$componentPhone}" always_show_in_edit_mode="true">
+    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Phone</span></r:edit_mode_only>
+    <span class="fas fa-phone position-absolute"></span>
+    <a class="d-block pl-3<r:edit_mode_only> d-none</r:edit_mode_only>" href="tel:<r:page:content name="{$componentPhone}" />"><r:page:content name="{$componentPhone}" /></a>
+    <r:edit_mode_only>
+      <r:editable_region name="{$componentPhone}" scope="{$componentScope}" type="simple" />
+    </r:edit_mode_only>
+  </r:page:if_has_content_for>
+</span>
+<span class="d-block position-relative">
+  <r:page:if_has_content_for region="{$componentEmail}" always_show_in_edit_mode="true">
+    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Email</span></r:edit_mode_only>
+    <span class="far fa-envelope position-absolute"></span>
+    <a class="d-block pl-3" href="mailto:<r:page:content name="{$componentEmail}" />"><r:page:content name="{$componentEmail}" /></a>
+    <r:edit_mode_only>
+      <r:editable_region name="{$componentEmail}" scope="{$componentScope}" type="simple" />
+    </r:edit_mode_only>
+  </r:page:if_has_content_for>
+</span>
+<span class="d-block position-relative">
+  <r:page:if_has_content_for region="{$componentOffice}" always_show_in_edit_mode="true">
+    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Office</span></r:edit_mode_only>
+    <span class="far fa-building position-absolute"></span>
+      <r:page:if_has_content_for region="{$componentOfficeURL}">
+        <a class="d-block pl-3" href="{$componentOfficeURL}"><r:page:content name="{$componentOffice}" /></a>
+      </r:page:if_has_content_for>
+      <r:page:unless_has_content_for region="{$componentOfficeURL}">
+        <r:page:content name="{$componentOffice}" />
+      </r:page:unless_has_content_for>
+    <r:edit_mode_only>
+      <r:editable_region name="{$componentOffice}" scope="{$componentScope}" type="simple" />
+    </r:edit_mode_only>
+    <r:page:if_has_content_for region="{$componentOfficeURL}" always_show_in_edit_mode="true">
+      <r:edit_mode_only>
+        <span class="d-inline-block badge badge-primary mb-1">Office URL</span>
+        <r:editable_region name="{$componentOfficeURL}" scope="{$componentScope}" type="simple" />
+      </r:edit_mode_only>
+    </r:page:if_has_content_for>
+  </r:page:if_has_content_for>
+</span>
+<span class="d-block position-relative">
+  <r:page:if_has_content_for region="{$componentWebsite}" always_show_in_edit_mode="true">
+    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Website</span></r:edit_mode_only>
+    <span class="fas fa-link position-absolute"></span>
+    <a class="d-block pl-3" href="<r:page:content name="{$componentWebsite}" />">Website<span class="sr-only">: <r:page:name /></span></a>
+    <r:edit_mode_only>
+      <r:editable_region name="{$componentWebsite}" scope="{$componentScope}" type="simple" />
+    </r:edit_mode_only>
+  </r:page:if_has_content_for>
+</span>
+<span class="d-block position-relative">
+  <r:page:if_has_content_for region="{$componentDownload}" always_show_in_edit_mode="true">
+    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Download</span></r:edit_mode_only>
+    <span class="far fa-file-pdf position-absolute"></span>
+    <a class="d-block pl-3" href="<r:page:content name="{$componentDownload}" />"><r:page:content name="{$componentDownload}" /></a>
+    <r:edit_mode_only>
+      <r:editable_region name="{$componentDownload}" scope="{$componentScope}" />
+    </r:edit_mode_only>
+  </r:page:if_has_content_for>
+</span>

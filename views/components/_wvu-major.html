@@ -1,0 +1,55 @@
+<r:comment><!-- Provide a base name for this component. We can use this later to dynamically create things like editable region names --></r:comment>
+<r:set_var name="baseComponentName" value="backpage" />
+
+<r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+
+<r:comment><!-- Define editable region names --></r:comment>
+<r:set_var name="componentMain">wvu-backpage-<r:var name="componentInstance" />__main</r:set_var>
+<r:comment><!-- Define editable region names --></r:comment>
+<r:set_var name="componentSidebarTop">wvu-backpage-<r:var name="componentInstance" />__sidebar-top</r:set_var>
+<r:comment><!-- Define editable region names --></r:comment>
+<r:set_var name="componentSidebarBottom">wvu-backpage-<r:var name="componentInstance" />__sidebar-bottom</r:set_var>
+
+<r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also be applied by default if the content editor does not apply her own. --></r:comment>
+<r:content_for name="{$defaultComponentClasses}"></r:content_for>
+
+<r:comment><!-- Content that gets pulled into the editable regions by default. --></r:comment>
+<r:content_for name="{$componentMain}"><p class="lead mb-3 mt-0">Churning anomalies game plan. High performance keywords not enough bandwidth.
+          Can we parallel path. Viral engagement great plan! let me diarize this,
+          and we can synchronise ourselves at a later timepoint but are there any
+          leftovers in the kitchen? driving the initiative forward.</p>
+
+        <p>Build on a culture of contribution and inclusion that jerk from finance really
+          threw me under the bus, so five-year strategic plan blue sky thinking,
+          nor clear blue water ramp up upstream selling. Strategic staircase can
+          we align on lunch orders. I don't want to drain the whole swamp, i just
+          want to shoot some alligators meeting assassin we need distributors to
+          evangelize the new line to local markets, nor cloud strategy but data-point,
+          but back to the drawing-board. </p></r:content_for>
+
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" /> class="wvu-backpage-main py-5 <r:page:unless_has_content_for region="{$componentClasses}"><r:yield name="{$defaultComponentClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$componentClasses}" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+  <div class="container wvu-z-index-content">
+    <div class="row">
+      <div class="col-md-8 mr-md-auto">
+        <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+          <r:yield name="{$componentMain}"><r:content /></r:yield>
+        </r:if>
+        <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+          <r:edit_mode_only>
+            <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Main Content</span></r:edit_mode_only>
+          </r:edit_mode_only>
+          <r:editable_region name="{$componentMain}" scope="{$componentScope}">
+            <r:yield name="{$componentMain}"><r:content /></r:yield>
+          </r:editable_region>
+        </r:if>
+      </div>
+      <r:partial name="components/wvu-sidebar" theme="University Relations: WVU Design System Components" />
+    </div>
+  </div><r:comment><!-- /.container --></r:comment>
+</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" />><!-- End markup -->
+
+<r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
+<r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+</r:if>

@@ -1,0 +1,78 @@
+<r:comment><!-- Provide a base name for this component. We can use this later to dynamically create things like editable region names --></r:comment>
+<r:set_var name="baseComponentName" value="photo-gallery" />
+
+<r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+
+<r:comment><!-- Define base editable region names. --></r:comment>
+<r:set_var name="componentHeader">wvu-photo-gallery-<r:var name="componentInstance" />__header</r:set_var>
+<r:set_var name="componentPostscript">wvu-photo-gallery-<r:var name="componentInstance" />__postscript</r:set_var>
+<r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
+
+<r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also be applied by default if the content editor does not apply her own. --></r:comment>
+<r:content_for name="{$defaultComponentClasses}">py-5</r:content_for>
+<r:content_for name="{$defaultHeaderClasses}">mb-4</r:content_for>
+
+<r:comment><!-- Content that gets pulled into the editable regions by default. --></r:comment>
+<r:content_for name="{$componentHeader}"><h2 id="<r:var name="componentName" />-label" class="display-3 wvu-shout">Featurettes Headline</h2>
+  <p class="h3 helvetica-neue-light">Subhead goes here.</p></r:content_for>
+<r:content_for name="{$componentPostscript}"><p class="mb-0">Put additional info or <a href="#">links</a> here.</p></r:content_for>
+
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" /> aria-labelledby="<r:var name="componentName" />-label" class="wvu-gallery <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+<r:comment><!-- Ignore the following section. --></r:comment>
+  <div class="container wvu-z-index-content">
+    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+      <div class="wvu-z-index-content <r:page:if_has_content_for region="{$itemHeaderClassesRegionName}"><r:page:content name="{$itemHeaderClassesRegionName}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderClassesRegionName}"><r:yield name="{$defaultHeaderClasses}" /></r:page:unless_has_content_for>">
+        <r:yield name="{$componentHeader}"><r:content /></r:yield>
+      </div>
+    </r:if>
+    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+      <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
+        <div class="wvu-z-index-content mb-4">
+          <r:editable_region name="{$componentHeader}" scope="{$componentScope}">
+            <r:yield name="{$componentHeader}"><r:content /></r:yield>
+          </r:editable_region>
+        </div>
+      </r:page:if_has_content_for>
+    </r:if>
+    <div class="row photos">
+      <r:set_var name="gallerypage">
+        <r:page:slug />-gallery-<r:var name="componentInstance" />
+      </r:set_var>
+      <r:files:each labels="{$gallerypage}" types="image">
+        <div class="col-md-4 col-lg-3 mb-3">
+          <a href="<r:file:image_url size="960x640" />" title="<r:file:description />"><r:file:image_tag size="480x320" alt="{file:alt_text}" /></a>
+        </div>
+      </r:files:each>
+    </div>
+  </div>
+</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" />><!-- End markup -->
+
+<r:content_for name="page_js">
+  <r:include_javascript name="vendor/jquery.magnific-popup" />
+
+  <script type="text/javascript">
+
+  	$(document).ready(function() {
+  		$('.photos').magnificPopup({
+  		  delegate: 'a', // child items selector, by clicking on it popup will open
+  		  type: 'image',
+  		  gallery: {
+  		    enabled: true, // set to true to enable gallery
+
+  		    preload: [0,2], // read about this option in next Lazy-loading section
+
+  		    navigateByImgClick: true,
+
+  		    arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+
+  		    tPrev: 'Previous (Left arrow key)', // title for left button
+  		    tNext: 'Next (Right arrow key)', // title for right button
+  		    tCounter: '<span class="mfp-counter">%curr% of %total%</span>' // markup of counter
+  		  }
+  		  // other options
+  		});
+  	});
+
+  </script>
+</r:content_for>

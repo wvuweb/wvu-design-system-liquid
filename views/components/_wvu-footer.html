@@ -1,0 +1,79 @@
+<r:comment><!-- Provide a base name for this component. We can use this later to dynamically create things like editable region names --></r:comment>
+<r:set_var name="baseComponentName" value="footer" />
+
+<r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+
+<r:comment><!-- Define editable region names --></r:comment>
+<r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
+<r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
+
+<r:comment><!-- Suggestions for what utility classes to assign to this components’s stylable elements. These will also be applied by default if the content editor does not apply her own. --></r:comment>
+<r:content_for name="{$defaultComponentClasses}">bg-light</r:content_for>
+
+<r:comment><!-- Content that gets pulled into the editable regions by default. Normally you don’t need to do this. I’m doing this so I can keep default content for each region in one palce, then pull it into the WVU Design System demo site. If you want to make a copy of this component, you can delete the following “content_for” lines and replace the “yield” snippets in the markup with the actual content. --></r:comment>
+<r:content_for name="{$componentMain}">Address</r:content_for>
+
+<!-- Markup --><footer class="py-4 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+          <r:yield name="{$componentMain}" />
+        </r:if>
+        <r:comment><!-- This is the code that will be used for any site other than the WVU Design System website. If you are making a copy of this component, you can delete the following “if” statement and keep what’s inside. --></r:comment>
+        <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+          <r:editable_region name="{$componentMain}" scope="site"><r:yield name="{$componentMain}" /></r:editable_region>
+        </r:if>
+      </div>
+      <div class="col-3">
+
+      </div>
+      <div class="col-3">
+        <r:if expr="{{ NOT(BLANK(masthead_link_2_address)) }}">
+          <a href="#"><i class="fab fa-facebook text-white"></i></i></a> <a href="#"><i class="fab fa-twitter text-white"></a> <a href="#"><i class="fab fa-youtube text-white"></i></a>
+        </r:if>
+      </div>
+    </div> <!-- /.wvu-contact -->
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://about.wvu.edu/wvu-facts"><small class="d-block">Accreditations</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://webstandards.wvu.edu"><small class="d-block">Web Standards</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://www.wvu.edu/privacy"><small class="d-block">Privacy Notice</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="mailto:web_services@mail.wvu.edu"><small class="d-block">Questions or Comments?</small></a></li>
+        </ul>
+
+        <p>
+          <small class="d-block">&copy; <r:date_format format="%Y" value="now" /> West Virginia University. WVU is an EEO/Affirmative Action employer &mdash; Minority/Female/Disability/Veteran.
+          <span class="wvu-credits__last-edited">Last updated on <r:date_format format="%B %-d, %Y" value="{page:updated_at}" />.</small></span>
+        </p>
+      </div>
+      <div class="col-md-6 text-md-right">
+        <ul class="list-unstyled mb-0">
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://www.wvu.edu/SiteIndex/"><small class="d-block">A-Z Site Index</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://campusmap.wvu.edu"><small class="d-block">Campus Map</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://careers.wvu.edu/career-opportunities"><small class="d-block">WVU Careers</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://directory.wvu.edu"><small class="d-block">Directory</small></a></li>
+        </ul>
+        <ul class="list-unstyled">
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://give.wvu.edu/"><small class="d-block">Give</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://careerservices.wvu.edu/students/mountaineertraklogins"><small class="d-block">MountaineerTRAK</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://alert.wvu.edu/"><small class="d-block">WVU Alert</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://wvutoday.wvu.edu"><small class="d-block">WVU Today</small></a></li>
+          <li class="list-inline-item"><a class="<r:site:data name="classes_wvu-footer-links" />" href="https://portal.wvu.edu"><small class="d-block">WVU Portal</small></a></li>
+        </ul>
+        <ul class="list-unstyled">
+          <li class="list-inline-item"><a href="https://www.facebook.com/wvumountaineers"><small class="d-block">WVU on Facebook</small></a></li>
+          <li class="list-inline-item"><a href="https://twitter.com/WestVirginiaU"><small class="d-block">WVU on Twitter</small></a></li>
+          <li class="list-inline-item"><a href="https://www.youtube.com/user/westvirginiau"><small class="d-block">WVU on YouTube</small></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer><!-- End markup -->
+
+<r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
+<r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+</r:if>

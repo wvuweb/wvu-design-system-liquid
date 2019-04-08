@@ -1,6 +1,17 @@
 ---
 layout: default
 custom_data_attributes:
+  - degree_type:
+    type: select
+    title: Degree type
+    options:
+      - [Bachelor’s, bachelors]
+      - [Master’s, masters]
+    include_blank: true
+  - program_page_url:
+    title: Program page URL
+  - major_map_url:
+    title: Major map URL
   - alternate_url:
     title: Alternate URL
   - backpage_header:
@@ -14,7 +25,7 @@ custom_data_attributes:
     title: Remove breadcrumbs
   - description:
     type: text
-    rows: 6
+    rows: 4
     tile: Description
     required: false
     maxlength: 255
@@ -190,7 +201,6 @@ custom_data_attributes:
       - [Subnav, subnav]
       - [Twitter Widget, twitter-widget]
     include_blank: true
-    default: subnav
   - slot_2_custom:
     title: If custom, name of partial
   - slot_2_where_to_display:
@@ -204,7 +214,7 @@ custom_data_attributes:
       - [Featurettes Panel 3, featurettes-panel-3]
       - [Sidebar, sidebar]
     include_blank: false
-    default: sidebar
+    default: as-full-width-block
   - slot_2_is_main:
     type: checkbox
     title: Is Main
@@ -1298,7 +1308,7 @@ custom_data_attributes:
   - slot_10_show_hidden:
     type: checkbox
     title: Show if hidden
----
+  ---
 
 <r:if v1="{$breadcrumbs}" v2="1" op="!=">
   <r:partial name="components/wvu-breadcrumbs" theme="University Relations: WVU Design System Components" />

@@ -1,0 +1,73 @@
+<r:comment><!-- Provide a base name for this component. We can use this later to dynamically create things like editable region names --></r:comment>
+<r:set_var name="baseComponentName" value="backpage-header" />
+
+<r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+
+<r:comment><!-- Define editable region names --></r:comment>
+<r:set_var name="componentHeader">wvu-<r:var name="componentName" />__header</r:set_var>
+<r:set_var name="componentHeaderLabel">wvu-<r:var name="componentName" />__label</r:set_var>
+<r:set_var name="componentSubhead">wvu-<r:var name="componentName" />__subhead</r:set_var>
+<r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
+
+<r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also be applied by default if the content editor does not apply her own. --></r:comment>
+<r:content_for name="{$defaultComponentClasses}">pb-3 bg-wvu-neutral--dark-gray text-white wvu-bg-vignetting wvu-bg-blend-mode-luminosity--80 wvu-background-position-center</r:content_for>
+<r:if expr="{{ NOT(BLANK(classes_wvu_backpage_header__h1)) }}">
+  <r:content_for name="{$defaultHeaderClasses}"><r:site:data name="classes_wvu-backpage-header__h1" /></r:content_for>
+</r:if>
+<r:if expr="{{ BLANK(classes_wvu_backpage_header__h1) }}">
+  <r:content_for name="{$defaultHeaderClasses}">display-4 helvetica-neue-bold mb-0</r:content_for>
+</r:if>
+
+<r:comment><!-- Content that gets pulled into the editable regions by default --></r:comment>
+<r:content_for name="{$componentHeaderLabel}"><span class="wvu-shout text-wvu-gold text-uppercase">Label pre</span> label post</r:content_for>
+<r:content_for name="{$componentSubhead}"><p class="lead mb-0 mt-1">Subhead goes here.</p></r:content_for>
+
+<!-- Markup --><header class="wvu-overflow-hidden pt-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+  <div class="container position-relative wvu-z-index-content">
+    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+      <r:page:if_has_content_for region="{$itemBackpageHasHeaderLabel}">
+        <p class="text-uppercase helvetica-neue-light mb-1">
+          <r:yield name="{$componentHeaderLabel}"><r:content /></r:yield>
+        </p>
+      </r:page:if_has_content_for>
+    </r:if>
+    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+      <r:if v1="{$header_label}" v2="1" op="=">
+        <p class="text-uppercase helvetica-neue-light mb-1">
+          <r:editable_region name="{$componentHeaderLabel}" scope="{$componentScope}"><r:yield name="{$componentHeaderLabel}"><r:content /></r:yield></r:editable_region>
+        </p>
+      </r:if>
+    </r:if>
+    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+      <h1 class="<r:page:if_has_content_for region="{$itemHeaderClassesRegionName}"><r:page:content name="{$itemHeaderClassesRegionName}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderClassesRegionName}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
+        <r:page:unless_has_content_for region="{$itemHeaderRegionName}"><r:yield name="{$componentHeader}"><r:content /></r:yield></r:page:unless_has_content_for><r:page:first_non_blank_attr names="alternate_name, name" />
+      </h1>
+    </r:if>
+    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+      <r:comment><!-- This uses a variable to define the name of the editable region. In the Super Theme, this is defined dynamically. If you are making a custom theme, and want to reference this partial more than once in the same tempalte, you will need to define an instance number (set_var name="componentInstance" value="something") when you insert each partial. --></r:comment>
+      <r:edit_mode_only>
+        <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
+          <pre class="mb-0 text-white"><r:editable_region name="{$headerClasses}" type="simple" /></pre>
+          <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></pre>
+        </small>
+      </r:edit_mode_only>
+      <h1 class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
+    </r:if>
+    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+      <r:page:if_has_content_for region="{$itemBackpageHasSubhead}">
+        <r:yield name="{$componentSubhead}"><r:content /></r:yield>
+      </r:page:if_has_content_for>
+    </r:if>
+    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+      <r:if v1="{$header_subhead}" v2="1" op="=">
+        <r:editable_region name="{$componentSubhead}" scope="{$componentScope}"><r:yield name="{$componentSubhead}"><r:content /></r:yield></r:editable_region>
+      </r:if>
+    </r:if>
+  </div>
+</header><!-- End markup -->
+
+<r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
+<r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+</r:if>

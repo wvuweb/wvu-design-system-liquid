@@ -1,0 +1,96 @@
+<r:comment><!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name --></r:comment>
+<r:set_var name="itemLabels">
+  <r:page:slug />-<r:var name="componentName" />
+</r:set_var>
+
+<r:content_for name="{$componentReadMoreButtonText}">Read More</r:content_for>
+
+<r:set_var name="itemReadMoreButtonText">
+  <r:yield name="{$componentReadMoreButtonText}"><r:content /></r:yield>
+</r:set_var>
+
+<r:set_var name="columnClasses">
+  col-sm-6 col-md-3
+</r:set_var>
+<r:if v1="{$componentLimit}" v2="1" op="=">
+  <r:if v1="{$componentAlign}" v2="left" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 mr-sm-auto
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentAlign}" v2="middle" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 mx-sm-auto
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentAlign}" v2="right" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 ml-sm-auto
+    </r:set_var>
+  </r:if>
+</r:if>
+<r:if v1="{$componentLimit}" v2="2" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-4
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="3" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="4" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="5" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-4 col-lg-3
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="6" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-4
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="9" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-4
+  </r:set_var>
+</r:if>
+
+<r:root>
+  <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
+    and $loopOrder to: "asc" or "desc";
+    and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
+  <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
+    <div class="row d-flex justify-content-center">
+      <r:comment><!-- Grab all of the items in the loop. --></r:comment>
+      <r:each limit="{$limit}">
+        <r:set_var name="contentIndex">
+          <r:index />
+        </r:set_var>
+        <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
+        <div class="<r:var name="columnClasses" /> mb-3">
+          <div class="mt-3">
+            <p class="wvu-quote iowan-old-style h4">
+              <r:page:content name="wvu-profile-1__quote" />
+            </p>
+            <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
+              <div class="mb-1">
+                <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="rounded-circle shadow text-center w-25" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
+              </div>
+            </r:if>
+            <h3 class="helvetica-neue-light mb-0 h5"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
+            <r:page:if_has_content_for region="wvu-profile-1__profile-title">
+              <p>
+                <small class="d-block helvetica-neue-light"><r:page:content name="wvu-profile-1__profile-title" /></small>
+              </p>
+            </r:page:if_has_content_for>
+          </div>
+        </div>
+      </r:each>
+    </div>
+  </r:descendants>
+</r:root>

@@ -1,0 +1,104 @@
+<!-- Markup --><div class="wvu-masthead wvu-masthead--<r:site:id /> wvu-masthead--<r:site:data name="masthead_color" /> bg-wvu-blue <r:files:each labels="masthead-logo" limit="1" types="image" random="true">wvu-masthead--blue</r:files:each>">
+  <div class="container">
+    <div class="row">
+      <div class="align-self-center col <r:if expr="{{ NOT(BLANK(has_alternate_logo))}}"><r:if expr="{{ BLANK(has_co_brand) }}">col-sm-6 col-md-3 col-xl-2 mx-sm-auto mx-md-0 mr-md-auto </r:if></r:if>">
+        <r:comment><!-- In Edit Mode, hide the real version of the lockup and co-brand, since they link elsewhere and therefore can’t be edited --></r:comment>
+        <r:edit_mode_only>
+          <div class="d-none">
+        </r:edit_mode_only>
+          <r:comment><!-- Ignore the following section. It is used for the WVU Design System documentation site. --></r:comment>
+          <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+            <a class="d-flex position-relative my-3 align-items-center" href="/">
+              <r:if expr="{{ BLANK(has_alternate_logo) }}">
+                <div class="wvu-logo-lockup text-white">
+                  <r:if expr="{{ BLANK(masthead_title) }}">
+                    <r:site:name />
+                  </r:if>
+                  <r:if expr="{{ NOT(BLANK(masthead_title)) }}">
+                    <r:site:data name="masthead_title" />
+                  </r:if>
+                </div>
+              </r:if>
+              <r:page:if_has_content_for region="{$itemHasCoBrand}">
+                <div class="wvu-co-branding d-inline-block align-self-center mx-2 p-2 text-white">
+                  <r:if expr="{{ NOT(BLANK(has_alternate_logo)) }}">
+                    <r:img src="http://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
+                  </r:if>
+                  <r:if expr="{{ BLANK(has_alternate_logo) }}">
+                    <r:page:content name="{$itemHasCoBrand}" />
+                  </r:if>
+                </div>
+              </r:page:if_has_content_for>
+            </a>
+          </r:if>
+          <r:comment><!-- Stop ignoring. --></r:comment>
+          <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+            <r:comment><!-- If we have an alternate logo but no co-brand, just display the logo. If both, display lockup and alternate logo as the co-brand. --></r:comment>
+            <r:if expr="{{ NOT(BLANK(has_alternate_logo)) }}">
+              <r:if expr="{{ BLANK(has_co_brand) }}">
+                <a class="d-block position-relative my-3" href="/">
+                  <div class="sr-only">Unit Name</div>
+                  <img alt="WVU 150 Years logo lockup" src="https://designsystem.sandbox.wvu.edu/files/d489a7df-0da5-4640-9d26-cdfdeeaf0e00/960x960">
+                </a>
+              </r:if>
+              <r:if expr="{{ NOT(BLANK(has_co_brand)) }}">
+                <a class="d-flex position-relative my-3 align-items-center" href="/">
+                  <div class="wvu-logo-lockup text-white">
+                    <r:if expr="{{ BLANK(masthead_title) }}"><r:site:name /></r:if>
+                    <r:if expr="{{ NOT(BLANK(masthead_title)) }}"><r:site:data name="masthead_title" /></r:if>
+                  </div>
+                  <r:if v1="{$has_co_brand}" v2="true" op="=">
+                    <div class="wvu-co-branding d-inline-block align-self-center mx-2 p-2 text-white">
+                      <r:if expr="{{ NOT(BLANK(has_alternate_logo)) }}">
+                        <r:img src="http://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
+                      </r:if>
+                      <r:if expr="{{ BLANK(has_alternate_logo) }}">
+                        <r:page:content name="co-brand" scope="site">Admissions</r:page:content>
+                      </r:if>
+                    </div>
+                  </r:if>
+                </a>
+              </r:if>
+            </r:if>
+            <r:if expr="{{ BLANK(has_alternate_logo) }}">
+              <a class="d-flex position-relative my-3 align-items-center" href="/">
+                <div class="wvu-logo-lockup text-white">
+                  <r:if expr="{{ BLANK(masthead_title) }}"><r:site:name /></r:if>
+                  <r:if expr="{{ NOT(BLANK(masthead_title)) }}"><r:site:data name="masthead_title" /></r:if>
+                </div>
+                <r:if expr="{{ NOT(BLANK(has_co_brand)) }}">
+                  <div class="wvu-co-branding d-inline-block align-self-center mx-2 p-2 text-white">
+                    <r:if expr="{{ NOT(BLANK(has_alternate_logo)) }}">
+                      <r:img src="http://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
+                    </r:if>
+                    <r:if expr="{{ BLANK(has_alternate_logo) }}">
+                      <r:page:content name="co-brand" scope="site">Admissions</r:page:content>
+                    </r:if>
+                  </div>
+                </r:if>
+              </a>
+            </r:if>
+          </r:if>
+        <r:comment><!-- close the <div> for the d-none class above --></r:comment>
+        <r:edit_mode_only>
+          </div>
+        </r:edit_mode_only>
+        <r:comment><!-- In Edit Mode, display a version of the lockup and co-brand that does not link to anything, so they can be edited --></r:comment>
+        <r:edit_mode_only>
+          <a class="d-flex position-relative my-3"><div class="wvu-logo-lockup text-white"><r:if expr="{{ BLANK(masthead_title) }}"><r:site:name /></r:if><r:if expr="{{ NOT(BLANK(masthead_title)) }}"><r:site:data name="masthead_title" /></r:if></div><r:if v1="{$has_co_brand}" v2="true" op="="><div class="wvu-co-branding d-inline-block align-self-center mx-2 p-2 text-white"><r:editable_region name="co-brand" scope="site">Admissions</r:editable_region></div></r:if></a>
+        </r:edit_mode_only>
+      </div>
+      <div class="col-12 col-md-4 align-self-center d-flex justify-content-md-end mb-3 mb-md-0">
+        <r:if expr="{{ NOT(BLANK(apply_link_1)) }}">
+          <a href="<r:site:data name="apply_link_1_url" />" class="btn btn-outline-wvu-accent--light-blue"><r:site:data name="apply_link_1" /></a>
+        </r:if>
+        <r:if expr="{{ NOT(BLANK(apply_link_2)) }}">
+          <a href="<r:site:data name="apply_link_2_url" />" class="btn btn-outline-wvu-accent--orange ml-1"><r:site:data name="apply_link_2" /></a>
+        </r:if>
+        <r:if expr="{{ NOT(BLANK(apply_link_3)) }}">
+          <a href="<r:site:data name="apply_link_3_url" />" class="btn btn-outline-wvu-gold ml-1"><r:site:data name="apply_link_3" /></a>
+        </r:if>
+      </div>
+    </div>
+  </div>
+</div><!-- End markup -->

@@ -1,0 +1,74 @@
+<r:comment><!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name --></r:comment>
+<r:set_var name="itemLabels">
+  <r:page:slug />-<r:var name="componentName" />
+</r:set_var>
+
+<r:content_for name="{$componentReadMoreButtonText}">Read More</r:content_for>
+
+<r:set_var name="itemReadMoreButtonText">
+  <r:yield name="{$componentReadMoreButtonText}"><r:content /></r:yield>
+</r:set_var>
+
+<r:get_page id="{$componentBlogID}">
+  <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
+    and $loopOrder to: "asc" or "desc";
+    and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
+  <r:children by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
+    <r:set_var name="itemCount">
+      <r:count />
+    </r:set_var>
+    <r:partial name="utilities/wvu-item-count" theme="University Relations: WVU Design System Components" />
+    <div class="row <r:if v1="{$itemCount}" v2="2" op="="> d-flex justify-content-center</r:if>">
+      <r:comment><!-- Grab the first item in the loop, and display a dummy version of it that accepts button text that will apply to all others items in the featurettes. --></r:comment>
+      <r:edit_mode_only>
+        <r:each limit="1">
+          <div class="<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="="><r:var name="columnClasses" /></r:if> mb-3 pt-2 mt-2 border border-wvu-accent--red">
+            <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
+              <div class="mb-1">
+                <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg 960w, <r:page:data name="thumbnail_url" />/586x286.jpg 586w, <r:page:data name="thumbnail_url" />/381x255.jpg 381w, <r:page:data name="thumbnail_url" />/286x191.jpg 286w, <r:page:data name="thumbnail_url" />/279x186.jpg 279w, <r:page:data name="thumbnail_url" />/217x145.jpg 217w" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
+              </div>
+            </r:if>
+            <h3 class="iowan-old-style-italic mb-1"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
+            <p>
+              <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
+              <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
+            </p>
+            <r:page:if_has_content_for region="{$componentReadMoreButtonText}" always_show_in_edit_mode="true">
+              <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+                <a class="btn btn-primary btn-sm text-white" aria-labelledby="<r:page:slug />-<r:page:id />"><r:yield name="{$componentReadMoreButtonText}" /></a>
+              </r:if>
+              <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+                <a class="btn btn-primary btn-sm text-white" aria-labelledby="<r:page:slug />-<r:page:id />"><r:editable_region name="{$componentReadMoreButtonText}"><r:yield name="{$componentReadMoreButtonText}"><r:content /></r:yield></r:editable_region></a>
+              </r:if>
+            </r:page:if_has_content_for>
+            <p class="bg-light mt-1 p-2"><small class="d-block">This is the template the rest will follow. Edit the button text that will apply to all elements in this featurettes component. You can also set these globally in the site settings (add link). If you don’t want a button to display, delete the content.</small>
+          </div>
+        </r:each>
+      </r:edit_mode_only>
+      <r:comment><!-- Grab all of the items in the loop. --></r:comment>
+      <r:each limit="{$limit}">
+        <r:set_var name="contentIndex">
+          <r:index />
+        </r:set_var>
+        <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
+        <r:if v1="{$itemCount}" v2="1" op="!=">
+          <div class="<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="="><r:var name="columnClasses" /></r:if> mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
+        </r:if>
+          <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
+            <div class="mb-1">
+              <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
+            </div>
+          </r:if>
+          <h3 class="iowan-old-style-italic mb-1"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
+          <p>
+            <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
+            <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
+          </p>
+          <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:page:name /></span></r:if></a>
+        <r:if v1="{$itemCount}" v2="1" op="!=">
+          </div>
+        </r:if>
+      </r:each>
+    </div>
+  </r:children>
+</r:get:page>

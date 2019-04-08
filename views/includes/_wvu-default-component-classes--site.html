@@ -1,0 +1,22 @@
+<r:edit_mode_only>
+  <section class="px-2 px-md-5 py-2 mb-0 text-light bg-wvu-neutral--black position-relative">
+    <p class="mb-0">
+      <span class="d-inline-block badge badge-secondary">Utility classes:</span> <div class="text-monospace "><r:editable_region name="{$componentClasses}" type="simple" scope="site" /></div>
+    </p>
+    <p class="mb-0 mt-1">
+      <small>
+        <r:yield name="{$defaultComponentClasses}">
+          <strong class="text-muted">Default classes:</strong> <pre class="text-muted mb-0"><r:content /></pre>
+        </r:yield>
+      </small>
+    </p>
+    <a class="text-wvu-accent--orange" data-toggle="collapse" href="#multiCollapseExample<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="multiCollapseExample<r:var name="componentName" />">Hints</a>
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample<r:var name="componentName" />">
+          <r:partial name="includes/wvu-default-component-classes__ul" theme="University Relations: WVU Design System Components" />
+        </div>
+      </div>
+    </div>
+  </section>
+</r:edit_mode_only>

@@ -1,0 +1,85 @@
+<r:comment>
+<!--
+
+Here is what we want:
+1. We want...
+2. Allow this component to be used as many times on the same page as the user wants.
+3. We therefore need unique editable region names.
+4. Want to have shared partials so anyone can use.
+5. Make it so this component can be shown on the demo site.
+
+Here is how we do it:
+1. Define a base component name. This name will be used to uniquely identify this component relative to other components that are on the same page.
+2. Use variables to define editable region names. This will... create variable names for things like... which can then be used in this component.
+
+Allow Comopnent to be Pulled in
+
+3. Define some base editable region names. These will be used later to dynamically assign region names based on an instance number. This number can be supplied via an option in Super Theme or an instanceNumber variable.  e.g. wvu-hero__header-1.
+4. Define some base classes for the component’s container. These will be assigned to the container by default, and overwritten if the user supplies their own.
+5. We define default content for our editable regions. This will be fed into the actual editable regions by default, or displayed on the demo site. This way we can manage default content in one place and not get out of sync, for example by creating editable regions on the demo site and then updating the default content later.
+6. Insert the classes to the container, use the dynamic editable region names in our component where appropriate.
+
+NOTE: Whenever you see an “if” statement that compares the page:template:name to $templateNameComponent, we are checking to see whether we should output content to the demo site. If so, we just pull from the content region’s r:yield, or overwrite the content from a page in the demo site. Just ignore what is in between the “if” statements where the two values are equal.
+
+-->
+</r:comment>
+
+<r:comment><!-- Define a base name for this component. We can use this later to dynamically create things like editable region names --></r:comment>
+<r:set_var name="baseComponentName" value="hero" />
+
+<r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+
+<r:comment><!-- Define editable region names --></r:comment>
+<r:set_var name="componentHeader">wvu-<r:var name="componentName" />__header</r:set_var>
+<r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
+<r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
+
+<r:comment><!-- Suggestions for what utility classes to assign to this components’s stylable elements. These will also be applied by default if the content editor does not apply her own. --></r:comment>
+<r:content_for name="{$defaultComponentClasses}">bg-dark text-white wvu-bg-position-center wvu-bg-size-cover wvu-bg-vignetting</r:content_for>
+<r:content_for name="{$defaultHeaderClasses}">display-1 wvu-shout wvu-slash</r:content_for>
+
+<r:comment><!-- Content that gets pulled into the editable regions by default. Normally you don’t need to do this. I’m doing this so I can keep default content for each region in one palce, then pull it into the WVU Design System demo site. If you want to make a copy of this component, you can delete the following “content_for” lines and replace the “yield” snippets in the markup with the actual content. --></r:comment>
+<r:content_for name="{$componentHeader}">It Starts Now.</r:content_for>
+<r:content_for name="{$componentMain}"><p class="lead py-2">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Call to Action</a></r:content_for>
+
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" /> aria-labelledby="<r:var name="componentName" />-label" class="jumbotron jumbotron-fluid mb-0 wvu-overflow-hidden wvu-bg-size-cover <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+  <div class="container position-relative wvu-z-index-content">
+    <div class="row py-5<r:if v1="{$hero_text_alignment}" v2="1" operator="="> justify-content-end</r:if>">
+      <div class="col col-md-6 <r:if v1="{$componentAlign}" v2="right" op="=">ml-md-auto</r:if><r:if v1="{$componentAlign}" v2="middle" op="=">mx-md-auto</r:if>">
+        <r:comment><!-- Ignore the “if” section that immediately follows. It is used only on the WVU Design System site to display component examples. If you want to make a copy of this component, you can delete the “if” statement and everything inside of it. --></r:comment>
+        <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+          <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section. --></r:comment>
+          <h1 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$itemHeaderClassesRegionName}"><r:page:content name="{$itemHeaderClassesRegionName}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderClassesRegionName}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
+            <r:page:unless_has_content_for region="{$itemHeaderRegionName}"><r:yield name="{$componentHeader}"><r:content /></r:yield></r:page:unless_has_content_for><r:page:content name="{$itemHeaderRegionName}" />
+          </h1>
+          <r:page:if_has_content_for region="{$itemMain}"><r:page:content name="{$itemMain}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemMain}"><r:yield name="{$componentMain}" /></r:page:unless_has_content_for>
+        </r:if>
+        <r:comment><!-- This is the code that will be used for any site other than the WVU Design System website. If you are making a copy of this component, you can delete the following “if” statement and keep what’s inside. --></r:comment>
+        <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+          <r:comment><!-- This uses a variable to define the name of the editable region. In the Super Theme, this is defined dynamically. If you are making a custom theme, and want to reference this partial more than once in the same tempalte, you will need to define an instance number (set_var name="componentInstance" value="something") when you insert each partial. --></r:comment>
+          <r:edit_mode_only>
+            <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
+              <pre class="mb-0 text-white"><r:editable_region name="{$headerClasses}" type="simple" /></pre>
+              <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></pre>
+            </small>
+          </r:edit_mode_only>
+          <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section --></r:comment>
+          <h1 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
+            <r:editable_region name="{$componentHeader}" scope="{$componentScope}" type="simple">
+              <r:yield name="{$componentHeader}"><r:content /></r:yield>
+            </r:editable_region>
+          </h1>
+          <r:comment><!-- This uses a variable to define the name of the editable region. In the Super Theme, this is defined dynamically. If you are making a custom theme, and want to reference this partial more than once in the same tempalte, you will need to define an instance number (set_var name="componentInstance" value="something") when you insert each partial. --></r:comment>
+          <r:editable_region name="{$componentMain}" scope="{$componentScope}"><r:yield name="{$componentMain}"><r:content /></r:yield></r:editable_region>
+        </r:if>
+      </div>
+    </div>
+  </div>
+</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" />><!-- End markup -->
+
+<r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
+<r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+</r:if>

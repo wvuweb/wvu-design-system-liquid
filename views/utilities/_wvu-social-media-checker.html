@@ -1,0 +1,35 @@
+<r:if expr="{{ NOT(BLANK(facebook_url)) }}">
+  <a class="fab fa-facebook-square text-light" href="<r:site:data name="facebook_url" />">
+    <span class="sr-only">Follow us on Facebook</span>
+  </a>
+</r:if>
+<r:if expr="{{ NOT(BLANK(github_url)) }}">
+  <a class="fab fa-github-square text-light" href="<r:site:data name="github_url" />">
+    <span class="sr-only">Follow us on Github</span>
+  </a>
+</r:if>
+<r:if expr="{{ NOT(BLANK(instagram_url)) }}">
+  <a class="fab fa-instagram-square text-light" href="<r:site:data name="instagram_url" />">
+    <span class="sr-only">Follow us on Instagram</span>
+  </a>
+</r:if>
+<r:if expr="{{ NOT(BLANK(linkedin_url)) }}">
+  <a class="fab fa-linkedin-square text-light" href="<r:site:data name="linkedin_url" />">
+    <span class="sr-only">Follow us on LinkedIn</span>
+  </a>
+</r:if>
+<r:if expr="{{ NOT(BLANK(syndication_url)) }}">
+  <a class="fab fa-rss-square text-light" href="<r:site:data name="syndication_url" />">
+    <span class="sr-only">Subsribe via RSS</span>
+  </a>
+</r:if>
+<r:if expr="{{ NOT(BLANK(twitter_url)) }}">
+  <a class="fab fa-twitter-square text-light" href="<r:site:data name="twitter_url" />">
+    <span class="sr-only">Follow us on Twitter</span>
+  </a>
+</r:if>
+<r:if expr="{{ NOT(BLANK(youtube_url)) }}">
+  <a class="fab fa-youtube-square text-light" href="<r:site:data name="youtube_url" />">
+    <span class="sr-only">Follow us on Youtube</span>
+  </a>
+</r:if>

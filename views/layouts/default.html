@@ -42,38 +42,25 @@
   <body class="<r:page:template:name /> page--<r:page:id /> page--<r:page:slug /> <r:edit_mode_only>page--edit-mode page--hide-instructions-<r:site:data name="hide_instructions" /></r:edit_mode_only>">
 
     <header>
-
       <a class="sr-only sr-only-focusable" href="#wvu-main-content">Skip to main content</a>
-
-      <r:if expr="{{ NOT(BLANK(slot_00_masthead)) }}">
-        <r:set_var name="patternNameMasthead">
-          components/wvu-<r:site:data name="slot_00_masthead" />
-        </r:set_var>
-        <r:partial name="{$patternNameMasthead}" theme="University Relations: WVU Design System Components" />
+      <r:if expr="{{ NOT(BLANK(is_demo_site))}}">
+        <div class="p-3 bg-wvu-accent--red text-white text-center">
+          This is a demo site. Some of the links won’t work. To see other templates in this theme, return to the <a href="http://designsystem.sandbox.wvu.edu/themes/<r:site:data name="is_demo_site" />" class="text-wvu-accent--yellow"><span class="text-capitalize"><r:site:data name="is_demo_site" /></span> theme page</a>. To see other themes, return to the <a href="http://designsystem.sandbox.wvu.edu/themes" class="text-wvu-accent--yellow">themes page</a>.
+        </div>
       </r:if>
-
+      <r:partial name="components/wvu-masthead" theme="University Relations: WVU Design System Components" />
     </header>
 
-    <r:if expr="{{ NOT(BLANK(slot_00_nav)) }}">
-      <r:set_var name="patternNameNav">
-        components/wvu-<r:site:data name="slot_00_nav" />
-      </r:set_var>
-      <r:partial name="{$patternNameNav}" theme="University Relations: WVU Design System Components" />
-    </r:if>
+    <r:partial name="components/wvu-nav" theme="University Relations: WVU Design System Components" />
 
-    <main id="wvu-main-content">
-
-      <r:comment><!-- What are layouts and <r:yield />? http://goo.gl/DFAsPv --></r:comment>
-      <r:yield />
-
-      <r:partial name="components/wvu-slots--sitewide" />
-
-    </main>
+    <r:comment><!-- What are layouts and <r:yield />? http://goo.gl/DFAsPv --></r:comment>
+    <r:yield />
 
     <r:if value1="{$has_standard_footer}" value2="false" operator="!=">
-      <r:partial name="components/wvu-footer-1" theme="University Relations: WVU Design System Components" />
+      <r:partial name="components/wvu-footer" theme="University Relations: WVU Design System Components" />
     </r:if>
 
+    <script type="text/javascript" src="/javascripts/vendor/clipboard.min.js"></script>
     <script type="text/javascript" src="//fast.fonts.net/jsapi/36d8cd92-7cc7-499b-b169-0eed9d670283.js"></script> <r:comment><!-- Helvetica Neue Light & Bold Condensed web font, valid for *.wvu.edu, *.wvutech.edu, & localhost --></r:comment>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -81,7 +68,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-    <r:include_javascript name="vendor/responsive-nav-dropdown, responsive-nav-dropdown--custom" />
+    <r:include_javascript name="vendor/responsive-nav-dropdown, responsive-nav-dropdown--custom, vendor/twitterFetcher, vendor/jquery.magnific-popup.js" />
 
     <r:yield name="page_js">
       <r:content />

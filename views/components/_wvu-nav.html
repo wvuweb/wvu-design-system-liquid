@@ -1,0 +1,113 @@
+<r:set_var name="nav_depth" value="{$nav_depth}" default="1" />
+
+<r:page:content_for><div class="row">
+        <div class="col-md-6">
+          <h2 class="h5">Quicklinks</h2>
+          <ul class="list-unstyled">
+            <li class="d-block my-1">
+              <a href="#" class="text-white fas fa-arrow-circle-right">
+                <small>Quicklink</small>
+              </a>
+            </li>
+            <li class="d-block my-1">
+              <a href="#" class="text-white fas fa-arrow-circle-right">
+                <small>Quicklink</small>
+              </a>
+            </li>
+            <li class="d-block my-1">
+              <a href="#" class="text-white fas fa-arrow-circle-right">
+                <small>Quicklink</small>
+              </a>
+            </li>
+            <li class="d-block my-1">
+              <a href="#" class="text-white fas fa-arrow-circle-right">
+                <small>Quicklink</small>
+              </a>
+            </li>
+            <li class="d-block my-1">
+              <a href="#" class="text-white fas fa-arrow-circle-right">
+                <small>Quicklink</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <a href="https://placeholder.com">
+            <img class="shadow-sm" src="https://via.placeholder.com/960x640">
+          </a>
+        </div>
+      </div></r:page:content_for>
+
+<nav class="navbar navbar-expand-lg p-0 navbar-dark bg-dark d-table w-100">
+  <div class="container">
+    <button id="nav-toggle" class="wvu-nav__button nav-toggle">
+      <img class="wvu-nav__menu-icon" src="https://static.wvu.edu/global/images/icons/wvu/hamburger-menu--1.0.0.svg" alt="" />
+      Open Menu
+    </button>
+    <div class="wvu-nav nav-collapse ml-lg-n1" id="wvu-nav">
+      <r:comment>
+        <!-- NOTE: If nav depth is greater than 1, show the dropdown caret (has_children_class) & `+` on mobile (sub_ul_class). -->
+      </r:comment>
+      <r:if v1="{$nav_depth}" v2="1" op=">" type="Number">
+        <r:site_menu max_depth="{$nav_depth}" ul_class="wvu-nav__items menu-items navbar-nav mr-auto" link_class="nav-link px-2 px-lg-1" has_children_class="dropdown" sub_ul_class="sub-menu small bg-wvu-neutral--black" />
+      </r:if>
+
+      <r:comment>
+        <!-- NOTE: If nav depth is equal to 1, do NOT show the dropdown caret (has_children_class). -->
+      </r:comment>
+      <r:if v1="{$nav_depth}" v2="1" op="=" type="Number">
+        <r:site_menu max_depth="{$nav_depth}" ul_class="wvu-nav__items menu-items" />
+      </r:if>
+    </div> <!-- /.nav-collapse -->
+    <a class="fas fa-search text-white py-2 px-2 py-lg-0 px-lg-0" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><span class="sr-only">Toggle Search</span></a>
+  </div> <!-- /.container -->
+</nav>
+<div class="collapse multi-collapse bg-light py-4 w-100 text-white bg-wvu-neutral--black wvu-bg-vignetting--20" id="multiCollapseExample1">
+  <div class="container wvu-z-index-content">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <form class="form-inline w-100" action="//search.wvu.edu/search" method="get" role="search">
+              <label for="q">
+                <span class="sr-only">Search</span>
+              </label>
+              <input id="sort" name="sort" type="hidden" value="date:D:L:d1" />
+              <input id="output" name="output" type="hidden" value="xml_no_dtd" />
+              <input id="ie" name="ie" type="hidden" value="UTF-8" />
+              <input id="oe" name="oe" type="hidden" value="UTF-8" />
+              <input id="proxystylesheet" name="proxystylesheet" type="hidden" value="default_frontend" />
+              <input id="client" name="client" type="hidden" value="default_frontend" />
+              <div class="input-group shadow-sm w-100">
+                <input id="q" class="form-control p-2" name="q" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-primary px-3 px-lg-4" name="btnG" type="submit"><span class="fas fa-search h5 mb-0"><span class="sr-only">Search</span></span></button>
+                </div>
+              </div>
+              <div class="row pt-1">
+                <fieldset class="col-12">
+                  <legend class="sr-only">
+                    Would you like to search this site specifically, or all WVU websites?
+                  </legend>
+                  <div class="d-inline-block pr-2">
+                    <input id="form-search__sitesearch" type="radio" name="as_sitesearch" value="<r:site:domain />" checked="checked" />
+                    <label class="d-inline-block" for="form-search__sitesearch">Search this site</label>
+                  </div>
+                  <div class="d-inline-block">
+                    <input id="form-search__wvusearch" type="radio" name="as_sitesearch" value="wvu.edu" />
+                    <label class="d-inline-block" for="form-search__wvusearch">Search WVU</label>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
+          </div>
+        </div>
+        <r:page:if_has_content_for region="search-content" always_show_in_edit_mode="true">
+          <div class="mt-4">
+            <r:editable_region name="search-content" scope="site" />
+          </div>
+        </r:page:if_has_content_for>
+      </div>
+    </div>
+  </div>
+</div>

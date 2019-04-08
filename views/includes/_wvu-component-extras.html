@@ -1,0 +1,19 @@
+<!-- Info you need to control repeated content, for example Featurettes or Profile. These can be overritten in your template. This is useful if, for example, you need more than one instance of your component. Just set_var instance to “2” when calling the partial. -->
+
+<!-- Pull in limit from “slot” if using Super Theme, else set it to “50” -->
+<r:set_var name="componentLimit" value="{$limit}" default="50" />
+
+<!-- Pull in loop by (name, title, sort order, etc.) from “slot” if using Super Theme, else set it to “50” -->
+<r:set_var name="componentLoopBy" value="{$loopBy}" default="sort_order" />
+
+<!-- Pull in labels to match from “slot” if using Super Theme, else set it to “50” -->
+<r:set_var name="componentLoopLabelsMatch" value="{$loopLabelsMatch}" default="all" />
+
+<!-- Pull in labels to match from “slot” if using Super Theme, else set it to “50” -->
+<r:set_var name="componentLoopOrder" value="{$loopOrder}" default="asc" />
+
+<!-- Pull in labels to match from “slot” if using Super Theme, else set it to “50” -->
+<r:set_var name="componentShowHidden" value="{$showHidden}" default="0" />
+
+<!-- Pull in labels to match from “slot” if using Super Theme, else set it to “50” -->
+<r:set_var name="componentIsMain" value="{$isMain}" default="0" />
