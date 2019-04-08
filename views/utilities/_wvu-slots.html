@@ -66,7 +66,7 @@
   <r:set_var name="instanceNumber"><r:page:data name="{$slotInstance}" /></r:set_var>
   <r:set_var name="whereToDisplay"><r:page:data name="{$slotWhereToDisplay}" /></r:set_var>
 
-  <!-- Show hidden parameter needs a value of “true” or “false”. Convert it here. -->
+  <r:comment><!-- Show hidden parameter needs a value of “true” or “false”. Convert it here. --></r:comment>
   <r:if v1="{$slotShowHidden}" v2="1" op="=">
     <r:set_var name="showHidden">true</r:set_var>
   </r:if>
@@ -74,7 +74,7 @@
     <r:set_var name="showHidden">false</r:set_var>
   </r:if>
 
-  <!-- Show hidden parameter needs a value of “true” or “false”. Convert it here. -->
+  <r:comment><!-- Show hidden parameter needs a value of “true” or “false”. Convert it here. --></r:comment>
   <r:if v1="{$slotIsRandom}" v2="1" op="=">
     <r:set_var name="showHidden">true</r:set_var>
   </r:if>
@@ -82,7 +82,7 @@
     <r:set_var name="showHidden">false</r:set_var>
   </r:if>
 
-  <!--  -->
+  <r:comment><!--  --></r:comment>
   <r:if v1="{$slotScope}" v2="1" op="=">
     <r:set_var name="scope">site</r:set_var>
   </r:if>
@@ -90,17 +90,17 @@
     <r:set_var name="scope">page</r:set_var>
   </r:if>
 
-  <!-- Get display context. If none, set to as-full-width-block -->
+  <r:comment><!-- Get display context. If none, set to as-full-width-block --></r:comment>
   <r:set_var name="displayChecker" value="{$whereToDisplay}" default="as-full-width-block" />
 
-  <!-- Get display context of slots component. If none, set to as-full-width-block -->
+  <r:comment><!-- Get display context of slots component. If none, set to as-full-width-block --></r:comment>
   <r:set_var name="slotsDisplayContext" value="{$componentDisplayContext}" default="as-full-width-block" />
 
-  <!-- If displayChecker and componentDisplayContext match, display the component. displayChecker will be as-full-width by default. componentDisplayContext will be set whenever the slots component is called. -->
+  <r:comment><!-- If displayChecker and componentDisplayContext match, display the component. displayChecker will be as-full-width by default. componentDisplayContext will be set whenever the slots component is called. --></r:comment>
   <r:if v1="{$displayChecker}" v2="{$slotsDisplayContext}" op="=">
     <r:if expr="{{ NOT(BLANK(slotNameValue)) }}">
 
-      <!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. -->
+      <r:comment><!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. --></r:comment>
       <r:if expr="{{ BLANK(slotCustomValue) }}">
         <r:set_var name="partialName">
           components/wvu-<r:page:data name="{$slotName}" />
@@ -120,5 +120,5 @@
 
 </r:loop:each>
 
-<!-- Reset component display context -->
+<r:comment><!-- Reset component display context --></r:comment>
 <r:set_var name="componentDisplayContext" value="as-full-width-block" />

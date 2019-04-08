@@ -33,9 +33,6 @@
     }
   }
 }
-.wvu-calendar--flex {
-  font-size: 1em;
-}
 
 .ua-calendar-widget {
   a {
@@ -55,34 +52,15 @@
 }
 
 .wvu-calendar-widget__item {
-  margin-bottom: 1em;
+  margin-bottom: $spacer / 2;
 }
 
 .wvu-calendar-widget__day {
-  font-size: 1.5em;
-}
-
-.wvu-sidebar, .so-featurettes__featurette, .so-magic-anytych__panel {
-  .wvu-calendar-widget__postscript, .wvu-calendar-widget__header {
-    display: none;
-  }
-  .wvu-calendar-widget__container {
-    padding: 0;
-  }
-  .wvu-calendar--flex { padding-left: 0;
-    li { padding-right: 1em; }
-    @include media-breakpoint-up(md) {
-      display: block;
-      li {
-        width: 100%;
-        padding: 0 0 1em 0;
-      }
-    }
-  }
+  font-size: 1.5rem;
 }
 
 .wvu-calendar-widget { padding-left: 0;
-  li { margin-bottom: 0.5em; display: inline-block; width: 100%;
+  li { margin-bottom: $spacer / 4; display: inline-block; width: 100%;
     .eventDate { float: left; margin-right: 4%; width: 10%; text-align: center; padding-bottom: 6px; border-radius: 6px;
     }
     .calEventMonth { font-size: .8em; text-transform: uppercase; }
@@ -101,7 +79,8 @@
     flex-flow: row wrap;
     li {
       width: 33%;
-      padding: 0 0 1em 0;
+      padding: 0 0 $spacer / 2 0;
+      vertical-align: top;
     }
   }
 }
