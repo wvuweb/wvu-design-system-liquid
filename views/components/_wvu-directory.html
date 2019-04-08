@@ -2,7 +2,7 @@
 <r:set_var name="baseComponentName" value="directory" />
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name --></r:comment>
 <r:set_var name="itemLabels">
@@ -13,7 +13,7 @@
 <r:content_for name="{$componentDescription}">Loops through all pages, finds those labeled with <code>{page-slug}-directory-{instance-number}</code>, pulls the relevant content, and displays as a directory.</r:content_for>
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define editable region names --></r:comment>
 <r:set_var name="componentHeader">wvu-hero-<r:var name="componentName" />__header</r:set_var>
@@ -24,7 +24,7 @@
 <r:comment><!-- Content that gets pulled into the editable regions by default --></r:comment>
 <r:content_for name="{$componentHeader}"><h2 id="<r:var name="componentName" />-label">Staff Directory Headline</h2></r:content_for>
 
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" /> aria-labelledby="<r:var name="componentName" />-label" class="mb-3 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="mb-3 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container">
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
       <div class="wvu-z-index-content mb-4">
@@ -86,9 +86,9 @@
       </table>
     </div>
   </div>
-</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" />><!-- End markup -->
+</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->
 
 <r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
 <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
 </r:if>

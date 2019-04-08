@@ -2,7 +2,7 @@
 <r:set_var name="baseComponentName" value="big-search" />
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define editable region names --></r:comment>
 <r:set_var name="componentHeader">wvu-action-hero-<r:var name="componentInstance" />__header</r:set_var>
@@ -25,7 +25,7 @@
 <r:content_for name="{$componentMain}"><p class="helvetica-neue-light h3">Type your search term below.</p></r:content_for>
 <r:content_for name="{$componentPostscript}"><p>Not sure what to search for? Browse our <a href="#">categories</a>.</p></r:content_for>
 
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" /> aria-labelledby="<r:var name="componentName" />-label" class="py-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />">
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="py-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />">
   <div class="container wvu-z-index-content">
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
       <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section. --></r:comment>
@@ -90,9 +90,9 @@
       <r:editable_region name="{$componentPostscript}" scope="{$componentScope}"><r:yield name="{$componentPostscript}"><r:content /></r:yield></r:editable_region>
     </r:if>
   </div>
-</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" />><!-- End markup -->
+</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->
 
 <r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
 <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
 </r:if>

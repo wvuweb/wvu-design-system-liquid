@@ -2,7 +2,7 @@
 <r:set_var name="baseComponentName" value="profile" />
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define editable region names --></r:comment>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
@@ -35,7 +35,7 @@
           fruit. My capacity is full i don't want to drain the whole swamp, i just
           want to shoot some alligators. Open door policy ramp up.</r:content_for>
 
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" /> aria-labelledby="<r:var name="componentName" />-label" class="py-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="py-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container wvu-z-index-content">
     <div class="row">
       <div class="col-md-3 mb-1">
@@ -43,7 +43,7 @@
           <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
             <img class="rounded-circle shadow" src="https://via.placeholder.com/960x960" alt="thumbnail_alt" />
             <p class="pt-3">
-              <r:partial name="includes/wvu-contact-info" theme="University Relations: WVU Design System Components" />
+              <r:partial name="includes/wvu-contact-info" theme="University Relations: WVU Design System" />
             </p>
           </r:if>
           <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
@@ -56,7 +56,7 @@
               </r:if>
             </r:if>
             <p class="pt-3">
-              <r:partial name="includes/wvu-contact-info" theme="University Relations: WVU Design System Components" />
+              <r:partial name="includes/wvu-contact-info" theme="University Relations: WVU Design System" />
             </p>
           </r:if>
         </div>
@@ -109,9 +109,9 @@
       </div>
     </div>
   </div>
-</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" />>
+</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />>
 
 <r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
 <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
 </r:if>

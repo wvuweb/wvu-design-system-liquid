@@ -48,16 +48,16 @@
           This is a demo site. Some of the links won’t work. To see other templates in this theme, return to the <a href="http://designsystem.sandbox.wvu.edu/themes/<r:site:data name="is_demo_site" />" class="text-wvu-accent--yellow"><span class="text-capitalize"><r:site:data name="is_demo_site" /></span> theme page</a>. To see other themes, return to the <a href="http://designsystem.sandbox.wvu.edu/themes" class="text-wvu-accent--yellow">themes page</a>.
         </div>
       </r:if>
-      <r:partial name="components/wvu-masthead" theme="University Relations: WVU Design System Components" />
+      <r:partial name="components/wvu-masthead" theme="University Relations: WVU Design System" />
     </header>
 
-    <r:partial name="components/wvu-nav" theme="University Relations: WVU Design System Components" />
+    <r:partial name="components/wvu-nav" theme="University Relations: WVU Design System" />
 
     <r:comment><!-- What are layouts and <r:yield />? http://goo.gl/DFAsPv --></r:comment>
     <r:yield />
 
     <r:if value1="{$has_standard_footer}" value2="false" operator="!=">
-      <r:partial name="components/wvu-footer" theme="University Relations: WVU Design System Components" />
+      <r:partial name="components/wvu-footer" theme="University Relations: WVU Design System" />
     </r:if>
 
     <script type="text/javascript" src="/javascripts/vendor/clipboard.min.js"></script>

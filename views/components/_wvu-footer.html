@@ -2,7 +2,7 @@
 <r:set_var name="baseComponentName" value="footer" />
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define editable region names --></r:comment>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
@@ -14,7 +14,7 @@
 <r:comment><!-- Content that gets pulled into the editable regions by default. Normally you don’t need to do this. I’m doing this so I can keep default content for each region in one palce, then pull it into the WVU Design System demo site. If you want to make a copy of this component, you can delete the following “content_for” lines and replace the “yield” snippets in the markup with the actual content. --></r:comment>
 <r:content_for name="{$componentMain}">Address</r:content_for>
 
-<!-- Markup --><footer class="py-4 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+<!-- Markup --><footer class="py-4 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container">
     <div class="row">
       <div class="col-6">
@@ -75,5 +75,5 @@
 
 <r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
 <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
 </r:if>

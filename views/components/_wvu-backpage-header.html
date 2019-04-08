@@ -2,7 +2,7 @@
 <r:set_var name="baseComponentName" value="backpage-header" />
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define editable region names --></r:comment>
 <r:set_var name="componentHeader">wvu-<r:var name="componentName" />__header</r:set_var>
@@ -23,7 +23,7 @@
 <r:content_for name="{$componentHeaderLabel}"><span class="wvu-shout text-wvu-gold text-uppercase">Label pre</span> label post</r:content_for>
 <r:content_for name="{$componentSubhead}"><p class="lead mb-0 mt-1">Subhead goes here.</p></r:content_for>
 
-<!-- Markup --><header class="wvu-overflow-hidden pt-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+<!-- Markup --><header class="wvu-overflow-hidden pt-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container position-relative wvu-z-index-content">
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
       <r:page:if_has_content_for region="{$itemBackpageHasHeaderLabel}">
@@ -69,5 +69,5 @@
 
 <r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
 <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
 </r:if>

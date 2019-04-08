@@ -2,7 +2,7 @@
 <r:set_var name="baseComponentName" value="photo-gallery" />
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define base editable region names. --></r:comment>
 <r:set_var name="componentHeader">wvu-photo-gallery-<r:var name="componentInstance" />__header</r:set_var>
@@ -18,7 +18,7 @@
   <p class="h3 helvetica-neue-light">Subhead goes here.</p></r:content_for>
 <r:content_for name="{$componentPostscript}"><p class="mb-0">Put additional info or <a href="#">links</a> here.</p></r:content_for>
 
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" /> aria-labelledby="<r:var name="componentName" />-label" class="wvu-gallery <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="wvu-gallery <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
 <r:comment><!-- Ignore the following section. --></r:comment>
   <div class="container wvu-z-index-content">
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
@@ -46,7 +46,7 @@
       </r:files:each>
     </div>
   </div>
-</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" />><!-- End markup -->
+</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->
 
 <r:content_for name="page_js">
   <r:include_javascript name="vendor/jquery.magnific-popup" />

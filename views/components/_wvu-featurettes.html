@@ -2,7 +2,7 @@
 <r:set_var name="baseComponentName" value="featurettes" />
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System Components" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define base editable region names. --></r:comment>
 <r:set_var name="componentHeader">wvu-featurettes-<r:var name="componentInstance" />__header</r:set_var>
@@ -19,7 +19,7 @@
   <p class="h3 helvetica-neue-light">Subhead goes here.</p></r:content_for>
 <r:content_for name="{$componentPostscript}"><p class="mb-0">Put additional info or <a href="#">links</a> here.</p></r:content_for>
 
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" /> aria-labelledby="<r:var name="componentName" />-label" class="<r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System Components" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System Components" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="<r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container wvu-z-index-content">
     <r:comment><!-- Ignore the following section. --></r:comment>
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
@@ -38,28 +38,28 @@
     </r:if>
     <r:comment><!-- Call a utility partial that loops through each papge in site and grabs content if the page label matches.--></r:comment>
     <r:if v1="{$componentFeaturettesStyle}" v2="default" op="=">
-      <r:partial name="includes/wvu-featurettes__default" theme="University Relations: WVU Design System Components" />
+      <r:partial name="includes/wvu-featurettes__default" theme="University Relations: WVU Design System" />
     </r:if>
     <r:if v1="{$componentFeaturettesStyle}" v2="cards" op="=">
-      <r:partial name="includes/wvu-featurettes__cards" theme="University Relations: WVU Design System Components" />
+      <r:partial name="includes/wvu-featurettes__cards" theme="University Relations: WVU Design System" />
     </r:if>
     <r:if v1="{$componentFeaturettesStyle}" v2="cards-w-overlay" op="=">
-      <r:partial name="includes/wvu-featurettes__cards-w-overlay" theme="University Relations: WVU Design System Components" />
+      <r:partial name="includes/wvu-featurettes__cards-w-overlay" theme="University Relations: WVU Design System" />
     </r:if>
     <r:if v1="{$componentFeaturettesStyle}" v2="testimonials" op="=">
-      <r:partial name="includes/wvu-featurettes__testimonials" theme="University Relations: WVU Design System Components" />
+      <r:partial name="includes/wvu-featurettes__testimonials" theme="University Relations: WVU Design System" />
     </r:if>
     <r:if v1="{$componentFeaturettesStyle}" v2="majors" op="=">
-      <r:partial name="includes/wvu-featurettes__majors" theme="University Relations: WVU Design System Components" />
+      <r:partial name="includes/wvu-featurettes__majors" theme="University Relations: WVU Design System" />
     </r:if>
     <r:if v1="{$componentFeaturettesStyle}" v2="profiles" op="=">
-      <r:partial name="includes/wvu-featurettes__profiles" theme="University Relations: WVU Design System Components" />
+      <r:partial name="includes/wvu-featurettes__profiles" theme="University Relations: WVU Design System" />
     </r:if>
     <r:if v1="{$componentFeaturettesStyle}" v2="editable-regions" op="=">
-      <r:partial name="includes/wvu-featurettes__editable-regions" theme="University Relations: WVU Design System Components" />
+      <r:partial name="includes/wvu-featurettes__editable-regions" theme="University Relations: WVU Design System" />
     </r:if>
     <r:if v1="{$componentFeaturettesStyle}" v2="custom" op="=">
-      <r:partial name="includes/wvu-featurettes__custom" theme="University Relations: WVU Design System Components" />
+      <r:partial name="includes/wvu-featurettes__custom" theme="University Relations: WVU Design System" />
     </r:if>
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
       <div class="mt-2 wvu-z-index-content">
@@ -80,9 +80,9 @@
       </r:page:if_has_content_for>
     </r:if>
   </div>
-</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System Components" />><!-- End markup -->
+</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->
 
 <r:comment><!-- Pull in partial that allows users to edit classes for component in CleanSlate editor --></r:comment>
 <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System Components" />
+  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
 </r:if>

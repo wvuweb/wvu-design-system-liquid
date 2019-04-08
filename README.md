@@ -30,7 +30,7 @@ You will need to install Node ^8.9.4.
 
 ## WVU Design System and CleanSlate
 
-If you are building a theme for [CleanSlate](https://cleanslatecms.wvu.edu/), you can use partials to include [components](https://designsystem.sandbox.wvu.edu/components). These are stored in a global theme called WVU Design System Components. Make sure to reference the this theme if you want to use a global partial. For example, to include a [Hero component](https://designsystem.sandbox.wvu.edu/components/hero), you would use the partial ```<r:partial name="components/wvu-hero" theme="University Relations: WVU Design System Components" />```. If you don’t want to use a global partial, you can create your own. For more about how to build themes in CleanSlate, check out [https://cleanslatecms.wvu.edu](https://cleanslatecms.wvu.edu).
+If you are building a theme for [CleanSlate](https://cleanslatecms.wvu.edu/), you can use partials to include [components](https://designsystem.sandbox.wvu.edu/components). These are stored in a global theme called WVU Design System Components. Make sure to reference the this theme if you want to use a global partial. For example, to include a [Hero component](https://designsystem.sandbox.wvu.edu/components/hero), you would use the partial ```<r:partial name="components/wvu-hero" theme="University Relations: WVU Design System" />```. If you don’t want to use a global partial, you can create your own. For more about how to build themes in CleanSlate, check out [https://cleanslatecms.wvu.edu](https://cleanslatecms.wvu.edu).
 
 ### Testing for CleanSlate
 
