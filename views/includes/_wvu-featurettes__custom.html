@@ -42,14 +42,20 @@
       </r:set_var>
     </r:if>
     <div class="<r:var name="columnClasses" /> mb-3">
-      <r:comment><!-- Grab all of the items in the loop. --></r:comment>
-      <r:each limit="{$componentLimit}">
+      <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
         <r:set_var name="componentDisplayContext" value="{$componentPanel}" /><!-- Should actually be sidebar 1, 2, 3, etc. -->
         <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
         <r:comment><!-- We need to reset our variables back to those of the parent component. Else the new component will change those of the parent, screwing subsequent variable references. --></r:comment>
         <r:set_var name="baseComponentName" value="featurettes" />
         <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
-      </r:each>
+      </r:if>
+      <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+        <r:set_var name="componentDisplayContext" value="{$componentPanel}" /><!-- Should actually be sidebar 1, 2, 3, etc. -->
+        <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
+        <r:comment><!-- We need to reset our variables back to those of the parent component. Else the new component will change those of the parent, screwing subsequent variable references. --></r:comment>
+        <r:set_var name="baseComponentName" value="featurettes" />
+        <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
+      </r:if>
     </div>
   </r:loop:each>
 </div>

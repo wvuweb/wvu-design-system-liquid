@@ -1,6 +1,6 @@
 shared_themes:
   "Code": "code"
-  "University Relations: WVU Design System Components": "wvu-design-system-components"
+  "University Relations: WVU Design System": "wvu-design-system-components"
 
 show_editable_regions: false  #If true a div with `border: 1px dashed red` will be injected into the content of the region
 
