@@ -1,7 +1,6 @@
 # Change Log
 
-## [Unreleased](https://github.com/wvuweb/wvu-design-system/tree/HEAD)
-
+## [v0.0.1](https://github.com/wvuweb/wvu-design-system/tree/v0.0.1) (2019-04-09)
 **Implemented enhancements:**
 
 - Remove bootstrap media queries from our utilities... [\#24](https://github.com/wvuweb/wvu-design-system/issues/24)

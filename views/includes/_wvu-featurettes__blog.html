@@ -54,11 +54,11 @@
   </r:set_var>
 </r:if>
 
-<r:get_page id="{$componentBlogID}">
+<r:root>
   <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
-  <r:children by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
+  <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
     <r:set_var name="itemCount">
       <r:count />
     </r:set_var>
@@ -127,5 +127,5 @@
         </r:if>
       </r:blog:articles>
     </div>
-  </r:children>
-</r:get:page>
+  </r:descendants>
+</r:root>
