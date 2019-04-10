@@ -159,6 +159,7 @@ blog:
         tags:
           - some-tag
           - some-other-tag
+          - wvu-featurettes-1
         published_at: "2 days ago"
       - article:
         id: 22
