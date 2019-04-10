@@ -64,6 +64,7 @@
     </r:set_var>
     <div class="row <r:if v1="{$itemCount}" v2="2" op="="> d-flex justify-content-center</r:if>">
       <r:if v1="{page:template:name}" v2="blog_index" op="=">
+      Test.
         <r:comment><!-- Grab the first item in the loop, and display a dummy version of it that accepts button text that will apply to all others items in the featurettes. --></r:comment>
         <r:edit_mode_only>
           <r:blog:articles limit="1" page="{$page}" tags="{$itemLabels}" tags_op="all" year="{$year}" month="{$month}" day="{$day}">

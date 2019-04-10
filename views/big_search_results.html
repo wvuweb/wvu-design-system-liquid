@@ -14,7 +14,7 @@ custom_data_attributes:
     title: Remove breadcrumbs
   - description:
     type: text
-    rows: 4
+    rows: 6
     tile: Description
     required: false
     maxlength: 255
@@ -45,6 +45,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -63,7 +64,7 @@ custom_data_attributes:
       - [Subnav, subnav]
       - [Twitter Widget, twitter-widget]
     include_blank: false
-    default: hero
+    default: big-search-results
   - slot_1_custom:
     title: If custom, name of partial
   - slot_1_where_to_display:
@@ -172,6 +173,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -203,7 +205,7 @@ custom_data_attributes:
       - [Featurettes Panel 3, featurettes-panel-3]
       - [Sidebar, sidebar]
     include_blank: false
-    default: as-full-width-block
+    default: sidebar
   - slot_2_is_main:
     type: checkbox
     title: Is Main
@@ -298,6 +300,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -424,6 +427,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -550,6 +554,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -676,6 +681,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -802,6 +808,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -928,6 +935,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -1054,6 +1062,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -1180,6 +1189,7 @@ custom_data_attributes:
       - [Action Hero Two Column, action-hero-two-column]
       - [Back Page, backpage]
       - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
       - [Blog Archive, blog-archive]
       - [Blog Article, blog-article]
       - [Blog Index, blog-index]
@@ -1298,6 +1308,14 @@ custom_data_attributes:
     type: checkbox
     title: Show if hidden
 ---
+
+<r:if v1="{$breadcrumbs}" v2="1" op="!=">
+  <r:partial name="components/wvu-breadcrumbs" theme="University Relations: WVU Design System" />
+</r:if>
+
+<r:if v1="{$backpage_header}" v2="1" op="!=">
+  <r:partial name="components/wvu-backpage-header" theme="University Relations: WVU Design System" />
+</r:if>
 
 <!-- Slots 01 - 10 -->
 <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />

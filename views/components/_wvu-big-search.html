@@ -57,20 +57,14 @@
       <div class="col-md-6 mx-auto">
         <div class="row mb-2">
           <div class="col-md-12">
-            <form class="form-inline w-100" action="//search.wvu.edu/search" method="get" role="search">
-              <label for="q">
+            <form class="form-inline w-100" action="<r:page:data name="search_action" />" method="get" role="search">
+              <label for="bq">
                 <span class="sr-only">Search</span>
               </label>
-              <input id="sort" name="sort" type="hidden" value="date:D:L:d1">
-              <input id="output" name="output" type="hidden" value="xml_no_dtd">
-              <input id="ie" name="ie" type="hidden" value="UTF-8">
-              <input id="oe" name="oe" type="hidden" value="UTF-8">
-              <input id="proxystylesheet" name="proxystylesheet" type="hidden" value="default_frontend">
-              <input id="client" name="client" type="hidden" value="default_frontend">
               <div class="input-group shadow-sm w-100">
-                <input id="q" class="form-control p-3 h1" name="q" type="search" placeholder="Search" aria-label="Search">
+                <input id="bq" class="form-control p-3 h1" name="cquery" maxlength="256" placeholder="Type in your search term." type="search" aria-label="Search" />
                 <div class="input-group-append">
-                  <button class="btn btn-primary px-3 px-lg-4" name="btnG" type="submit">
+                  <button class="btn btn-primary px-3 px-lg-4" name="submit" type="submit" value="Search">
                     <span class="fas fa-search h4 mb-0">
                       <span class="sr-only">Search</span>
                     </span>
