@@ -27,8 +27,17 @@ editable_region:
     <p><%= Faker::Lorem.paragraph(3) %></p>
     <a class="btn btn-primary" href="#">Call to Action</a>
   wvu-hero-1-classes: ""
-  wvy-hero-1-default-component-classes: ""
+  wvu-hero-1-default-component-classes: ""
   wvu-hero-1-header-classes: ""
+  wvu-video-feature-1__header: |
+    <h2 class="display-4 wvu-shout">Video Feature Headline</h2>
+    <p class="h3 helvetica-neue-light">Subhead goes here.</p>
+  wvu-video-feature-1__main: |
+    <iframe title="We love WVU!" class="embed-responsive-item" src="https://www.youtube.com/embed/vAv2SRTOyvc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  wvu-video-feature-1__postscript: |
+    <p class="mb-0">View <a href="#" class="text-wvu-gold">more videos</a>.</p>
+  wvu-video-feature-1-classes: ""
+  wvu-video-feature-1-default-component-classes: ""
 
 site:
   id: 26
@@ -73,6 +82,10 @@ page:
     wvu-hero-1-classes: " "
     wvy-hero-1-default-component-classes: " "
     wvu-hero-1-header-classes: " "
+    wvu-video-feature-1__header: ""
+    wvu-video-feature-1__postscript: ""
+    wvu-video-feature-1-classes: "py-5 bg-wvu-neutral--black wvu-bg-vignetting text-white text-center"
+    wvu-video-feature-1-default-component-classes: ""
 
 pages:
   - id: 2
