@@ -69,30 +69,34 @@
             <r:if_no_articles>
               <p>No blog posts found. Try again later, perhaps?</p>
             </r:if_no_articles>
-            <div class="<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="="><r:var name="columnClasses" /></r:if> mb-3 pt-2 mt-2 border border-wvu-accent--red">
-              <div class="mt-3<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="> row</r:if>">
-              <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
-                <div class="mb-1<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="> col-md-4</r:if>">
-                  <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
+            <r:if_articles>
+              <r:each>
+                <div class="<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="="><r:var name="columnClasses" /></r:if> mb-3 pt-2 mt-2 border border-wvu-accent--red">
+                  <div class="mt-3<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="> row</r:if>">
+                  <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
+                    <div class="mb-1<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="> col-md-4</r:if>">
+                      <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
+                    </div>
+                  </r:if>
+                  <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="><div class="col-md-8"></r:if>
+                  <h3 class="iowan-old-style-italic mb-1"><a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:article:name /></a></h3>
+                  <p>
+                    <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
+                    <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
+                  </p>
+                  <r:page:if_has_content_for region="{$componentReadMoreButtonText}" always_show_in_edit_mode="true">
+                    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+                      <a class="btn btn-primary btn-sm text-white" aria-labelledby="<r:page:slug />-<r:page:id />"><r:yield name="{$componentReadMoreButtonText}" /></a>
+                    </r:if>
+                    <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
+                      <a class="btn btn-primary btn-sm text-white" aria-labelledby="<r:page:slug />-<r:page:id />"><r:editable_region name="{$componentReadMoreButtonText}"><r:yield name="{$componentReadMoreButtonText}"><r:content /></r:yield></r:editable_region></a>
+                    </r:if>
+                  </r:page:if_has_content_for>
+                  <p class="bg-light mt-1 p-2"><small class="d-block">This is the template the rest will follow. Edit the button text that will apply to all elements in this featurettes component. You can also set these globally in the site settings (add link). If you don’t want a button to display, delete the content.</small>
+                  <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="></div></div></r:if>
                 </div>
-              </r:if>
-              <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="><div class="col-md-8"></r:if>
-              <h3 class="iowan-old-style-italic mb-1"><a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:article:name /></a></h3>
-              <p>
-                <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
-                <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
-              </p>
-              <r:page:if_has_content_for region="{$componentReadMoreButtonText}" always_show_in_edit_mode="true">
-                <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
-                  <a class="btn btn-primary btn-sm text-white" aria-labelledby="<r:page:slug />-<r:page:id />"><r:yield name="{$componentReadMoreButtonText}" /></a>
-                </r:if>
-                <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-                  <a class="btn btn-primary btn-sm text-white" aria-labelledby="<r:page:slug />-<r:page:id />"><r:editable_region name="{$componentReadMoreButtonText}"><r:yield name="{$componentReadMoreButtonText}"><r:content /></r:yield></r:editable_region></a>
-                </r:if>
-              </r:page:if_has_content_for>
-              <p class="bg-light mt-1 p-2"><small class="d-block">This is the template the rest will follow. Edit the button text that will apply to all elements in this featurettes component. You can also set these globally in the site settings (add link). If you don’t want a button to display, delete the content.</small>
-              <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="></div></div></r:if>
-            </div>
+              </r:each>
+            </r:if_articles>
           </r:blog:articles>
         </r:edit_mode_only>
         <r:comment><!-- Grab all of the items in the loop. --></r:comment>
@@ -104,26 +108,29 @@
           <r:if_no_articles>
             <p>No blog posts found. Try again later, perhaps?</p>
           </r:if_no_articles>
-          <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
-          <r:if v1="{$itemCount}" v2="1" op="!=">
-            <div class="<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="="><r:var name="columnClasses" /></r:if> mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
-          </r:if>
-            <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
-              <div class="mb-1<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="> col-md-4</r:if>">
-                <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
-              </div>
-            </r:if>
-            <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="><div class="col-md-8"></r:if>
-            <h3 class="iowan-old-style-italic mb-1"><a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:article:name /></a></h3>
-            <p>
-              <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
-              <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
-            </p>
-            <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:article:name /></span></r:if></a>
-            <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="></div></r:if>
-          <r:if v1="{$itemCount}" v2="1" op="!=">
-            </div>
-          </r:if>
+          <r:if_articles>
+            <r:each>
+              <r:if v1="{$itemCount}" v2="1" op="!=">
+                <div class="<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="="><r:var name="columnClasses" /></r:if> mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
+              </r:if>
+                <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
+                  <div class="mb-1<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="> col-md-4</r:if>">
+                    <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
+                  </div>
+                </r:if>
+                <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="><div class="col-md-8"></r:if>
+                <h3 class="iowan-old-style-italic mb-1"><a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:article:name /></a></h3>
+                <p>
+                  <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
+                  <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
+                </p>
+                <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:article:name /></span></r:if></a>
+                <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="></div></r:if>
+              <r:if v1="{$itemCount}" v2="1" op="!=">
+                </div>
+              </r:if>
+            </r:each>
+          </r:if_articles>
         </r:blog:articles>
       </r:if>
     </r:descendants:each>
