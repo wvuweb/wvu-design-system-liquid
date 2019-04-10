@@ -1,6 +1,12 @@
+<r:comment><!-- Define a base name for this component. We can use this later to dynamically create things like editable region names --></r:comment>
+<r:set_var name="baseComponentName" value="sidebar" />
+
+<r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
+
 <aside class="wvu-sidebar col-md-4">
   <div class="mb-3">
-    <r:set_var name="componentDisplayContext" value="sidebar" /><!-- Should actually be sidebar 1, 2, 3, etc. -->
+    <r:set_var name="componentDisplayContext" value="{$componentName}" /><!-- Should actually be sidebar 1, 2, 3, etc. -->
     <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
     <r:comment><!-- We need to reset our variables back to those of the parent component. Else the new component will change those of the parent, screwing subsequent variable references. --></r:comment>
     <r:set_var name="baseComponentName" value="backpage" />
