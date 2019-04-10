@@ -58,11 +58,8 @@
   <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
-  <r:descendants>
-    <r:set_var name="itemCount">
-      <r:count />
-    </r:set_var>
-    <div class="row <r:if v1="{$itemCount}" v2="2" op="="> d-flex justify-content-center</r:if>">
+  <r:descendants:each>
+    <div class="row d-flex justify-content-center">
       Template name: <r:page:template:name />
       <r:if v1="{page:template:name}" v2="blog_index" op="=">
       Test.
@@ -131,5 +128,5 @@
         </r:blog:articles>
       </r:if>
     </div>
-  </r:descendants>
+  </r:descendants:each>
 </r:root>
