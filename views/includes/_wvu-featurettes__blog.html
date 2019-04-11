@@ -48,7 +48,7 @@
     col-sm-6 col-md-4
   </r:set_var>
 </r:if>
-<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!=">
+<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!=">
   <r:set_var name="columnClasses">
     col-sm-12 col-md-12
   </r:set_var>
@@ -68,14 +68,14 @@
         </r:if_no_articles>
         <r:if_articles>
           <r:each>
-            <div class="<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="="><r:var name="columnClasses" /></r:if> mb-3 pt-2 mt-2 border border-wvu-accent--red">
-              <div class="mt-3<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="> row</r:if>">
+            <div class="<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><r:var name="columnClasses" /></r:if> mb-3 pt-2 mt-2 border border-wvu-accent--red">
+              <div class="mt-3<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="> row</r:if>">
               <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
-                <div class="mb-1<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="> col-md-4</r:if>">
-                  <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
+                <div class="mb-1<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="> col-md-4</r:if>">
+                  <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="shadow" src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
                 </div>
               </r:if>
-              <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="><div class="col-md-8"></r:if>
+              <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="><div class="col-md-8"></r:if>
               <h3 class="iowan-old-style-italic mb-1"><a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:article:name /></a></h3>
               <p>
                 <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
@@ -90,7 +90,7 @@
                 </r:if>
               </r:page:if_has_content_for>
               <p class="bg-light mt-1 p-2"><small class="d-block">This is the template the rest will follow. Edit the button text that will apply to all elements in this featurettes component. You can also set these globally in the site settings (add link). If you don’t want a button to display, delete the content.</small>
-              <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="></div></div></r:if>
+              <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="></div></div></r:if>
             </div>
           </r:each>
         </r:if_articles>
@@ -108,21 +108,22 @@
       <r:if_articles>
         <r:each>
           <r:if v1="{$itemCount}" v2="1" op="!=">
-            <div class="<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="="><r:var name="columnClasses" /></r:if> mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
+            <div class="<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><r:var name="columnClasses" /></r:if> mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
           </r:if>
+            <div class="mt-3<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="> row</r:if>">
             <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
-              <div class="mb-1<r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="> col-md-4</r:if>">
-                <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
+              <div class="mb-1<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="> col-md-4</r:if>">
+                <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="shadow" src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
               </div>
             </r:if>
-            <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="><div class="col-md-8"></r:if>
+            <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="><div class="col-md-8"></r:if>
             <h3 class="iowan-old-style-italic mb-1"><a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:article:name /></a></h3>
             <p>
               <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
               <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
             </p>
             <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:article:name /></span></r:if></a>
-            <r:if v1="{$componentDisplayContext}" v2="as-full-width-block" op="!="></div></r:if>
+            <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="></div></r:if>
           <r:if v1="{$itemCount}" v2="1" op="!=">
             </div>
           </r:if>

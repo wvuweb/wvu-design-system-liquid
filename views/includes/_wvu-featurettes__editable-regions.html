@@ -1,9 +1,9 @@
 <div class="row">
   <r:comment><!-- Grab all of the items in the loop. --></r:comment>
   <r:loop:each times="{$componentLimit}">
-    <r:set_var name="componentPanelPhoto">wvu-featurettes-panel-<r:var name="componentInstance" />-<r:item />__photo</r:set_var>
-    <r:set_var name="componentPanelHeader">wvu-featurettes-panel-<r:var name="componentInstance" />-<r:item />__header</r:set_var>
-    <r:set_var name="componentPanelMain">wvu-featurettes-panel-<r:var name="componentInstance" />-<r:item />__main</r:set_var>
+    <r:set_var name="componentPanelPhoto">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__photo</r:set_var>
+    <r:set_var name="componentPanelHeader">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__header</r:set_var>
+    <r:set_var name="componentPanelMain">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__main</r:set_var>
 
     <r:content_for name="{$componentPanelPhoto}"><img src="http://placehold.it/960x640" alt="Placeholder" /></r:content_for>
     <r:content_for name="{$componentPanelHeader}"><h3 class="iowan-old-style-italic mb-1">Panel Header</h3></r:content_for>

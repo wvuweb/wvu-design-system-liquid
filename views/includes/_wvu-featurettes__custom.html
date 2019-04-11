@@ -1,7 +1,7 @@
 <div class="row">
   <r:comment><!-- Grab all of the items in the loop. --></r:comment>
   <r:loop:each times="{$componentLimit}">
-    <r:set_var name="componentPanel">featurettes-panel-<r:item /></r:set_var>
+    <r:set_var name="componentPanel">featurettes_panel_<r:item /></r:set_var>
     <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
     <r:set_var name="columnClasses">
       col-sm-6 col-md-3
