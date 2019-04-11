@@ -6,7 +6,7 @@
 
 <aside class="wvu-sidebar col-md-4">
   <div class="mb-3">
-    <r:set_var name="componentDisplayContext" value="{$componentName}" /><!-- Should actually be sidebar 1, 2, 3, etc. -->
+    <r:set_var name="componentDisplayContext" value="sidebar_1" /><!-- Should actually be sidebar 1, 2, 3, etc. -->
     <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
     <r:comment><!-- We need to reset our variables back to those of the parent component. Else the new component will change those of the parent, screwing subsequent variable references. --></r:comment>
     <r:set_var name="baseComponentName" value="backpage" />

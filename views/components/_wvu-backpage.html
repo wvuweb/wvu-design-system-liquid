@@ -40,7 +40,7 @@
           <r:editable_region name="{$componentMain}" scope="{$componentScope}">
             <r:yield name="{$componentMain}"><r:content /></r:yield>
           </r:editable_region>
-          <r:set_var name="componentDisplayContext" value="backpage-main" />
+          <r:set_var name="componentDisplayContext" value="backpage_main" />
           <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
           <r:comment><!-- We need to reset our variables back to those of the parent component. Else the new component will change those of the parent, screwing subsequent variable references. --></r:comment>
           <r:set_var name="baseComponentName" value="backpage" />
