@@ -43,6 +43,7 @@
     </r:if>
     <div class="<r:var name="columnClasses" /> mb-3">
       <r:set_var name="componentDisplayContext" value="{$componentPanel}" /><!-- Should actually be sidebar 1, 2, 3, etc. -->
+      Component display context: <r:var name="componentDisplayContext" /><br>
       <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
     </div>
   </r:loop:each>
