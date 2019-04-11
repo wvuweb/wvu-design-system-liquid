@@ -1,14 +1,12 @@
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
-<r:set_var name="componentDisplayContext" value="{$whereToDisplay}" default="as_full_width_block" />
-
 <r:comment><!-- Pull in instance number from “slot” if using Super Theme, else set it to “1” (this can be overritten in your template if you need more than one instance of your component) --></r:comment>
-<r:set_var name="slotInstanceInContext">slotInstance_<r:var name="componentDisplayContext" /></r:set_var>
-<r:set_var name="{$slotInstanceInContext}" value="{$slotInstance}" />
-<r:set_var name="componentInstance" value="{$slotInstanceInContext}" default="1" />
+<r:set_var name="componentInstance" value="{$instanceNumber}" default="1" />
 
-<r:comment><!-- Unique name of component (including which instance it is) we can reference when styling, for example when assigning a label to set a background image. --></r:comment>
+<r:comment><!-- Pull in scope from “slot” if using Super Theme, else set it to “page” (this can be overritten in your template if you need more than one instance of your component) --></r:comment>
+<r:set_var name="componentScope" value="{$scope}" default="page" />
+
+<r:comment><!-- Unique name of component (including which instance it is) we can reference when styling, for example when assigning a label to set a background image --></r:comment>
 <r:set_var name="componentName">
-  <r:var name="baseComponentName" />-<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="><r:var name="componentDisplayContext" />-</r:if><r:var name="componentInstance" />
+  <r:var name="baseComponentName" />-<r:var name="componentInstance" />
 </r:set_var>
 
 <r:comment><!-- List of labels that will allow us to assign a background image to the component --></r:comment>
@@ -16,46 +14,46 @@
   <r:page:slug />-<r:var name="componentName" />-background
 </r:set_var>
 
-<r:comment><!-- Name of editable region where user can enter classes to style component --></r:comment>
+<r:comment><!-- Name of editable region where user can enter classes to style as_full_width_block --></r:comment>
 <r:set_var name="componentClasses">
   wvu-<r:var name="componentName" />-classes
 </r:set_var>
 
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="defaultComponentClasses">
   wvu-<r:var name="componentName" />-default-component-classes
 </r:set_var>
 
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="defaultHeaderClasses">
   wvu-<r:var name="componentName" />-default-header-classes
 </r:set_var>
 
-<r:comment><!-- Pull in scope from “slot” if using Super Theme, else set it to “page” (this can be overritten in your template if you need more than one instance of your component) --></r:comment>
-<r:set_var name="componentScope" value="{$scope}" default="page" />
-
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="componentIsMain" value="{$isMain}" />
 
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="componentIsRandom" value="{$isRandom}" default="false" />
 
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="componentHasSubnav" value="{$hasSubnav}" default="1" />
 
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="componentFeaturettesStyle" value="{$featurettesStyle}" default="default" />
 
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="componentFeaturettesID" value="{$featurettesID}" />
 
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="componentAlign" value="{$align}" />
 
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
+<r:set_var name="componentDisplayContext" value="{$whereToDisplay}" default="as-full-width-block" />
+
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="componentLimit" value="{$limit}" default="4" />
 
-<r:comment><!-- Classes that get pulled in to style component if no “component classes” are provided --></r:comment>
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="componentLoopBy" value="{$loopBy}" default="sort_order" />
 
 <r:comment><!-- This is the name of the template we check against to see if the partial is being used on the WVU Design System demo site. --></r:comment>
