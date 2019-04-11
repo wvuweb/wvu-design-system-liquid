@@ -54,13 +54,12 @@
   </r:set_var>
 </r:if>
 
-<r:root>
+<r:get_page id="84386">
   <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <div class="row d-flex justify-content-center">
-    <r:descendants:each hidden="true">
-      <r:if v1="{page:template:name}" v2="blog_index" op="=">
+
       Test.
         <r:comment><!-- Grab the first item in the loop, and display a dummy version of it that accepts button text that will apply to all others items in the featurettes. --></r:comment>
         <r:edit_mode_only>
@@ -133,7 +132,6 @@
             </r:each>
           </r:if_articles>
         </r:blog:articles>
-      </r:if>
-    </r:descendants:each>
+
   </div>
-</r:root>
+</r:get_page>
