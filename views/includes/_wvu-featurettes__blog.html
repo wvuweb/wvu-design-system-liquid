@@ -107,8 +107,6 @@
       </r:if_no_articles>
       <r:if_articles>
         <r:each>
-        Display context: <r:var name="componentDisplayContext" /><br>
-        Column classes: <r:var name="columnClasses" />
           <r:if v1="{$itemCount}" v2="1" op="!=">
             <div class="<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><r:var name="columnClasses" /> </r:if>mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
           </r:if>
