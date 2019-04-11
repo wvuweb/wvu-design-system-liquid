@@ -90,7 +90,6 @@
                 </r:if>
               </r:page:if_has_content_for>
               <p class="bg-light mt-1 p-2"><small class="d-block">This is the template the rest will follow. Edit the button text that will apply to all elements in this featurettes component. You can also set these globally in the site settings (add link). If you don’t want a button to display, delete the content.</small>
-              <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="></div></div></r:if>
             </div>
           </r:each>
         </r:if_articles>
@@ -123,7 +122,6 @@
               <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
             </p>
             <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:article:name /></span></r:if></a>
-            <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="></div></r:if>
           <r:if v1="{$itemCount}" v2="1" op="!=">
             </div>
           </r:if>
