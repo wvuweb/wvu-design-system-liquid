@@ -68,7 +68,7 @@ page:
     some_key: some_data_value
     another_key: some_other_value
     slot_1: wvu-hero
-    slot_10_number: 1
+    slot_1_number: 1
   content:
     search-content: ""
     shared_content: |
