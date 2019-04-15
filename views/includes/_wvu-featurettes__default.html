@@ -57,7 +57,7 @@
       <r:comment><!-- Grab the first item in the loop, and display a dummy version of it that accepts button text that will apply to all others items in the featurettes. --></r:comment>
       <r:edit_mode_only>
         <r:each limit="1">
-          <div class="<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><r:var name="columnClasses" /></r:if> mb-3 pt-2 mt-2 border border-wvu-accent--red">
+          <div class="<r:if v1="{$componentDisplayContext}" v2="as_full_width_block,__main" op="~="><r:var name="columnClasses" /></r:if> mb-3 pt-2 mt-2 border border-wvu-accent--red">
             <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
               <div class="mb-1">
                 <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg 960w, <r:page:data name="thumbnail_url" />/586x286.jpg 586w, <r:page:data name="thumbnail_url" />/381x255.jpg 381w, <r:page:data name="thumbnail_url" />/286x191.jpg 286w, <r:page:data name="thumbnail_url" />/279x186.jpg 279w, <r:page:data name="thumbnail_url" />/217x145.jpg 217w" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
@@ -76,7 +76,7 @@
                 <a class="btn btn-primary btn-sm text-white" aria-labelledby="<r:page:slug />-<r:page:id />"><r:editable_region name="{$componentReadMoreButtonText}"><r:yield name="{$componentReadMoreButtonText}"><r:content /></r:yield></r:editable_region></a>
               </r:if>
             </r:page:if_has_content_for>
-            <p class="bg-light mt-1 p-2"><small class="d-block">This is the template the rest will follow. Edit the button text that will apply to all elements in this featurettes component. You can also set these globally in the site settings (add link). If you don’t want a button to display, delete the content.</small></p>
+            <p class="bg-light mt-1 p-2 text-wvu-neutral--black"><small class="d-block">This is the template the rest will follow. Edit the button text that will apply to all elements in this featurettes component. You can also set these globally in the site settings (add link). If you don’t want a button to display, delete the content.</small></p>
           </div>
         </r:each>
       </r:edit_mode_only>
