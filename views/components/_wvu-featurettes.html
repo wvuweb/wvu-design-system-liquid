@@ -95,6 +95,12 @@
 </<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->
 
 <r:comment><!-- Pull in partial that allows users to edit classes for component in CleanSlate editor --></r:comment>
+
 <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
   <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
+</r:if>
+<r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
+  <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!=">
+    <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
+  </r:if>
 </r:if>
