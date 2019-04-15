@@ -18,7 +18,7 @@
       <r:count />
     </r:set_var>
     <r:partial name="utilities/wvu-item-count" theme="University Relations: WVU Design System" />
-    <div class="row <r:if v1="{$itemCount}" v2="2" op="="> d-flex justify-content-center</r:if>">
+    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><div class="row <r:if v1="{$itemCount}" v2="2" op="="> d-flex justify-content-center</r:if>"></r:if>
       <r:comment><!-- Grab the first item in the loop, and display a dummy version of it that accepts button text that will apply to all others items in the featurettes. --></r:comment>
       <r:edit_mode_only>
         <r:each limit="1">
@@ -78,6 +78,6 @@
           </div>
         </r:if>
       </r:each>
-    </div>
+    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="></div></r:if>
   </r:descendants>
 </r:root>

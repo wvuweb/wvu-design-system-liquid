@@ -81,15 +81,24 @@
       </div>
     </r:if>
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-      <r:page:if_has_content_for region="{$componentPostscript}" always_show_in_edit_mode="true">
+      <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="=">
+        <r:page:if_has_content_for region="{$componentPostscript}" always_show_in_edit_mode="true">
+          <div class="mt-2 wvu-z-index-content">
+            <div class="wvu-z-index-content mb-2">
+              <r:editable_region name="{$componentPostscript}" scope="{$componentScope}">
+                <r:yield name="{$componentPostscript}"><r:content /></r:yield>
+              </r:editable_region>
+            </div>
+          </div>
+        </r:page:if_has_content_for>
+      </r:if>
+      <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!=">
         <div class="mt-2 wvu-z-index-content">
-          <div class="wvu-z-index-content mb-2">
-            <r:editable_region name="{$componentPostscript}" scope="{$componentScope}">
-              <r:yield name="{$componentPostscript}"><r:content /></r:yield>
-            </r:editable_region>
+          <div class="wvu-z-index-content mb-2 <r:page:if_has_content_for region="{$itemHeaderClassesRegionName}"><r:page:content name="{$itemHeaderClassesRegionName}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderClassesRegionName}"><r:yield name="{$defaultHeaderClasses}" /></r:page:unless_has_content_for>">
+            <r:yield name="{$componentPostscript}"><r:content /></r:yield>
           </div>
         </div>
-      </r:page:if_has_content_for>
+      </r:if>
     </r:if>
   </div>
 </<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->

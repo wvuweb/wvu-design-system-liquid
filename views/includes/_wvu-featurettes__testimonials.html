@@ -65,7 +65,7 @@
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
-    <div class="row d-flex justify-content-center">
+    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><div class="row d-flex justify-content-center"></r:if>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
         <r:set_var name="contentIndex">
@@ -91,6 +91,6 @@
           </div>
         </div>
       </r:each>
-    </div>
+    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="></div></r:if>
   </r:descendants>
 </r:root>

@@ -49,7 +49,7 @@
         col-sm-6 col-md-4
       </r:set_var>
     </r:if>
-    <div class="row <r:if v1="{$componentLimit}" v2="2" op="<="> d-flex justify-content-center</r:if>">
+    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><div class="row <r:if v1="{$componentLimit}" v2="2" op="<="> d-flex justify-content-center</r:if>"></r:if>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
         <r:set_var name="contentIndex">
@@ -76,6 +76,6 @@
           </div>
         </div>
       </r:each>
-    </div>
+    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="></div></r:if>
   </r:descendants>
 </r:root>
