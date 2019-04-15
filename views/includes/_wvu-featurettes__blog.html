@@ -55,7 +55,7 @@
 </r:if>
 
 <r:get_page id="{$componentFeaturettesID}">
-  <div class="row d-flex justify-content-center">
+  <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><div class="row d-flex justify-content-center"></r:if>
     <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
       and $loopOrder to: "asc" or "desc";
       and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
@@ -132,5 +132,5 @@
         </r:each>
       </r:if_articles>
     </r:blog:articles>
-  </div>
+  <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="></div></r:if>
 </r:get_page>
