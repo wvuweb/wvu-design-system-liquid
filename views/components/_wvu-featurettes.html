@@ -16,7 +16,7 @@
 
 <r:comment><!-- Content that gets pulled into the editable regions by default. --></r:comment>
 <r:content_for name="{$componentHeader}"><h2 id="<r:var name="componentName" />-label" class="display-3 wvu-shout">Featurettes Headline</h2>
-        <p class="h3 helvetica-neue-light">Subhead goes here.</p></r:content_for>
+      <p class="h3 helvetica-neue-light">Subhead goes here.</p></r:content_for>
 <r:content_for name="{$componentPostscript}"><p class="mb-0">Put additional info or <a href="#">links</a> here.</p></r:content_for>
 
 <!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="<r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
@@ -95,13 +95,13 @@
     </r:if>
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
       <r:page:if_has_content_for region="{$componentPostscript}" always_show_in_edit_mode="true">
-        <div class="mt-2 wvu-z-index-content">
-          <div class="wvu-z-index-content mb-2">
-            <r:editable_region name="{$componentPostscript}" scope="{$componentScope}">
-              <r:yield name="{$componentPostscript}"><r:content /></r:yield>
-            </r:editable_region>
-          </div>
-        </div>
+    <div class="mt-2 wvu-z-index-content">
+      <div class="wvu-z-index-content mb-2">
+        <r:editable_region name="{$componentPostscript}" scope="{$componentScope}">
+          <r:yield name="{$componentPostscript}"><r:content /></r:yield>
+        </r:editable_region>
+      </div>
+    </div>
       </r:page:if_has_content_for>
     </r:if>
   </div>
