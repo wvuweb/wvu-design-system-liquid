@@ -69,7 +69,7 @@
         <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3">
           <div class="mt-3<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"> row</r:if>">
             <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
-              <div class="mb-1<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="> col-md-4</r:if>">
+              <div class="mb-1<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"> col-md-4</r:if>">
                 <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
               </div>
             </r:if>
@@ -109,7 +109,7 @@
             <p class="mb-0 mt-2">
               <a class="btn btn-primary btn-sm" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>">View Info<span class="sr-only">: <r:page:name /></span></a>
             </p>
-            <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="></div></r:if>
+            <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
           </div>
         </div>
       </r:each>
