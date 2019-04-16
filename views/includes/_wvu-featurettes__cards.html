@@ -6,7 +6,7 @@
 <r:content_for name="{$componentReadMoreButtonText}">Read More</r:content_for>
 
 <r:set_var name="itemReadMoreButtonText">
-  <r:yield name="{$componentReadMoreButtonText}"><r:content /></r:yield>
+  <r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
 <r:if v1="{$componentLimit}" v2="1" op="=">
@@ -99,7 +99,7 @@
                 <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
                 <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
               </p>
-              <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:page:content name="{$componentReadMoreButtonText}" /><span class="sr-only">: <r:page:name /></span></r:if></a>
+              <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:page:name /></span></r:if></a>
             </div>
           </div>
         </div>
