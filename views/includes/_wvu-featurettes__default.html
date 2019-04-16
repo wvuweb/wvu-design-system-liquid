@@ -87,7 +87,7 @@
         </r:set_var>
         <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
         <r:if v1="{$componentLimit}" v2="1" op="!=">
-          <div class="<r:if expr="{{ contains(componentDisplayContext, '__main') or contains(componentDisplayContext, 'as_full_width_block') }}"> mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
+          <div class="<r:if expr="{{ contains(componentDisplayContext, '__main') or contains(componentDisplayContext, 'as_full_width_block') }}"><r:var name="columnClasses" /> </r:if>mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
         </r:if>
           <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
             <div class="mb-1">
