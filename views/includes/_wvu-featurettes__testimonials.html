@@ -65,13 +65,13 @@
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
-    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><div class="row d-flex justify-content-center"></r:if>
+    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row d-flex justify-content-center"></r:if>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
         <r:set_var name="contentIndex">
           <r:index />
         </r:set_var>
-        <div class="<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><r:var name="columnClasses" /> </r:if>mb-3">
+        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3">
           <div class="mt-3">
             <p class="wvu-quote iowan-old-style h4">
               <r:page:content name="wvu-profile-1__quote" />
@@ -90,6 +90,6 @@
           </div>
         </div>
       </r:each>
-    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="></div></r:if>
+    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
   </r:descendants>
 </r:root>

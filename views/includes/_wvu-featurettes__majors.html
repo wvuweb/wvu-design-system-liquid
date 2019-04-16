@@ -49,13 +49,13 @@
         col-sm-6 col-md-4
       </r:set_var>
     </r:if>
-    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><div class="row <r:if v1="{$componentLimit}" v2="2" op="<="> d-flex justify-content-center</r:if>"></r:if>
+    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:if v1="{$componentLimit}" v2="2" op="<="> d-flex justify-content-center</r:if>"></r:if>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
         <r:set_var name="contentIndex">
           <r:index />
         </r:set_var>
-        <div class="<r:var name="columnClasses" /> mb-3">
+        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3">
           <div class="card shadow-sm h-100 bg-white">
             <div class="pt-1 h-100 bg-wvu-gold">
               <div class="card-body bg-white h-100">
@@ -76,6 +76,6 @@
           </div>
         </div>
       </r:each>
-    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="></div></r:if>
+    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
   </r:descendants>
 </r:root>

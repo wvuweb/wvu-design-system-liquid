@@ -50,7 +50,7 @@
         col-sm-6 col-md-4
       </r:set_var>
     </r:if>
-    <div class="<r:var name="columnClasses" /> mb-3">
+    <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3">
       <r:page:if_has_content_for region="{$componentPanelPhoto}" always_show_in_edit_mode="true">
         <div class="mb-1">
           <r:editable_region name="{$componentPanelPhoto}" scope="{$componentScope}">
