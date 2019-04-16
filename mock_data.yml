@@ -156,6 +156,8 @@ pages:
     depth: 1
     data:
       description: <%= Faker::Lorem.paragraph(1) %>
+    tags:
+      - "home-featurettes-1"
   - id: 3
     name: "Study of Fish"
     slug: "study-of-fish"
