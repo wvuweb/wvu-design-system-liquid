@@ -1,19 +1,11 @@
 <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
   <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="=">
-    <r:page:if_has_content_for region="{$itemComponentClassesRegionName}">
-      <r:page:content name="{$itemComponentClassesRegionName}" />
-    </r:page:if_has_content_for>
-    <r:page:unless_has_content_for region="{$itemComponentClassesRegionName}">
-      <r:yield name="{$defaultComponentClasses}" />
-    </r:page:unless_has_content_for>
+    <r:page:if_has_content_for region="{$itemComponentClassesRegionName}"><r:page:content name="{$itemComponentClassesRegionName}" /></r:page:if_has_content_for>
+    <r:page:unless_has_content_for region="{$itemComponentClassesRegionName}"><r:yield name="{$defaultComponentClasses}" /></r:page:unless_has_content_for>
   </r:if>
   <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!=">
-    <r:page:if_has_content_for region="{$componentClasses}">
-      <r:page:content name="{$componentClasses}" />
-    </r:page:if_has_content_for>
-    <r:page:unless_has_content_for region="{$componentClasses}">
-      <r:yield name="{$defaultComponentClasses}" />
-    </r:page:unless_has_content_for>
+    <r:page:if_has_content_for region="{$componentClasses}"><r:page:content name="{$componentClasses}" /></r:page:if_has_content_for>
+    <r:page:unless_has_content_for region="{$componentClasses}"><r:yield name="{$defaultComponentClasses}" /></r:page:unless_has_content_for>
   </r:if>
 </r:if>
 <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
