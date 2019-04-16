@@ -64,11 +64,13 @@
                   <img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg 960w, <r:page:data name="thumbnail_url" />/586x286.jpg 586w, <r:page:data name="thumbnail_url" />/381x255.jpg 381w, <r:page:data name="thumbnail_url" />/286x191.jpg 286w, <r:page:data name="thumbnail_url" />/279x186.jpg 279w, <r:page:data name="thumbnail_url" />/217x145.jpg 217w" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />">
                 </r:if>
                 <div class="card-img-overlay">
-                  <h3 class="card-title wvu-shout text-wvu-gold"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
-                  <p class="card-text"><small class="d-block">
-                    <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
-                    <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if></small>
-                  </p>
+                  <div class="wvu-z-index-content">
+                    <h3 class="card-title wvu-shout text-wvu-gold"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
+                    <p class="card-text"><small class="d-block">
+                      <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
+                      <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if></small>
+                    </p>
+                  </div>
                 </div>
               </div>
             </a>

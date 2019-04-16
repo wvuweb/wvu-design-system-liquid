@@ -71,8 +71,7 @@
         <r:set_var name="contentIndex">
           <r:index />
         </r:set_var>
-        <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
-        <div class="<r:var name="columnClasses" /> mb-3">
+        <div class="<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><r:var name="columnClasses" /> </r:if>mb-3">
           <div class="mt-3">
             <p class="wvu-quote iowan-old-style h4">
               <r:page:content name="wvu-profile-1__quote" />

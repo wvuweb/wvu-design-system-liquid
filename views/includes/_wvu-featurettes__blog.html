@@ -123,7 +123,7 @@
                   <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
                   <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
                 </p>
-                <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:article:name /></span></r:if></a>
+                <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="componentReadMoreButtonText" /><span class="sr-only">: <r:article:name /></span></r:if></a>
               <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!="></div></r:if>
             </div>
           <r:if v1="{$itemCount}" v2="1" op="!=">

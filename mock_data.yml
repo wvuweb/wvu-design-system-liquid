@@ -20,6 +20,12 @@ editable_region:
     <a class="btn btn-wvu-blue btn-lg" href="#" role="button">Call to Action</a>
     <p class="mt-2">Here is a <a href="#" class="text-wvu-accent--dark-blue">Secondary Call to Action</a></p>
   wvu-action-hero-1-classes: ""
+  wvu-featurettes-1__header: |
+    <h2 class="display-3 wvu-shout">Featurettes Headline</h2>
+    <p class="h3 helvetica-neue-light">Subhead goes here.</p>
+  wvu-featurettes-1__postscript: |
+    <p class="mb-0">Put additional info or <a href="#">links</a> here.</p>
+  wvu-featurettes-1-default-component-classes: "py-5"
   wvu-footer-1__main: |
     <p><%= Faker::Lorem.paragraph(2) %></p>
   wvu-hero-1__header: "It Starts Now"
@@ -54,8 +60,8 @@ root: true
 
 page:
   id: 1 # This number must match the ID of the current blog you want to display
-  name: "Test Page 1"
-  slug: "test-page-1"
+  name: "Home"
+  slug: "home"
   meta_description: "Hello World"
   title: "This is the best Test page ever!"
   alternate_name: "Some other name"
@@ -63,12 +69,60 @@ page:
   updated_at: today
   created_at: two weeks ago
   published_at: now
-  default_page: true
+  default_page: false
   data:
     some_key: some_data_value
     another_key: some_other_value
-    slot_1: wvu-hero
+    slot_1: hero
+    slot_1_custom: ""
+    slot_1_where_to_display: "as_full_width_block"
+    slot_1_is_main: "0"
+    slot_1_align: "left"
+    slot_1_featurettes_style: "default"
+    slot_1_featurettes_id: ""
     slot_1_number: 1
+    slot_1_loop_by: "sort_order"
+    slot_1_loop_labels_match: "all"
+    slot_1_loop_order: "asc"
+    slot_1_scope: 0
+    slot_1_show_hidden: 0
+    slot_2: featurettes
+    slot_1_limit: 4
+    slot_2_custom: ""
+    slot_2_number: 1
+    slot_2_where_to_display: "as_full_width_block"
+    slot_3: action-hero
+    slot_3_custom: ""
+    slot_3_number: 1
+    slot_3_where_to_display: "as_full_width_block"
+    slot_4: action-hero
+    slot_4_custom: ""
+    slot_4_number: 1
+    slot_4_where_to_display: "as_full_width_block"
+    slot_5: action-hero
+    slot_5_custom: ""
+    slot_5_number: 1
+    slot_5_where_to_display: "as_full_width_block"
+    slot_6: action-hero
+    slot_6_custom: ""
+    slot_6_number: 1
+    slot_6_where_to_display: "as_full_width_block"
+    slot_7: action-hero
+    slot_7_custom: ""
+    slot_7_number: 1
+    slot_7_where_to_display: "as_full_width_block"
+    slot_8: action-hero
+    slot_8_custom: ""
+    slot_8_number: 1
+    slot_8_where_to_display: "as_full_width_block"
+    slot_9: action-hero
+    slot_9_custom: ""
+    slot_9_number: 1
+    slot_9_where_to_display: "as_full_width_block"
+    slot_10: action-hero
+    slot_10_custom: ""
+    slot_10_number: 1
+    slot_10_where_to_display: "as_full_width_block"
   content:
     search-content: ""
     shared_content: |
@@ -79,6 +133,10 @@ page:
       <p><%= Faker::Lorem.paragraph(2) %></p>
     wvu-action-hero-1-header-classes: " "
     wvu-action-hero-1-classes: " "
+    wvu-featurettes-1__header: " "
+    wvu-featurettes-1__postscript: " "
+    wvu-featurettes-1-classes: "py-5"
+    wvu-featurettes-1-default-component-classes: ""
     wvu-hero-1-classes: " "
     wvy-hero-1-default-component-classes: " "
     wvu-hero-1-header-classes: " "
@@ -96,6 +154,8 @@ pages:
     title: "Study of Birds"
     alternate_name: "Ornithology"
     depth: 1
+    data:
+      description: <%= Faker::Lorem.paragraph(1) %>
   - id: 3
     name: "Study of Fish"
     slug: "study-of-fish"
@@ -104,6 +164,23 @@ pages:
     title: "Study of Fish"
     alternate_name: "Ichthyology"
     depth: 1
+    default_page: true
+    data:
+      some_key: some_data_value
+      another_key: some_other_value
+      slot_1: backpage
+      slot_1_custom: ""
+      slot_1_where_to_display: "as_full_width_block"
+      slot_1_is_main: "0"
+      slot_1_align: "left"
+      slot_1_featurettes_style: "default"
+      slot_1_featurettes_id: ""
+      slot_1_number: 1
+      slot_1_loop_by: "sort_order"
+      slot_1_loop_labels_match: "all"
+      slot_1_loop_order: "asc"
+      slot_1_scope: 0
+      slot_1_show_hidden: 0
 
 if_page_depth_eq: 1
 if_page_depth_gt: 1
