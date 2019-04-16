@@ -53,7 +53,7 @@
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
-    <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><div class="row <r:if v1="{$componentLimit}" v2="2" op="="> d-flex justify-content-center</r:if>"></r:if>
+    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:if v1="{$componentLimit}" v2="2" op="="> d-flex justify-content-center</r:if>"></r:if>
       <r:comment><!-- Grab the first item in the loop, and display a dummy version of it that accepts button text that will apply to all others items in the featurettes. --></r:comment>
       <r:edit_mode_only>
         <r:each limit="1">
@@ -87,7 +87,7 @@
         </r:set_var>
         <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
         <r:if v1="{$componentLimit}" v2="1" op="!=">
-          <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') }}"><r:var name="columnClasses" /> </r:if><r:if expr="{{ contains(componentDisplayContext, 'wvu-backpage-1__main') }}"><r:var name="columnClasses" /> </r:if>mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
+          <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') }}"><r:var name="columnClasses" /> </r:if><r:if expr="{{ contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
         </r:if>
           <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
             <div class="mb-1">
