@@ -84,7 +84,7 @@
         </r:set_var>
         <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
         <r:if v1="{$componentLimit}" v2="1" op="!=">
-          <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /></r:if> mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
+        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /></r:if> mb-3<r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="="> d-none</r:if></r:edit_mode_only>">
         </r:if>
           <a class="text-white wvu-grow-shadow" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>">
             <div class="card bg-dark text-white shadow wvu-bg-vignetting">
@@ -103,7 +103,7 @@
             </div>
           </a>
         <r:if v1="{$componentLimit}" v2="1" op="!=">
-          </div>
+        </div>
         </r:if>
       </r:each>
     <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>

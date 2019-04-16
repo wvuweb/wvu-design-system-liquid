@@ -31,9 +31,9 @@
         </div>
       </r:if>
       <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="=">
-      <div class="wvu-z-index-content <r:page:if_has_content_for region="{$itemHeaderClassesRegionName}"><r:page:content name="{$itemHeaderClassesRegionName}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderClassesRegionName}"><r:yield name="{$defaultHeaderClasses}" /></r:page:unless_has_content_for>">
-        <r:page:if_has_content_for region="{$itemHeaderRegionNameH2}"><r:page:content name="{$itemHeaderRegionNameH2}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderRegionNameH2}"><r:yield name="{$componentHeader}"><r:content /></r:yield></r:page:unless_has_content_for>
-      </div>
+    <div class="wvu-z-index-content <r:page:if_has_content_for region="{$itemHeaderClassesRegionName}"><r:page:content name="{$itemHeaderClassesRegionName}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderClassesRegionName}"><r:yield name="{$defaultHeaderClasses}" /></r:page:unless_has_content_for>">
+      <r:page:if_has_content_for region="{$itemHeaderRegionNameH2}"><r:page:content name="{$itemHeaderRegionNameH2}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderRegionNameH2}"><r:yield name="{$componentHeader}"><r:content /></r:yield></r:page:unless_has_content_for>
+    </div>
       </r:if>
     </r:if>
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
