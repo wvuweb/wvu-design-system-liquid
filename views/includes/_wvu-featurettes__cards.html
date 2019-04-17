@@ -84,25 +84,25 @@
       </r:edit_mode_only>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
-        <r:set_var name="contentIndex">
-          <r:index />
-        </r:set_var>
-        <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
-        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
-          <div class="card shadow">
-            <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
-              <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="card-img-top" src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
-            </r:if>
-            <div class="card-body bg-white">
-              <h3 class="card-title iowan-old-style-italic mb-1"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
-              <p class="card-text">
-                <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
-                <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
-              </p>
-              <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:page:name /></span></r:if></a>
-            </div>
+      <r:set_var name="contentIndex">
+        <r:index />
+      </r:set_var>
+      <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
+      <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3<r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="="> d-none</r:if></r:edit_mode_only>">
+        <div class="card shadow">
+          <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
+            <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="card-img-top" src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
+          </r:if>
+          <div class="card-body bg-white">
+            <h3 class="card-title iowan-old-style-italic mb-1"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
+            <p class="card-text">
+              <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
+              <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
+            </p>
+            <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:page:name /></span></r:if></a>
           </div>
         </div>
+      </div>
       </r:each>
     <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
   </r:descendants>

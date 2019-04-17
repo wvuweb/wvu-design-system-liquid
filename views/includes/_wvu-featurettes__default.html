@@ -1,14 +1,17 @@
-<r:comment><!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name --></r:comment>
+<r:comment><!-- This is the label that will be used to pull in content to the featurettes component. The component pulls from from pages labeled with the slug of the page upon which you want it to display, along with the component name (base name plus instance number e.g. if this component should display on the Home page, label the pages you want to pull data from with “home-featurettes-1”). --></r:comment>
 <r:set_var name="itemLabels">
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
+<r:comment><!-- This is the default text that displays on each featurette’s call-to-action button. You can overwrite the text by editing the button of the first featurette that displays in Edit Mode (see comment further down the page). --></r:comment>
 <r:content_for name="{$componentReadMoreButtonText}">Read More</r:content_for>
 
+<r:comment><!-- Create a variable that will pull in the button text. You define the button text by editing the button of the first featurette that displays in Edit Mode (see comment further down the page). This text then gets pulled into each button when all featurettes display. --><r:comment>
 <r:set_var name="itemReadMoreButtonText">
   <r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
+<r:comment><!-- Set the columnClasses variable. These change based on how many items are meant to display as featurettes. They will be added to the individuals items. --></r:comment>
 <r:set_var name="columnClasses">
   col-sm-6 col-md-3
 </r:set_var>
@@ -54,7 +57,7 @@
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
     <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:if v1="{$componentLimit}" v2="2" op="="> d-flex justify-content-center</r:if>"></r:if>
-      <r:comment><!-- Grab the first item in the loop, and display a dummy version of it that accepts button text that will apply to all others items in the featurettes. --></r:comment>
+      <r:comment><!-- Grab the first item in the loop and use it as a template for the rest of the items. The user can set the button text, for example. --></r:comment>
       <r:edit_mode_only>
         <r:each limit="1">
           <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /></r:if> mb-3 pt-2 mt-2 border border-wvu-accent--red">
@@ -85,7 +88,7 @@
         <r:set_var name="contentIndex">
           <r:index />
         </r:set_var>
-        <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
+        <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place, allowing the user to edit. These changes will then apply to all subsequent featurettes in this component. --></r:comment>
         <r:if v1="{$componentLimit}" v2="1" op="!=">
           <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
         </r:if>
