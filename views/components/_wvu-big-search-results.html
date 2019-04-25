@@ -1,5 +1,5 @@
 <r:comment><!-- Define a base name for this component. We can use this later to dynamically create things like editable region names --></r:comment>
-<r:set_var name="baseComponentName" value="hero" />
+<r:set_var name="baseComponentName" value="big-search-results" />
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
 <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
@@ -32,7 +32,7 @@
       <h2>Search Results</h2>
       <div id="anchor-results">
         <r:comment>Get a count of the items that match our search</r:comment>
-        <r:set_var name="itemCount"><r:descendants:count content="{$cquery}" content_keys:="wvu-backpage-main-1,wvu-backpage-main-2,wvu-backpage-main-3" by="" limit="200" /></r:set_var>
+        <r:set_var name="itemCount"><r:descendants:count content="{$cquery}" content_keys:="{$contentKeys}" by="" limit="200" /></r:set_var>
         <r:comment>If we HAVE items then write out the results</r:comment>
         <r:if v1="{$itemCount}" v2="0" operator=">" type="number">
           <r:comment>Set the copy for items based on how many items matched our search</r:comment>
@@ -45,7 +45,7 @@
             <r:comment>
               search all of the descendants of this page for the search search term in the appropriate content keys
             </r:comment>
-            <r:descendants:each content="{$cquery}" content_keys:="{$content_keys:}" by="" limit="200">
+            <r:descendants:each content="{$cquery}" content_keys:="{$content_keys}" by="" limit="200">
               <li><a href="<r:page:url />"><r:page:first_non_blank_attr names="wvu-backpage-1__main" /></a></li>
             </r:descendants:each>
           </ul>
