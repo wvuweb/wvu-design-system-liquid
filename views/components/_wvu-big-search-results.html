@@ -45,7 +45,7 @@
             <r:comment>
               search all of the descendants of this page for the search search term in the appropriate content keys
             </r:comment>
-            <r:descendants:each content="{$cquery}" content_keys="{$content_keys}" by="" limit="200">
+            <r:descendants:each content="{$cquery}" content_keys="{$contentKeys}" by="" limit="200">
               <li><a href="<r:page:url />"><r:page:first_non_blank_attr names="wvu-backpage-1__main" /></a></li>
             </r:descendants:each>
           </ul>
