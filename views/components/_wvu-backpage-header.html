@@ -12,12 +12,7 @@
 
 <r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also be applied by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">pb-3 bg-wvu-neutral--dark-gray text-white wvu-bg-vignetting wvu-bg-blend-mode-luminosity--80 wvu-background-position-center</r:content_for>
-<r:if expr="{{ NOT(BLANK(classes_wvu_backpage_header__h1)) }}">
-  <r:content_for name="{$defaultHeaderClasses}"><r:site:data name="classes_wvu-backpage-header__h1" /></r:content_for>
-</r:if>
-<r:if expr="{{ BLANK(classes_wvu_backpage_header__h1) }}">
-  <r:content_for name="{$defaultHeaderClasses}">display-4 helvetica-neue-bold mb-0</r:content_for>
-</r:if>
+<r:content_for name="{$defaultHeaderClasses}">display-4 helvetica-neue-bold mb-0</r:content_for>
 
 <r:comment><!-- Content that gets pulled into the editable regions by default --></r:comment>
 <r:content_for name="{$componentHeaderLabel}"><span class="wvu-shout text-wvu-gold text-uppercase">Label pre</span> label post</r:content_for>

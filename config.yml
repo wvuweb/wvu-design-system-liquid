@@ -36,6 +36,7 @@ custom_site_attributes:
   - has_standard_footer
   - hide_instructions
   - instagram_url
+  - is_demo_site
   - jquery_defer
   - linkedin_url
   - masthead_college_link_address
