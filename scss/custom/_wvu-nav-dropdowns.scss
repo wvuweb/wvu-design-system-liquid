@@ -3,9 +3,11 @@
 .nav-collapse ul {
   margin: 0;
   padding: 0;
-  width: 100%;
   display: block;
   list-style: none;
+  @media (max-width: $wvu-bp-lg) {
+    width: 100%;
+  }
 }
 
 .nav-collapse li {
@@ -113,7 +115,7 @@
   float: left;
   ul {
     list-style: none;
-    width: 100%;
+    // width: 100%;
     float: left;
   }
   li {
@@ -263,12 +265,10 @@
 .dropdown {
   ul {
     a {
-      background: #282e34;
       padding-left: 1.5em;
     }
     ul {
       a {
-        background: #2d353e;
         padding-left: 2.5em;
       }
       border: 0;

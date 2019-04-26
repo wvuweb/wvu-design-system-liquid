@@ -46,12 +46,12 @@
         </small>
       </r:edit_mode_only>
       <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section --></r:comment>
-      <h2 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>"><r:editable_region name="{$componentHeader}" scope="{$componentScope}" type="simple"><r:yield name="{$componentHeader}"><r:content /></r:yield></r:editable_region></h2>
-      <r:page:if_has_content_for region="{$componentMain}" always_show_in_edit_mode="true">
-        <div class="mb-3">
-          <r:editable_region name="{$componentMain}" scope="{$componentScope}"><r:yield name="{$componentMain}"><r:content /></r:yield></r:editable_region>
-        </div>
-      </r:page:if_has_content_for>
+    <h2 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>"><r:editable_region name="{$componentHeader}" scope="{$componentScope}" type="simple"><r:yield name="{$componentHeader}"><r:content /></r:yield></r:editable_region></h2>
+    <r:page:if_has_content_for region="{$componentMain}" always_show_in_edit_mode="true">
+      <div class="mb-3">
+        <r:editable_region name="{$componentMain}" scope="{$componentScope}"><r:yield name="{$componentMain}"><r:content /></r:yield></r:editable_region>
+      </div>
+    </r:page:if_has_content_for>
     </r:if>
     <div class="row d-flex justify-content-center mb-3">
       <div class="col-md-6 mx-auto">
@@ -77,11 +77,11 @@
       </div>
     </div>
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
-      <r:page:unless_has_content_for region="{$itemPostscriptRegionName}"><r:yield name="{$componentPostscript}"><r:content /></r:yield></r:page:unless_has_content_for><r:page:content name="{$itemPostscriptRegionName}" />
+    <r:page:unless_has_content_for region="{$itemPostscriptRegionName}"><r:yield name="{$componentPostscript}"><r:content /></r:yield></r:page:unless_has_content_for><r:page:content name="{$itemPostscriptRegionName}" />
     </r:if>
     <r:comment><!-- This is the code that will be used for any site other than the WVU Design System website. --></r:comment>
     <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-      <r:editable_region name="{$componentPostscript}" scope="{$componentScope}"><r:yield name="{$componentPostscript}"><r:content /></r:yield></r:editable_region>
+    <r:editable_region name="{$componentPostscript}" scope="{$componentScope}"><r:yield name="{$componentPostscript}"><r:content /></r:yield></r:editable_region>
     </r:if>
   </div>
 </<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->

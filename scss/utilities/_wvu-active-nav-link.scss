@@ -2,17 +2,18 @@
   position: relative;
   .active {
     background-color: transparent !important;
-    &:before {
-      border-top: 3px solid $wvu-gold;
-      content: '';
-      left: 0;
-      position: absolute;
-      width: 100%;
-    }
   }
-  > li {
-    .active {
-      background-color: transparent !important;
+  > ul {
+    > li {
+      > .active {
+        &:before {
+          border-top: 3px solid $wvu-gold;
+          content: '';
+          left: 0;
+          position: absolute;
+          width: 100%;
+        }
+      }
     }
   }
 }

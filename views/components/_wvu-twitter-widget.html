@@ -5,7 +5,7 @@
 <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define editable region names --></r:comment>
-<r:set_var name="componentHeader">wvu-twitter-widget-<r:var name="componentInstance" />__header</r:set_var>
+<r:set_var name="componentHeader">wvu-<r:var name="componentName" />__header</r:set_var>
 
 <r:comment><!-- Suggestions for what utility classes to assign to this components’s stylable elements. These will also be applied by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">bg-wvu-neutral--dark-gray text-white py-5 wvu-bg-position-center wvu-bg-blend-mode-luminosity--90</r:content_for>

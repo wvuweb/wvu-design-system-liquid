@@ -46,7 +46,7 @@ custom_site_attributes:
   - masthead_link_2_title
   - masthead_logo_url
   - masthead_title
-  - nav_depth
+  - nav_dropdowns
   - syndication_url
   - show_apply_links
   - show_instructions

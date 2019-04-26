@@ -5,7 +5,7 @@
 <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define editable region names --></r:comment>
-<r:set_var name="componentMain">wvu-major-<r:var name="componentInstance" />__main</r:set_var>
+<r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
 
 <r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also be applied by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}"></r:content_for>

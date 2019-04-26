@@ -35,7 +35,6 @@
     <r:comment>If a search term WAS passed see if we have results for it</r:comment>
     <r:if v1="{$cquery}" v2="" operator="!=">
       <h2>Search Results</h2>
-      content keys: <r:var name="contentKeys" />
       <div id="anchor-results">
         <r:comment>Get a count of the items that match our search</r:comment>
         <r:set_var name="itemCount"><r:descendants:count content="{$cquery}" content_keys="{$contentKeys}" by="" limit="200" /></r:set_var>

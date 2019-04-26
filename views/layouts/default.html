@@ -60,11 +60,14 @@
       <r:partial name="components/wvu-footer" theme="University Relations: WVU Design System" />
     </r:if>
 
-    <r:content_for name="keywords">
-      <r:page:data name="keywords" />
-    </r:content_for>
-
-    <r:yield name="keywords" />
+    <r:if v1="{$enable_keywords}" v2="1" op="=">
+      <r:edit_mode_only>
+        <div class="container py-4">
+          <h2>Keywords</h2>
+          <r:editable_region name="keywords" />
+        </div>
+      </r:edit_mode_only>
+    </r:if>
 
     <script type="text/javascript" src="/javascripts/vendor/clipboard.min.js"></script>
     <script type="text/javascript" src="//fast.fonts.net/jsapi/36d8cd92-7cc7-499b-b169-0eed9d670283.js"></script> <r:comment><!-- Helvetica Neue Light & Bold Condensed web font, valid for *.wvu.edu, *.wvutech.edu, & localhost --></r:comment>
