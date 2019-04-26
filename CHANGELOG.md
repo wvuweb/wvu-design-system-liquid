@@ -1,7 +1,20 @@
 # Change Log
 
-## [0.0.3](https://github.com/wvuweb/wvu-design-system/tree/0.0.3) (2019-04-26)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.2...0.0.3)
+## [Unreleased](https://github.com/wvuweb/wvu-design-system/tree/HEAD)
+
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...HEAD)
+
+**Implemented enhancements:**
+
+- Add Fontface Observer back in. [\#50](https://github.com/wvuweb/wvu-design-system/issues/50)
+- Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
+
+**Fixed bugs:**
+
+- Bg-vignetting--right breaks luminosity... [\#26](https://github.com/wvuweb/wvu-design-system/issues/26)
+
+## [v0.0.3](https://github.com/wvuweb/wvu-design-system/tree/v0.0.3) (2019-04-26)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.2...v0.0.3)
 
 **Implemented enhancements:**
 
