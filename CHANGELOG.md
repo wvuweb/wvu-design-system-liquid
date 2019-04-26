@@ -1,7 +1,19 @@
 # Change Log
 
-## [0.0.2](https://github.com/wvuweb/wvu-design-system/tree/0.0.2) (2019-04-26)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.1...0.0.2)
+## [0.0.3](https://github.com/wvuweb/wvu-design-system/tree/0.0.3) (2019-04-26)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.2...0.0.3)
+
+**Implemented enhancements:**
+
+- Replace nav with the one from wvu.edu. [\#25](https://github.com/wvuweb/wvu-design-system/issues/25)
+- Include \<header\>, \<section\> tags in code examples [\#22](https://github.com/wvuweb/wvu-design-system/issues/22)
+
+**Closed issues:**
+
+- Background styler in Edit Mode should be hidden... [\#31](https://github.com/wvuweb/wvu-design-system/issues/31)
+
+## [v0.0.2](https://github.com/wvuweb/wvu-design-system/tree/v0.0.2) (2019-04-26)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.1...v0.0.2)
 
 **Implemented enhancements:**
 
