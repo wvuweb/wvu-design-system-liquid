@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.0.2](https://github.com/wvuweb/wvu-design-system/tree/0.0.2) (2019-04-26)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.1...0.0.2)
+
+**Implemented enhancements:**
+
+- Add an Infographic component. [\#5](https://github.com/wvuweb/wvu-design-system/issues/5)
+
+**Fixed bugs:**
+
+- Content stretches on example pages with preformatted text. [\#9](https://github.com/wvuweb/wvu-design-system/issues/9)
+
 ## [v0.0.1](https://github.com/wvuweb/wvu-design-system/tree/v0.0.1) (2019-04-09)
 **Implemented enhancements:**
 
