@@ -44,18 +44,18 @@
       <img class="wvu-nav__menu-icon" src="https://static.wvu.edu/global/images/icons/wvu/hamburger-menu--1.0.0.svg" alt="" />
       Open Menu
     </button>
-    <div class="wvu-nav nav-collapse ml-lg-n1" id="wvu-nav">
+    <div class="wvu-nav nav-collapse ml-lg-n2" id="wvu-nav">
       <r:comment>
         <!-- NOTE: If nav depth is greater than 1, show the dropdown caret (has_children_class) & `+` on mobile (sub_ul_class). -->
       </r:comment>
-      <r:if expr="{{ BLANK(nav_dropdowns) }}">
+      <r:if expr="{{ NOT(BLANK(nav_dropdowns)) }}">
         <r:site_menu max_depth="2" ul_class="wvu-nav__items menu-items navbar-nav mr-auto" link_class="nav-link px-2 px-lg-1" has_children_class="dropdown" sub_ul_class="sub-menu small bg-wvu-neutral--black px-1 mx-n1" />
       </r:if>
 
       <r:comment>
         <!-- NOTE: If nav depth is equal to 1, do NOT show the dropdown caret (has_children_class). -->
       </r:comment>
-      <r:if expr="{{ NOT(BLANK(nav_dropdowns)) }}">
+      <r:if expr="{{ BLANK(nav_dropdowns) }}">
         <r:site_menu max_depth="1" ul_class="wvu-nav__items menu-items navbar-nav mr-auto" />
       </r:if>
     </div> <!-- /.nav-collapse -->
