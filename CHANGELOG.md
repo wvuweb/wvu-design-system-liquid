@@ -5,6 +5,7 @@
 
 **Implemented enhancements:**
 
+- Make a stat sheet component... [\#53](https://github.com/wvuweb/wvu-design-system/issues/53)
 - Add Fontface Observer back in. [\#50](https://github.com/wvuweb/wvu-design-system/issues/50)
 - Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
 - Add Event Agenda component. [\#1](https://github.com/wvuweb/wvu-design-system/issues/1)
