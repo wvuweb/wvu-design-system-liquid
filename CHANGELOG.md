@@ -1,16 +1,17 @@
 # Change Log
 
-## [Unreleased](https://github.com/wvuweb/wvu-design-system/tree/HEAD)
-
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...HEAD)
+## [0.0.4](https://github.com/wvuweb/wvu-design-system/tree/0.0.4) (2019-04-29)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...0.0.4)
 
 **Implemented enhancements:**
 
 - Add Fontface Observer back in. [\#50](https://github.com/wvuweb/wvu-design-system/issues/50)
 - Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
+- Add Event Agenda component. [\#1](https://github.com/wvuweb/wvu-design-system/issues/1)
 
 **Fixed bugs:**
 
+- Copy JS to Clipboard no longer works on demo site. [\#51](https://github.com/wvuweb/wvu-design-system/issues/51)
 - Bg-vignetting--right breaks luminosity... [\#26](https://github.com/wvuweb/wvu-design-system/issues/26)
 
 ## [v0.0.3](https://github.com/wvuweb/wvu-design-system/tree/v0.0.3) (2019-04-26)
