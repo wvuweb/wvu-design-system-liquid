@@ -1,13 +1,15 @@
 # Change Log
 
-## [0.0.4](https://github.com/wvuweb/wvu-design-system/tree/0.0.4) (2019-04-29)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...0.0.4)
+## [v0.0.4](https://github.com/wvuweb/wvu-design-system/tree/v0.0.4) (2019-05-01)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...v0.0.4)
 
 **Implemented enhancements:**
 
+- Create demo version of masthead component [\#54](https://github.com/wvuweb/wvu-design-system/issues/54)
 - Make a stat sheet component... [\#53](https://github.com/wvuweb/wvu-design-system/issues/53)
 - Add Fontface Observer back in. [\#50](https://github.com/wvuweb/wvu-design-system/issues/50)
 - Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
+- Create a full-bleed photo component. [\#8](https://github.com/wvuweb/wvu-design-system/issues/8)
 - Add Event Agenda component. [\#1](https://github.com/wvuweb/wvu-design-system/issues/1)
 
 **Fixed bugs:**
