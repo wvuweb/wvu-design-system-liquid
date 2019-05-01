@@ -1,9 +1,11 @@
 @mixin wvu-co-branding() {
-  border-left: 1px solid !important;
   font-family: $helvetica-neue-bold !important;
   font-size: .8rem !important;
   line-height: 1em !important;
   @media (min-width: $wvu-bp-sm) {
+    font-size: 1rem !important;
+  }
+  @media (min-width: $wvu-bp-md) {
     font-size: 1.5rem !important;
   }
   img {

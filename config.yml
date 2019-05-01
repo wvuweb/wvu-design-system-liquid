@@ -24,6 +24,7 @@ custom_site_attributes:
   - classes_wvu-featurettes-2--anywhere
   - classes_wvu-footer
   - classes_wvu-footer-links
+  - co_brand_subtitle
   - default_content_01
   - default_content_02
   - default_content_03
