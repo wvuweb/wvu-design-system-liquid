@@ -1,10 +1,11 @@
 # Change Log
 
-## [v0.0.4](https://github.com/wvuweb/wvu-design-system/tree/v0.0.4) (2019-05-01)
+## [v0.0.4](https://github.com/wvuweb/wvu-design-system/tree/v0.0.4) (2019-05-02)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...v0.0.4)
 
 **Implemented enhancements:**
 
+- Build CleanSlate version of masthead with all options [\#56](https://github.com/wvuweb/wvu-design-system/issues/56)
 - Create demo version of masthead component [\#54](https://github.com/wvuweb/wvu-design-system/issues/54)
 - Make a stat sheet component... [\#53](https://github.com/wvuweb/wvu-design-system/issues/53)
 - Add Fontface Observer back in. [\#50](https://github.com/wvuweb/wvu-design-system/issues/50)
