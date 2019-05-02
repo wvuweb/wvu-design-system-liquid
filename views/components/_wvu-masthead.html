@@ -46,7 +46,7 @@
             <r:if expr="{{ BLANK(has_co_brand) }}">
               <a class="d-block position-relative my-3" href="/">
                 <div class="sr-only">Unit Name</div>
-                <img alt="WVU 150 Years logo lockup" src="https://designsystem.sandbox.wvu.edu/files/d489a7df-0da5-4640-9d26-cdfdeeaf0e00/960x960">
+                <r:img src="http://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
               </a>
             </r:if>
             <r:if expr="{{ NOT(BLANK(has_co_brand)) }}">
@@ -98,50 +98,50 @@
         <div class="container">
           <r:if v1="{page:template:name}" v2="component-examples" op="=">
           <r:page:if_has_content_for region="{$itemMastheadCollegeLinkTitle}">
-            <div class="row mb-2">
-              <a class="<r:if v1="{$masthead_color}" v2="gold" op="!=">bg-wvu-gold text-wvu-blue </r:if><r:if v1="{$masthead_color}" v2="gold" op="=">bg-wvu-blue text-white </r:if>px-2 py-1 align-self-top small" href="#">Parent Organization Name Goes Here</a>
-            </div>
+          <div class="row mb-2">
+            <a class="<r:if v1="{$masthead_color}" v2="gold" op="!=">bg-wvu-gold text-wvu-blue </r:if><r:if v1="{$masthead_color}" v2="gold" op="=">bg-wvu-blue text-white </r:if>px-2 py-1 align-self-top small" href="#">Parent Organization Name Goes Here</a>
+          </div>
           </r:page:if_has_content_for>
           <div class="row<r:page:unless_has_content_for region="{$itemMastheadCollegeLinkTitle}"> h-100</r:page:unless_has_content_for>">
               <r:if v1="{$masthead_color}" v2="gold" op="!=">
-            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--light-blue">Apply Link 1</a>
-            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--orange ml-1">Apply Link 2</a>
-            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-gold ml-1">Apply Link 3</a>
+            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--light-blue mr-1">Apply Link 1</a>
+            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--orange mr-1">Apply Link 2</a>
+            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-gold">Apply Link 3</a>
               </r:if>
               <r:if v1="{$masthead_color}" v2="gold" op="=">
-            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-blue">Apply Link 1</a>
-            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--red ml-1">Apply Link 2</a>
-            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--dark-green ml-1">Apply Link 3</a>
+            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-blue mr-1">Apply Link 1</a>
+            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--red mr-1">Apply Link 2</a>
+            <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--dark-green">Apply Link 3</a>
               </r:if>
           </div>
           </r:if>
           <r:if v1="{page:template:name}" v2="component-examples" op="!=">
             <r:if expr="{{ NOT(BLANK(masthead_college_link_title)) }}">
-              <div class="row mb-2">
-                <a class="<r:if v1="{$masthead_color}" v2="gold" op="!=">bg-wvu-gold text-wvu-blue </r:if><r:if v1="{$masthead_color}" v2="gold" op="=">bg-wvu-blue text-white </r:if>px-2 py-1 align-self-top small" href="<r:site:data name="masthead_college_link_address" /><r:site:data name="masthead_college_link_title" /></a>
-              </div>
+            <div class="row mb-2">
+              <a class="<r:if v1="{$masthead_color}" v2="gold" op="!=">bg-wvu-gold text-wvu-blue </r:if><r:if v1="{$masthead_color}" v2="gold" op="=">bg-wvu-blue text-white </r:if>px-2 py-1 align-self-top small" href="<r:site:data name="masthead_college_link_address" />"><r:site:data name="masthead_college_link_title" /></a>
+            </div>
             </r:if>
-          <div class="row<r:if expr="{{ NOT(BLANK(masthead_college_link_title)) }}"> h-100</r:if>">
+          <div class="row<r:if expr="{{ BLANK(masthead_college_link_title) }}"> h-100</r:if>">
               <r:if v1="{$masthead_color}" v2="gold" op="!=">
             <r:if expr="{{ NOT(BLANK(apply_link_1)) }}">
-              <a href="<r:site:data name="apply_link_1_url" />" class="align-self-center btn mb-1 btn-outline-wvu-accent--light-blue"><r:site:data name="apply_link_1" /></a>
+              <a href="<r:site:data name="apply_link_1_url" />" class="align-self-center btn mb-1 btn-outline-wvu-accent--light-blue mr-1"><r:site:data name="apply_link_1" /></a>
             </r:if>
             <r:if expr="{{ NOT(BLANK(apply_link_2)) }}">
-              <a href="<r:site:data name="apply_link_2_url" />" class="align-self-center btn mb-1 btn-outline-wvu-accent--orange ml-1"><r:site:data name="apply_link_2" /></a>
+              <a href="<r:site:data name="apply_link_2_url" />" class="align-self-center btn mb-1 btn-outline-wvu-accent--orange mr-1"><r:site:data name="apply_link_2" /></a>
             </r:if>
             <r:if expr="{{ NOT(BLANK(apply_link_3)) }}">
-              <a href="<r:site:data name="apply_link_3_url" />" class="align-self-center btn mb-1 btn-outline-wvu-gold ml-1"><r:site:data name="apply_link_3" /></a>
+              <a href="<r:site:data name="apply_link_3_url" />" class="align-self-center btn mb-1 btn-outline-wvu-gold"><r:site:data name="apply_link_3" /></a>
             </r:if>
               </r:if>
               <r:if v1="{$masthead_color}" v2="gold" op="=">
             <r:if expr="{{ NOT(BLANK(apply_link_1)) }}">
-              <a href="<r:site:data name="apply_link_1_url" />" class="align-self-center btn mb-1 btn-outline-wvu-blue"><r:site:data name="apply_link_1" /></a>
+              <a href="<r:site:data name="apply_link_1_url" />" class="align-self-center btn mb-1 btn-outline-wvu-blue mr-1"><r:site:data name="apply_link_1" /></a>
             </r:if>
             <r:if expr="{{ NOT(BLANK(apply_link_2)) }}">
-              <a href="<r:site:data name="apply_link_2_url" />" class="align-self-center btn mb-1 btn-outline-wvu-accent--red ml-1"><r:site:data name="apply_link_2" /></a>
+              <a href="<r:site:data name="apply_link_2_url" />" class="align-self-center btn mb-1 btn-outline-wvu-accent--red mr-1"><r:site:data name="apply_link_2" /></a>
             </r:if>
             <r:if expr="{{ NOT(BLANK(apply_link_3)) }}">
-              <a href="<r:site:data name="apply_link_3_url" />" class="align-self-center btn mb-1 btn-outline-wvu-accent--dark-green ml-1"><r:site:data name="apply_link_3" /></a>
+              <a href="<r:site:data name="apply_link_3_url" />" class="align-self-center btn mb-1 btn-outline-wvu-accent--dark-green"><r:site:data name="apply_link_3" /></a>
             </r:if>
               </r:if>
           </div>
