@@ -1,3 +1,10 @@
+a {
+  &:focus {
+    outline: auto 2px Highlight; // for non-webkit browsers
+    outline: auto 5px -webkit-focus-ring-color; // for webkit browsers
+  }
+}
+
 blockquote {
   margin-left: 1rem;
   margin-right: 1rem;
