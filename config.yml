@@ -55,6 +55,45 @@ custom_site_attributes:
   - sidebar_sticky_site
   - slot_00_masthead
   - slot_00_nav
+  - slot_11
+  - slot_11_custom
+  - slot_11_where_to_display
+  - slot_11_is_main
+  - slot_11_align
+  - slot_11_featurettes_style
+  - slot_11_featurettes_id
+  - slot_11_limit
+  - slot_11_number
+  - slot_11_loop_by
+  - slot_11_loop_labels_match
+  - slot_11_loop_order
+  - slot_11_show_hidden
+  - slot_12
+  - slot_12_custom
+  - slot_12_where_to_display
+  - slot_12_is_main
+  - slot_12_align
+  - slot_12_featurettes_style
+  - slot_12_featurettes_id
+  - slot_12_limit
+  - slot_12_number
+  - slot_12_loop_by
+  - slot_12_loop_labels_match
+  - slot_12_loop_order
+  - slot_12_show_hidden
+  - slot_13
+  - slot_13_custom
+  - slot_13_where_to_display
+  - slot_13_is_main
+  - slot_13_align
+  - slot_13_featurettes_style
+  - slot_13_featurettes_id
+  - slot_13_limit
+  - slot_13_number
+  - slot_13_loop_by
+  - slot_13_loop_labels_match
+  - slot_13_loop_order
+  - slot_13_show_hidden
   - twitter_handle
   - twitter_url
   - twitter_widget_id

@@ -10,7 +10,7 @@
 <r:set_var name="componentSidebarBottom">wvu-<r:var name="componentName" />__sidebar-bottom</r:set_var>
 
 <r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also be applied by default if the content editor does not apply her own. --></r:comment>
-<r:content_for name="{$defaultComponentClasses}"></r:content_for>
+<r:content_for name="{$defaultComponentClasses}">py-5 </r:content_for>
 
 <r:comment><!-- Content that gets pulled into the editable regions by default. --></r:comment>
 <r:content_for name="{$componentMain}"><p class="lead mb-3 mt-0">Churning anomalies game plan. High performance keywords not enough bandwidth.
@@ -26,7 +26,7 @@
           evangelize the new line to local markets, nor cloud strategy but data-point,
           but back to the drawing-board. </p></r:content_for>
 
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> class="wvu-backpage-main py-5<r:page:unless_has_content_for region="{$componentClasses}"> <r:yield name="{$defaultComponentClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$componentClasses}" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> class="wvu-backpage-main<r:page:unless_has_content_for region="{$componentClasses}"> <r:yield name="{$defaultComponentClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$componentClasses}" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container wvu-z-index-content">
     <div class="row">
       <div class="col-md-8 mr-md-auto">
