@@ -60,27 +60,29 @@
 $i: 1;
 
 @while $i < 5 {
-  .wvu-slash--#{$i}-left {
-    &:before {
-      left: -($i * $spacer) !important;
+  .wvu-slash {
+    &.wvu-slash--#{$i}-left {
+      &:before {
+        left: -($i * $spacer) !important;
+      }
     }
-  }
-  .wvu-slash--#{$i}-right {
-    &:before {
-      right: -($i * $spacer) !important;
+    &.wvu-slash--#{$i}-right {
+      &:before {
+        left: ($i * $spacer) !important;
+      }
     }
-  }
-  .wvu-slash--#{$i}-up {
-    &:before {
-      top: calc(-25% + -(#{$i} * #{$spacer})) !important;
+    &.wvu-slash--#{$i}-up {
+      &:before {
+        top: calc(-25% + -(#{$i} * #{$spacer})) !important;
+      }
     }
-  }
-  .wvu-slash--#{$i}-down {
-    &:before {
-      top: calc(-25% + (#{$i} * #{$spacer})) !important;
+    &.wvu-slash--#{$i}-down {
+      &:before {
+        top: calc(-25% + (#{$i} * #{$spacer})) !important;
+      }
     }
+    $i: $i + 1;
   }
-  $i: $i + 1;
 }
 
 .wvu-ul-slashes {
