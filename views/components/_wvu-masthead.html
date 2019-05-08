@@ -14,7 +14,7 @@
             </r:page:unless_has_content_for>
             <r:page:if_has_content_for region="{$itemHasCoBrand}">
         <a class="d-flex position-relative my-3 align-items-center justify-content-center justify-content-md-start<r:if v1="{$masthead_color}" v2="gold" op="!="> text-white</r:if><r:if v1="{$masthead_color}" v2="gold" op="="> text-wvu-blue</r:if>" href="/">
-          <div class="wvu-logo-lockup<r:if v1="{$masthead_color}" v2="gold" op="="> wvu-logo-lockup--blue</r:if>">
+          <div class="wvu-logo-lockup mt-n1<r:if v1="{$masthead_color}" v2="gold" op="="> wvu-logo-lockup--blue</r:if>">
             Masthead Title
           </div>
           <div class="wvu-co-branding d-inline-block align-self-center mx-2 p-2 border-left<r:if v1="{$masthead_color}" v2="gold" op="!="> border-white</r:if><r:if v1="{$masthead_color}" v2="gold" op="="> border-wvu-blue</r:if>">
@@ -25,7 +25,7 @@
           </r:page:if_has_content_for>
           <r:page:unless_has_content_for region="{$itemAlternateLogo}">
         <a class="d-flex position-relative my-3 align-items-center justify-content-center justify-content-md-start<r:if v1="{$masthead_color}" v2="gold" op="!="> text-white</r:if><r:if v1="{$masthead_color}" v2="gold" op="="> text-wvu-blue</r:if>" href="/">
-          <div class="wvu-logo-lockup<r:if v1="{$masthead_color}" v2="gold" op="="> wvu-logo-lockup--blue</r:if>">
+          <div class="wvu-logo-lockup mt-1<r:if v1="{$masthead_color}" v2="gold" op="="> wvu-logo-lockup--blue</r:if>">
             Masthead Title
           </div>
           <r:page:if_has_content_for region="{$itemHasCoBrand}">
@@ -51,7 +51,7 @@
             </r:if>
             <r:if expr="{{ NOT(BLANK(has_co_brand)) }}">
           <a class="d-flex position-relative my-3 align-items-center justify-content-center justify-content-md-start<r:if v1="{$masthead_color}" v2="gold" op="!="> text-white</r:if><r:if v1="{$masthead_color}" v2="gold" op="="> text-wvu-blue</r:if>" href="/">
-            <div class="wvu-logo-lockup<r:if v1="{$masthead_color}" v2="gold" op="="> wvu-logo-lockup--blue</r:if>">
+            <div class="wvu-logo-lockup mt-n1<r:if v1="{$masthead_color}" v2="gold" op="="> wvu-logo-lockup--blue</r:if>">
               <r:if expr="{{ BLANK(masthead_title) }}"><r:site:name /></r:if>
               <r:if expr="{{ NOT(BLANK(masthead_title)) }}"><r:site:data name="masthead_title" /></r:if>
             </div>
@@ -73,7 +73,7 @@
           </r:if>
           <r:if expr="{{ BLANK(has_alternate_logo) }}">
         <a class="d-flex position-relative my-3 align-items-center justify-content-center justify-content-md-start<r:if v1="{$masthead_color}" v2="gold" op="!="> text-white</r:if><r:if v1="{$masthead_color}" v2="gold" op="="> text-wvu-blue</r:if>" href="/">
-          <div class="wvu-logo-lockup<r:if v1="{$masthead_color}" v2="gold" op="="> wvu-logo-lockup--blue</r:if>">
+          <div class="wvu-logo-lockup mt-n1<r:if v1="{$masthead_color}" v2="gold" op="="> wvu-logo-lockup--blue</r:if>">
             <r:if expr="{{ BLANK(masthead_title) }}"><r:site:name /></r:if>
             <r:if expr="{{ NOT(BLANK(masthead_title)) }}"><r:site:data name="masthead_title" /></r:if>
           </div>

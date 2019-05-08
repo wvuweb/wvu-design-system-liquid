@@ -1,0 +1,18 @@
+.wvu-bar {
+  @include wvu-bar($wvu-bar-color, top);
+  &.wvu-bar--bottom {
+    @include wvu-bar($wvu-bar-color, bottom);
+  }
+  &.wvu-bar--center {
+    display: inline-block !important;
+    &:before, &:after {
+      left: 50% !important;
+      margin-left: -($wvu-bar-width * .5) !important;
+    }
+  }
+  &.wvu-bar--white {
+    &:before, &:after {
+      background-color: white !important;
+    }
+  }
+}
