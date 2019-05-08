@@ -1,15 +1,19 @@
 # Change Log
 
-## [v0.0.4](https://github.com/wvuweb/wvu-design-system/tree/v0.0.4) (2019-05-02)
+## [v0.0.4](https://github.com/wvuweb/wvu-design-system/tree/v0.0.4) (2019-05-08)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...v0.0.4)
 
 **Implemented enhancements:**
 
+- Create gold bar typographic typographic element [\#61](https://github.com/wvuweb/wvu-design-system/issues/61)
 - Build CleanSlate version of masthead with all options [\#56](https://github.com/wvuweb/wvu-design-system/issues/56)
 - Create demo version of masthead component [\#54](https://github.com/wvuweb/wvu-design-system/issues/54)
 - Make a stat sheet component... [\#53](https://github.com/wvuweb/wvu-design-system/issues/53)
 - Add Fontface Observer back in. [\#50](https://github.com/wvuweb/wvu-design-system/issues/50)
 - Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
+- Headings for each section type on utilities and components pages [\#40](https://github.com/wvuweb/wvu-design-system/issues/40)
+- Focus Indicator [\#27](https://github.com/wvuweb/wvu-design-system/issues/27)
+- Document slash modifiers for positions. [\#19](https://github.com/wvuweb/wvu-design-system/issues/19)
 - Create a full-bleed photo component. [\#8](https://github.com/wvuweb/wvu-design-system/issues/8)
 - Add Event Agenda component. [\#1](https://github.com/wvuweb/wvu-design-system/issues/1)
 
@@ -17,6 +21,10 @@
 
 - Copy JS to Clipboard no longer works on demo site. [\#51](https://github.com/wvuweb/wvu-design-system/issues/51)
 - Bg-vignetting--right breaks luminosity... [\#26](https://github.com/wvuweb/wvu-design-system/issues/26)
+
+**Closed issues:**
+
+- Figure out sitewide partials... [\#33](https://github.com/wvuweb/wvu-design-system/issues/33)
 
 ## [v0.0.3](https://github.com/wvuweb/wvu-design-system/tree/v0.0.3) (2019-04-26)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.2...v0.0.3)
