@@ -1,10 +1,15 @@
 # Change Log
 
-## [v0.0.4](https://github.com/wvuweb/wvu-design-system/tree/v0.0.4) (2019-05-08)
+## [v0.0.4](https://github.com/wvuweb/wvu-design-system/tree/v0.0.4) (2019-05-15)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...v0.0.4)
 
 **Implemented enhancements:**
 
+- Get rid of "dummy" featurette items. Stying is now done through component footer. [\#67](https://github.com/wvuweb/wvu-design-system/issues/67)
+- On featurettes, check if there is a header, if not, change \<h3\>s to \<h2\>s in items. [\#66](https://github.com/wvuweb/wvu-design-system/issues/66)
+- Add ability to style background images for individual featurette items [\#65](https://github.com/wvuweb/wvu-design-system/issues/65)
+- Add ability to edit individual featurettes styles to component footers... [\#64](https://github.com/wvuweb/wvu-design-system/issues/64)
+- Change lang attribute to "en-US" [\#62](https://github.com/wvuweb/wvu-design-system/issues/62)
 - Create gold bar typographic typographic element [\#61](https://github.com/wvuweb/wvu-design-system/issues/61)
 - Build CleanSlate version of masthead with all options [\#56](https://github.com/wvuweb/wvu-design-system/issues/56)
 - Create demo version of masthead component [\#54](https://github.com/wvuweb/wvu-design-system/issues/54)
