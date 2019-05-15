@@ -55,6 +55,8 @@ site:
     has_alternate_logo: ""
     masthead_color: wvu-blue
     masthead_title: "My Site"
+    nav_depth: 1
+    nav_dropdowns: false
 
 root: true
 
