@@ -3,12 +3,6 @@
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
-<r:content_for name="{$componentReadMoreButtonText}">Read More</r:content_for>
-
-<r:set_var name="itemReadMoreButtonText">
-  <r:yield name="{$componentReadMoreButtonText}"><r:content /></r:yield>
-</r:set_var>
-
 <r:set_var name="columnClasses">
   col-sm-6 col-md-3
 </r:set_var>
@@ -60,6 +54,22 @@
   </r:set_var>
 </r:if>
 
+<r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
+<r:content_for name="{$defaultItemHeaderClasses}">helvetica-neue-light mb-0 h5</r:content_for>
+<r:content_for name="{$defaultItemBodyClasses}">helvetica-neue-light</r:content_for>
+
+<r:set_var name="itemClassesChecker">
+  <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />
+</r:set_var>
+
+<r:set_var name="itemHeaderClassesChecker">
+  <r:page:unless_has_content_for region="{$itemHeaderClasses}"><r:yield name="{$defaultItemHeaderClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemHeaderClasses}" />
+</r:set_var>
+
+<r:set_var name="itemReadMoreButtonTextChecker">
+  <r:page:unless_has_content_for region="{$itemReadMoreButtonText}">More Info</r:page:unless_has_content_for><r:page:content name="{$itemReadMoreButtonText}" />
+</r:set_var>
+
 <r:root>
   <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
     and $loopOrder to: "asc" or "desc";
@@ -68,10 +78,11 @@
     <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row d-flex justify-content-center"></r:if>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
-        <r:set_var name="contentIndex">
-          <r:index />
+        <r:comment><!-- Define the label used to add a background image to a featurette item. --></r:comment>
+        <r:set_var name="bgurl">
+          <r:var name="bgPrefix" />-panel-<r:index />-background
         </r:set_var>
-        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3">
+        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if><r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
           <div class="mt-3">
             <p class="wvu-quote iowan-old-style h4">
               <r:page:content name="wvu-profile-1__quote" />
@@ -81,10 +92,10 @@
                 <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="rounded-circle shadow text-center w-25" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
               </div>
             </r:if>
-            <h3 class="helvetica-neue-light mb-0 h5"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
+            <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> class="<r:var name="itemHeaderClassesChecker" />"><r:page:first_non_blank_attr names="alternate_name,name" /></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
             <r:page:if_has_content_for region="wvu-profile-1__profile-title">
               <p>
-                <small class="d-block helvetica-neue-light"><r:page:content name="wvu-profile-1__profile-title" /></small>
+                <small class="d-block <r:var name="itemBodyClassesChecker" />"><r:page:content name="wvu-profile-1__profile-title" /></small>
               </p>
             </r:page:if_has_content_for>
           </div>

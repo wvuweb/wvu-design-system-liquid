@@ -9,6 +9,21 @@
   <r:var name="baseComponentName" />-<r:var name="componentInstance" />
 </r:set_var>
 
+<r:comment><!-- Define classes that get pulled in to style compoonent --></r:comment>
+<r:set_var name="itemClasses">
+  wvu-<r:var name="componentName" />-item-classes
+</r:set_var>
+
+<r:comment><!-- Define classes that get pulled in to style compoonent --></r:comment>
+<r:set_var name="itemHeaderClasses">
+  wvu-<r:var name="componentName" />-item-header-classes
+</r:set_var>
+
+<r:comment><!-- Define classes that get pulled in to style compoonent --></r:comment>
+<r:set_var name="itemBodyClasses">
+  wvu-<r:var name="componentName" />-item-body-classes
+</r:set_var>
+
 <r:comment><!-- List of labels that will allow us to assign a background image to the component --></r:comment>
 <r:set_var name="bgurl">
   <r:page:slug />-<r:var name="componentName" />-background
@@ -27,6 +42,23 @@
 <r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
 <r:set_var name="defaultHeaderClasses">
   wvu-<r:var name="componentName" />-default-header-classes
+</r:set_var>
+
+<r:set_var name="defaultItemClasses">
+  wvu-<r:var name="componentName" />-default-item-classes
+</r:set_var>
+
+<r:set_var name="defaultItemHeaderClasses">
+  wvu-<r:var name="componentName" />-default-item-header-classes
+</r:set_var>
+
+<r:set_var name="defaultItemBodyClasses">
+  wvu-<r:var name="componentName" />-default-item-body-classes
+</r:set_var>
+
+<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
+<r:set_var name="componentReadMoreButtonText">
+  wvu-<r:var name="componentName" />-button-text
 </r:set_var>
 
 <r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>

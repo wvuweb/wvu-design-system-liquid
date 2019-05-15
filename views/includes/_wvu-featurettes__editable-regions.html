@@ -1,71 +1,68 @@
+<r:set_var name="columnClasses">
+  col-sm-6 col-md-3
+</r:set_var>
+<r:if v1="{$componentLimit}" v2="1" op="=">
+  <r:set_var name="columnClasses">
+    col
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="2" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-4
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="3" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="4" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="5" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-4 col-lg-3
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="6" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-4
+  </r:set_var>
+</r:if>
+<r:if v1="{$componentLimit}" v2="9" op="=">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-4
+  </r:set_var>
+</r:if>
+
 <div class="row">
   <r:comment><!-- Grab all of the items in the loop. --></r:comment>
   <r:loop:each times="{$componentLimit}">
+    <r:set_var name="bgurl">
+      <r:var name="bgPrefix" />-panel-<r:index />-background
+    </r:set_var>
     <r:set_var name="componentPanelPhoto">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__photo</r:set_var>
     <r:set_var name="componentPanelHeader">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__header</r:set_var>
     <r:set_var name="componentPanelMain">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__main</r:set_var>
-
-    <r:content_for name="{$componentPanelPhoto}"><img src="http://placehold.it/960x640" alt="Placeholder" /></r:content_for>
-    <r:content_for name="{$componentPanelHeader}"><h3 class="iowan-old-style-italic mb-1">Panel Header</h3></r:content_for>
-    <r:content_for name="{$componentPanelMain}"><p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <a href="#" class="btn btn-sm btn-primary">Read More</a></r:content_for>
-    <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
-    <r:set_var name="columnClasses">
-      col-sm-6 col-md-3
-    </r:set_var>
-    <r:if v1="{$componentLimit}" v2="1" op="=">
-      <r:set_var name="columnClasses">
-        col
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="2" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md-4
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="3" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="4" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="5" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md-4 col-lg-3
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="6" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md-4
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="9" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md-4
-      </r:set_var>
-    </r:if>
-    <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3">
+    <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if><r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
       <r:page:if_has_content_for region="{$componentPanelPhoto}" always_show_in_edit_mode="true">
         <div class="mb-1">
           <r:editable_region name="{$componentPanelPhoto}" scope="{$componentScope}">
-            <r:yield name="{$componentPanelPhoto}" />
+            <img src="http://placehold.it/960x640" alt="Placeholder" />
           </r:editable_region>
         </div>
       </r:page:if_has_content_for>
       <r:page:if_has_content_for region="{$componentPanelHeader}" always_show_in_edit_mode="true">
         <r:editable_region name="{$componentPanelHeader}" scope="{$componentScope}">
-          <r:yield name="{$componentPanelHeader}" />
+          <h3 class="iowan-old-style-italic mb-1">Panel Header</h3>
         </r:editable_region>
       </r:page:if_has_content_for>
       <r:page:if_has_content_for region="{$componentPanelMain}" always_show_in_edit_mode="true">
         <r:editable_region name="{$componentPanelMain}" scope="{$componentScope}">
-          <r:yield name="{$componentPanelMain}" />
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#" class="btn btn-sm btn-primary">Read More</a>
         </r:editable_region>
       </r:page:if_has_content_for>
     </div>

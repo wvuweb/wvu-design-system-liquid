@@ -3,14 +3,6 @@
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
-<r:comment><!-- This is the default text that displays on each featurette’s call-to-action button. You can overwrite the text by editing the button of the first featurette that displays in Edit Mode (see comment further down the page). --></r:comment>
-<r:content_for name="{$componentReadMoreButtonText}">Read More</r:content_for>
-
-<r:comment><!-- Create a variable that will pull in the button text. You define the button text by editing the button of the first featurette that displays in Edit Mode (see comment further down the page). This text then gets pulled into each button when all featurettes display. --></r:comment>
-<r:set_var name="itemReadMoreButtonText">
-  <r:page:content name="{$componentReadMoreButtonText}" />
-</r:set_var>
-
 <r:comment><!-- Set the columnClasses variable. These change based on how many items are meant to display as featurettes. They will be added to the individuals items. --></r:comment>
 <r:set_var name="columnClasses">
   col-sm-6 col-md-3
@@ -51,61 +43,49 @@
   </r:set_var>
 </r:if>
 
+<r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
+<r:content_for name="{$defaultItemHeaderClasses}">h3 iowan-old-style-italic mb-1</r:content_for>
+<r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
+
+<r:set_var name="itemClassesChecker">
+  <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />
+</r:set_var>
+
+<r:set_var name="itemHeaderClassesChecker">
+  <r:page:unless_has_content_for region="{$itemHeaderClasses}"><r:yield name="{$defaultItemHeaderClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemHeaderClasses}" />
+</r:set_var>
+
+<r:set_var name="itemBodyClassesChecker">
+  <r:page:unless_has_content_for region="{$itemBodyClasses}"><r:yield name="{$defaultItemBodyClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemBodyClasses}" />
+</r:set_var>
+
+<r:set_var name="itemReadMoreButtonTextChecker">
+  <r:page:unless_has_content_for region="{$itemReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$itemReadMoreButtonText}" />
+</r:set_var>
+
 <r:root>
   <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
     <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:if v1="{$componentLimit}" v2="2" op="="> d-flex justify-content-center</r:if>"></r:if>
-      <r:comment><!-- Grab the first item in the loop and use it as a template for the rest of the items. The user can set the button text, for example. --></r:comment>
-      <r:edit_mode_only>
-        <r:each limit="1">
-          <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /></r:if> mb-3 pt-2 mt-2 border border-wvu-accent--red">
-            <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
-              <div class="mb-1">
-                <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg 960w, <r:page:data name="thumbnail_url" />/586x286.jpg 586w, <r:page:data name="thumbnail_url" />/381x255.jpg 381w, <r:page:data name="thumbnail_url" />/286x191.jpg 286w, <r:page:data name="thumbnail_url" />/279x186.jpg 279w, <r:page:data name="thumbnail_url" />/217x145.jpg 217w" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
-              </div>
-            </r:if>
-            <h3 class="iowan-old-style-italic mb-1"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
-            <p>
-              <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
-              <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
-            </p>
-            <r:page:if_has_content_for region="{$componentReadMoreButtonText}" always_show_in_edit_mode="true">
-              <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="=">
-                <a class="btn btn-primary btn-sm text-white" aria-labelledby="<r:page:slug />-<r:page:id />"><r:yield name="{$componentReadMoreButtonText}" /></a>
-              </r:if>
-              <r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-                <a class="btn btn-primary btn-sm text-white" aria-labelledby="<r:page:slug />-<r:page:id />"><r:editable_region name="{$componentReadMoreButtonText}"><r:yield name="{$componentReadMoreButtonText}"><r:content /></r:yield></r:editable_region></a>
-              </r:if>
-            </r:page:if_has_content_for>
-            <p class="bg-light mt-1 p-2 text-wvu-neutral--black"><small class="d-block">This is the template the rest will follow. Edit the button text that will apply to all elements in this featurettes component. You can also set these globally in the site settings (add link). If you don’t want a button to display, delete the content.</small></p>
-          </div>
-        </r:each>
-      </r:edit_mode_only>
-      <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
-        <r:set_var name="contentIndex">
-          <r:index />
+        <r:set_var name="bgurl">
+          <r:var name="bgPrefix" />-panel-<r:index />-background
         </r:set_var>
-        <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place, allowing the user to edit. These changes will then apply to all subsequent featurettes in this component. --></r:comment>
-        <r:if v1="{$componentLimit}" v2="1" op="!=">
-          <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>mb-3 <r:edit_mode_only><r:if v1="{$contentIndex}" v2="1" op="=">d-none</r:if></r:edit_mode_only>">
-        </r:if>
+        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if><r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
           <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
             <div class="mb-1">
               <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
             </div>
           </r:if>
-          <h3 class="iowan-old-style-italic mb-1"><r:page:first_non_blank_attr names="alternate_name,name" /></h3>
-          <p>
+          <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> class="<r:var name="itemHeaderClassesChecker" />"><r:page:first_non_blank_attr names="alternate_name,name" /></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
+          <p class="<r:var name="itemBodyClassesChecker" />">
             <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
             <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
           </p>
-          <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonText" /><span class="sr-only">: <r:page:name /></span></r:if></a>
-        <r:if v1="{$componentLimit}" v2="1" op="!=">
-          </div>
-        </r:if>
+          <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></r:if></a>
+        </div>
       </r:each>
     <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
   </r:descendants>
