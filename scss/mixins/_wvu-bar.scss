@@ -1,6 +1,7 @@
 @mixin wvu-bar($wvu-bar-color, $wvu-bar-position) {
   position: relative !important;
   @if $wvu-bar-position == 'top' {
+    margin-top: $spacer * 2 !important;
     &:before {
       background-color: $wvu-bar-color !important;
       content: '' !important;
@@ -11,6 +12,8 @@
     }
   }
   @if $wvu-bar-position == 'bottom' {
+    margin-bottom: $spacer * 2 !important;
+    margin-top: 0 !important;
     &:before {
       display: none !important;
     }

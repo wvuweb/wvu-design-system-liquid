@@ -1,6 +1,6 @@
 <r:edit_mode_only>
   <a class="text-white p-1 rounded-sm d-inline-block btn btn-sm btn-wvu-neutral--black wvu-grow-shadow wvu-z-index-content position-absolute mt-n4 ml-1" data-toggle="collapse" href="#editpanel-<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="editpanel-<r:var name="componentName" />"><small class="d-block"><i class="far fa-edit"></i> Edit <span class="text-capitalize"><r:var name="baseComponentName" /></span> Styles</small></a>
-  <section class="px-2 px-md-5 py-2 mb-0 text-light bg-wvu-neutral--black position-relative collapse multi-collapse" id="editpanel-<r:var name="componentName" />">
+  <section class="px-2 px-md-5 pt-2 pb-3 mb-0 text-light bg-wvu-neutral--black position-relative collapse multi-collapse" id="editpanel-<r:var name="componentName" />">
     <p class="mb-0">
       <span class="d-inline-block badge badge-secondary">Utility classes:</span> <div class="text-monospace "><r:editable_region name="{$componentClasses}" scope="{$componentScope}" type="simple" /></div>
     </p>
@@ -33,6 +33,68 @@
         </div>
       </div>
     </div>
+    <r:if v1="{$baseComponentName}" v2="featurettes" op="=">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="mb-0">
+            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for items:</span></r:edit_mode_only>
+            <p>
+              <r:editable_region name="{$itemClasses}" type="simple"></r:editable_region>
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            <small>
+              <r:yield name="{$defaultItemClasses}">
+                <strong>Default classes:</strong> <r:content />
+              </r:yield>
+            </small>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p class="mb-0">
+            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item headers:</span></r:edit_mode_only>
+            <p>
+              <r:editable_region name="{$itemHeaderClasses}" type="simple"></r:editable_region>
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            <small>
+              <r:yield name="{$defaultItemHeaderClasses}">
+                <strong>Default classes:</strong> <r:content />
+              </r:yield>
+            </small>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p class="mb-0">
+            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item body copy:</span></r:edit_mode_only>
+            <p>
+              <r:editable_region name="{$itemBodyClasses}" type="simple"></r:editable_region>
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            <small>
+              <r:yield name="{$defaultItemBodyClasses}">
+                <strong>Default classes:</strong> <r:content />
+              </r:yield>
+            </small>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p class="mb-0">
+            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Featurettes button text:</span></r:edit_mode_only>
+            <p>
+              <r:editable_region name="{$componentReadMoreButtonText}">Read More</r:editable_region>
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            <small>
+              <strong>Default button text:</strong> Read More
+            </small>
+          </p>
+        </div>
+      </div>
+    </r:if>
   </section>
 </r:edit_mode_only>
 
