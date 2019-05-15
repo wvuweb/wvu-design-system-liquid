@@ -42,7 +42,7 @@
     col-sm-6 col-md-4
   </r:set_var>
 </r:if>
-<r:if expr="{{ NOT(contains(componentDisplayContext, 'as_full_width_block')) or NOT(contains(componentDisplayContext, 'wvu-backpage')) }}">
+<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!=">
   <r:set_var name="columnClasses">
     col-sm-12 col-md-12
   </r:set_var>
