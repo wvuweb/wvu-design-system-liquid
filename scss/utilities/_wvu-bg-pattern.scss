@@ -33,3 +33,11 @@
 .wvu-bg-pattern-grid-zoomed-transparent {
   @include wvu-bg-pattern(grid-zoomed-transparent);
 }
+
+.wvu-bg-topo-dark {
+  @include wvu-bg-pattern(topo-dark);
+}
+
+.wvu-bg-topo-light {
+  @include wvu-bg-pattern(topo-light);
+}

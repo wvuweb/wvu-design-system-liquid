@@ -16,6 +16,7 @@
     position: relative;
     &:before {
       background-image: url($wvu-white-pattern);
+      background-position: center;
       background-size: cover;
       bottom: 0;
       content: '';
@@ -31,6 +32,7 @@
     position: relative;
     &:before {
       background-image: url($wvu-slashes-gold-blue);
+      background-position: center;
       background-size: cover;
       bottom: 0;
       content: '';
@@ -46,6 +48,7 @@
     position: relative;
     &:before {
       background-image: url($wvu-slashes-gold-blue-white);
+      background-position: center;
       background-size: cover;
       bottom: 0;
       content: '';
@@ -62,6 +65,7 @@
     position: relative;
     &:before {
       background-image: url($wvu-grid-pattern);
+      background-position: center;
       background-size: cover;
       bottom: 0;
       content: '';
@@ -77,6 +81,7 @@
     position: relative;
     &:before {
       background-image: url($wvu-grid-pattern-transparent);
+      background-position: center;
       background-size: cover;
       bottom: 0;
       content: '';
@@ -92,6 +97,7 @@
     position: relative;
     &:before {
       background-image: url($wvu-grid-pattern-zoomed);
+      background-position: center;
       background-size: cover;
       bottom: 0;
       content: '';
@@ -107,6 +113,39 @@
     position: relative;
     &:before {
       background-image: url($wvu-grid-pattern-zoomed-transparent);
+      background-position: center;
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+  @if $pattern-type == 'topo-dark' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      background-image: url($wvu-topo-map-black);
+      background-position: center;
+      background-size: cover;
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: $wvu-z-index-grid;
+    }
+  }
+  @if $pattern-type == 'topo-light' {
+    background-size: cover;
+    position: relative;
+    &:before {
+      background-image: url($wvu-topo-map-white);
+      background-position: center;
       background-size: cover;
       bottom: 0;
       content: '';
