@@ -1,42 +1,3 @@
-<r:set_var name="columnClasses">
-  col-sm-6 col-md-3
-</r:set_var>
-<r:if v1="{$componentLimit}" v2="1" op="=">
-  <r:set_var name="columnClasses">
-    col
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="2" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="3" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="4" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="5" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4 col-lg-3
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="6" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="9" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
-</r:if>
-
 <r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
 <r:content_for name="{$defaultItemHeaderClasses}">h3 iowan-old-style-italic mb-1</r:content_for>
 <r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
@@ -61,6 +22,44 @@
   <r:comment><!-- Grab all of the items in the loop. --></r:comment>
   <r:loop:each times="{$componentLimit}">
     <r:set_var name="componentPanel">featurettes_<r:var name="componentInstance" />_panel_<r:item /></r:set_var>
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-3
+    </r:set_var>
+    <r:if v1="{$componentLimit}" v2="1" op="=">
+      <r:set_var name="columnClasses">
+        col
+      </r:set_var>
+    </r:if>
+    <r:if v1="{$componentLimit}" v2="2" op="=">
+      <r:set_var name="columnClasses">
+        col-sm-6 col-md
+      </r:set_var>
+    </r:if>
+    <r:if v1="{$componentLimit}" v2="3" op="=">
+      <r:set_var name="columnClasses">
+        col-sm-6 col-md
+      </r:set_var>
+    </r:if>
+    <r:if v1="{$componentLimit}" v2="4" op="=">
+      <r:set_var name="columnClasses">
+        col-sm-6 col-md
+      </r:set_var>
+    </r:if>
+    <r:if v1="{$componentLimit}" v2="5" op="=">
+      <r:set_var name="columnClasses">
+        col-sm-6 col-md-4 col-lg-3
+      </r:set_var>
+    </r:if>
+    <r:if v1="{$componentLimit}" v2="6" op="=">
+      <r:set_var name="columnClasses">
+        col-sm-6 col-md-4
+      </r:set_var>
+    </r:if>
+    <r:if v1="{$componentLimit}" v2="9" op="=">
+      <r:set_var name="columnClasses">
+        col-sm-6 col-md-4
+      </r:set_var>
+    </r:if>
     <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if><r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
       <r:partial name="includes/wvu-component-variables-temp" theme="University Relations: WVU Design System" />
       <r:set_var name="componentDisplayContext" value="{$componentPanel}" /><!-- Should actually be sidebar 1, 2, 3, etc. -->
