@@ -1,3 +1,6 @@
+hammer_nav:
+  disabled: false
+
 shared_themes:
   "Code": "code"
   "University Relations: WVU Design System": "wvu-design-system-components"
