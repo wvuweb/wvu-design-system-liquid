@@ -1,92 +1,95 @@
-<r:comment><!-- Pull in instance number from “slot” if using Super Theme, else set it to “1” (this can be overritten in your template if you need more than one instance of your component) --></r:comment>
+<r:comment><!-- Pull in instance number from a given “slot” if using Super Theme, else set it to “1” (this can also be overritten in your template if you need more than one instance of your component). We need to define an instance number in case we want to use the component more than once on a page. --></r:comment>
 <r:set_var name="componentInstance" value="{$instanceNumber}" default="1" />
 
-<r:comment><!-- Pull in scope from “slot” if using Super Theme, else set it to “page” (this can be overritten in your template if you need more than one instance of your component) --></r:comment>
+<r:comment><!-- Pull in scope from “slot” if using Super Theme, else set it to “page”. Can also be overwritten in template (the same goes for any other variables that accept values from a “slot”). --></r:comment>
 <r:set_var name="componentScope" value="{$scope}" default="page" />
 
-<r:comment><!-- Unique name of component (including which instance it is) we can reference when styling, for example when assigning a label to set a background image --></r:comment>
+<r:comment><!-- Unique name of component (combines base component name, which is defined in the component partial, with an instance number). We can use this when creating unique editable region names for our component, or for assigning a label to set as a background image to our component. --></r:comment>
 <r:set_var name="componentName">
   <r:var name="baseComponentName" />-<r:var name="componentInstance" />
 </r:set_var>
 
-<r:comment><!-- Define classes that get pulled in to style compoonent --></r:comment>
-<r:set_var name="itemClasses">
-  wvu-<r:var name="componentName" />-item-classes
-</r:set_var>
+<r:comment><!-- Pull in value from an “Is Main” checkbox in Super Theme. Gets used by a wvu-is-main-checker utility partial, which toggles between secion and main tags on the outer container of a component’s HTML. --></r:comment>
+<r:set_var name="componentIsMain" value="{$isMain}" default="false" />
 
-<r:comment><!-- Define classes that get pulled in to style compoonent --></r:comment>
-<r:set_var name="itemHeaderClasses">
-  wvu-<r:var name="componentName" />-item-header-classes
-</r:set_var>
+<r:comment><!-- Pull in value from an “Randomize” checkbox in Super Theme. Gets used by a featurettes component to randomize items when listing them. --></r:comment>
+<r:set_var name="componentIsRandom" value="{$isRandom}" default="false" />
 
-<r:comment><!-- Define classes that get pulled in to style compoonent --></r:comment>
-<r:set_var name="itemBodyClasses">
-  wvu-<r:var name="componentName" />-item-body-classes
-</r:set_var>
+<r:comment><!-- Pull in value from “Featurettes Style” dropdown in Super Theme. Gets used to determine which partial to use with a featurette (default, profiles, blog articles, etc.). --></r:comment>
+<r:set_var name="componentFeaturettesStyle" value="{$featurettesStyle}" default="default" />
 
-<r:comment><!-- List of labels that will allow us to assign a background image to the component --></r:comment>
+<r:comment><!-- Pull in value from “Featurettes ID” text box in Super Theme. Gets used by a featurette to know what partent to start from when cycling through children from which to grab and display content from. --></r:comment>
+<r:set_var name="componentFeaturettesID" value="{$featurettesID}" />
+
+<r:comment><!-- Pull in value from Alignment dropdown in Super Theme. Gets used by the hero component to set text to the left, center, or right. --></r:comment>
+<r:set_var name="componentAlign" value="{$align}" />
+
+<r:comment><!-- Pull in value from “Where to display” dropdown in Super Theme. Gets used by certain components that can accept other components embedded within them. In these components, we loop through all slots and if the display context matches, we pull in that component. --></r:comment>
+<r:set_var name="componentDisplayContext" value="{$whereToDisplay}" default="as_full_width_block" />
+
+<r:comment><!-- Pull in value from a “Limit” text box in Super Theme. Gets used to define how many items are displayed in a featurettes component. --></r:comment>
+<r:set_var name="componentLimit" value="{$limit}" default="4" />
+
+<r:comment><!-- Pull in value from a “Loop By” dropdown in Super Theme. Gets used by a featurettes partial to know what criteria should be evaluated when displaying items (sort order, slug, name, etc.). --></r:comment>
+<r:set_var name="componentLoopBy" value="{$loopBy}" default="sort_order" />
+
+<r:comment><!-- Pull in value from a “Loop Labels Match” dropdown in Super Theme. Gets used by a featurettes partial to know what labels to evaluate when displaying items. --></r:comment>
+<r:set_var name="componentLoopLabelsMatch" value="{$loopLabelsMatch}" default="all" />
+
+<r:comment><!-- Pull in value from a “Loop Order” dropdown in Super Theme. Gets used by a featurettes partial to know what criteria whether to display items in either ascending or descending order. --></r:comment>
+<r:set_var name="componentLoopOrder" value="{$loopOrder}" default="asc" />
+
+<r:comment><!-- Labels that will allow us to assign a background image to the component. --></r:comment>
 <r:set_var name="bgurl">
   <r:page:slug />-<r:var name="componentName" />-background
 </r:set_var>
 
-<r:comment><!-- Name of editable region where user can enter classes to style as_full_width_block --></r:comment>
+<r:comment><!-- Name of editable region where user can enter classes that will apply to the component’t outer container. --></r:comment>
 <r:set_var name="componentClasses">
   wvu-<r:var name="componentName" />-classes
 </r:set_var>
 
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
+<r:comment><!-- Name of editable region containing classes that get applied to a component’s outer container if no “component classes” are provided by the content editor. --></r:comment>
 <r:set_var name="defaultComponentClasses">
   wvu-<r:var name="componentName" />-default-component-classes
 </r:set_var>
 
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
+<r:comment><!-- Name of editable region containing classes that get applied to a component’s header if no “component header classes” are provided by the content editor. The editable region for the component header classes is defined in the component partial. --></r:comment>
 <r:set_var name="defaultHeaderClasses">
   wvu-<r:var name="componentName" />-default-header-classes
 </r:set_var>
 
+<r:comment><!-- Name of editable region containing classes that get applied to the outer container of a featurette’s items. --></r:comment>
+<r:set_var name="itemClasses">
+  wvu-<r:var name="componentName" />-item-classes
+</r:set_var>
+
+<r:comment><!-- Name of editable region containing classes that get applied to the header of a featurette’s items. --></r:comment>
+<r:set_var name="itemHeaderClasses">
+  wvu-<r:var name="componentName" />-item-header-classes
+</r:set_var>
+
+<r:comment><!-- Name of editable region containing classes that get applied to the body text of a featurette’s items. --></r:comment>
+<r:set_var name="itemBodyClasses">
+  wvu-<r:var name="componentName" />-item-body-classes
+</r:set_var>
+
+<r:comment><!-- Name of editable region containing classes that get applied to the outer container of a featurette’s items if no “item classes” are provided by the content editor. --></r:comment>
 <r:set_var name="defaultItemClasses">
   wvu-<r:var name="componentName" />-default-item-classes
 </r:set_var>
 
+<r:comment><!-- Name of editable region containing classes that get applied to the header of a featurette’s items if no “item header classes” are provided by the content editor. --></r:comment>
 <r:set_var name="defaultItemHeaderClasses">
   wvu-<r:var name="componentName" />-default-item-header-classes
 </r:set_var>
 
+<r:comment><!-- Name of editable region containing classes that get applied to the body text of a featurette’s items if no “item body classes” are provided by the content editor. --></r:comment>
 <r:set_var name="defaultItemBodyClasses">
   wvu-<r:var name="componentName" />-default-item-body-classes
 </r:set_var>
 
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
+<r:comment><!-- Name of editable region that lets the user define the button text that gets applied to items in a featurette. --></r:comment>
 <r:set_var name="componentReadMoreButtonText">
   wvu-<r:var name="componentName" />-button-text
 </r:set_var>
-
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
-<r:set_var name="componentIsMain" value="{$isMain}" default="false" />
-
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
-<r:set_var name="componentIsRandom" value="{$isRandom}" default="false" />
-
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
-<r:set_var name="componentHasSubnav" value="{$hasSubnav}" default="1" />
-
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
-<r:set_var name="componentFeaturettesStyle" value="{$featurettesStyle}" default="default" />
-
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
-<r:set_var name="componentFeaturettesID" value="{$featurettesID}" />
-
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
-<r:set_var name="componentAlign" value="{$align}" />
-
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
-<r:set_var name="componentDisplayContext" value="{$whereToDisplay}" default="as_full_width_block" />
-
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
-<r:set_var name="componentLimit" value="{$limit}" default="4" />
-
-<r:comment><!-- Classes that get pulled in to style as_full_width_block if no “component classes” are provided --></r:comment>
-<r:set_var name="componentLoopBy" value="{$loopBy}" default="sort_order" />
-
-<r:comment><!-- This is the name of the template we check against to see if the partial is being used on the WVU Design System demo site. --></r:comment>
-<r:set_var name="templateNameComponent">component-examples</r:set_var>
