@@ -3,57 +3,89 @@
 }
 
 @mixin helvetica-neue() {
-  font-family: $helvetica-neue-font-stack !important;
+  font-family: $helvetica-neue-fallback !important;
+  .expanded-fonts-loaded & {
+    font-family: $helvetica-neue !important;
+  }
 }
 
 @mixin helvetica-neue-bold() {
-  font-family: $helvetica-neue-bold !important;
+  font-family: $helvetica-neue-fallback !important;
   font-weight: bold !important;
+  .expanded-fonts-loaded & {
+    font-family: $helvetica-neue-bold !important;
+    font-weight: normal !important;
+  }
 }
 
 @mixin helvetica-neue-light() {
-  font-family: $helvetica-neue-light !important;
+  font-family: $helvetica-neue-fallback !important;
   font-weight: normal !important;
   -webkit-font-smoothing: antialiased !important;
-  .fonts-loaded & {
+  .base-fonts-loaded & {
     font-family: $helvetica-neue-light !important;
   }
 }
 
 // NOTE: You must include the fonts.com script for the Iowan web font to use Iowan as you see here.
 @mixin iowan-old-style() {
-  font-family: $iowan-old-style !important;
-  font-weight: normal;
+  font-family: $iowan-fallback !important;
+  font-weight: normal !important;
   line-height: $wvu-traditional-audience-line-height !important;
   -webkit-font-smoothing: antialiased !important;
+  .expanded-fonts-loaded & {
+    font-family: $iowan-old-style !important;
+  }
 }
 
 @mixin iowan-old-style-italic() {
-  font-family: $iowan-old-style-italic !important;
+  font-family: $iowan-fallback !important;
+  font-style: italic !important;
   font-weight: normal !important;
   line-height: $wvu-traditional-audience-line-height !important;
   -webkit-font-smoothing: antialiased !important;
+  .expanded-fonts-loaded & {
+    font-family: $iowan-old-style-italic !important;
+    font-style: normal !important;
+  }
 }
 
 @mixin iowan-old-style-black() {
-  font-family: $iowan-old-style-black !important;
-  font-weight: normal;
+  font-family: $iowan-fallback !important;
+  font-weight: bold !important;
   line-height: $wvu-traditional-audience-line-height !important;
   -webkit-font-smoothing: antialiased !important;
+  .expanded-fonts-loaded & {
+    font-family: $iowan-old-style-black !important;
+    font-weight: normal !important;
+  }
 }
 
 @mixin iowan-old-style-black-italic() {
-  font-family: $iowan-old-style-black-italic !important;
-  font-weight: normal !important;
+  font-family: $iowan-fallback;
+  font-style: italic !important;
+  font-weight: bold !important;
   line-height: $wvu-traditional-audience-line-height !important;
   -webkit-font-smoothing: antialiased !important;
+  .expanded-fonts-loaded & {
+    font-family: $iowan-old-style-black-italic !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+  }
 }
 
 @mixin wvu-shout() {
-  font-family: $wvu-shout-font-family !important;
+  font-family: $wvu-shout-fallback !important;
+  font-weight: bolder !important;
+  letter-spacing: -.4px !important;
   line-height: $wvu-shout-line-height !important;
   text-transform: uppercase !important;
   word-break: break-word !important;
+  .base-fonts-loaded & {
+    font-family: $wvu-shout-font-family !important;
+    font-weight: normal !important;
+    letter-spacing: 0 !important;
+  }
 }
 
 @mixin wvu-first-line-gold() {

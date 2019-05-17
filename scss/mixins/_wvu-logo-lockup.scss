@@ -1,11 +1,11 @@
 @mixin wvu-logo-lockup() {
+  @include helvetica-neue();
   background-image: url($wvu-flying-wv-w-signature) !important;
   background-repeat: no-repeat !important;
   background-position: 0 -0.09em !important;
   background-size: 22.25em 3.5em !important;
   color: white !important;
   display: inline-block !important;
-  font-family: $helvetica-neue-font-stack !important;
   font-size: .5rem !important;
   font-weight: normal !important;
   line-height: 1.4em !important;

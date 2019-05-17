@@ -1,3 +1,10 @@
+body {
+  font-family: $helvetica-neue-fallback;
+  .expanded-fonts-loaded & {
+    font-family: $helvetica-neue;
+  }
+}
+
 a {
   &:focus {
     outline: auto 2px Highlight; // for non-webkit browsers
