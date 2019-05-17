@@ -6,24 +6,22 @@
 <r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
 <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
-<r:comment><!-- Define editable region names --></r:comment>
+<r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
 <r:set_var name="componentHeader">wvu-<r:var name="componentName" />__header</r:set_var>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
-
-<r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also be applied by default if the content editor does not apply her own. --></r:comment>
-<r:content_for name="{$defaultComponentClasses}">text-center wvu-bg-pattern-gold text-wvu-blue</r:content_for>
-
-<r:comment><!-- Suggestions for what utility classes to assign to this component. These will also be applied by default if the content editor does not apply her own. --></r:comment>
-<r:content_for name="{$defaultHeaderClasses}">display-2 wvu-shout</r:content_for>
-
-<r:comment><!-- The editable region name that will be used to enter classes on this components <h1> element. --></r:comment>
 <r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
 
+<r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
+<r:content_for name="{$defaultComponentClasses}">text-center wvu-bg-pattern-gold text-wvu-blue</r:content_for>
+<r:content_for name="{$defaultHeaderClasses}">display-2 wvu-shout</r:content_for>
+
+<r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
+<r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
 <!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="jumbotron jumbotron-fluid mb-0 wvu-overflow-hidden wvu-background-size-cover <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container position-relative wvu-z-index-content text-center">
     <div class="row">
       <div class="col-md-8 mx-auto">
-        <r:comment><!-- This uses a variable to define the name of the editable region. In the Super Theme, this is defined dynamically. If you are making a custom theme, and want to reference this partial more than once in the same tempalte, you will need to define an instance number (set_var name="componentInstance" value="something") when you insert each partial. --></r:comment>
+        <r:comment><!-- This is where you can add utility classes that will apply to the hero’s heading. --></r:comment>
         <r:edit_mode_only>
           <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
             <pre class="mb-0 text-white"><r:editable_region name="{$headerClasses}" type="simple" /></pre>
@@ -39,6 +37,7 @@
       </div>
     </div>
   </div>
+<r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
 </<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->
 
 <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />

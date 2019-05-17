@@ -6,7 +6,7 @@
 <r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
 <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
-<r:comment><!-- Define editable region names --></r:comment>
+<r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
 <r:set_var name="componentSidebarTop">wvu-<r:var name="componentName" />__sidebar-top</r:set_var>
 <r:set_var name="componentFigure">wvu-<r:var name="componentName" />__figure</r:set_var>
@@ -18,15 +18,11 @@
 <r:set_var name="componentWebsite">wvu-<r:var name="componentName" />__website</r:set_var>
 <r:set_var name="componentDownload">wvu-<r:var name="componentName" />__download</r:set_var>
 
-<r:comment><!-- Suggestions for what utility classes to assign to this components’s stylable elements. These will also be applied by default if the content editor does not apply her own. --></r:comment>
+<r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}"></r:content_for>
 
-<r:comment><!-- Content that gets pulled into the editable regions by default. Normally you don’t need to do this. I’m doing this so I can keep default content for each region in one palce, then pull it into the WVU Design System demo site. If you want to make a copy of this component, you can delete the following “content_for” lines and replace the “yield” snippets in the markup with the actual content. --></r:comment>
-<r:content_for name="{$componentMain}"></r:content_for>
-<r:content_for name="{$componentSidebarTop}"></r:content_for>
-<r:content_for name="{$componentFigure}"></r:content_for>
-<r:content_for name="{$componentFigcaption}"></r:content_for>
-
+<r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
+<r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
 <!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="py-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container">
     <div class="row">
@@ -88,7 +84,8 @@
       </div>
     </div>
   </div>
+<r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
 </<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->
 
-<r:comment><!-- Pull in partial that allows user to edit classes for component in CleanSlate editor --></r:comment>
+<r:comment><!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. --></r:comment>
 <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />

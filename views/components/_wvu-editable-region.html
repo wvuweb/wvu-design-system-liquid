@@ -6,7 +6,7 @@
 <r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
 <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
-<r:comment><!-- Define editable region names --></r:comment>
+<r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
 
 <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Editable Region</span></r:edit_mode_only>

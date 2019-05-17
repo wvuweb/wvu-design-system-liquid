@@ -11,7 +11,7 @@
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
 <r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
 
-<r:comment><!-- Suggestions for what utility classes to assign to this components’s stylable elements. These will be applied by default if the content editor does not apply her own. --></r:comment>
+<r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">bg-dark text-white wvu-bg-position-center wvu-bg-size-cover wvu-bg-vignetting</r:content_for>
 <r:content_for name="{$defaultHeaderClasses}">display-1 wvu-shout wvu-slash</r:content_for>
 
@@ -48,7 +48,7 @@
       </div>
     </div>
   </div>
-  <r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
+<r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
 </<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup --><r:comment><!-- Closing main/section tag is the closing markup tag. --></r:comment>
 
 <r:comment><!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. --></r:comment>
