@@ -1,7 +1,9 @@
-<r:comment><!-- Provide a base name for this component. We can use this later to dynamically create things like editable region names --></r:comment>
+<r:comment><!-- For a detailed look at the concepts behind a shared partial, see https://designsystem.sandbox.wvu.edu/tutorials/the-anatomy-of-a-shared-partial. --></r:comment>
+
+<r:comment><!-- Define a base name for this component. We can use this later to dynamically create editable region names --></r:comment>
 <r:set_var name="baseComponentName" value="breadcrumbs" />
 
-<r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
+<r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
 <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also show up by default if the content editor does not apply her own. --></r:comment>
@@ -23,6 +25,4 @@
 </section>
 
 <r:comment><!-- Pull in component instructions and allow user to edit classes for component in CleanSlate editor --></r:comment>
-<r:if v1="{page:template:name}" v2="{$templateNameComponent}" op="!=">
-  <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
-</r:if>
+<r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
