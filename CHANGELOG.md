@@ -1,5 +1,23 @@
 # Change Log
 
+## [v0.1.0](https://github.com/wvuweb/wvu-design-system/tree/v0.1.0) (2019-05-20)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.4...v0.1.0)
+
+**Implemented enhancements:**
+
+- Bump logo lockup one spacing unit in masthead [\#76](https://github.com/wvuweb/wvu-design-system/issues/76)
+- Add "active" checkbox for each partial. [\#71](https://github.com/wvuweb/wvu-design-system/issues/71)
+- Add ability to style buttons for featurettes. [\#70](https://github.com/wvuweb/wvu-design-system/issues/70)
+- Add topographic map utilities [\#68](https://github.com/wvuweb/wvu-design-system/issues/68)
+- Remove conditional statements for demo template... [\#63](https://github.com/wvuweb/wvu-design-system/issues/63)
+- Make buttons in masthead align to the right if no parent organization [\#60](https://github.com/wvuweb/wvu-design-system/issues/60)
+- Add Fontface Observer back in. [\#50](https://github.com/wvuweb/wvu-design-system/issues/50)
+
+**Fixed bugs:**
+
+- Blog Articles sidebar is broke. [\#73](https://github.com/wvuweb/wvu-design-system/issues/73)
+- Masthead Gold not working on Demo site. [\#57](https://github.com/wvuweb/wvu-design-system/issues/57)
+
 ## [v0.0.4](https://github.com/wvuweb/wvu-design-system/tree/v0.0.4) (2019-05-15)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...v0.0.4)
 
@@ -14,7 +32,6 @@
 - Build CleanSlate version of masthead with all options [\#56](https://github.com/wvuweb/wvu-design-system/issues/56)
 - Create demo version of masthead component [\#54](https://github.com/wvuweb/wvu-design-system/issues/54)
 - Make a stat sheet component... [\#53](https://github.com/wvuweb/wvu-design-system/issues/53)
-- Add Fontface Observer back in. [\#50](https://github.com/wvuweb/wvu-design-system/issues/50)
 - Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
 - Headings for each section type on utilities and components pages [\#40](https://github.com/wvuweb/wvu-design-system/issues/40)
 - Focus Indicator [\#27](https://github.com/wvuweb/wvu-design-system/issues/27)
