@@ -2,28 +2,29 @@
 //==================================================
 
 // Helvetica Neue
-$helvetica-neue-font-stack: 'HelveticaNeueW01-55Roma', 'Helvetica Neue', Helvetica, 'Helvetica LT Std', 'Helvetica CY', Arial, 'Lucida Grande', sans-serif !default;
-$helvetica-neue-light: 'HelveticaNeueW01-45Ligh', $helvetica-neue-font-stack !default;
-$helvetica-neue-bold: 'Helvetica Neue LT W01_75 Bold', $helvetica-neue-font-stack !default;
-$helvetica-neue-condensed-black: 'HelveticaNeueW01-97Blac', $helvetica-neue-font-stack !default;
+$helvetica-neue-fallback: 'Helvetica Neue', Helvetica, 'Helvetica LT Std', 'Helvetica CY', Arial, 'Lucida Grande', sans-serif !default;
+$helvetica-neue: 'HelveticaNeueW01-55Roma', $helvetica-neue-fallback;
+
+// Webfonts from Fonts.com
+$helvetica-neue-light: 'HelveticaNeueW01-45Ligh', $helvetica-neue-fallback !default;
+$helvetica-neue-bold: 'Helvetica Neue LT W01_75 Bold', $helvetica-neue-fallback !default;
+$helvetica-neue-condensed-black: 'HelveticaNeueW01-97Blac', $helvetica-neue-fallback !default;
 
 // Iowan
-$iowan-old-style: 'IowanOldStyleW01-Roman', Georgia, Times, serif !default;
-$iowan-old-style-italic: 'IowanOldStyleW01-Italic1120392', Georgia, Times, serif !default;
-$iowan-old-style-black: 'IowanOldStyleW01-Black' !default;
-$iowan-old-style-black-italic: 'IowanOldStyleW01-BlackI', Georgia, Times, serif !default;
+$iowan-fallback: Iowan, Georgia, 'Times New Roman', Times, serif !default;
+$iowan-old-style: 'IowanOldStyleW01-Roman', $iowan-fallback !default;
+$iowan-old-style-italic: 'IowanOldStyleW01-Italic1120392', $iowan-fallback !default;
+$iowan-old-style-black: 'IowanOldStyleW01-Black', $iowan-fallback !default;
+$iowan-old-style-black-italic: 'IowanOldStyleW01-BlackI', $iowan-fallback !default;
 
 // Shout
+$wvu-shout-fallback: 'Arial Narrow', Impact, Charcoal, 'Arial Black', $helvetica-neue-fallback !default;
 $wvu-shout-font-family: $helvetica-neue-condensed-black !default;
-
-// Lead
-$wvu-lead-font-family: $helvetica-neue-light !default;
 
 // Font size
 $wvu-font-size-base: 1rem !default;
 
 // Paragraph measure
-
 $wvu-p-measure: 48rem !default;
 
 // Line height
@@ -66,19 +67,16 @@ $wvu-accent--yellow: #FDDA24;
 
 // Masthead
 //==================================================
-
 $wvu-flying-wv-w-signature: 'https://static.wvu.edu/global/images/logos/wvu/wvu-logo--2.0.0.svg' !default;
 $wvu-flying-wv-w-signature--blue: 'https://static.wvu.edu/global/images/logos/wvu/wvu-logo__blue--2.0.0.svg' !default;
 
 // Hero Elements
 //==================================================
-
 $wvu-shout-font-size-medium: 4.5em !default;
 $wvu-shout-font-size-long: 3em !default;
 $wvu-shout-margin: 0 0 .5em !default;
 
 // Hero Typography
-
 $wvu-hero-font-color: white !default;
 $wvu-hero-title-typeface: $wvu-shout-font-family !default;
 $wvu-hero-vignetting-opacity: .85 !default;
@@ -102,7 +100,6 @@ $wvu-topo-map-black: "https://static.wvu.edu/global/images/patterns/wvu/backgrou
 $wvu-topo-map-white: "https://static.wvu.edu/global/images/patterns/wvu/background__topo-white-transparent--1.0.0.png";
 
 // WVU Elements
-
 $wvu-bar-color: $wvu-gold !default;
 $wvu-bar-position: 'top' !default;
 $wvu-bar-width: 7rem !default;
@@ -116,7 +113,6 @@ $wvu-z-index-angle-container: -1 !default;
 $wvu-z-index-vignetting: 1 !default;
 
 // WVU Breakpoints
-
 $wvu-bp-xs: 0 !default;
 $wvu-bp-sm: 576px !default;
 $wvu-bp-md: 768px !default;
@@ -135,7 +131,6 @@ $wvu-breakpoints: (
 
 // Bootstrap Overrides
 //==================================================
-
 $sizes: (
   10: 10%,
   20: 20%,
@@ -211,7 +206,7 @@ $dark: $wvu-neutral--black;
 $display1-size: 7rem;
 $font-size-base: 1rem;
 $emphasized-link-hover-darken-percentage: 0%;
-$font-family-sans-serif: $helvetica-neue-font-stack;
+$font-family-sans-serif: $helvetica-neue-fallback;
 $jumbotron-bg: transparent;
 $jumbotron-padding: 4rem;
 $lead-font-size: ($font-size-base * 1.5);

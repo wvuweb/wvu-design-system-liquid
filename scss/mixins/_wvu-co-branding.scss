@@ -1,5 +1,5 @@
 @mixin wvu-co-branding() {
-  font-family: $helvetica-neue-bold !important;
+  @include helvetica-neue-bold();
   font-size: .8rem !important;
   line-height: 1em !important;
   @media (min-width: $wvu-bp-sm) {

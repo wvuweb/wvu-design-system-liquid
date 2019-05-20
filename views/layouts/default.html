@@ -69,14 +69,20 @@
       </r:edit_mode_only>
     </r:if>
 
-    <script src="https://fast.fonts.net/jsapi/36d8cd92-7cc7-499b-b169-0eed9d670283.js"></script> <r:comment><!-- Helvetica Neue Light & Bold Condensed web font, valid for *.wvu.edu, *.wvutech.edu, & localhost --></r:comment>
+    <r:comment>
+      <!-- Helvetica Neue Light, Bold, & Condensed Black + Iowan Old Style, Italic, Black, & Black Italic web font from fonts.com. -->
+      <!-- Valid for *.wvu.edu, *.wvutech.edu, *.potomacstatecollege.edu & localhost. -->
+      <!-- Email web_services@mail.wvu.edu to get your domain added to this list. -->
+    </r:comment>
+    <script src="https://fast.fonts.net/jsapi/36d8cd92-7cc7-499b-b169-0eed9d670283.js"></script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <r:include_javascript name="vendor/responsive-nav-dropdown, responsive-nav-dropdown--custom, vendor/twitterFetcher, vendor/jquery.magnific-popup, vendor/fontfaceobserver-1.5.1, fontfaceobserver__custom" />
+    <r:include_javascript name="vendor/responsive-nav-dropdown, responsive-nav-dropdown--custom, vendor/twitterFetcher, vendor/jquery.magnific-popup, vendor/fontfaceobserver-2.1.0, fontfaceobserver__custom" />
 
     <r:yield name="page_js">
       <r:content />
@@ -86,11 +92,11 @@
 
       $('.fa-question-circle').popover({
         trigger: 'focus'
-      })
+      });
 
       $('button').popover({
         trigger: 'focus'
-      })
+      });
 
     </script>
 
