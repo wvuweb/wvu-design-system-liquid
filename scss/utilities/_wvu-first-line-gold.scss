@@ -1,5 +1,5 @@
 .wvu-first-line-gold {
   &::first-line {
-    color: $wvu-gold !important;
+    color: $wvu-gold $global-important;
   }
 }

@@ -11,7 +11,7 @@ $i: 90;
   .wvu-bg-blend-mode-luminosity--#{$i} {
     @extend %wvu-bg-blend-mode-luminosity;
     &:before {
-      opacity: $i * .01 !important;
+      opacity: $i * .01 $global-important;
     }
   }
   $i: $i - 10;

@@ -1,82 +1,82 @@
-@mixin wvu-slash($color, $width, $position) {
-  position: relative !important;
-  z-index: 0 !important;
+@mixin wvu-slash($color, $width, $position, $is-important: $global-important) {
+  position: relative $is-important;
+  z-index: 0 $is-important;
   &:before {
     background-color: $color;
-    content: '' !important;
-    position: absolute !important;
+    content: '' $is-important;
+    position: absolute $is-important;
     right: 0;
     left: -.5em;
     height: $wvu-slash-height;
     max-height: 15rem;
     top: -25%;
     width: $wvu-slash-width;
-    opacity: 1 !important;
-    z-index: $wvu-z-index-slash !important;
-    -ms-transform: skewX(149deg) !important; /* IE 9 */
-    -webkit-transform: skewX(149deg) !important; /* Safari */
-    transform: skewX(149deg) !important;
+    opacity: 1 $is-important;
+    z-index: $wvu-z-index-slash $is-important;
+    -ms-transform: skewX(149deg) $is-important; /* IE 9 */
+    -webkit-transform: skewX(149deg) $is-important; /* Safari */
+    transform: skewX(149deg) $is-important;
   }
   @if $color == 'white' {
     &:before {
-      background-color: $wvu-neutral--white !important;
+      background-color: $wvu-neutral--white $is-important;
     }
   }
   @if $color == 'blue' {
     &:before {
-      background-color: $wvu-blue !important;
+      background-color: $wvu-blue $is-important;
     }
   }
   @if $width == 'skinny' {
     &:before {
-      left: -.25em !important;
-      width: $wvu-slash-width * .5 !important;
+      left: -.25em $is-important;
+      width: $wvu-slash-width * .5 $is-important;
     }
   }
   @if $position == 'center' {
-    display: inline-block !important;
+    display: inline-block $is-important;
     &:before {
-      left: auto !important;
-      right: calc(50% - .5em) !important;
+      left: auto $is-important;
+      right: calc(50% - .5em) $is-important;
     }
   }
   @if $position == 'center-bottom' {
-    display: inline-block !important;
+    display: inline-block $is-important;
     &:before {
-      bottom: 0 !important;
-      left: auto !important;
-      right: calc(50% - .5em) !important;
-      top: auto !important;
+      bottom: 0 $is-important;
+      left: auto $is-important;
+      right: calc(50% - .5em) $is-important;
+      top: auto $is-important;
     }
   }
   @if $position == 'right' {
-    display: inline-block !important;
+    display: inline-block $is-important;
     &:before {
-      left: auto !important;
-      right: -1em !important;
+      left: auto $is-important;
+      right: -1em $is-important;
     }
   }
   @if $position == 'right-bottom' {
-    display: inline-block !important;
+    display: inline-block $is-important;
     &:before {
-      bottom: 0 !important;
-      left: auto !important;
-      right: -1em !important;
-      top: auto !important;
+      bottom: 0 $is-important;
+      left: auto $is-important;
+      right: -1em $is-important;
+      top: auto $is-important;
     }
   }
 }
 
-@mixin wvu-slashes($color) {
+@mixin wvu-slashes($color, $is-important: $global-important) {
   list-style-type: none;
   li {
-    display: block !important;
+    display: block $is-important;
     &:before {
-      color: $color !important;
-      height: 1em !important;
-      width: .5em !important;
-      left: -1.5rem !important;
-      top: .25em !important;
+      color: $color $is-important;
+      height: 1em $is-important;
+      width: .5em $is-important;
+      left: -1.5rem $is-important;
+      top: .25em $is-important;
     }
   }
 }

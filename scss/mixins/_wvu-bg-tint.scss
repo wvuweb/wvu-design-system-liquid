@@ -1,5 +1,5 @@
-@mixin wvu-bg-tint($wvu-tint-opacity) {
-  background-size: cover !important;
+@mixin wvu-bg-tint($wvu-tint-opacity, $is-important: $global-important) {
+  background-size: cover $is-important;
   position: relative;
   &:before {
     content: '';
@@ -14,42 +14,42 @@
   }
   &.wvu-bg-pattern-grid {
     &:before {
-      background-image: url($wvu-grid-pattern), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+      background-image: url($wvu-grid-pattern), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) $is-important;
     }
   }
   &.wvu-bg-pattern-grid-transparent {
     &:before {
-      background-image: url($wvu-grid-pattern-transparent), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+      background-image: url($wvu-grid-pattern-transparent), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) $is-important;
     }
   }
   &.wvu-bg-pattern-grid-zoomed {
     &:before {
-      background-image: url($wvu-grid-pattern-zoomed), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+      background-image: url($wvu-grid-pattern-zoomed), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) $is-important;
     }
   }
   &.wvu-bg-pattern-grid-zoomed-transparent {
     &:before {
-      background-image: url($wvu-grid-pattern-zoomed-transparent), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+      background-image: url($wvu-grid-pattern-zoomed-transparent), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) $is-important;
     }
   }
   &.wvu-bg-topo-dark {
     &:before {
-      background-image: url($wvu-topo-map-black), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+      background-image: url($wvu-topo-map-black), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) $is-important;
     }
   }
   &.wvu-bg-topo-light {
     &:before {
-      background-image: url($wvu-topo-map-white), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+      background-image: url($wvu-topo-map-white), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) $is-important;
     }
   }
   &.wvu-bg-pattern-slashes-gold-blue {
     &:before {
-      background-image: url($wvu-slashes-gold-blue), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+      background-image: url($wvu-slashes-gold-blue), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) $is-important;
     }
   }
   &.wvu-bg-pattern-slashes-gold-blue-white {
     &:before {
-      background-image: url($wvu-slashes-gold-blue-white), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+      background-image: url($wvu-slashes-gold-blue-white), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) $is-important;
     }
   }
 }

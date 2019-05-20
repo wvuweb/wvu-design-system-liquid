@@ -1,7 +1,7 @@
 .wvu-nav {
   position: relative;
   .active {
-    background-color: transparent !important;
+    background-color: transparent $global-important;
   }
   > ul {
     > li {

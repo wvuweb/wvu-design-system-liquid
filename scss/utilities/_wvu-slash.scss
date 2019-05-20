@@ -4,56 +4,56 @@
 
 .wvu-slash--blue {
   &:before {
-    background-color: $wvu-blue !important;
+    background-color: $wvu-blue $global-important;
   }
 }
 
 .wvu-slash--white {
   &:before {
-    background-color: $wvu-neutral--white !important;
+    background-color: $wvu-neutral--white $global-important;
   }
 }
 
 .wvu-slash--skinny {
   &:before {
-    left: -.25em !important;
-    width: $wvu-slash-width * .5 !important;
+    left: -.25em $global-important;
+    width: $wvu-slash-width * .5 $global-important;
   }
 }
 
 .wvu-slash--center {
-  display: inline-block !important;
+  display: inline-block $global-important;
   &:before {
-    left: auto !important;
-    right: calc(50% - .5em) !important;
+    left: auto $global-important;
+    right: calc(50% - .5em) $global-important;
   }
 }
 
 .wvu-slash--center-bottom {
-  display: inline-block !important;
+  display: inline-block $global-important;
   &:before {
-    bottom: 0 !important;
-    left: auto !important;
-    right: calc(50% - .5em) !important;
-    top: auto !important;
+    bottom: 0 $global-important;
+    left: auto $global-important;
+    right: calc(50% - .5em) $global-important;
+    top: auto $global-important;
   }
 }
 
 .wvu-slash--right {
-  display: inline-block !important;
+  display: inline-block $global-important;
   &:before {
-    left: auto !important;
-    right: -1em !important;
+    left: auto $global-important;
+    right: -1em $global-important;
   }
 }
 
 .wvu-slash--right-bottom {
-  display: inline-block !important;
+  display: inline-block $global-important;
   &:before {
-    bottom: 0 !important;
-    left: auto !important;
-    right: -1em !important;
-    top: auto !important;
+    bottom: 0 $global-important;
+    left: auto $global-important;
+    right: -1em $global-important;
+    top: auto $global-important;
   }
 }
 
@@ -63,22 +63,22 @@ $i: 1;
   .wvu-slash {
     &.wvu-slash--#{$i}-left {
       &:before {
-        left: -($i * $spacer) !important;
+        left: -($i * $spacer) $global-important;
       }
     }
     &.wvu-slash--#{$i}-right {
       &:before {
-        left: ($i * $spacer) !important;
+        left: ($i * $spacer) $global-important;
       }
     }
     &.wvu-slash--#{$i}-up {
       &:before {
-        top: calc(-25% + -(#{$i} * #{$spacer})) !important;
+        top: calc(-25% + -(#{$i} * #{$spacer})) $global-important;
       }
     }
     &.wvu-slash--#{$i}-down {
       &:before {
-        top: calc(-25% + (#{$i} * #{$spacer})) !important;
+        top: calc(-25% + (#{$i} * #{$spacer})) $global-important;
       }
     }
     $i: $i + 1;

@@ -1,17 +1,17 @@
 .wvu-column-count-2 {
-  column-count: 2 !important;
+  column-count: 2 $global-important;
 }
 
 .wvu-column-count-3 {
-  column-count: 3 !important;
+  column-count: 3 $global-important;
 }
 
 .wvu-column-count-4 {
-  column-count: 4 !important;
+  column-count: 4 $global-important;
 }
 
 .wvu-column-count-5 {
-  column-count: 5 !important;
+  column-count: 5 $global-important;
 }
 
 @each $bp-value, $breakpoint in (xs, $wvu-bp-xs),
@@ -21,19 +21,19 @@
                                 (xl, $wvu-bp-xl) {
   @media (min-width: $breakpoint) {
     .wvu-column-count-#{$bp-value}-1 {
-      column-count: 1 !important;
+      column-count: 1 $global-important;
     }
     .wvu-column-count-#{$bp-value}-2 {
-      column-count: 2 !important;
+      column-count: 2 $global-important;
     }
     .wvu-column-count-#{$bp-value}-3 {
-      column-count: 3 !important;
+      column-count: 3 $global-important;
     }
     .wvu-column-count-#{$bp-value}-4 {
-      column-count: 4 !important;
+      column-count: 4 $global-important;
     }
     .wvu-column-count-#{$bp-value}-5 {
-      column-count: 5 !important;
+      column-count: 5 $global-important;
     }
   }
 }

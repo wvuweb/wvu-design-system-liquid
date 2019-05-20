@@ -7,7 +7,7 @@ $i: 90;
   .wvu-bg-vignetting--#{$i} {
     @extend %wvu-bg-vignetting;
     &:before {
-      opacity: $i * .01 !important;
+      opacity: $i * .01 $global-important;
     }
   }
   $i: $i - 10;

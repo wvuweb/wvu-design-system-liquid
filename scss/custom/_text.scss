@@ -11,61 +11,61 @@
 // NOTE: These override Bootstrap’s .display classes. If you are using a framework other than Bootstrap, you can delete these.
 
 .display-1 {
-  font-size: 3rem !important;
+  font-size: 3rem $global-important;
 }
 
 .display-2 {
-  font-size: 3rem !important;
+  font-size: 3rem $global-important;
 }
 
 .display-3 {
-  font-size: 3rem !important;
+  font-size: 3rem $global-important;
 }
 .display-4 {
-  font-size: 3rem !important;
+  font-size: 3rem $global-important;
 }
 
 @include media-breakpoint-up(sm) {
   .display-1 {
-    font-size: 4.5rem !important;
+    font-size: 4.5rem $global-important;
   }
   .display-2 {
-    font-size: 3rem !important;
+    font-size: 3rem $global-important;
   }
   .display-3 {
-    font-size: 3rem !important;
+    font-size: 3rem $global-important;
   }
   .display-4 {
-    font-size: 3rem !important;
+    font-size: 3rem $global-important;
   }
 }
 
 @include media-breakpoint-up(md) {
   .display-1 {
-    font-size: 5rem !important;
+    font-size: 5rem $global-important;
   }
   .display-2 {
-    font-size: 3rem !important;
+    font-size: 3rem $global-important;
   }
   .display-3 {
-    font-size: 3rem !important;
+    font-size: 3rem $global-important;
   }
   .display-4 {
-    font-size: 3rem !important;
+    font-size: 3rem $global-important;
   }
 }
 
 @include media-breakpoint-up(lg) {
   .display-1 {
-    font-size: $display1-size !important;
+    font-size: $display1-size $global-important;
   }
   .display-2 {
-    font-size: $display2-size !important;
+    font-size: $display2-size $global-important;
   }
   .display-3 {
-    font-size: $display3-size !important;
+    font-size: $display3-size $global-important;
   }
   .display-4 {
-    font-size: $display4-size !important;
+    font-size: $display4-size $global-important;
   }
 }

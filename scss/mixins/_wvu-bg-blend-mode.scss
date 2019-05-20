@@ -1,22 +1,22 @@
-@mixin wvu-bg-blend-mode($blend-mode) {
+@mixin wvu-bg-blend-mode($blend-mode, $is-important: $global-important) {
   @if $blend-mode == 'lighten' {
-    background-blend-mode: lighten !important;
-    background-color: $wvu-blue !important;
-    background-size: cover !important;
+    background-blend-mode: lighten $is-important;
+    background-color: $wvu-blue $is-important;
+    background-size: cover $is-important;
   }
   @if $blend-mode == 'luminosity' {
-    background-blend-mode: luminosity !important;
-    background-size: cover !important;
+    background-blend-mode: luminosity $is-important;
+    background-size: cover $is-important;
     position: relative;
     &:before {
-      background-color: inherit !important;
-      bottom: 0 !important;
-      content: '' !important;
-      left: 0 !important;
-      opacity: .8 !important;
-      position: absolute !important;
-      right: 0 !important;
-      top: 0 !important;
+      background-color: inherit $is-important;
+      bottom: 0 $is-important;
+      content: '' $is-important;
+      left: 0 $is-important;
+      opacity: .8 $is-important;
+      position: absolute $is-important;
+      right: 0 $is-important;
+      top: 0 $is-important;
     }
   }
 }

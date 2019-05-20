@@ -99,6 +99,9 @@ $wvu-grid-pattern-zoomed-transparent: "https://static.wvu.edu/global/images/patt
 $wvu-topo-map-black: "https://static.wvu.edu/global/images/patterns/wvu/background__topo-black-transparent--1.0.0.png";
 $wvu-topo-map-white: "https://static.wvu.edu/global/images/patterns/wvu/background__topo-white-transparent--1.0.0.png";
 
+// Make !important configurable
+$global-important: !important !default; // Set to `null` to remove !important from all CSS property values, except where explicitly defined otherwise in mixin @includes.
+
 // WVU Elements
 $wvu-bar-color: $wvu-gold !default;
 $wvu-bar-position: 'top' !default;

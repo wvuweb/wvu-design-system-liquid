@@ -1,17 +1,17 @@
 .wvu-bg-none {
-  background-image: none !important;
+  background-image: none $global-important;
 }
 
 .wvu-bg-sm-none {
   @media (max-width: $wvu-bp-sm) {
-    background-image: none !important;
+    background-image: none $global-important;
   }
 }
 
 .wvu-bg-size-contain {
-  background-size: contain !important;
+  background-size: contain $global-important;
 }
 
 .wvu-bg-size-cover {
-  background-size: cover !important;
+  background-size: cover $global-important;
 }

@@ -1,17 +1,17 @@
 .wvu-bg-position-center {
-  background-position: 50% 50% !important;
+  background-position: 50% 50% $global-important;
 }
 .wvu-bg-position-bottom {
-  background-position: bottom !important;
+  background-position: bottom $global-important;
 }
 .wvu-bg-position-top {
-  background-position: top !important;
+  background-position: top $global-important;
 }
 .wvu-bg-position-left {
-  background-position: left !important;
+  background-position: left $global-important;
 }
 .wvu-bg-position-right {
-  background-position: right !important;
+  background-position: right $global-important;
 }
 
 @each $bp-value, $breakpoint in (xs, $wvu-bp-xs),
@@ -21,19 +21,19 @@
                                 (xl, $wvu-bp-xl) {
   @media (min-width: $breakpoint) {
     .wvu-bg-position-#{$bp-value}-center {
-      background-position: center !important;
+      background-position: center $global-important;
     }
     .wvu-bg-position-#{$bp-value}-bottom {
-      background-position: bottom !important;
+      background-position: bottom $global-important;
     }
     .wvu-bg-position-#{$bp-value}-top {
-      background-position: top !important;
+      background-position: top $global-important;
     }
     .wvu-bg-position-#{$bp-value}-left {
-      background-position: left !important;
+      background-position: left $global-important;
     }
     .wvu-bg-position-#{$bp-value}-right {
-      background-position: right !important;
+      background-position: right $global-important;
     }
   }
 }
@@ -54,7 +54,7 @@ $i: 100;
                                     (xl, $wvu-bp-xl) {
       .wvu-bg-position-#{$bp-value}-#{$bg-class}--#{$i} {
         @media (min-width: $breakpoint) {
-          background-position: $bg-property round(percentage($i/100)) !important;
+          background-position: $bg-property round(percentage($i/100)) $global-important;
         }
       }
     }
@@ -76,7 +76,7 @@ $i: 100;
                                   (xl, $wvu-bp-xl) {
     .wvu-bg-position-#{$bp-value}-#{$bg-class} {
       @media (min-width: $breakpoint) {
-        background-position: $bg-property !important;
+        background-position: $bg-property $global-important;
       }
     }
   }
@@ -86,28 +86,28 @@ $i: 100;
 
 .wvu-bg-position-spacer-top {
   @media (max-width: $wvu-bp-sm) {
-    background-repeat: no-repeat !important;
-    padding-top: 24rem !important;
+    background-repeat: no-repeat $global-important;
+    padding-top: 24rem $global-important;
   }
 }
 
 .wvu-bg-position-spacer-md-top {
   @media (max-width: $wvu-bp-md) {
-    background-repeat: no-repeat !important;
-    padding-top: 24rem !important;
+    background-repeat: no-repeat $global-important;
+    padding-top: 24rem $global-important;
   }
 }
 
 .wvu-bg-position-spacer-bottom {
   @media (max-width: $wvu-bp-sm) {
-    background-repeat: no-repeat !important;
-    padding-bottom: 24rem !important;
+    background-repeat: no-repeat $global-important;
+    padding-bottom: 24rem $global-important;
   }
 }
 
 .wvu-bg-position-spacer-md-bottom {
   @media (max-width: $wvu-bp-md) {
-    background-repeat: no-repeat !important;
-    padding-bottom: 24rem !important;
+    background-repeat: no-repeat $global-important;
+    padding-bottom: 24rem $global-important;
   }
 }
