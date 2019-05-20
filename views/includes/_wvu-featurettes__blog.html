@@ -51,6 +51,7 @@
 <r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
 <r:content_for name="{$defaultItemHeaderClasses}">h3 iowan-old-style-italic mb-1</r:content_for>
 <r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
+<r:content_for name="{$defaultItemButtonClasses}">btn-primary btn-sm</r:content_for>
 
 <r:set_var name="itemClassesChecker">
   <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />
@@ -64,8 +65,12 @@
   <r:page:unless_has_content_for region="{$itemBodyClasses}"><r:yield name="{$defaultItemBodyClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemBodyClasses}" />
 </r:set_var>
 
+<r:set_var name="itemButtonClassesChecker">
+  <r:page:unless_has_content_for region="{$itemButtonClasses}"><r:yield name="{$defaultItemButtonClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemButtonClasses}" />
+</r:set_var>
+
 <r:set_var name="itemReadMoreButtonTextChecker">
-  <r:page:unless_has_content_for region="{$itemReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$itemReadMoreButtonText}" />
+  <r:page:unless_has_content_for region="{$componentReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
 <r:get_page id="{$componentFeaturettesID}">
@@ -100,7 +105,7 @@
                   <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
                   <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
                 </p>
-                <a class="btn btn-primary btn-sm" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:article:name /></span></r:if></a>
+                <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:article:name /></span></r:if></a>
               <r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"></div></r:if>
             </div>
           </div>

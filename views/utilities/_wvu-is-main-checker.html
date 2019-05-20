@@ -1,1 +1,1 @@
-<r:if v1="{$componentIsMain}" v2="1" op="=">main</r:if><r:if v1="{$componentIsMain}" v2="1" op="!=">section</r:if>
+<r:comment><!-- If the “Is Main” cusotm data attribute is checked for a component in site data or set using a variable, output “main”, else output “section”. This is used to change the opening and closing HTML tags of a component. --></r:comment><r:if v1="{$componentIsMain}" v2="1" op="=">main</r:if><r:if v1="{$componentIsMain}" v2="1" op="!=">section</r:if>

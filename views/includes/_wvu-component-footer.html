@@ -35,7 +35,7 @@
     </div>
     <r:if v1="{$baseComponentName}" v2="featurettes" op="=">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-lg">
           <p class="mb-0">
             <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for items:</span></r:edit_mode_only>
             <p>
@@ -50,7 +50,7 @@
             </small>
           </p>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg">
           <p class="mb-0">
             <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item headers:</span></r:edit_mode_only>
             <p>
@@ -65,7 +65,7 @@
             </small>
           </p>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg">
           <p class="mb-0">
             <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item body copy:</span></r:edit_mode_only>
             <p>
@@ -80,7 +80,22 @@
             </small>
           </p>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg">
+          <p class="mb-0">
+            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for buttons:</span></r:edit_mode_only>
+            <p>
+              <r:editable_region name="{$itemButtonClasses}" type="simple"></r:editable_region>
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            <small>
+              <r:yield name="{$defaultItemButtonClasses}">
+                <strong>Default classes:</strong> <r:content />
+              </r:yield>
+            </small>
+          </p>
+        </div>
+        <div class="col-lg">
           <p class="mb-0">
             <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Featurettes button text:</span></r:edit_mode_only>
             <p>

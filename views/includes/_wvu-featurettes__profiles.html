@@ -51,6 +51,7 @@
 <r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
 <r:content_for name="{$defaultItemHeaderClasses}">iowan-old-style-italic mb-0</r:content_for>
 <r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
+<r:content_for name="{$defaultItemButtonClasses}">btn-primary btn-sm</r:content_for>
 
 <r:set_var name="itemClassesChecker">
   <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />
@@ -60,8 +61,12 @@
   <r:page:unless_has_content_for region="{$itemHeaderClasses}"><r:yield name="{$defaultItemHeaderClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemHeaderClasses}" />
 </r:set_var>
 
+<r:set_var name="itemButtonClassesChecker">
+  <r:page:unless_has_content_for region="{$itemButtonClasses}"><r:yield name="{$defaultItemButtonClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemButtonClasses}" />
+</r:set_var>
+
 <r:set_var name="itemReadMoreButtonTextChecker">
-  <r:page:unless_has_content_for region="{$itemReadMoreButtonText}">More Info</r:page:unless_has_content_for><r:page:content name="{$itemReadMoreButtonText}" />
+  <r:page:unless_has_content_for region="{$itemReadMoreButtonText}">More Info</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
 <r:root>
@@ -117,7 +122,7 @@
                 </p>
               </r:page:if_has_content_for>
               <p class="mb-0 mt-2">
-                <a class="btn btn-primary btn-sm" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></a>
+                <a class="btn <r:var name="itemButtonClassesChecker" />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></a>
               </p>
             <r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"></div></r:if>
           </div>

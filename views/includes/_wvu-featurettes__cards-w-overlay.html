@@ -58,10 +58,6 @@
   <r:page:unless_has_content_for region="{$itemBodyClasses}"><r:yield name="{$defaultItemBodyClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemBodyClasses}" />
 </r:set_var>
 
-<r:set_var name="itemReadMoreButtonTextChecker">
-  <r:page:unless_has_content_for region="{$itemReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$itemReadMoreButtonText}" />
-</r:set_var>
-
 <r:root>
   <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
     and $loopOrder to: "asc" or "desc";

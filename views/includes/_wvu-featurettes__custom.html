@@ -14,10 +14,6 @@
   <r:page:unless_has_content_for region="{$itemBodyClasses}"><r:yield name="{$defaultItemBodyClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemBodyClasses}" />
 </r:set_var>
 
-<r:set_var name="itemReadMoreButtonTextChecker">
-  <r:page:unless_has_content_for region="{$itemReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$itemReadMoreButtonText}" />
-</r:set_var>
-
 <div class="row">
   <r:comment><!-- Grab all of the items in the loop. --></r:comment>
   <r:loop:each times="{$componentLimit}">

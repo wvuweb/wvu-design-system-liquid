@@ -9,6 +9,9 @@
   <r:var name="baseComponentName" />-<r:var name="componentInstance" />
 </r:set_var>
 
+<r:comment><!-- Pull in value from an “Is active” checkbox in Super Theme. Gets used by each componentn to determine whether to display the component on a live page. --></r:comment>
+<r:set_var name="componentIsEditModeOnly" value="{$isEditModeOnly}" />
+
 <r:comment><!-- Pull in value from an “Is Main” checkbox in Super Theme. Gets used by a wvu-is-main-checker utility partial, which toggles between secion and main tags on the outer container of a component’s HTML. --></r:comment>
 <r:set_var name="componentIsMain" value="{$isMain}" default="false" />
 
@@ -33,7 +36,7 @@
 <r:comment><!-- Pull in value from a “Loop By” dropdown in Super Theme. Gets used by a featurettes partial to know what criteria should be evaluated when displaying items (sort order, slug, name, etc.). --></r:comment>
 <r:set_var name="componentLoopBy" value="{$loopBy}" default="sort_order" />
 
-<r:comment><!-- Pull in value from a “Loop Labels Match” dropdown in Super Theme. Gets used by a featurettes partial to know what labels to evaluate when displaying items. --></r:comment>
+<r:comment><!-- Pull in value from a “Loop Labels Match” dropdown in Super Theme. Gets used by a featurettes partial to know the criteria by which to evaluate items with a certain label (all, none, any), and whether to display them. --></r:comment>
 <r:set_var name="componentLoopLabelsMatch" value="{$loopLabelsMatch}" default="all" />
 
 <r:comment><!-- Pull in value from a “Loop Order” dropdown in Super Theme. Gets used by a featurettes partial to know what criteria whether to display items in either ascending or descending order. --></r:comment>
@@ -74,6 +77,11 @@
   wvu-<r:var name="componentName" />-item-body-classes
 </r:set_var>
 
+<r:comment><!-- Name of editable region containing classes that get applied to the body text of a featurette’s items. --></r:comment>
+<r:set_var name="itemButtonClasses">
+  wvu-<r:var name="componentName" />-item-button-classes
+</r:set_var>
+
 <r:comment><!-- Name of editable region containing classes that get applied to the outer container of a featurette’s items if no “item classes” are provided by the content editor. --></r:comment>
 <r:set_var name="defaultItemClasses">
   wvu-<r:var name="componentName" />-default-item-classes
@@ -87,6 +95,11 @@
 <r:comment><!-- Name of editable region containing classes that get applied to the body text of a featurette’s items if no “item body classes” are provided by the content editor. --></r:comment>
 <r:set_var name="defaultItemBodyClasses">
   wvu-<r:var name="componentName" />-default-item-body-classes
+</r:set_var>
+
+<r:comment><!-- Name of editable region containing classes that get applied to the button of a featurette’s items if no “item button classes” are provided by the content editor. --></r:comment>
+<r:set_var name="defaultItemButtonClasses">
+  wvu-<r:var name="componentName" />-default-item-button-classes
 </r:set_var>
 
 <r:comment><!-- Name of editable region that lets the user define the button text that gets applied to items in a featurette. --></r:comment>

@@ -1,6 +1,6 @@
 {
   "name": "wvu-design-system",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "WVU Design System",
   "main": "gulpfile.js",
   "scripts": {

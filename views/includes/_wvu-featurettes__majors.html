@@ -59,7 +59,7 @@
 </r:set_var>
 
 <r:set_var name="itemReadMoreButtonTextChecker">
-  <r:page:unless_has_content_for region="{$itemReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$itemReadMoreButtonText}" />
+  <r:page:unless_has_content_for region="{$componentReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
 <r:root>
@@ -67,9 +67,6 @@
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
-    <r:set_var name="itemCount">
-      <r:count />
-    </r:set_var>
     <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:if v1="{$componentLimit}" v2="2" op="<="> d-flex justify-content-center</r:if>"></r:if>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
