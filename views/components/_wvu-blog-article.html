@@ -27,12 +27,14 @@
         <div class="col-sm-8 col-md-6 mx-auto">
           <r:if v1="{$blog_article_has_hero}" v2="1" op="!=">
             <h1 id="<r:var name="componentName" />-label" itemprop="headline"><r:page:name /></h1>
-            <p>
-              <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                <span itemprop="name">
-                  <r:article:author_full_name /> |
-                </span> <r:comment><!-- /.wvu-article__author --></r:comment>
-              </span> <r:comment><!-- /itemprop="author" --></r:comment>
+            <p class="small d-block">
+              <r:if v1="{$blog_article_hide_author}" v2="1" op="!=">
+                <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                  <span itemprop="name">
+                    <r:article:author_full_name /> |
+                  </span> <r:comment><!-- /.wvu-article__author --></r:comment>
+                </span> <r:comment><!-- /itemprop="author" --></r:comment>
+              </r:if>
               <time datetime="<r:date_format format="iso8601" value="{article:published_at}" />"><r:date_format format="%A, %B %d, %Y" value="{article:published_at}" error_msg="Not Yet Published" /></time>
             </p> <r:comment><!-- /.wvu-article__meta --></r:comment>
           </r:if>

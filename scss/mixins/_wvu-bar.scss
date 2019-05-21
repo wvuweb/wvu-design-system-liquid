@@ -7,12 +7,12 @@
       content: '' $is-important;
       height: 1rem * .5 $is-important;
       position: absolute $is-important;
-      top: -1rem $is-important;
+      top: -2rem $is-important;
       width: $wvu-bar-width $is-important;
     }
   }
   @if $wvu-bar-position == 'bottom' {
-    margin-bottom: $spacer * 2 $is-important;
+    margin-bottom: $spacer $is-important;
     margin-top: 0 $is-important;
     &:before {
       display: none $is-important;

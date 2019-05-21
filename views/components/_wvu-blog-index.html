@@ -43,13 +43,17 @@
 
           <r:comment><!-- NOTE: Blog articles use Schema.org's tags to structure your data & help with SEO: http://goo.gl/SKs4Qb --></r:comment>
 
+          <r:set_var name="blogIsHidden">
+            <r:page:data name="blog_index_hide_author" />
+          </r:set_var>
+
           <r:if_articles>
             <div class="wvu-articles">
               <r:each>
                 <article class="mb-4" itemscope="" itemtype="http://schema.org/BlogPosting">
                   <h2 itemprop="headline"><a href="<r:article:path />"><r:article:name /></a></h2>
                   <p class="small d-block">
-                    <r:if v1="{$blog_index_hide_author}" v2="1" op="!=">
+                    <r:if v1="{$blogIsHidden}" v2="1" op="!=">
                       <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                         <span itemprop="name">
                           <r:article:author_full_name /> |
