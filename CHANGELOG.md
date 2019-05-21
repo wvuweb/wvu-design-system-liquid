@@ -1,7 +1,26 @@
 # Change Log
 
-## [v0.1.0](https://github.com/wvuweb/wvu-design-system/tree/v0.1.0) (2019-05-20)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.4...v0.1.0)
+## [v0.2.0](https://github.com/wvuweb/wvu-design-system/tree/v0.2.0) (2019-05-21)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v.0.1.0...v0.2.0)
+
+**Implemented enhancements:**
+
+- Make !important configurable. [\#78](https://github.com/wvuweb/wvu-design-system/issues/78)
+- Option to hide blog author in blog index, article [\#74](https://github.com/wvuweb/wvu-design-system/issues/74)
+- Add popover to new demo template [\#58](https://github.com/wvuweb/wvu-design-system/issues/58)
+- Re-implement sitewide styling of backpage headers. [\#52](https://github.com/wvuweb/wvu-design-system/issues/52)
+- Add ability to style headers, button colors for featurettes. [\#48](https://github.com/wvuweb/wvu-design-system/issues/48)
+- Add randomize option for featurettes. [\#44](https://github.com/wvuweb/wvu-design-system/issues/44)
+- Add different leading for Iowan at bigger sizes... [\#20](https://github.com/wvuweb/wvu-design-system/issues/20)
+- Use Bootstrap's z-index utilities... [\#18](https://github.com/wvuweb/wvu-design-system/issues/18)
+- Incorporate Bootstrap’s classes into dropdowns, subnav. [\#4](https://github.com/wvuweb/wvu-design-system/issues/4)
+
+**Fixed bugs:**
+
+- Utilities for Co-branding... [\#21](https://github.com/wvuweb/wvu-design-system/issues/21)
+
+## [v.0.1.0](https://github.com/wvuweb/wvu-design-system/tree/v.0.1.0) (2019-05-20)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.4...v.0.1.0)
 
 **Implemented enhancements:**
 
