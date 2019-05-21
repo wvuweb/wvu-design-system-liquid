@@ -14,7 +14,13 @@
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">pb-3 bg-wvu-neutral--dark-gray text-white wvu-bg-vignetting wvu-bg-blend-mode-luminosity--80 wvu-background-position-center</r:content_for>
-<r:content_for name="{$defaultHeaderClasses}">display-4 helvetica-neue-bold mb-0</r:content_for>
+
+<r:if expr="{{ NOT(BLANK(classes_wvu_backpage_header__h1)) }}">
+  <r:content_for name="{$defaultHeaderClasses}"><r:site:data name="classes_wvu_backpage_header__h1" /></r:content_for>
+</r:if>
+<r:if expr="{{ BLANK(classes_wvu_backpage_header__h1) }}">
+  <r:content_for name="{$defaultHeaderClasses}">display-4 helvetica-neue-bold mb-0</r:content_for>
+</r:if>
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>

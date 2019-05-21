@@ -49,11 +49,13 @@
                 <article class="mb-4" itemscope="" itemtype="http://schema.org/BlogPosting">
                   <h2 itemprop="headline"><a href="<r:article:path />"><r:article:name /></a></h2>
                   <p class="small d-block">
-                    <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                      <span itemprop="name">
-                        <r:article:author_full_name /> |
-                      </span> <!-- /.wvu-article__author -->
-                    </span> <!-- /itemprop="author" -->
+                    <r:if v1="{$blog_index_hide_author}" v2="1" op="!=">
+                      <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                        <span itemprop="name">
+                          <r:article:author_full_name /> |
+                        </span> <!-- /.wvu-article__author -->
+                      </span> <!-- /itemprop="author" -->
+                    </r:if>
                     <time itemprop="datePublished" datetime="<r:date_format format="iso8601" value="{article:published_at}" />"><r:date_format format="%A, %B %d, %Y" value="{article:published_at}" /></time>
                   </p> <!-- /.wvu-article__meta -->
                   <div class="mb-2" itemprop="articleBody">

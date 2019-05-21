@@ -11,7 +11,8 @@
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
 <r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
 <r:set_var name="componentStats">wvu-<r:var name="componentName" />__stats</r:set_var>
-<r:set_var name="statsClasses">wvu-<r:var name="componentName" />-stat-classes</r:set_var>
+<r:set_var name="statClasses">wvu-<r:var name="componentName" />-stat-classes</r:set_var>
+<r:set_var name="defaultStatClasses">wvu-<r:var name="componentName" />-default-stat-classes</r:set_var>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">mb-0 wvu-overflow-hidden wvu-background-size-cover bg-wvu-neutral--black wvu-bg-vignetting--80</r:content_for>
@@ -57,7 +58,7 @@
         </r:edit_mode_only>
         <r:editable_region name="{$componentStats}" scope="{$componentScope}">
           <h2 class="wvu-h3">Tuition Rates</h2>
-          <p class="mb-3">Looking for a quick ballpark figure? We have you covered.</p>
+          <p class="mb-2">Looking for a quick ballpark figure? We have you covered.</p>
           <table class="table mb-2">
             <tbody>
               <tr>
