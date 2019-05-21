@@ -36,6 +36,9 @@
   .expanded-fonts-loaded & {
     font-family: $iowan-old-style $is-important;
   }
+  &.display-1, &.display-2, &.display-3, &.display-4 {
+    line-height: 1em !important;
+  }
 }
 
 @mixin iowan-old-style-italic($is-important: $global-important) {
@@ -48,6 +51,9 @@
     font-family: $iowan-old-style-italic $is-important;
     font-style: normal $is-important;
   }
+  &.display-1, &.display-2, &.display-3, &.display-4 {
+    line-height: 1em !important;
+  }
 }
 
 @mixin iowan-old-style-black($is-important: $global-important) {
@@ -58,6 +64,9 @@
   .expanded-fonts-loaded & {
     font-family: $iowan-old-style-black $is-important;
     font-weight: normal $is-important;
+  }
+  &.display-1, &.display-2, &.display-3, &.display-4 {
+    line-height: 1em !important;
   }
 }
 
@@ -71,6 +80,9 @@
     font-family: $iowan-old-style-black-italic $is-important;
     font-style: normal $is-important;
     font-weight: normal $is-important;
+  }
+  &.display-1, &.display-2, &.display-3, &.display-4 {
+    line-height: 1em !important;
   }
 }
 
