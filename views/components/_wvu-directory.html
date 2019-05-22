@@ -28,6 +28,7 @@
   <div class="container">
     <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
       <div class="wvu-z-index-content mb-4">
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header</span></r:edit_mode_only>
         <r:editable_region name="{$componentHeader}" scope="{$componentScope}">
           <h2 id="<r:var name="componentName" />-label">Staff Directory Headline</h2>
         </r:editable_region>

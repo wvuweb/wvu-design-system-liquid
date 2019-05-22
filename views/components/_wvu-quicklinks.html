@@ -32,6 +32,7 @@
             <pre class="mb-0 text-white"><r:editable_region name="{$headerClasses}" type="simple" /></pre>
             <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></pre>
           </small>
+          <span class="d-inline-block badge badge-primary mb-1">Header</span>
         </r:edit_mode_only>
         <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section --></r:comment>
         <h2 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
@@ -39,6 +40,9 @@
         </h2>
       </div>
       <div class="col-lg-8">
+        <r:edit_mode_only>
+          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Quicklinks</span></r:edit_mode_only>
+        </r:edit_mode_only>
         <r:editable_region name="{$componentMain}" scope="{$componentScope}">
           <ul class="list-unstyled wvu-column-count-3">
             <li>
@@ -102,6 +106,7 @@
     <r:page:if_has_content_for region="{$componentPostscript}" always_show_in_edit_mode="true">
       <div class="mt-2 wvu-z-index-content">
         <div class="wvu-z-index-content mb-2">
+          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Postscript</span></r:edit_mode_only>
           <r:editable_region name="{$componentPostscript}" scope="{$componentScope}">
             <p class="mb-0">View <a href="#">all quicklinks</a>.</p>
           </r:editable_region>

@@ -27,6 +27,7 @@
     <div class="row">
       <div class="col col-md-6">
         <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
+          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Lede Text</span></r:edit_mode_only>
           <r:editable_region name="{$componentHeader}" scope="{$componentScope}">
             <p class="helvetica-neue-light h2 mb-3 pr-md-3">We just need to put these last issues to bed.</p>
           </r:editable_region>
@@ -36,6 +37,7 @@
             <span class="fas fa-map-marker-alt position-absolute"></span>
             <span class="pl-3 d-block">Find Us at the office</span>
           </h2>
+          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Address</span></r:edit_mode_only>
           <r:editable_region name="{$componentAddress}" scope="{$componentScope}">
             <address class="pl-3">
               <small class="d-block">
@@ -48,6 +50,7 @@
           </r:editable_region>
         </r:page:if_has_content_for>
         <r:page:if_has_content_for region="{$componentPhone}" always_show_in_edit_mode="true">
+          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Phone + Email</span></r:edit_mode_only>
           <r:editable_region name="{$componentPhone}" scope="{$componentScope}">
             <h2 class="h5 iowan-old-style-black mt-3">
               <span class="fas fa-phone position-absolute"></span>
@@ -66,6 +69,7 @@
         </r:page:if_has_content_for>
       </div>
       <div class="col col-md-6 bg-white text-wvu-neutral--black shadow-lg">
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Form</span></r:edit_mode_only>
         <r:editable_region name="{$componentForm}" scope="{$componentScope}">
           <form class="px-3 py-4">
             <h2>Or Fill Out Our Form</h2>

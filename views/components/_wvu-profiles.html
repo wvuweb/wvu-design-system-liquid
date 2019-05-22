@@ -28,6 +28,7 @@
   <div class="container wvu-z-index-content">
     <div class="mb-4">
       <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header</span></r:edit_mode_only>
         <r:editable_region name="{$componentHeader}" scope="{$componentScope}">
           <h2 id="<r:var name="componentName" />-label" class="display-3 wvu-shout">Featurettes Headline</h2>
           <p class="h3 helvetica-neue-light">Subhead goes here.</p>

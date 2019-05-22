@@ -31,12 +31,13 @@
             <pre class="mb-0 text-white"><r:editable_region name="{$headerClasses}" type="simple" /></pre>
             <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></pre>
           </small>
+          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header</span></r:edit_mode_only>
         </r:edit_mode_only>
         <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section --></r:comment>
         <h1 id="<r:var name="componentName" />-label" itemprop="headline" class="<r:page:if_has_content_for region="{$itemHeaderClassesRegionName}"><r:page:content name="{$itemHeaderClassesRegionName}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderClassesRegionName}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
           <r:page:name />
         </h1>
-        <r:comment><!-- This uses a variable to define the name of the editable region. In the Super Theme, this is defined dynamically. If you are making a custom theme, and want to reference this partial more than once in the same tempalte, you will need to define an instance number (set_var name="componentInstance" value="something") when you insert each partial. --></r:comment>
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Subhead</span></r:edit_mode_only>
         <r:editable_region name="{$componentSubhead}" scope="{$componentScope}"><p class="helvetica-neue-bold h2">Subhead goes here.</p></r:editable_region>
         <p>
           <r:if v1="{$blog_article_hide_author}" v2="1" op="!=">

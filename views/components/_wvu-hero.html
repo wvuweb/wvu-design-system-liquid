@@ -35,7 +35,7 @@
             <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultHeaderClasses}" /></pre>
           </small>
         </r:edit_mode_only>
-
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header</span></r:edit_mode_only>
         <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section. --></r:comment>
         <h1 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
           <r:comment><!-- Use the editable region name for th header section of the hero, which you defined above. --></r:comment>
@@ -44,6 +44,7 @@
           </r:editable_region>
         </h1>
 
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Main Content</span></r:edit_mode_only>
         <r:comment><!-- Use the editable region name for th main section of the hero, which you defined above. --></r:comment>
         <r:editable_region name="{$componentMain}" scope="{$componentScope}">
           <p class="lead py-2">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>

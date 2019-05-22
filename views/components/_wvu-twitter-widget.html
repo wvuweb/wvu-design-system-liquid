@@ -21,21 +21,15 @@
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
 <!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if><r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container wvu-z-index-content">
-    <r:if v1="{page:template:name}" v2="component-examples" op="=">
-      <div class="wvu-z-index-content mb-4">
-        <r:page:if_has_content_for region="{$itemHeaderRegionNameH2}"><r:page:content name="{$itemHeaderRegionNameH2}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$itemHeaderRegionNameH2}"><r:yield name="{$componentHeader}"><r:content /></r:yield></r:page:unless_has_content_for>
-      </div>
-    </r:if>
-    <r:if v1="{page:template:name}" v2="component-examples" op="!=">
-      <div class="wvu-z-index-content mb-4">
-        <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
-          <r:editable_region name="{$componentHeader}" scope="{$componentScope}">
-            <h2 id="<r:var name="componentName" />-label" class="display-3 wvu-shout">Featurettes Headline</h2>
-            <p class="h3 helvetica-neue-light">Subhead goes here.</p>
-          </r:editable_region>
-        </r:page:if_has_content_for>
-      </div>
-    </r:if>
+    <div class="wvu-z-index-content mb-4">
+      <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header</span></r:edit_mode_only>
+        <r:editable_region name="{$componentHeader}" scope="{$componentScope}">
+          <h2 id="<r:var name="componentName" />-label" class="display-3 wvu-shout">Featurettes Headline</h2>
+          <p class="h3 helvetica-neue-light">Subhead goes here.</p>
+        </r:editable_region>
+      </r:page:if_has_content_for>
+    </div>
     <div id="exampleProfile"></div>
     <div class="text-center">
       <a href="https://twitter.com/<r:site:data name="twitter_handle" />" class="fab fa-twitter text-black mt-4 h3">

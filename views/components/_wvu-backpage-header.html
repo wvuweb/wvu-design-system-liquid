@@ -28,10 +28,12 @@
   <div class="container position-relative wvu-z-index-content">
     <r:if v1="{$header_label}" v2="1" op="=">
       <p class="text-uppercase helvetica-neue-light mb-1">
+        <r:edit_mode_only>
+          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Label</span></r:edit_mode_only>
+        </r:edit_mode_only>
         <r:editable_region name="{$componentHeaderLabel}" scope="{$componentScope}"><span class="wvu-shout text-wvu-gold text-uppercase">Label pre</span> <span class="text-uppercase">Label Post</span></r:editable_region>
       </p>
     </r:if>
-    <r:comment><!-- This uses a variable to define the name of the editable region. In the Super Theme, this is defined dynamically. If you are making a custom theme, and want to reference this partial more than once in the same tempalte, you will need to define an instance number (set_var name="componentInstance" value="something") when you insert each partial. --></r:comment>
     <r:edit_mode_only>
       <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
         <pre class="mb-0 text-white"><r:editable_region name="{$headerClasses}" type="simple" /></pre>
@@ -40,6 +42,9 @@
     </r:edit_mode_only>
     <h1 class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
     <r:if v1="{$header_subhead}" v2="1" op="=">
+      <r:edit_mode_only>
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Subhead</span></r:edit_mode_only>
+      </r:edit_mode_only>
       <r:editable_region name="{$componentSubhead}" scope="{$componentScope}"><p class="lead mb-0 mt-1">Subhead goes here.</p></r:editable_region>
     </r:if>
   </div>

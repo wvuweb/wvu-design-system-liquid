@@ -27,6 +27,7 @@
 
     <r:page:if_has_content_for region="{$componentMain}" always_show_in_edit_mode="true">
       <div class="mb-4">
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Intro</span></r:edit_mode_only>
         <r:editable_region name="{$componentMain}"><h2>Articles</h2><p>Intro text.</p></r:editable_region>
       </div>
     </r:page:if_has_content_for>

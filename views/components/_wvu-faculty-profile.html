@@ -33,8 +33,10 @@
     <div class="row">
       <div class="col-md-8">
         <r:page:if_has_content_for region="{$componentFigure}" always_show_in_edit_mode="true">
+          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Image</span></r:edit_mode_only>
           <r:editable_region name="{$componentFigure}"><img alt="Placeholder" src="https://via.placeholder.com/1200x800" /></r:editable_region>
           <r:page:if_has_content_for region="{$componentFigcaption}" always_show_in_edit_mode="true">
+            <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Caption</span></r:edit_mode_only>
             <figcaption>
               <small class="d-block">
                 <r:editable_region name="{$componentFigcaption}">
@@ -47,6 +49,7 @@
         </r:page:if_has_content_for>
       </div>
       <div class="col-md-4">
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Sidebar Content</span></r:edit_mode_only>
         <r:editable_region name="{$componentSidebarTop}">
           <p class="helvetica-neue-light h5 mb-3">Who's responsible for the ask for this request? we need to button up our
             approach streamline. Run it up the flag pole I just wanted to give you
@@ -64,6 +67,7 @@
 
       </div>
       <div class="col-md-8 col-xl-6 mr-md-auto">
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Main Content</span></r:edit_mode_only>
         <r:editable_region name="{$componentMain}">
           <p>Personal development push back. Value prop upsell we need to leverage our
             synergies. Gain traction good optics we need to socialize the comms with

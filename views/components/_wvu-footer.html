@@ -19,13 +19,14 @@
   <div class="container">
     <div class="row">
       <div class="col-6">
-        <r:if v1="{page:template:name}" v2="component-examples" op="=">
-          <r:yield name="{$componentMain}" />
-        </r:if>
-        <r:comment><!-- This is the code that will be used for any site other than the WVU Design System website. If you are making a copy of this component, you can delete the following “if” statement and keep what’s inside. --></r:comment>
-        <r:if v1="{page:template:name}" v2="component-examples" op="!=">
-          <r:editable_region name="{$componentMain}" scope="site">Address</r:editable_region>
-        </r:if>
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Address</span></r:edit_mode_only>
+        <r:editable_region name="{$componentMain}" scope="site">
+          <strong>Organization Name</strong><br>
+          Address Line 1<br>
+          Address Line 2<br>
+          <a href="tel:3041234567">(304) 123-4567</a><br>
+          <a href="mailto:email@mail.wvu.edu">email@mail.wvu.edu</a>
+        </r:editable_region>
       </div>
       <div class="col-3">
 
