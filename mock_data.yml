@@ -50,14 +50,22 @@ editable_region:
 
 site:
   id: 26
-  name: "This is my site name"
-  domain: "domain.wvu.edu"
+  name: "My Site Title Name"
+  domain: "designsystem.sandbox.wvu.edu"
   data:
-    anykey: "This can be any value"
-    anotherkey: "Another Value"
-    has_alternate_logo: ""
-    masthead_color: wvu-blue
-    masthead_title: "My Site"
+    has_alternate_logo: null # Options: null | *slug* to a logo image.
+    has_co_brand: "STEM Center" # Options: true | false | string
+    co_brand_subtitle: "Master of Science"
+    masthead_color: "blue" # Options: blue | gold
+    masthead_title: "My Site Name"
+    masthead_college_link_title: null # Options: null | string (eg: "Davis College")
+    masthead_college_link_address: "https://universityrelations.wvu.edu/"
+    apply_link_1: "Apply Now"
+    apply_link_1_url: "https://admissions.wvu.edu/how-to-apply"
+    apply_link_2: "Visit WVU"
+    apply_link_2_url: "https://admissions.wvu.edu/visit"
+    apply_link_3: "Request Information"
+    apply_link_3_url: "https://admissions.wvu.edu/request-information"
     nav_dropdowns: false
 
 root: true
