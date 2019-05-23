@@ -85,7 +85,7 @@ page:
   data:
     some_key: some_data_value
     another_key: some_other_value
-    slot_1: hero
+    slot_1: "hero"
     slot_1_custom: ""
     slot_1_where_to_display: "as_full_width_block"
     slot_1_is_main: "0"
@@ -98,40 +98,40 @@ page:
     slot_1_loop_order: "asc"
     slot_1_scope: 0
     slot_1_show_hidden: 0
-    slot_2: featurettes
     slot_1_limit: 4
+    slot_2: "featurettes"
     slot_2_custom: ""
     slot_2_number: 1
     slot_2_where_to_display: "as_full_width_block"
-    slot_3: action-hero
+    slot_3: "action-hero"
     slot_3_custom: ""
     slot_3_number: 1
     slot_3_where_to_display: "as_full_width_block"
-    slot_4: action-hero
+    slot_4: ""
     slot_4_custom: ""
     slot_4_number: 1
     slot_4_where_to_display: "as_full_width_block"
-    slot_5: action-hero
+    slot_5: ""
     slot_5_custom: ""
     slot_5_number: 1
     slot_5_where_to_display: "as_full_width_block"
-    slot_6: action-hero
+    slot_6: ""
     slot_6_custom: ""
     slot_6_number: 1
     slot_6_where_to_display: "as_full_width_block"
-    slot_7: action-hero
+    slot_7: ""
     slot_7_custom: ""
     slot_7_number: 1
     slot_7_where_to_display: "as_full_width_block"
-    slot_8: action-hero
+    slot_8: ""
     slot_8_custom: ""
     slot_8_number: 1
     slot_8_where_to_display: "as_full_width_block"
-    slot_9: action-hero
+    slot_9: ""
     slot_9_custom: ""
     slot_9_number: 1
     slot_9_where_to_display: "as_full_width_block"
-    slot_10: action-hero
+    slot_10: ""
     slot_10_custom: ""
     slot_10_number: 1
     slot_10_where_to_display: "as_full_width_block"
