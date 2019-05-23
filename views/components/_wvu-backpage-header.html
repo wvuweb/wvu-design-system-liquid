@@ -29,16 +29,12 @@
 <!-- Markup --><header class="wvu-overflow-hidden pt-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container position-relative wvu-z-index-content">
     <r:if v1="{$header_label}" v2="1" op="=">
-      <div class="row">
-        <div class="col-md-8">
-          <p class="text-uppercase helvetica-neue-light mb-1">
-            <r:edit_mode_only>
-              <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Label</span></r:edit_mode_only>
-            </r:edit_mode_only>
-            <r:editable_region name="{$componentHeaderLabel}" scope="{$componentScope}"><span class="wvu-shout text-wvu-gold text-uppercase">Label pre</span> <span class="text-uppercase">Label Post</span></r:editable_region>
-          </p>
-        </div>
-      </div>
+      <p class="text-uppercase helvetica-neue-light mb-1">
+        <r:edit_mode_only>
+          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Label</span></r:edit_mode_only>
+        </r:edit_mode_only>
+        <r:editable_region name="{$componentHeaderLabel}" scope="{$componentScope}"><span class="wvu-shout text-wvu-gold text-uppercase">Label pre</span> <span class="text-uppercase">Label Post</span></r:editable_region>
+      </p>
     </r:if>
     <r:edit_mode_only>
       <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
@@ -48,16 +44,20 @@
     </r:edit_mode_only>
     <h1 class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
     <r:if v1="{$header_subhead}" v2="1" op="=">
-      <r:edit_mode_only>
-        <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
-          <pre class="mb-0 text-white"><r:editable_region name="{$subheadClasses}" type="simple" /></pre>
-          <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultSubheadClasses}"><r:content /></r:yield></pre>
-        </small>
-        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Subhead / Title</span></r:edit_mode_only>
-      </r:edit_mode_only>
-      <p class="<r:page:if_has_content_for region="{$subheadClasses}"><r:page:content name="{$subheadClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$subheadClasses}"><r:yield name="{$defaultSubheadClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
-        <r:editable_region name="{$componentSubhead}" scope="{$componentScope}" type="simple">Subhead goes here.</r:editable_region>
-      </p>
+      <div class="row">
+        <div class="col-md-8">
+          <r:edit_mode_only>
+            <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
+              <pre class="mb-0 text-white"><r:editable_region name="{$subheadClasses}" type="simple" /></pre>
+              <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultSubheadClasses}"><r:content /></r:yield></pre>
+            </small>
+            <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Subhead / Title</span></r:edit_mode_only>
+          </r:edit_mode_only>
+          <p class="<r:page:if_has_content_for region="{$subheadClasses}"><r:page:content name="{$subheadClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$subheadClasses}"><r:yield name="{$defaultSubheadClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
+            <r:editable_region name="{$componentSubhead}" scope="{$componentScope}" type="simple">Subhead goes here.</r:editable_region>
+          </p>
+        </div>
+      </div>
     </r:if>
   </div>
 </header><!-- End markup -->
