@@ -71,12 +71,19 @@
   list-style-type: none;
   li {
     display: block $is-important;
+    position: relative $is-important;
     &:before {
-      color: $color $is-important;
+      background-color: $color $is-important;
+      content: '' $is-important;
       height: 1em $is-important;
+      position: absolute $is-important;
       width: .5em $is-important;
       left: -1.5rem $is-important;
       top: .25em $is-important;
+      z-index: $wvu-z-index-slash $is-important;
+      -ms-transform: skewX(149deg) $is-important; /* IE 9 */
+      -webkit-transform: skewX(149deg) $is-important; /* Safari */
+      transform: skewX(149deg) $is-important;
     }
   }
 }

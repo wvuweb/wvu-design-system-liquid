@@ -11,9 +11,11 @@
 <r:set_var name="componentHeaderLabel">wvu-<r:var name="componentName" />__label</r:set_var>
 <r:set_var name="componentSubhead">wvu-<r:var name="componentName" />__subhead</r:set_var>
 <r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
+<r:set_var name="subheadClasses">wvu-<r:var name="componentName" />-subhead-classes</r:set_var>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">pb-3 bg-wvu-neutral--dark-gray text-white wvu-bg-vignetting wvu-bg-blend-mode-luminosity--80 wvu-background-position-center</r:content_for>
+<r:content_for name="{$defaultSubheadClasses}">lead mb-0 mt-1</r:content_for>
 
 <r:if expr="{{ NOT(BLANK(classes_wvu_backpage_header__h1)) }}">
   <r:content_for name="{$defaultHeaderClasses}"><r:site:data name="classes_wvu_backpage_header__h1" /></r:content_for>
@@ -43,9 +45,15 @@
     <h1 class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
     <r:if v1="{$header_subhead}" v2="1" op="=">
       <r:edit_mode_only>
-        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Subhead</span></r:edit_mode_only>
+        <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
+          <pre class="mb-0 text-white"><r:editable_region name="{$subheadClasses}" type="simple" /></pre>
+          <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultSubheadClasses}"><r:content /></r:yield></pre>
+        </small>
+        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Subhead / Title</span></r:edit_mode_only>
       </r:edit_mode_only>
-      <r:editable_region name="{$componentSubhead}" scope="{$componentScope}"><p class="lead mb-0 mt-1">Subhead goes here.</p></r:editable_region>
+      <p class="<r:page:if_has_content_for region="{$subheadClasses}"><r:page:content name="{$subheadClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$subheadClasses}"><r:yield name="{$defaultSubheadClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
+        <r:editable_region name="{$componentSubhead}" scope="{$componentScope}" type="simple">Subhead goes here.</r:editable_region>
+      </p>
     </r:if>
   </div>
 </header><!-- End markup -->

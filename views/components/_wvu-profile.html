@@ -46,21 +46,21 @@
         </div>
       </div>
       <div class="col-md-8 mr-md-auto">
-        <r:page:if_has_content_for region="{$componentHeaderLabel}" always_show_in_edit_mode="true">
-          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header Label</span></r:edit_mode_only>
-          <p class="helvetica-neue-light h5 text-uppercase">
-            <r:editable_region name="{$componentHeaderLabel}" scope="{$componentScope}" type="simple" />
-          </p>
-        </r:page:if_has_content_for>
         <r:if v1="{$backpage_header}" v2="1" op="=">
+          <r:page:if_has_content_for region="wvu-backpage-header-1__label" always_show_in_edit_mode="true">
+            <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header Label</span></r:edit_mode_only>
+            <p class="helvetica-neue-light h5 text-uppercase">
+              <r:editable_region name="wvu-backpage-header-1__label" scope="{$componentScope}" type="simple" />
+            </p>
+          </r:page:if_has_content_for>
           <h1><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
+          <r:page:if_has_content_for region="wvu-backpage-header-1__subhead" always_show_in_edit_mode="true">
+            <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Title / Subhead</span></r:edit_mode_only>
+            <p class="helvetica-neue-light h5">
+              <r:editable_region name="wvu-backpage-header-1__subhead" scope="{$componentScope}" type="simple" />
+            </p>
+          </r:page:if_has_content_for>
         </r:if>
-        <r:page:if_has_content_for region="{$componentProfileTitle}" always_show_in_edit_mode="true">
-          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Title / Subhead</span></r:edit_mode_only>
-          <p class="helvetica-neue-light h5">
-            <r:editable_region name="{$componentProfileTitle}" scope="{$componentScope}" type="simple" />
-          </p>
-        </r:page:if_has_content_for>
         <r:page:if_has_content_for region="{$componentQuote}" always_show_in_edit_mode="true">
           <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Quote</span></r:edit_mode_only>
           <p class="iowan-old-style-black-italic h3 mt-3">
