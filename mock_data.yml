@@ -33,7 +33,7 @@ editable_region:
     <p><%= Faker::Lorem.paragraph(2) %></p>
   wvu-hero-1__header: "It Starts Now"
   wvu-hero-1__main: |
-    <p><%= Faker::Lorem.paragraph(3) %></p>
+    <p>Hero text goes here. <%= Faker::Hacker.say_something_smart %> <%= Faker::Hacker.say_something_smart %></p>
     <a class="btn btn-primary" href="#">Call to Action</a>
   wvu-hero-1-classes: ""
   wvu-hero-1-default-component-classes: ""
@@ -199,6 +199,12 @@ pages:
 if_page_depth_eq: 1
 if_page_depth_gt: 1
 
+files:
+  # Hero:
+  - image_url: "/files/225e0ebe-d50b-422c-9a92-2e06864328b6/1780x1780?cb=1553729523" # NOTE: Be sure to link to your own photo!
+    label: "home-hero-1-background"
+    alt_text: "Fall Woodburn"
+
 site_menu: |
   <ul class="wvu-nav__items menu-items navbar-nav mr-auto">
     <li class="active">
@@ -242,7 +248,7 @@ ancestor_menu: |
 
 breadcrumbs: |
   <ul class="wvu-breadcrumbs__crumbs">
-    <li><a href="#">Home</a></li>
+    <li><a href="/">Home</a></li>
     <li class="active">Page</li>
   </ul>
 
@@ -382,11 +388,3 @@ blog:
             date: "October 2015"
             count: 2
             url: '#'
-
-files:
-  - filename: String
-    name: String
-    title: String
-    alt_text: String
-    download_url: String
-    image_url: String
