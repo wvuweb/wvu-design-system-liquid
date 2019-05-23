@@ -46,7 +46,7 @@
             <r:if expr="{{ BLANK(has_co_brand) }}">
               <a class="d-block position-relative my-3" href="/">
                 <div class="sr-only">Unit Name</div>
-                <r:img src="http://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
+                <r:img src="https://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
               </a>
             </r:if>
             <r:if expr="{{ NOT(BLANK(has_co_brand)) }}">
@@ -58,7 +58,7 @@
                 <r:if v1="{$has_co_brand}" v2="true" op="=">
                 <div class="wvu-co-branding d-inline-block align-self-center mx-2 p-2 border-left<r:if v1="{$masthead_color}" v2="gold" op="!="> border-white</r:if><r:if v1="{$masthead_color}" v2="gold" op="="> border-wvu-blue</r:if>">
                   <r:if expr="{{ NOT(BLANK(has_alternate_logo)) }}">
-                    <r:img src="http://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
+                    <r:img src="https://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
                   </r:if>
                   <r:if expr="{{ BLANK(has_alternate_logo) }}">
                     <r:site:data name="has_co_brand" />
@@ -80,7 +80,7 @@
               <r:if expr="{{ NOT(BLANK(has_co_brand)) }}">
               <div class="wvu-co-branding d-inline-block align-self-center mx-2 p-2 border-left<r:if v1="{$masthead_color}" v2="gold" op="!="> border-white</r:if><r:if v1="{$masthead_color}" v2="gold" op="="> border-wvu-blue</r:if>">
                 <r:if expr="{{ NOT(BLANK(has_alternate_logo)) }}">
-                  <r:img src="http://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
+                  <r:img src="https://<r:site:domain /><r:site:data name="has_alternate_logo" />" alt="<r:site:name />" />
                 </r:if>
                 <r:if expr="{{ BLANK(has_alternate_logo) }}">
                   <r:site:data name="has_co_brand" />
