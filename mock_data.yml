@@ -66,7 +66,7 @@ site:
     apply_link_2_url: "https://admissions.wvu.edu/visit"
     apply_link_3: "Request Information"
     apply_link_3_url: "https://admissions.wvu.edu/request-information"
-    nav_dropdowns: false
+    nav_dropdowns: true # Options: null | true
 
 root: true
 
@@ -200,12 +200,27 @@ if_page_depth_eq: 1
 if_page_depth_gt: 1
 
 site_menu: |
-  <ul>
-    <li class="active"><a href="#">Hello</a></li>
-    <li><a href="#">World</a></li>
-    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
-    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
-    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+  <ul class="wvu-nav__items menu-items navbar-nav mr-auto">
+    <li class="active">
+      <a class="nav-link px-2 px-lg-1" href="/">Home</a>
+    </li>
+    <li class="dropdown">
+      <a class="nav-link px-2 px-lg-1" href="#">How to Apply</a>
+      <ul class="sub-menu small bg-wvu-neutral--black px-1 mx-n1">
+        <li><a class="nav-link px-2 px-lg-1" href="#">Check Your Status</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">First-Time Freshmen</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">Transfer Students</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">International Undergraduate Students</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">Change of Campus Students</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">Graduate Students</a></li>
+      </ul>
+    </li>
+    <li><a class="nav-link px-2 px-lg-1" href="#">Academics</a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#">Cost and Aid</a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#">Information For</a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#">Admitted Students</a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#"><%= Faker::Coffee.blend_name %></a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#"><%= Faker::Superhero.name %></a></li>
   </ul>
 
 sub_menu: |
