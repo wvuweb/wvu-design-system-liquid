@@ -20,8 +20,8 @@
       <r:page:slug />-thumbnail
     </r:set_var>
     <r:files:each limit="1" labels="{$thumbnailurl}" types="image" random="true">
-      <meta property="og:image" content="http://<r:site:domain /><r:file:image_url size="1200x630" />" />
-      <meta name="twitter:image" content="http://<r:site:domain /><r:file:image_url size="1200x630" />" />
+      <meta property="og:image" content="https://<r:site:domain /><r:file:image_url size="1200x630" />" />
+      <meta name="twitter:image" content="https://<r:site:domain /><r:file:image_url size="1200x630" />" />
     </r:files:each>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="<r:page:url />" />
@@ -43,7 +43,7 @@
       <a class="sr-only sr-only-focusable" href="#wvu-main-content">Skip to main content</a>
       <r:if expr="{{ NOT(BLANK(is_demo_site)) }}">
         <div class="p-3 bg-wvu-accent--red text-white text-center">
-          This is a demo site. Some of the links won’t work. To see other templates in this theme, return to the <a href="http://designsystem.sandbox.wvu.edu/themes/<r:site:data name="is_demo_site" />" class="text-wvu-accent--yellow"><span class="text-capitalize"><r:site:data name="is_demo_site" /></span> theme page</a>. To see other themes, return to the <a href="http://designsystem.sandbox.wvu.edu/themes" class="text-wvu-accent--yellow">themes page</a>.
+          This is a demo site. Some of the links won’t work. To see other templates in this theme, return to the <a href="https://designsystem.sandbox.wvu.edu/themes/<r:site:data name="is_demo_site" />" class="text-wvu-accent--yellow"><span class="text-capitalize"><r:site:data name="is_demo_site" /></span> theme page</a>. To see other themes, return to the <a href="https://designsystem.sandbox.wvu.edu/themes" class="text-wvu-accent--yellow">themes page</a>.
         </div>
       </r:if>
       <r:partial name="components/wvu-masthead" theme="University Relations: WVU Design System" />
@@ -51,7 +51,7 @@
 
     <r:partial name="components/wvu-nav" theme="University Relations: WVU Design System" />
 
-    <r:comment><!-- What are layouts and <r:yield />? http://goo.gl/DFAsPv --></r:comment>
+    <r:comment><!-- What are layouts and <r:yield />? https://goo.gl/DFAsPv --></r:comment>
     <r:yield />
 
     <r:partial name="utilities/wvu-slots--site" theme="University Relations: WVU Design System" />
