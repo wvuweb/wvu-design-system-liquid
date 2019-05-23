@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.3.0](https://github.com/wvuweb/wvu-design-system/tree/v0.3.0) (2019-05-23)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.2.0...v0.3.0)
+
+**Implemented enhancements:**
+
+- Fix padding on nav when nav has dropdowns. [\#83](https://github.com/wvuweb/wvu-design-system/issues/83)
+- Slashes for unordered lists stopped working. [\#82](https://github.com/wvuweb/wvu-design-system/issues/82)
+- Make profiles title pull from header subhead [\#81](https://github.com/wvuweb/wvu-design-system/issues/81)
+- Adde lede text option to component dropdown in custom data [\#80](https://github.com/wvuweb/wvu-design-system/issues/80)
+- Add labels to all editable regions. [\#47](https://github.com/wvuweb/wvu-design-system/issues/47)
+- Auto-populate meta data in \<head\> [\#46](https://github.com/wvuweb/wvu-design-system/issues/46)
+
 ## [v0.2.0](https://github.com/wvuweb/wvu-design-system/tree/v0.2.0) (2019-05-21)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v.0.1.0...v0.2.0)
 
