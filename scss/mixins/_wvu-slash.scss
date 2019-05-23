@@ -72,6 +72,7 @@
   li {
     display: block $is-important;
     position: relative $is-important;
+    z-index: 0 $is-important;
     &:before {
       background-color: $color $is-important;
       content: '' $is-important;
