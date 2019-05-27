@@ -1,8 +1,10 @@
 body {
-  font-family: $helvetica-neue-fallback;
-  .expanded-fonts-loaded & {
-    font-family: $helvetica-neue;
-  }
+  @include helvetica-neue($is-important: null); // Disable !important in this instance.
+}
+
+strong,
+b {
+  @include helvetica-neue-bold($is-important: null); // Disable !important in this instance.
 }
 
 a {
