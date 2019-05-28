@@ -71,6 +71,11 @@
     <r:var name="slotName" />_loop_order
   </r:set_var>
 
+  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Loop By” value for this slot. The data in slot_{number}_loop_by will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). --></r:comment>
+  <r:set_var name="slotGalleryLoopBy">
+    <r:var name="slotName" />_gallery_loop_by
+  </r:set_var>
+
   <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Custom” value for this slot. The data in slot_{number}_custom will be used below to determine if a custom partial should be used instead of a shared partial. If the user fills out this field, we will display a partial with the provided partial name. --></r:comment>
   <r:set_var name="slotCustom">
     <r:var name="slotName" />_custom
@@ -99,6 +104,7 @@
   <r:set_var name="loopBy"><r:page:data name="{$slotLoopBy}" /></r:set_var>
   <r:set_var name="loopLabelsMatch"><r:page:data name="{$slotLoopLabelsMatch}" /></r:set_var>
   <r:set_var name="loopOrder"><r:page:data name="{$slotLoopOrder}" /></r:set_var>
+  <r:set_var name="galleryLoopBy"><r:page:data name="{$slotGalleryLoopBy}" /></r:set_var>
   <r:set_var name="isMain"><r:page:data name="{$slotIsMain}" /></r:set_var>
   <r:set_var name="instanceNumber"><r:page:data name="{$slotInstance}" /></r:set_var>
   <r:set_var name="whereToDisplay"><r:page:data name="{$slotWhereToDisplay}" /></r:set_var>

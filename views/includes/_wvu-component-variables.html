@@ -42,6 +42,9 @@
 <r:comment><!-- Pull in value from a “Loop Order” dropdown in Super Theme. Gets used by a featurettes partial to know what criteria whether to display items in either ascending or descending order. --></r:comment>
 <r:set_var name="componentLoopOrder" value="{$loopOrder}" default="asc" />
 
+<r:comment><!-- Pull in value from a “Gallery Loop By” dropdown in Super Theme. Gets used by a gallery partial to know what criteria should be evaluated when displaying items (Title, Filename). --></r:comment>
+<r:set_var name="componentGalleryLoopBy" value="{$galleryLoopBy}" default="title" />
+
 <r:comment><!-- Labels that will allow us to assign a background image to the component. --></r:comment>
 <r:set_var name="bgurl">
   <r:page:slug />-<r:var name="componentName" />-background

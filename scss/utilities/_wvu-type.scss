@@ -29,6 +29,10 @@
   @include wvu-shout();
 }
 
+.wvu-text-letter-spacing {
+  @include wvu-text-letter-spacing();
+}
+
 .helvetica-neue {
   @include helvetica-neue();
 }

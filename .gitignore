@@ -155,6 +155,3 @@ stylesheets/css-output
 *.mp3
 *.aac
 *.wma
-
-### Package Lock JSON ###
-package-lock.json

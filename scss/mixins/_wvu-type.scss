@@ -119,3 +119,7 @@
     font-size: 3rem;
   }
 }
+
+@mixin wvu-text-letter-spacing() {
+  letter-spacing: $wvu-letter-spacing-width !important;
+}
