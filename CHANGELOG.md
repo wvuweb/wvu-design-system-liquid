@@ -1,13 +1,37 @@
 # Change Log
 
+## [v0.4.0](https://github.com/wvuweb/wvu-design-system/tree/v0.4.0) (2019-05-28)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.3.1...v0.4.0)
+
+**Implemented enhancements:**
+
+- package-lock.json should not be included in .gitignore [\#94](https://github.com/wvuweb/wvu-design-system/issues/94)
+- Move javascript files to be installed via npm dependencies [\#92](https://github.com/wvuweb/wvu-design-system/issues/92)
+- On “Putting it All Together” section, include a lot more examples. [\#90](https://github.com/wvuweb/wvu-design-system/issues/90)
+- Reconcile top margin for profiles between when used as full-width container or within an other component. [\#59](https://github.com/wvuweb/wvu-design-system/issues/59)
+- For Gallery component, allow users to manipulate options such as "order by" [\#55](https://github.com/wvuweb/wvu-design-system/issues/55)
+- Create hosted CSS and JS files on static. [\#43](https://github.com/wvuweb/wvu-design-system/issues/43)
+- Create option for non-square thumbnail for all components. [\#41](https://github.com/wvuweb/wvu-design-system/issues/41)
+- New layout for Components page [\#29](https://github.com/wvuweb/wvu-design-system/issues/29)
+
+**Closed issues:**
+
+- Docs for custom components... [\#32](https://github.com/wvuweb/wvu-design-system/issues/32)
+
 ## [v0.3.1](https://github.com/wvuweb/wvu-design-system/tree/v0.3.1) (2019-05-28)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.3.0...v0.3.1)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.1.1...v0.3.1)
+
+**Implemented enhancements:**
+
+- Add logic to blog article template [\#87](https://github.com/wvuweb/wvu-design-system/issues/87)
+
+## [v0.1.1](https://github.com/wvuweb/wvu-design-system/tree/v0.1.1) (2019-05-28)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.3.0...v0.1.1)
 
 **Implemented enhancements:**
 
 - Make Action Hero inner container width dependent on display context... [\#91](https://github.com/wvuweb/wvu-design-system/issues/91)
 - If only 5 featurette items, make all fit on one line [\#89](https://github.com/wvuweb/wvu-design-system/issues/89)
-- Add logic to blog article template [\#87](https://github.com/wvuweb/wvu-design-system/issues/87)
 - Add item classe checker to featurettes with editable regions. [\#84](https://github.com/wvuweb/wvu-design-system/issues/84)
 - Add a label to each component showing which version of the core theme files it was introduced/is compatible with. [\#79](https://github.com/wvuweb/wvu-design-system/issues/79)
 - Create an optional editable region name override. [\#38](https://github.com/wvuweb/wvu-design-system/issues/38)
