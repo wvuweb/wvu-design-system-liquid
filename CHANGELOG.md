@@ -1,5 +1,21 @@
 # Change Log
 
+## [v0.1.1](https://github.com/wvuweb/wvu-design-system/tree/v0.1.1) (2019-05-28)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.3.0...v0.1.1)
+
+**Implemented enhancements:**
+
+- Make Action Hero inner container width dependent on display context... [\#91](https://github.com/wvuweb/wvu-design-system/issues/91)
+- If only 5 featurette items, make all fit on one line [\#89](https://github.com/wvuweb/wvu-design-system/issues/89)
+- Add item classe checker to featurettes with editable regions. [\#84](https://github.com/wvuweb/wvu-design-system/issues/84)
+- Add a label to each component showing which version of the core theme files it was introduced/is compatible with. [\#79](https://github.com/wvuweb/wvu-design-system/issues/79)
+- Create an optional editable region name override. [\#38](https://github.com/wvuweb/wvu-design-system/issues/38)
+- Create a Log In component. [\#6](https://github.com/wvuweb/wvu-design-system/issues/6)
+
+**Fixed bugs:**
+
+- Fix CV region on profile component [\#86](https://github.com/wvuweb/wvu-design-system/issues/86)
+
 ## [v0.3.0](https://github.com/wvuweb/wvu-design-system/tree/v0.3.0) (2019-05-23)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.2.0...v0.3.0)
 
