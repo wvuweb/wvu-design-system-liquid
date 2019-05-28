@@ -1,3 +1,7 @@
+// WVU BG Tint
+//==================================================
+// Adds a black tint to a background element to improve legibility of any text that is overlayed.
+
 @mixin wvu-bg-tint($wvu-tint-opacity, $is-important: $global-important) {
   background-size: cover $is-important;
   position: relative;
@@ -53,3 +57,8 @@
     }
   }
 }
+
+// Example usage
+// .wvu-bg-tint, %wvu-bg-tint {
+//   @include wvu-bg-tint($wvu-tint-opacity);
+// }

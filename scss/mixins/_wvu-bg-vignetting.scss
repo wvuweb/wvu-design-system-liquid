@@ -1,3 +1,7 @@
+// WVU BG Vignetting
+//==================================================
+// Adds a vignetting effect to an element’s background image.
+
 @mixin wvu-bg-vignetting($wvu-vignetting-opacity, $wvu-vignetting-alignment, $is-important: $global-important) {
   background-size: cover $is-important;
   position: relative;
@@ -80,3 +84,8 @@
     }
   }
 }
+
+// Example usage:
+// .wvu-bg-vignetting, %wvu-bg-vignetting {
+//   @include wvu-bg-vignetting($wvu-vignetting-opacity, left);
+// }

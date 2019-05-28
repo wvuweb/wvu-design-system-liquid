@@ -1,3 +1,7 @@
+// WVU BG Blend Mode
+//==================================================
+// Adds a luminosity or lighten effect to a background image.
+
 @mixin wvu-bg-blend-mode($blend-mode, $is-important: $global-important) {
   @if $blend-mode == 'lighten' {
     background-blend-mode: lighten $is-important;
@@ -20,3 +24,8 @@
     }
   }
 }
+
+// Usage example:
+// .wvu-bg-blend-mode-lighten {
+//   @include wvu-bg-blend-mode(lighten);
+// }

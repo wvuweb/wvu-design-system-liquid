@@ -1,3 +1,7 @@
+// WVU BG Pattern
+//==================================================
+// Adds a WVU-branded background pattern to an element (weave, grid, topo map, etc.)
+
 @mixin wvu-bg-pattern($pattern-type, $is-important: $global-important) {
   @if $pattern-type == 'wvu-blue' {
     background-color: $wvu-blue $is-important;
@@ -157,3 +161,8 @@
     }
   }
 }
+
+// Usage example:
+// .wvu-bg-pattern-gold, %wvu-bg-pattern-gold {
+//   @include wvu-bg-pattern(wvu-gold);
+// }

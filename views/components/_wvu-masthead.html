@@ -107,8 +107,8 @@
                 <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--light-blue mr-1">Apply Link 1</a>
                 <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--orange mr-1">Apply Link 2</a>
                 <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-gold">Apply Link 3</a>
-                  </r:if>
-                  <r:if v1="{$masthead_color}" v2="gold" op="=">
+              </r:if>
+              <r:if v1="{$masthead_color}" v2="gold" op="=">
                 <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-blue mr-1">Apply Link 1</a>
                 <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--red mr-1">Apply Link 2</a>
                 <a href="#" class="align-self-center btn mb-1 btn-outline-wvu-accent--dark-green">Apply Link 3</a>
@@ -132,8 +132,8 @@
                 <r:if expr="{{ NOT(BLANK(apply_link_3)) }}">
                   <a href="<r:site:data name="apply_link_3_url" />" class="align-self-center btn mb-1 btn-outline-wvu-gold"><r:site:data name="apply_link_3" /></a>
                 </r:if>
-                  </r:if>
-                  <r:if v1="{$masthead_color}" v2="gold" op="=">
+              </r:if>
+              <r:if v1="{$masthead_color}" v2="gold" op="=">
                 <r:if expr="{{ NOT(BLANK(apply_link_1)) }}">
                   <a href="<r:site:data name="apply_link_1_url" />" class="align-self-center btn mb-1 btn-outline-wvu-blue mr-1"><r:site:data name="apply_link_1" /></a>
                 </r:if>

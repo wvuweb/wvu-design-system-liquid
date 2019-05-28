@@ -1,3 +1,7 @@
+// WVU Slash
+//==================================================
+// Adds a gold, white, or blue WVU-branded slash to a text element.
+
 @mixin wvu-slash($color, $width, $position, $is-important: $global-important) {
   position: relative $is-important;
   z-index: 0 $is-important;
@@ -67,6 +71,15 @@
   }
 }
 
+// Example usage:
+// .wvu-slash {
+//   @include wvu-slash($wvu-gold, normal, left);
+// }
+
+// WVU Slashes
+//==================================================
+// Adds gold, white, or blue WVU-branded slashes to list items of an element.
+
 @mixin wvu-slashes($color, $is-important: $global-important) {
   list-style-type: none;
   li {
@@ -89,7 +102,14 @@
   }
 }
 
-// NOTE: This is for breadcrumbs.
+// Example usage:
+// .wvu-ul-slashes {
+//   @include wvu-slashes($wvu-gold);
+// }
+
+// WVU Slash List
+//==================================================
+// Adds a forward slash before each item in a list. Used mainly for breadcrumbs.
 
 @mixin wvu-slash-list() {
   li {
@@ -104,3 +124,8 @@
     }
   }
 }
+
+// Example usage:
+// .wvu-slash-list {
+//   @include wvu-slash-list();
+// }

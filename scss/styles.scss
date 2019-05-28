@@ -48,20 +48,7 @@
 @import "./node_modules/bootstrap/scss/utilities";
 @import "./node_modules/bootstrap/scss/print";
 
-// Misc.
-@import './node_modules/animatewithsass/_properties';
-@import './node_modules/animatewithsass/_fading-entrances/fadeIn';
-@import './node_modules/animatewithsass/_fading-entrances/fadeInDown';
-@import './node_modules/animatewithsass/_sliding-entrances/slideInDown';
-@import "./node_modules/hover.css/scss/options";
-@import "./node_modules/hover.css/scss/mixins";
-@import "./node_modules/hover.css/scss/hacks";
-@import "./node_modules/hover.css/scss/effects/shadow-and-glow-transitions/grow-shadow";
-
-// @import './node_modules/animate.scss-master/animate.scss';
-
 // WVU Components
-@import 'mixins/wvu-animate';
 @import 'mixins/wvu-bar';
 @import 'mixins/wvu-bg-blend-mode';
 @import 'mixins/wvu-bg-pattern';
@@ -71,9 +58,7 @@
 @import 'mixins/wvu-logo-lockup';
 @import 'mixins/wvu-slash';
 @import 'mixins/wvu-type';
-@import 'mixins/wvu-vignetting';
 @import 'utilities/wvu-active-nav-link';
-@import 'utilities/wvu-animate';
 @import 'utilities/wvu-bar';
 @import 'utilities/wvu-bg';
 @import 'utilities/wvu-bg-blend-mode';
