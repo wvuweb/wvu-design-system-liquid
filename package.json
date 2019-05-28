@@ -4,7 +4,7 @@
   "description": "WVU Design System",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "gulp"
+    "postinstall": "gulp move-js-files"
   },
   "repository": {
     "type": "git",
@@ -15,11 +15,15 @@
   "dependencies": {
     "bootstrap": "~4.3",
     "animatewithsass": "3.2.1",
-    "hover.css": "2.3.2"
+    "hover.css": "2.3.2",
+    "fontfaceobserver": "2.1.0",
+    "twitter-fetcher": "17.0.3",
+    "magnific-popup": "1.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "*"
   }
 }
