@@ -52,10 +52,6 @@
 <r:page:if_has_content_for region="{$componentDownload}" always_show_in_edit_mode="true">
   <span class="d-block position-relative">
     <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Download</span></r:edit_mode_only>
-    <span class="far fa-file-pdf position-absolute"></span>
-    <a class="d-block pl-3" href="<r:page:content name="{$componentDownload}" />"><r:page:content name="{$componentDownload}" /></a>
-    <r:edit_mode_only>
-      <r:editable_region name="{$componentDownload}" scope="{$componentScope}" />
-    </r:edit_mode_only>
+    <span class="far fa-file-pdf position-absolute"></span> <span class="d-block pl-3"><r:editable_region name="{$componentDownload}" scope="{$componentScope}" /></span>
   </span>
 </r:page:if_has_content_for>

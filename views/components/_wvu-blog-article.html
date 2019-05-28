@@ -26,7 +26,7 @@
       <div class="row py-5">
         <div class="col-sm-8 col-md-6 mx-auto">
           <r:if v1="{$blog_article_has_hero}" v2="1" op="!=">
-            <h1 id="<r:var name="componentName" />-label" itemprop="headline"><r:page:name /></h1>
+            <r:if v1="{$backpage_header}" v2="1" op="="><h1 id="<r:var name="componentName" />-label" itemprop="headline"><r:page:name /></h1></r:if>
             <p class="small d-block">
               <r:if v1="{$blog_article_hide_author}" v2="1" op="!=">
                 <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">

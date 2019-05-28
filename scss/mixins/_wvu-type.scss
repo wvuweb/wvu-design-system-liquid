@@ -1,3 +1,7 @@
+// WVU BG Vignetting
+//==================================================
+// Adds a vignetting effect to an element’s background image.
+
 @mixin wvu-header-max-width($is-important: $global-important) {
   max-width: 9em $is-important;
 }
