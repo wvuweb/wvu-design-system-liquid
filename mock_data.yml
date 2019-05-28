@@ -33,7 +33,7 @@ editable_region:
     <p><%= Faker::Lorem.paragraph(2) %></p>
   wvu-hero-1__header: "It Starts Now"
   wvu-hero-1__main: |
-    <p><%= Faker::Lorem.paragraph(3) %></p>
+    <p>Hero text goes here. <%= Faker::Hacker.say_something_smart %> <%= Faker::Hacker.say_something_smart %></p>
     <a class="btn btn-primary" href="#">Call to Action</a>
   wvu-hero-1-classes: ""
   wvu-hero-1-default-component-classes: ""
@@ -50,15 +50,23 @@ editable_region:
 
 site:
   id: 26
-  name: "This is my site name"
-  domain: "domain.wvu.edu"
+  name: "My Site Title Name"
+  domain: "designsystem.sandbox.wvu.edu"
   data:
-    anykey: "This can be any value"
-    anotherkey: "Another Value"
-    has_alternate_logo: ""
-    masthead_color: wvu-blue
-    masthead_title: "My Site"
-    nav_dropdowns: false
+    has_alternate_logo: null # Options: null | *slug* to a logo image.
+    has_co_brand: "STEM Center" # Options: true | false | string
+    co_brand_subtitle: "Master of Science"
+    masthead_color: "blue" # Options: blue | gold
+    masthead_title: "My Site Name"
+    masthead_college_link_title: null # Options: null | string (eg: "Davis College")
+    masthead_college_link_address: "https://universityrelations.wvu.edu/"
+    apply_link_1: "Apply Now"
+    apply_link_1_url: "https://admissions.wvu.edu/how-to-apply"
+    apply_link_2: "Visit WVU"
+    apply_link_2_url: "https://admissions.wvu.edu/visit"
+    apply_link_3: "Request Information"
+    apply_link_3_url: "https://admissions.wvu.edu/request-information"
+    nav_dropdowns: true # Options: null | true
 
 root: true
 
@@ -77,7 +85,7 @@ page:
   data:
     some_key: some_data_value
     another_key: some_other_value
-    slot_1: hero
+    slot_1: "hero"
     slot_1_custom: ""
     slot_1_where_to_display: "as_full_width_block"
     slot_1_is_main: "0"
@@ -90,40 +98,40 @@ page:
     slot_1_loop_order: "asc"
     slot_1_scope: 0
     slot_1_show_hidden: 0
-    slot_2: featurettes
     slot_1_limit: 4
+    slot_2: "featurettes"
     slot_2_custom: ""
     slot_2_number: 1
     slot_2_where_to_display: "as_full_width_block"
-    slot_3: action-hero
+    slot_3: "action-hero"
     slot_3_custom: ""
     slot_3_number: 1
     slot_3_where_to_display: "as_full_width_block"
-    slot_4: action-hero
+    slot_4: ""
     slot_4_custom: ""
     slot_4_number: 1
     slot_4_where_to_display: "as_full_width_block"
-    slot_5: action-hero
+    slot_5: ""
     slot_5_custom: ""
     slot_5_number: 1
     slot_5_where_to_display: "as_full_width_block"
-    slot_6: action-hero
+    slot_6: ""
     slot_6_custom: ""
     slot_6_number: 1
     slot_6_where_to_display: "as_full_width_block"
-    slot_7: action-hero
+    slot_7: ""
     slot_7_custom: ""
     slot_7_number: 1
     slot_7_where_to_display: "as_full_width_block"
-    slot_8: action-hero
+    slot_8: ""
     slot_8_custom: ""
     slot_8_number: 1
     slot_8_where_to_display: "as_full_width_block"
-    slot_9: action-hero
+    slot_9: ""
     slot_9_custom: ""
     slot_9_number: 1
     slot_9_where_to_display: "as_full_width_block"
-    slot_10: action-hero
+    slot_10: ""
     slot_10_custom: ""
     slot_10_number: 1
     slot_10_where_to_display: "as_full_width_block"
@@ -191,13 +199,34 @@ pages:
 if_page_depth_eq: 1
 if_page_depth_gt: 1
 
+files:
+  # Hero:
+  - image_url: "/files/225e0ebe-d50b-422c-9a92-2e06864328b6/1780x1780?cb=1553729523" # NOTE: Be sure to link to your own photo!
+    label: "home-hero-1-background"
+    alt_text: "Fall Woodburn"
+
 site_menu: |
-  <ul>
-    <li class="active"><a href="#">Hello</a></li>
-    <li><a href="#">World</a></li>
-    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
-    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
-    <li><a href="#"><%= Faker::Lorem.word.capitalize %></a></li>
+  <ul class="wvu-nav__items menu-items navbar-nav mr-auto">
+    <li class="active">
+      <a class="nav-link px-2 px-lg-1" href="/">Home</a>
+    </li>
+    <li class="dropdown">
+      <a class="nav-link px-2 px-lg-1" href="#">How to Apply</a>
+      <ul class="sub-menu small bg-wvu-neutral--black px-1 mx-n1">
+        <li><a class="nav-link px-2 px-lg-1" href="#">Check Your Status</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">First-Time Freshmen</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">Transfer Students</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">International Undergraduate Students</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">Change of Campus Students</a></li>
+        <li><a class="nav-link px-2 px-lg-1" href="#">Graduate Students</a></li>
+      </ul>
+    </li>
+    <li><a class="nav-link px-2 px-lg-1" href="#">Academics</a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#">Cost and Aid</a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#">Information For</a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#">Admitted Students</a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#"><%= Faker::Coffee.blend_name %></a></li>
+    <li><a class="nav-link px-2 px-lg-1" href="#"><%= Faker::Superhero.name %></a></li>
   </ul>
 
 sub_menu: |
@@ -219,7 +248,7 @@ ancestor_menu: |
 
 breadcrumbs: |
   <ul class="wvu-breadcrumbs__crumbs">
-    <li><a href="#">Home</a></li>
+    <li><a href="/">Home</a></li>
     <li class="active">Page</li>
   </ul>
 
@@ -359,11 +388,3 @@ blog:
             date: "October 2015"
             count: 2
             url: '#'
-
-files:
-  - filename: String
-    name: String
-    title: String
-    alt_text: String
-    download_url: String
-    image_url: String
