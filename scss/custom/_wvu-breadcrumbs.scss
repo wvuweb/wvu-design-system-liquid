@@ -1,10 +1,7 @@
 .wvu-breadcrumbs {
+  color: $wvu-breadcrumbs-color;
   a, a:link, a:visited, a:hover {
-    color: white;
-  }
-  .text-wvu-neutral--light-gray {
-    a, a:link, a:visited, a:hover {
-      color: $wvu-neutral--light-gray;
-    }
+    color: $wvu-breadcrumbs-color;
+    text-decoration: underline;
   }
 }
