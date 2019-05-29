@@ -1,5 +1,17 @@
 # Change Log
 
+## [v0.3.2](https://github.com/wvuweb/wvu-design-system/tree/v0.3.2) (2019-05-29)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.4.0...v0.3.2)
+
+**Implemented enhancements:**
+
+- Default featurettes instance numbers has 5 listed twice, no 4 [\#96](https://github.com/wvuweb/wvu-design-system/issues/96)
+- Buy an extended commercial license for Hover.css [\#95](https://github.com/wvuweb/wvu-design-system/issues/95)
+
+**Fixed bugs:**
+
+- Fix color contrast of Breadcrumbs [\#85](https://github.com/wvuweb/wvu-design-system/issues/85)
+
 ## [v0.4.0](https://github.com/wvuweb/wvu-design-system/tree/v0.4.0) (2019-05-28)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.3.1...v0.4.0)
 
