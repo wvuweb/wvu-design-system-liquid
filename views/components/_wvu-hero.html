@@ -26,7 +26,6 @@
   <div class="container position-relative wvu-z-index-content">
     <div class="row py-5<r:if v1="{$hero_text_alignment}" v2="1" operator="="> justify-content-end</r:if>">
       <div class="col col-md-6 <r:if v1="{$componentAlign}" v2="right" op="=">ml-md-auto</r:if><r:if v1="{$componentAlign}" v2="middle" op="=">mx-md-auto</r:if>">
-
         <r:comment><!-- This is where you can add utility classes that will apply to the hero’s heading. --></r:comment>
         <r:edit_mode_only>
           <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
@@ -35,6 +34,7 @@
             <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultHeaderClasses}" /></pre>
           </small>
         </r:edit_mode_only>
+        <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
         <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header</span></r:edit_mode_only>
         <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section. --></r:comment>
         <h1 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
@@ -43,14 +43,13 @@
             It Starts Now.
           </r:editable_region>
         </h1>
-
+        <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
         <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Main Content</span></r:edit_mode_only>
         <r:comment><!-- Use the editable region name for th main section of the hero, which you defined above. --></r:comment>
         <r:editable_region name="{$componentMain}" scope="{$componentScope}">
           <p class="lead py-2">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
           <a class="btn btn-primary btn-lg" href="#" role="button">Call to Action</a>
         </r:editable_region>
-
       </div>
     </div>
   </div>

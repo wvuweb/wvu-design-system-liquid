@@ -24,6 +24,7 @@
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <!-- Markup --><section aria-label="<r:var name="componentName" />-label" class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if><r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <figure>
+    <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
     <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Image</span></r:edit_mode_only>
     <r:editable_region name="{$componentMain}">
       <img src="https://designsystem.sandbox.wvu.edu/files/7f5da73f-36df-4693-a2c8-f01398b3adbd/1720x1720" alt="Cheerleaders waving a flag">
@@ -38,6 +39,7 @@
           <strong class="text-muted">Default caption classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultComponentCaptionClasses}" /></pre>
         </small>
       </r:edit_mode_only>
+      <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
       <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Caption</span></r:edit_mode_only>
       <small<r:page:if_has_content_for region="{$componentCaptionClasses}"> class="<r:page:content name="{$componentCaptionClasses}" />"</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentCaptionClasses}"> class="<r:yield name="{$defaultComponentCaptionClasses}" />"</r:page:unless_has_content_for>>
         <r:editable_region name="{$componentCaption}">

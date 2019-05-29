@@ -27,6 +27,7 @@
   <div class="container wvu-z-index-content">
     <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
       <div class="wvu-z-index-content mb-4">
+        <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
         <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header</span></r:edit_mode_only>
         <r:editable_region name="{$componentHeader}" scope="{$componentScope}">
           <h2 id="<r:var name="componentName" />-label" class="display-3 wvu-shout">Video Feature Headline</h2>
@@ -37,6 +38,7 @@
     <div class="row">
       <div class="col-md-8 mx-auto">
         <div class="embed-responsive embed-responsive-16by9 mb-3">
+          <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
           <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Video</span></r:edit_mode_only>
           <r:editable_region name="{$componentMain}">
             <iframe title="We love WVU!" class="embed-responsive-item" src="https://www.youtube.com/embed/vAv2SRTOyvc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -47,6 +49,7 @@
     <r:page:if_has_content_for region="{$componentPostscript}" always_show_in_edit_mode="true">
       <div class="mt-2 wvu-z-index-content">
         <div class="wvu-z-index-content mb-2">
+          <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
           <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Postscript</span></r:edit_mode_only>
           <r:editable_region name="{$componentPostscript}" scope="{$componentScope}">
             <p class="mb-0">View <a class="text-wvu-gold" href="#">more videos</a>.</p>
