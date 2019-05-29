@@ -1,12 +1,20 @@
 # Change Log
 
+## [v0.5.0](https://github.com/wvuweb/wvu-design-system/tree/v0.5.0) (2019-05-29)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.4.1...v0.5.0)
+
+**Implemented enhancements:**
+
+- Add full bleed photo component. [\#99](https://github.com/wvuweb/wvu-design-system/issues/99)
+- Buy an extended commercial license for Hover.css [\#95](https://github.com/wvuweb/wvu-design-system/issues/95)
+- Better default content for address region in footer [\#88](https://github.com/wvuweb/wvu-design-system/issues/88)
+
 ## [v0.4.1](https://github.com/wvuweb/wvu-design-system/tree/v0.4.1) (2019-05-29)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.4.0...v0.4.1)
 
 **Implemented enhancements:**
 
 - Default featurettes instance numbers has 5 listed twice, no 4 [\#96](https://github.com/wvuweb/wvu-design-system/issues/96)
-- Buy an extended commercial license for Hover.css [\#95](https://github.com/wvuweb/wvu-design-system/issues/95)
 
 **Fixed bugs:**
 
@@ -17,7 +25,6 @@
 
 **Implemented enhancements:**
 
-- package-lock.json should not be included in .gitignore [\#94](https://github.com/wvuweb/wvu-design-system/issues/94)
 - Move javascript files to be installed via npm dependencies [\#92](https://github.com/wvuweb/wvu-design-system/issues/92)
 - On “Putting it All Together” section, include a lot more examples. [\#90](https://github.com/wvuweb/wvu-design-system/issues/90)
 - Reconcile top margin for profiles between when used as full-width container or within an other component. [\#59](https://github.com/wvuweb/wvu-design-system/issues/59)
