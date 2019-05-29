@@ -1,10 +1,19 @@
-// WVU BG Vignetting
+// WVU Header Max Width
 //==================================================
-// Adds a vignetting effect to an element’s background image.
+// When using a display header, you usually don’t want it extending too long. Limit its width with this mixin.
 
 @mixin wvu-header-max-width($is-important: $global-important) {
   max-width: 9em $is-important;
 }
+
+// Example usage:
+// .wvu-header-max-width {
+//   @include wvu-header-max-width();
+// }
+
+// WVU Typography Options
+//==================================================
+// Use these to apply different typefaces to text elements.
 
 @mixin helvetica-neue($is-important: $global-important) {
   font-family: $helvetica-neue-fallback $is-important;
@@ -12,6 +21,11 @@
     font-family: $helvetica-neue $is-important;
   }
 }
+
+// Example usage:
+// .helvetica-neue {
+//   @include helvetica-neue();
+// }
 
 @mixin helvetica-neue-bold($is-important: $global-important) {
   font-family: $helvetica-neue-fallback $is-important;
@@ -22,6 +36,11 @@
   }
 }
 
+// Example usage:
+// .helvetica-neue-bold {
+//   @include helvetica-neue-bold();
+// }
+
 @mixin helvetica-neue-light($is-important: $global-important) {
   font-family: $helvetica-neue-fallback $is-important;
   font-weight: normal $is-important;
@@ -30,6 +49,11 @@
     font-family: $helvetica-neue-light $is-important;
   }
 }
+
+// Example usage:
+// .helvetica-neue-light {
+//   @include helvetica-neue-light();
+// }
 
 // NOTE: You must include the fonts.com script for the Iowan web font to use Iowan as you see here.
 @mixin iowan-old-style($is-important: $global-important) {
@@ -44,6 +68,10 @@
     line-height: 1em !important;
   }
 }
+// Example usage:
+// .iowan-old-style {
+//   @include iowan-old-style();
+// }
 
 @mixin iowan-old-style-italic($is-important: $global-important) {
   font-family: $iowan-fallback $is-important;
@@ -60,6 +88,11 @@
   }
 }
 
+// Example usage:
+// .iowan-old-style-italic {
+//   @include iowan-old-style-italic();
+// }
+
 @mixin iowan-old-style-black($is-important: $global-important) {
   font-family: $iowan-fallback $is-important;
   font-weight: bold $is-important;
@@ -73,6 +106,11 @@
     line-height: 1em !important;
   }
 }
+
+// Example usage:
+// .iowan-old-style-black {
+//   @include iowan-old-style-black();
+// }
 
 @mixin iowan-old-style-black-italic($is-important: $global-important) {
   font-family: $iowan-fallback;
@@ -90,6 +128,11 @@
   }
 }
 
+// Example usage:
+// .iowan-old-style-black-italic {
+//   @include iowan-old-style-black-italic();
+// }
+
 @mixin wvu-shout($is-important: $global-important) {
   font-family: $wvu-shout-fallback $is-important;
   font-weight: bolder $is-important;
@@ -104,11 +147,29 @@
   }
 }
 
+// Example usage:
+// .wwvu-shout {
+//   @include wvu-shout();
+// }
+
+// WVU First Line Gold
+//==================================================
+// If you have a header, particularly one that uses WVU Shout, sometimes you want the top line to be gold and the bottom white.
+
 @mixin wvu-first-line-gold($is-important: $global-important) {
   &:first-line {
     color: $wvu-gold $is-important;
   }
 }
+
+// Example usage:
+// .wvu-first-line-gold {
+//   @include wvu-first-line-gold();
+// }
+
+// WVU Quote
+//==================================================
+// Let’s say you want to call out a quote. Use this to insert an opening quotation mark before your text.
 
 @mixin wvu-quote() {
   &:before {
@@ -120,6 +181,20 @@
   }
 }
 
+// Example usage:
+// .wvu-quote {
+//   @include wvu-quote();
+// }
+
+// WVU Letter Spacing
+//==================================================
+// This is good for using with a text element that is all caps and uses Iowan Old Style. It gives your text a more formal look.
+
 @mixin wvu-text-letter-spacing() {
   letter-spacing: $wvu-letter-spacing-width !important;
 }
+
+// Example usage:
+// .wvu-text-letter-spacing {
+//   @include wvu-text-letter-spacing();
+// }

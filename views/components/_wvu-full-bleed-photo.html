@@ -9,9 +9,12 @@
 <r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
 <r:set_var name="componentCaption">wvu-<r:var name="componentName" />__caption</r:set_var>
+<r:set_var name="componentCaptionClasses">wvu-<r:var name="componentName" />-caption-classes</r:set_var>
+<r:set_var name="defaultComponentCaptionClasses">wvu-<r:var name="componentName" />-default-caption-classes</r:set_var>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
-<r:content_for name="{$defaultComponentClasses}">py-5 position-relative</r:content_for>
+<r:content_for name="{$defaultComponentClasses}">my-4</r:content_for>
+<r:content_for name="{$defaultComponentCaptionClasses}">d-block wvu-p-max-width</r:content_for>
 
 <r:comment><!-- Components do not display on live sites unless set to “Is active” in the slot’s custom data. But we need to make the component active no matter what in Edit Mode so the user can test it. You can see the “if” statement in the component’s outer HTML container that checks. --></r:comment>
 <r:edit_mode_only>
@@ -19,18 +22,24 @@
 </r:edit_mode_only>
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
-<r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if>jumbotron jumbotron-fluid mb-0 wvu-overflow-hidden wvu-bg-size-cover <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
-  <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Image</span></r:edit_mode_only>
+<!-- Markup --><section aria-label="<r:var name="componentName" />-label" class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if><r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <figure>
+    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Image</span></r:edit_mode_only>
     <r:editable_region name="{$componentMain}">
-      <img class="w-100" src="https://designsystem.sandbox.wvu.edu/files/7f5da73f-36df-4693-a2c8-f01398b3adbd/1720x1720" alt="Cheerleaders waving a flag">
+      <img src="https://designsystem.sandbox.wvu.edu/files/7f5da73f-36df-4693-a2c8-f01398b3adbd/1720x1720" alt="Cheerleaders waving a flag">
     </r:editable_region>
   </figure>
-  <figcaption class="w-100">
-    <div class="container">
-      <small class="d-block">
-        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Caption</span></r:edit_mode_only>
+  <r:page:if_has_content_for region="{$componentCaption}" always_show_in_edit_mode="true">
+    <figcaption class="container">
+      <r:edit_mode_only>
+        <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Caption classes:
+          <pre class="mb-0 text-white"><r:editable_region name="{$componentCaptionClasses}" type="simple" /></pre>
+          <r:comment><!-- Show the default classes in case the user forgets, or needs to revert back to the original styling. --></r:comment>
+          <strong class="text-muted">Default caption classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultComponentCaptionClasses}" /></pre>
+        </small>
+      </r:edit_mode_only>
+      <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Caption</span></r:edit_mode_only>
+      <small<r:page:if_has_content_for region="{$componentCaptionClasses}"> class="<r:page:content name="{$componentCaptionClasses}" />"</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentCaptionClasses}"> class="<r:yield name="{$defaultComponentCaptionClasses}" />"</r:page:unless_has_content_for>>
         <r:editable_region name="{$componentCaption}">
           After I ran into Helen at a restaurant, I realized she was just office pretty
           we’re starting to formalize flexible opinions around our foundations let's
@@ -38,10 +47,9 @@
           but time vampire and knowledge process outsourcing.
         </r:editable_region>
       </small>
-    </div>
-  </figcaption>
-<r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
-</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />><!-- End markup -->
+    </figcaption>
+  </r:page:if_has_content_for>
+</section><!-- End markup --><r:comment><!-- Closing markup tag. --></r:comment>
 
 <r:comment><!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. --></r:comment>
 <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />

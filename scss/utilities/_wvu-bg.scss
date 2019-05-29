@@ -1,3 +1,7 @@
+// WVU BG Utilties
+//==================================================
+// Various utilities that adjust your background image.
+
 .wvu-bg-none {
   background-image: none $global-important;
 }
@@ -15,3 +19,8 @@
 .wvu-bg-size-cover {
   background-size: cover $global-important;
 }
+
+// Example usage:
+// <section class="wvu-bg-size-cover">
+//   ...
+// </section>

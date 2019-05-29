@@ -1,3 +1,5 @@
+// Some base styles that Bootstrap doesn’t provide.
+
 body {
   @include helvetica-neue($is-important: null); // Disable !important in this instance.
 }
@@ -23,6 +25,8 @@ blockquote {
 img {
   max-width: 100%;
 }
+
+// Inside a backpage main, add some padding to certain elements when they trail others. This allows us to group blocks of text with headings, etc. to improve scannability.
 
 .wvu-backpage-main {
   h2,

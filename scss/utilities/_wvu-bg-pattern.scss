@@ -1,3 +1,7 @@
+// WVU BG Patterns
+//==================================================
+// Utility classes that apply a background pattern to an element (weave, grid, topo map).
+
 .wvu-bg-pattern-gold, %wvu-bg-pattern-gold {
   @include wvu-bg-pattern(wvu-gold);
 }
@@ -41,3 +45,8 @@
 .wvu-bg-topo-light {
   @include wvu-bg-pattern(topo-light);
 }
+
+// Example usage:
+// <section class="wvu-bg-topo-dark">
+//   ...
+// </section>

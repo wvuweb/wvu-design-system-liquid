@@ -1,3 +1,7 @@
+// WVU BG Position
+//==================================================
+// Utility classes that allow you to adjust the position of a background image. This is useful for full-bleed images with text overlayed. Position your images to allow the text to be legible.
+
 .wvu-bg-position-center {
   background-position: 50% 50% $global-important;
 }
@@ -13,6 +17,8 @@
 .wvu-bg-position-right {
   background-position: right $global-important;
 }
+
+// Set background image to center, bottom, top, left, or right.
 
 @each $bp-value, $breakpoint in (xs, $wvu-bp-xs),
                                 (sm, $wvu-bp-sm),
@@ -37,6 +43,8 @@
     }
   }
 }
+
+// Create different utilities for various breakpoints and percentage widths of your image. This allows you to fine-tune.
 
 $i: 100;
 
@@ -82,7 +90,7 @@ $i: 100;
   }
 }
 
-// need options for bg-top, bg-bottom for various ratios for mobile
+// Give yourself some extra padding on top or bottom on smaller screen sizes.
 
 .wvu-bg-position-spacer-top {
   @media (max-width: $wvu-bp-sm) {
@@ -111,3 +119,8 @@ $i: 100;
     padding-bottom: 24rem $global-important;
   }
 }
+
+// Example usage:
+// <div class="py-5 text-center text-white wvu-bg-vignetting bg-wvu-neutral--dark-gray wvu-bg-pattern-grid-transparent wvu-bg-position-center-left--75 wvu-bg-position-xl-center-right wvu-bg-position-spacer-md-top" style="background-image: url(/files/8aa49c0c-ca6f-495b-af9d-72fd45761700/1720x1720);">
+//   ...
+// </div>

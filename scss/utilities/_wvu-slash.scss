@@ -1,3 +1,7 @@
+// WVU Slash
+//==================================================
+// Adds a gold, white, or blue WVU-branded slash to a text element.
+
 .wvu-slash {
   @include wvu-slash($wvu-gold, normal, left);
 }
@@ -57,6 +61,8 @@
   }
 }
 
+// You can position the slash to the left or right using these modifer classes.
+
 $i: 1;
 
 @while $i < 5 {
@@ -85,6 +91,15 @@ $i: 1;
   }
 }
 
+// Example usage:
+// <h2 class="wvu-slash wvu-slash--gold wvu-slash--skinny wvu-slash--2-left">
+//   My Header
+// </h2>
+
+// WVU Slashes
+//==================================================
+// Adds gold, white, or blue WVU-branded slashes to list items of an element.
+
 .wvu-ul-slashes {
   @include wvu-slashes($wvu-gold);
 }
@@ -101,6 +116,20 @@ $i: 1;
   @include wvu-slashes($wvu-neutral--white);
 }
 
+// Example usage:
+// <ul class="wvu-ul-slashes">
+//   ...
+// </ul>
+
+// WVU Slash List
+//==================================================
+// Adds a forward slash before each item in a list. Used mainly for breadcrumbs.
+
 .wvu-slash-list {
   @include wvu-slash-list();
 }
+
+// Example usage:
+// <ul class="wvu-slash-list pl-0">
+//   ...
+// </ul>

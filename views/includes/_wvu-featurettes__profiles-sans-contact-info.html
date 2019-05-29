@@ -100,37 +100,12 @@
                   <small class="d-block"><r:page:content name="wvu-backpage-header-1__subhead" /></small>
                 </p>
               </r:page:if_has_content_for>
-              <r:page:if_has_content_for region="wvu-profile-1__phone">
-                <p class="mb-0">
-                  <small class="d-block">
-                    <a href="tel:<r:page:content name="wvu-profile-1__phone-url" />" class="fas fa-phone"> <r:page:content name="wvu-profile-1__phone" /></a>
-                  </small>
-                </p>
-              </r:page:if_has_content_for>
-              <r:page:if_has_content_for region="wvu-profile-1__email">
-                <p class="mb-0">
-                  <small class="d-block">
-                    <a href="tel:<r:page:content name="wvu-profile-1__email" />" class="fas fa-envelope"> <r:page:content name="wvu-profile-1__email" /></a>
-                  </small>
-                </p>
-              </r:page:if_has_content_for>
-              <r:page:if_has_content_for region="wvu-profile-1__office">
-                <p class="mb-0">
-                  <small class="d-block">
-                    <r:page:if_has_content_for region="wvu-profile-1__office-url">
-                      <a href="tel:<r:page:content name="wvu-profile-1__office-url" />" class="fas fa-building"> <r:page:content name="wvu-profile-1__office" /></a>
-                    </r:page:if_has_content_for>
-                    <r:page:unless_has_content_for region="wvu-profile-1__office-url">
-                      <span class="fas fa-phone"><r:page:content name="wvu-profile-1__office" /></span>
-                    </r:page:unless_has_content_for>
-                  </small>
-                </p>
-              </r:page:if_has_content_for>
               <r:if expr="{{ NOT(BLANK(description)) }}">
                 <p class="<r:var name="itemBodyClassesChecker" />">
                   <r:page:data name="description" />
                 </p>
               </r:if>
+              </p>
               <p class="mb-0 mt-2">
                 <a class="btn <r:var name="itemButtonClassesChecker" />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></a>
               </p>

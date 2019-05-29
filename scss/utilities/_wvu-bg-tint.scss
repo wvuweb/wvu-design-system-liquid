@@ -1,3 +1,12 @@
+// WVU BG Tint
+//==================================================
+// Utility class that lets you add a dark tint to your background image to separate the image from your text.
+
 .wvu-bg-tint, %wvu-bg-tint {
   @include wvu-bg-tint($wvu-tint-opacity);
 }
+
+// Example usage:
+// <section class="wvu-bg-tint">
+//   ...
+// </section>
