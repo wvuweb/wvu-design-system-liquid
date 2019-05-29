@@ -45,24 +45,58 @@
 <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
 
 <r:content_for name="page_js">
-  <r:include_javascript name="vendor/twitterFetcher" />
+  <r:include_javascript name="vendor/twitter-fetcher/twitterFetcher_min" />
 
-  <script type="text/javascript" defer>
-    // ##### Simple example 1 #####
-    // A simple example to get my latest tweet and write to a HTML element with
-    // id "example1". Also automatically hyperlinks URLS and user mentions and
-    // hashtags.
+  <script defer>
+    // Adding aria-labelledby's and id's to tweet elements to avoid duplicate link text
     var configProfile = {
-      "profile": {"screenName": '<r:site:data name="twitter_handle" />'},
-      "domId": 'exampleProfile',
-      "maxTweets": 4,
-      "enableLinks": true,
-      "showUser": false,
-      "showTime": true,
-      "showImages": false,
-      "showInteraction": false,
-      "lang": 'en'
+      'profile': {
+        'screenName': '<r:site:data name="twitter_handle" />'
+      },
+      'domId': 'exampleProfile',
+      'maxTweets': 4,
+      'enableLinks': true,
+      'showUser': false,
+      'showTime': true,
+      'showImages': false,
+      'showInteraction': false,
+      'customCallback': formatTweets,
+      'lang': 'en'
     };
     twitterFetcher.fetch(configProfile);
+
+    String.prototype.supplant = function (o) {
+      return this.replace(/\${([^\${}]*)}/g, function (a, b) {
+        var r = o[b];
+        return typeof r === 'string' || typeof r === 'number' ? r : a;
+      });
+    };
+
+    function formatTweets (tweets) {
+      var config = {
+        domId: 'exampleProfile',
+        wrap_string: '<div class="row">${itemHTML}</div>',
+        item_string: '<div class="col border-left border-wvu-neutral--light-gray">${tweet}</div>'
+      };
+      var element = document.getElementById(config.domId);
+      var html = '';
+      var itemHTML = '';
+      tweets.forEach(function (tweet, index) {
+        var ariaId = index + 1;
+        var dom = new DOMParser().parseFromString(tweet, 'text/html');
+        dom.querySelectorAll('.tweet')[0].setAttribute('id', 'aria__tweet--' + ariaId);
+        dom.querySelectorAll('.timeposted a')[0].setAttribute('aria-labelledby', 'aria__tweet--' + ariaId);
+        var tweetContent = dom.querySelectorAll('body')[0].innerHTML;
+        itemHTML += config.item_string.supplant({
+          ariaId: ariaId,
+          tweet: tweetContent
+        });
+      });
+      html = config.wrap_string.supplant({
+        itemHTML: itemHTML
+      });
+      element.innerHTML = html;
+    }
+
   </script>
 </r:content_for>

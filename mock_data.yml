@@ -29,6 +29,8 @@ editable_region:
   wvu-featurettes-1__postscript: |
     <p class="mb-0">Put additional info or <a href="#">links</a> here.</p>
   wvu-featurettes-1-default-component-classes: "py-5"
+  wvu-twitter-widget-1__header: |
+    <h2 id="twitter-widget-1-label" class="lede text-center pt-5">Follow us on Twitter</h2>
   wvu-footer-1__main: |
     <p><%= Faker::Lorem.paragraph(2) %></p>
   wvu-hero-1__header: "It Starts Now"
@@ -67,6 +69,7 @@ site:
     apply_link_3: "Request Information"
     apply_link_3_url: "https://admissions.wvu.edu/request-information"
     nav_dropdowns: true # Options: null | true
+    twitter_handle: "WestVirginiaU"
 
 root: true
 
@@ -152,6 +155,7 @@ page:
     wvu-hero-1-classes: " "
     wvy-hero-1-default-component-classes: " "
     wvu-hero-1-header-classes: " "
+    wvu-twitter-widget-1__header: ""
     wvu-video-feature-1__header: ""
     wvu-video-feature-1__postscript: ""
     wvu-video-feature-1-classes: "py-5 bg-wvu-neutral--black wvu-bg-vignetting text-white text-center"
