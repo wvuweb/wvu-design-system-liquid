@@ -1,5 +1,24 @@
 # Change Log
 
+## [v0.6.0](https://github.com/wvuweb/wvu-design-system/tree/v0.6.0) (2019-05-30)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.5.0...v0.6.0)
+
+**Implemented enhancements:**
+
+- Add a social media component [\#103](https://github.com/wvuweb/wvu-design-system/issues/103)
+- Figure out how to ignore auto-generated copies of CSS, JS [\#100](https://github.com/wvuweb/wvu-design-system/issues/100)
+- package-lock.json should not be included in .gitignore [\#94](https://github.com/wvuweb/wvu-design-system/issues/94)
+- Add more typography examples to default content areas. [\#37](https://github.com/wvuweb/wvu-design-system/issues/37)
+- Create a CleanSlate version of all components. [\#3](https://github.com/wvuweb/wvu-design-system/issues/3)
+
+**Fixed bugs:**
+
+- Twitter fetcher JS has been modified and differs from what's published on Github [\#98](https://github.com/wvuweb/wvu-design-system/issues/98)
+
+**Closed issues:**
+
+- Removing Unused CSS [\#36](https://github.com/wvuweb/wvu-design-system/issues/36)
+
 ## [v0.5.0](https://github.com/wvuweb/wvu-design-system/tree/v0.5.0) (2019-05-29)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.4.1...v0.5.0)
 
