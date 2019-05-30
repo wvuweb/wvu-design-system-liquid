@@ -92,7 +92,7 @@ default_templates:
   content: backpage
   blog: blog_index
   article: blog_article
-  error: backpage
+  error: error
 
 ## Optimizations
 css:
