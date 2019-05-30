@@ -33,7 +33,7 @@
       </small>
       <span class="d-inline-block badge badge-primary mb-1">Header</span>
     </r:edit_mode_only>
-    <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section --></r:comment>
+    <r:comment><!-- For the h2, apply an ID that will tell screanreaders to use this element as the label for the section. Also apply classes to the header. If supplied by user, use those. If not use default. --></r:comment>
     <h2 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}" /></r:page:unless_has_content_for>"><r:editable_region name="{$componentHeader}" scope="{$componentScope}" type="simple">Big Search Header</r:editable_region></h2>
     <r:page:if_has_content_for region="{$componentMain}" always_show_in_edit_mode="true">
       <div class="mb-3">

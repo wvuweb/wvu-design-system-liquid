@@ -25,6 +25,7 @@
 <!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> aria-labelledby="<r:var name="componentName" />-label" class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if>">
   <div class="container position-relative wvu-z-index-content">
     <div class="row">
+      <r:comment><!-- If component alignment is set to “right” then put some empty space before the main content. --></r:comment>
       <r:if v1="{$componentAlign}" v2="right" op="=">
         <div class="col-md-6 wvu-bg-size-cover <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
 
@@ -40,12 +41,13 @@
           <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
           <span class="d-inline-block badge badge-primary mb-1">Header</span>
         </r:edit_mode_only>
-        <r:comment><!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section --></r:comment>
+        <r:comment><!-- For the h2, apply an ID that will tell screanreaders to use this element as the label for the section. Also add different classes depending on how the component alignment is set. --></r:comment>
         <h2 id="<r:var name="componentName" />-label" class="p-4 bg-light <r:if v1="{$componentAlign}" v2="right" op="!=">mr-md-n5 float-right</r:if> <r:if v1="{$componentAlign}" v2="right" op="=">ml-md-n5</r:if> <r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}">Outreach and Advocacy</r:page:unless_has_content_for>"><r:editable_region name="{$componentHeader}" scope="{$componentScope}" type="simple"><r:yield name="{$componentHeader}"><r:content /></r:yield></r:editable_region></h2>
-        <r:comment><!-- This uses a variable to define the name of the editable region. In the Super Theme, this is defined dynamically. If you are making a custom theme, and want to reference this partial more than once in the same tempalte, you will need to define an instance number (set_var name="componentInstance" value="something") when you insert each partial. --></r:comment>
+        <r:comment><!-- Apply different classes to the element based on the component’s alignment. --></r:comment>
         <div class="<r:if v1="{$componentAlign}" v2="right" op="!=">pr-2 float-right</r:if><r:if v1="{$componentAlign}" v2="right" op="=">pl-2</r:if>">
           <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
           <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Main Content</span></r:edit_mode_only>
+          <r:comment><!-- Editable region for main content. --></r:comment>
           <r:editable_region name="{$componentMain}" scope="{$componentScope}">
             <p class="iowan-old-style-italic text-wvu-blue h1">Center for Cool Innovation</p>
             <p class="lead mb-4">For even more hands-on experience and to improve the oral health of children
@@ -55,6 +57,7 @@
           </r:editable_region>
         </div>
       </div>
+      <r:comment><!-- If component alignment is set to “right” then put some empty space after the main content. --></r:comment>
       <r:if v1="{$componentAlign}" v2="right" op="!=">
         <div class="col-md-6 wvu-bg-size-cover <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
 
