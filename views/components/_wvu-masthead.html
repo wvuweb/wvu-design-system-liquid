@@ -119,7 +119,7 @@
           <r:if v1="{page:template:name}" v2="component-examples" op="!=">
             <r:if expr="{{ NOT(BLANK(masthead_college_link_title)) }}">
               <div class="row justify-content-center justify-content-lg-start mb-2">
-                <span class="<r:if v1="{$masthead_color}" v2="gold" op="!=">bg-wvu-gold </r:if><r:if v1="{$masthead_color}" v2="gold" op="=">bg-wvu-blue</r:if>px-2 py-1 align-self-top small"><a href="#" class="<r:if v1="{$masthead_color}" v2="gold" op="!=">text-wvu-blue </r:if><r:if v1="{$masthead_color}" v2="gold" op="=">text-white </r:if>">Parent Organization Name Goes Here</a></span>
+                <span class="<r:if v1="{$masthead_color}" v2="gold" op="!=">bg-wvu-gold </r:if><r:if v1="{$masthead_color}" v2="gold" op="=">bg-wvu-blue</r:if>px-2 py-1 align-self-top small"><a href="<r:site:data name="masthead_college_link_address" />" class="<r:if v1="{$masthead_color}" v2="gold" op="!=">text-wvu-blue </r:if><r:if v1="{$masthead_color}" v2="gold" op="=">text-white </r:if>"><r:site:data name="masthead_college_link_title" /></a></span>
               </div>
             </r:if>
             <div class="row align-content-center justify-content-center justify-content-lg-start<r:if expr="{{ BLANK(masthead_college_link_title) }}"> h-100 justify-content-xl-end</r:if>">
