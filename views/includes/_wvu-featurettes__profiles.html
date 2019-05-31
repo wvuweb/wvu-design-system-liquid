@@ -94,7 +94,7 @@
                   <small class="d-block"><r:page:content name="wvu-backpage-header-1__label" /></small>
                 </p>
               </r:page:if_has_content_for>
-              <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> class="<r:var name="itemHeaderClassesChecker" />" id="<r:page:slug />-<r:page:id />"><a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:page:first_non_blank_attr names="alternate_name,name" /></a></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
+              <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> class="<r:var name="itemHeaderClassesChecker" />" id="<r:page:slug />-<r:var name="componentName" />-<r:page:id />"><a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:page:first_non_blank_attr names="alternate_name,name" /></a></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
               <r:page:if_has_content_for region="wvu-backpage-header-1__subhead">
                 <p class="helvetica-neue-light">
                   <small class="d-block"><r:page:content name="wvu-backpage-header-1__subhead" /></small>
@@ -132,7 +132,7 @@
                 </p>
               </r:if>
               <p class="mb-0 mt-2">
-                <a class="btn <r:var name="itemButtonClassesChecker" />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></a>
+                <a aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" class="btn <r:var name="itemButtonClassesChecker" />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></a>
               </p>
             <r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"></div></r:if>
           <r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"></div></r:if>
