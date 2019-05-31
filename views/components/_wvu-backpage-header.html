@@ -26,7 +26,7 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><header class="wvu-overflow-hidden pt-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
+<!-- Markup --><header class="wvu-overflow-hidden pt-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" aria-labelledby="<r:var name="componentName" />-label" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container position-relative wvu-z-index-content">
     <r:if v1="{$header_label}" v2="1" op="=">
       <p class="text-uppercase helvetica-neue-light mb-1">
@@ -42,7 +42,7 @@
       </small>
     </r:edit_mode_only>
     <r:comment><!-- Apply classes to the header. If supplied by user, use those. If not use default. --></r:comment>
-    <h1 class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
+    <h1 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
     <r:if v1="{$header_subhead}" v2="1" op="=">
       <div class="row">
         <div class="col-md-8">

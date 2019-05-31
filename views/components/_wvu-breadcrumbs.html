@@ -8,7 +8,7 @@
 
 <r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also show up by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">
-  
+
 </r:content_for>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
@@ -16,7 +16,7 @@
   wvu-slash-list pl-0 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />
 </r:set_var>
 
-<section class="wvu-breadcrumbs py-2 w-100 position-absolute <r:site:data name="classes_wvu-breadcrumbs" /> wvu-z-index-breadcrumbs">
+<section class="wvu-breadcrumbs py-2 w-100 position-absolute <r:site:data name="classes_wvu-breadcrumbs" /> wvu-z-index-breadcrumbs" aria-label="<r:var name="componentName" />">
   <div class="container position-relative wvu-z-index-content">
     <small>
       <r:breadcrumbs ul_class="{$componentClassesBreadcrumbs}" />
