@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.6.1](https://github.com/wvuweb/wvu-design-system/tree/v0.6.1) (2019-05-31)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.6.0...v0.6.1)
+
+**Fixed bugs:**
+
+- BG for featurettes custom panels not getting reset [\#106](https://github.com/wvuweb/wvu-design-system/issues/106)
+- Fix error template. [\#105](https://github.com/wvuweb/wvu-design-system/issues/105)
+
 ## [v0.6.0](https://github.com/wvuweb/wvu-design-system/tree/v0.6.0) (2019-05-30)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.5.0...v0.6.0)
 
