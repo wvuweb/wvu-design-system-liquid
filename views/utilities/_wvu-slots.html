@@ -108,13 +108,11 @@
   <r:set_var name="isMain"><r:page:data name="{$slotIsMain}" /></r:set_var>
   <r:set_var name="instanceNumber"><r:page:data name="{$slotInstance}" /></r:set_var>
   <r:set_var name="whereToDisplay"><r:page:data name="{$slotWhereToDisplay}" /></r:set_var>
+  <r:set_var name="showHidden"><r:page:data name="{$slotShowHidden}" /></r:set_var>
 
   <r:comment><!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. --></r:comment>
   <r:if v1="{$showHidden}" v2="1" op="=">
     <r:set_var name="showHidden">true</r:set_var>
-  </r:if>
-  <r:if v1="{$showHidden}" v2="1" op="!=">
-    <r:set_var name="showHidden">false</r:set_var>
   </r:if>
 
   <r:comment><!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. --></r:comment>
