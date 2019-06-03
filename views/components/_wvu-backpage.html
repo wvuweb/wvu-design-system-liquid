@@ -21,7 +21,7 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if><r:page:unless_has_content_for region="{$componentClasses}"> <r:yield name="{$defaultComponentClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$componentClasses}" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> aria-label="<r:page:slug />-<r:var name="componentName" />" class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if><r:page:unless_has_content_for region="{$componentClasses}"> <r:yield name="{$defaultComponentClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$componentClasses}" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container wvu-z-index-content">
     <div class="row">
       <r:if v1="{$componentAlign}" v2="right" op="=">
