@@ -8,9 +8,12 @@
 
 <r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
 <r:set_var name="componentHeader">wvu-<r:var name="componentName" />__header</r:set_var>
+<r:set_var name="componentTwitterLinkClasses">wvu-<r:var name="componentName" />__twitter-classes</r:set_var>
+<r:set_var name="defaultTwitterLinkClasses">wvu-<r:var name="componentName" />__default-twitter-classes</r:set_var>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">py-5 bg-wvu-neutral--dark-gray text-white py-5 wvu-bg-position-center wvu-bg-blend-mode-luminosity--90</r:content_for>
+<r:content_for name="{$defaultTwitterLinkClasses}">text-black mt-4 h3 helvetica-neue-light</r:content_for>
 
 <r:comment><!-- Components do not display on live sites unless set to “Is active” in the slot’s custom data. But we need to make the component active no matter what in Edit Mode so the user can test it. You can see the “if” statement in the component’s outer HTML container that checks. --></r:comment>
 <r:edit_mode_only>
@@ -35,8 +38,16 @@
     <r:comment><!-- Use this div to pull in tweets. --></r:comment>
     <div id="exampleProfile"></div>
     <div class="text-center">
-      <a href="https://twitter.com/<r:site:data name="twitter_handle" />" class="fab fa-twitter text-black mt-4 h3">
-        <span class="helvetica-neue-light"><r:site:data name="twitter_handle" /></span>
+      <r:comment><!-- This is where you can add utility classes that will apply to the hero’s heading. --></r:comment>
+      <r:edit_mode_only>
+        <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Twitter link classes:
+          <pre class="mb-0 text-white"><r:editable_region name="{$componentTwitterLinkClasses}" type="simple" /></pre>
+          <r:comment><!-- Show the default classes in case the user forgets, or needs to revert back to the original styling. --></r:comment>
+          <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultTwitterLinkClasses}" /></pre>
+        </small>
+      </r:edit_mode_only>
+      <a href="https://twitter.com/<r:site:data name="twitter_handle" />" class="fab fa-twitter <r:page:if_has_content_for region="{$componentTwitterLinkClasses}"><r:page:content name="{$componentTwitterLinkClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentTwitterLinkClasses}"><r:yield name="{$defaultTwitterLinkClasses}" /></r:page:unless_has_content_for>">
+        <r:site:data name="twitter_handle" />
       </a>
     </div>
   </div>
