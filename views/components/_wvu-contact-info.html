@@ -76,16 +76,26 @@
         <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Form</span></r:edit_mode_only>
         <r:editable_region name="{$componentForm}" scope="{$componentScope}">
           <form class="px-3 py-4">
-            <h2>Or Fill Out Our Form</h2>
             <div class="form-group">
-              <label for="exampleFormControlInput1">Email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <label id="username-label" for="exampleFormControlInput1">Username</label>
+              <input aria-labelledby="username-label" type="text" class="form-control" id="exampleFormControlInput1"
+              placeholder="name@example.com" autocomplete="off" style="background-image: url(&quot;&quot;); cursor: auto;"
+              data:image="" background-repeat:="" no-repeat="" background-attachment:="" scroll=""
+              background-size:="" background-position:="">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Example textarea</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <label id="password-label" for="exampleFormControlInput1">Password</label>
+              <input aria-labelledby="password-label" type="password" class="form-control" id="exampleFormControlInput2"
+              placeholder="••••••••" autocomplete="off" style="background-image: url(&quot;&quot;); cursor: auto;"
+              data:image="" background-repeat:="" no-repeat="" background-attachment:="" scroll=""
+              background-size:="" background-position:="" cursor:="" auto="">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Log In</button>
+            <p class="mt-2">
+              <small>
+                <a href="#">Forgot password?</a>
+              </small>
+            </p>
           </form>
         </r:editable_region>
       </div>
