@@ -59,21 +59,21 @@
                 </td>
                 <td class="align-middle">
                   <r:page:if_has_content_for region="wvu-profile-1__phone">
-                    <i class="fas fa-phone"> <a href="tel:<r:page:content name="profile-1__phone" />"><r:page:content name="wvu-profile-1__phone" /></a></i>
+                    <a class="fas fa-phone" href="tel:<r:page:content name="profile-1__phone" />"> <r:page:content name="wvu-profile-1__phone" /></a>
                   </r:page:if_has_content_for>
                 </td>
                 <td class="align-middle">
                   <r:page:if_has_content_for region="wvu-profile-1__email">
-                    <i class="fas fa-envelope"> <a href="tel:<r:page:content name="profile-1__email" />"><r:page:content name="wvu-profile-1__email" /></a></i>
+                    <a class="fas fa-envelope" href="tel:<r:page:content name="profile-1__email" />"> <r:page:content name="wvu-profile-1__email" /></a>
                   </r:page:if_has_content_for>
                 </td>
                 <td class="align-middle">
                   <r:page:if_has_content_for region="wvu-profile-1__office">
-                    <i class="fas fa-building"> <r:page:if_has_content_for region="wvu-profile-1__office-url"><a href="tel:<r:page:content name="wvu-profile-1__office-url" />"><r:page:content name="wvu-profile-1__office" /></a></r:page:if_has_content_for><r:page:unless_has_content_for region="wvu-profile-1__office-url"><r:page:content name="wvu-profile-1__office" /></r:page:unless_has_content_for></i>
+                    <r:page:if_has_content_for region="wvu-profile-1__office-url"><a class="fas fa-building" href="tel:<r:page:content name="wvu-profile-1__office-url" />"> <r:page:content name="wvu-profile-1__office" /></a></r:page:if_has_content_for><r:page:unless_has_content_for region="wvu-profile-1__office-url"> <r:page:content name="wvu-profile-1__office" /></r:page:unless_has_content_for>
                   </r:page:if_has_content_for>
                 </td>
                 <td class="align-middle">
-                  <i class="fas fa-user-circle"> <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>">Profile<span class="sr-only">: <r:page:name /></span></a></i>
+                  <a class="fas fa-user-circle" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"> Profile<span class="sr-only">: <r:page:name /></span></a>
                 </td>
               </tr>
             </r:descendants:each>
