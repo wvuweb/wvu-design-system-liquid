@@ -16,6 +16,7 @@
 <r:set_var name="componentWebsite">wvu-<r:var name="componentName" />__website</r:set_var>
 <r:set_var name="componentQuote">wvu-<r:var name="componentName" />__quote</r:set_var>
 <r:set_var name="componentHeaderLabel">wvu-<r:var name="componentName" />__header-label</r:set_var>
+<r:set_var name="componentAlsoSee">wvu-<r:var name="componentName" />__also-see</r:set_var>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">py-5</r:content_for>
@@ -40,9 +41,26 @@
               <img class="shadow" src="<r:page:data name="thumbnail_url" />" alt="thumbnail_alt" />
             </r:if>
           </r:if>
-          <p class="pt-3">
+          <p class="my-3">
             <r:partial name="includes/wvu-contact-info" theme="University Relations: WVU Design System" />
           </p>
+          <r:editable_region name="{$componentAlsoSee}" scope="{$componentScope}">
+            <h2 class="wvu-shout">Also See:</h2>
+            <ul class="wvu-ul-slashes wvu-ul-slashes--gold">
+              <li>
+                <a href="#" class="text-white">Related Link 1</a>
+              </li>
+              <li>
+                <a href="#" class="text-white">Related Link 2</a>
+              </li>
+              <li>
+                <a href="#" class="text-white">Related Link 3</a>
+              </li>
+              <li>
+                <a href="#" class="text-white">Related Link 4</a>
+              </li>
+            </ul>
+          </r:editable_region>
         </div>
       </div>
       <div class="col-md-8 mr-md-auto">

@@ -64,6 +64,11 @@
   <r:page:unless_has_content_for region="{$componentReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
+<r:comment><!-- Grab the button text so we can evaluate whether to display the button (if user has entered “none” then we don’t display the button). --></r:comment>
+<r:set_var name="buttonText">
+  <r:page:content name="{$componentReadMoreButtonText}" />
+</r:set_var>
+
 <r:root>
   <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
     and $loopOrder to: "asc" or "desc";
@@ -87,7 +92,9 @@
                 <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
                 <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
               </p>
-              <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></r:if></a>
+              <r:if v1="{$buttonText}" v2="none" op="!=">
+                <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></r:if></a>
+              </r:if>
             </div>
           </div>
         </div>

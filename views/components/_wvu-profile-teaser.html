@@ -1,0 +1,75 @@
+<r:comment><!-- For a detailed look at the concepts behind a shared partial, see https://designsystem.sandbox.wvu.edu/tutorials/the-anatomy-of-a-shared-partial. --></r:comment>
+
+<r:comment><!-- Define a base name for this component. We can use this later to dynamically create editable region names --></r:comment>
+<r:set_var name="baseComponentName" value="profile-teaser" />
+
+<r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
+
+<r:comment><!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name --></r:comment>
+<r:set_var name="itemLabels">
+  <r:page:slug />-<r:var name="componentName" />
+</r:set_var>
+
+<r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
+<r:set_var name="componentHeader">wvu-profiles-<r:var name="componentInstance" />__header</r:set_var>
+
+<r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
+<r:content_for name="{$defaultComponentClasses}"></r:content_for>
+
+<r:comment><!-- Components do not display on live sites unless set to “Is active” in the slot’s custom data. But we need to make the component active no matter what in Edit Mode so the user can test it. You can see the “if” statement in the component’s outer HTML container that checks. --></r:comment>
+<r:edit_mode_only>
+  <r:set_var name="componentIsEditModeOnly" value="0" />
+</r:edit_mode_only>
+
+<r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
+<r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
+<!-- Markup --><r:root>
+  <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
+    and $loopOrder to: "asc" or "desc";
+    and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
+  <r:descendants:each by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}" limit="1">
+    <<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if>py-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
+      <div class="container wvu-z-index-content">
+        <div class="row">
+          <div class="col-md-3 ml-md-auto mb-1 text-center">
+            <div class="row">
+              <div class="col-8 col-xl-8 ml-auto">
+                <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
+                  <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="rounded-circle shadow text-center" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
+                </r:if>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mr-md-auto">
+            <div class="row mb-5">
+              <div class="col-md-8">
+                <p class="text-uppercase">
+                  <r:page:content name="wvu-backpage-header-1__label" />
+                </p>
+                <h2 class="iowan-old-style-italic mb-0"><r:page:first_non_blank_attr names="alternate_name,name" /></h2>
+                <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
+                <r:page:if_has_content_for region="wvu-backpage-header-1__subhead">
+                  <p class="h3 iowan-old-style-italic mb-2">
+                    <r:page:content name="wvu-backpage-header-1__subhead" />
+                  </p>
+                </r:page:if_has_content_for>
+                <p class="mb-0">
+                  <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
+                  <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
+                </p>
+                <p class="mb-0 mt-2">
+                  <a class="btn btn-primary btn-sm" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>">View Profile<span class="sr-only">: <r:page:name /></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
+    </<r:partial name="utilities/wvu-is-main-checker--end" theme="University Relations: WVU Design System" />>
+  </r:descendants:each>
+</r:root><!-- End markup -->
+
+<r:comment><!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. --></r:comment>
+<r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />

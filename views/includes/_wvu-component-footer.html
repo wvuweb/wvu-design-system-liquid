@@ -1,118 +1,119 @@
-<r:edit_mode_only>
-  <a class="text-white p-1 rounded-sm d-inline-block btn btn-sm btn-wvu-neutral--black wvu-grow-shadow wvu-z-index-content position-absolute mt-n4 ml-1" data-toggle="collapse" href="#editpanel-<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="editpanel-<r:var name="componentName" />"><small class="d-block"><i class="far fa-edit"></i> Edit <span class="text-capitalize"><r:var name="baseComponentName" /></span> Styles</small></a>
-  <section class="px-2 px-md-5 pt-2 pb-3 mb-0 text-light bg-wvu-neutral--black position-relative collapse multi-collapse" id="editpanel-<r:var name="componentName" />">
-    <p class="mb-0">
-      <span class="d-inline-block badge badge-secondary">Utility classes:</span> <div class="text-monospace "><r:editable_region name="{$componentClasses}" scope="{$componentScope}" type="simple" /></div>
-    </p>
-    <p class="mt-1">
-      <small>
-        <r:yield name="{$defaultComponentClasses}">
-          <strong class="text-muted">Default classes:</strong> <pre class="text-muted"><r:content /></pre>
-        </r:yield>
-      </small>
-    </p>
-    <p class="mb-0 mt-1">
-      <small><strong class="text-muted">Label for background image:</strong></small> <span class="badge badge-pill badge-secondary"><r:page:slug />-<r:var name="componentName" />-background</span>
-    </p>
-    <a class="text-wvu-accent--orange" data-toggle="collapse" href="#multiCollapseExample<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="multiCollapseExample<r:var name="componentName" />">Hints</a>
-    <div class="row">
-      <div class="col">
-        <div class="collapse multi-collapse" id="multiCollapseExample<r:var name="componentName" />">
-          <ul class="text-monospace">
-            <li>bg-* (wvu-accent--light-blue)</li>
-            <li>text-center</li>
-            <li>text-* (wvu-blue)</li>
-            <li>wvu-bg-blend-mode-lighten</li>
-            <li>wvu-bg-blend-mode-luminosity--* (10, 20, ... 80, 90)</li>
-            <li>wvu-bg-pattern-* (blue, gold, grid, grid-transparent, grid-zoomed, grid-zoomed-transparent, confetti-gold-blue, confetti-gold-blue-white)</li>
-            <li>wvu-bg-position-* (center, top, bottom)</li>
-            <li>wvu-bg-size-cover</li>
-            <li>wvu-bg-topo-* (light, dark)</li>
-            <li>wvu-bg-vignetting--* (10, 20, ... 80, 90)</li>
-          </ul>
-          <p class="helvetica-neue">For a complete list, see our <a class="text-wvu-accent--orange" href="https://designsystem.sandbox.wvu.edu/utilities">utilities</a>.</p>
-        </div>
-      </div>
-    </div>
-    <r:if v1="{$baseComponentName}" v2="featurettes" op="=">
-      <div class="row">
-        <div class="col-lg">
-          <p class="mb-0">
-            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for items:</span></r:edit_mode_only>
-            <p>
-              <r:editable_region name="{$itemClasses}" type="simple"></r:editable_region>
-            </p>
-          </p>
-          <p class="text-muted mb-0 mt-1">
-            <small>
-              <r:yield name="{$defaultItemClasses}">
-                <strong>Default classes:</strong> <r:content />
-              </r:yield>
-            </small>
-          </p>
-        </div>
-        <div class="col-lg">
-          <p class="mb-0">
-            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item headers:</span></r:edit_mode_only>
-            <p>
-              <r:editable_region name="{$itemHeaderClasses}" type="simple"></r:editable_region>
-            </p>
-          </p>
-          <p class="text-muted mb-0 mt-1">
-            <small>
-              <r:yield name="{$defaultItemHeaderClasses}">
-                <strong>Default classes:</strong> <r:content />
-              </r:yield>
-            </small>
-          </p>
-        </div>
-        <div class="col-lg">
-          <p class="mb-0">
-            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item body copy:</span></r:edit_mode_only>
-            <p>
-              <r:editable_region name="{$itemBodyClasses}" type="simple"></r:editable_region>
-            </p>
-          </p>
-          <p class="text-muted mb-0 mt-1">
-            <small>
-              <r:yield name="{$defaultItemBodyClasses}">
-                <strong>Default classes:</strong> <r:content />
-              </r:yield>
-            </small>
-          </p>
-        </div>
-        <div class="col-lg">
-          <p class="mb-0">
-            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for buttons:</span></r:edit_mode_only>
-            <p>
-              <r:editable_region name="{$itemButtonClasses}" type="simple"></r:editable_region>
-            </p>
-          </p>
-          <p class="text-muted mb-0 mt-1">
-            <small>
-              <r:yield name="{$defaultItemButtonClasses}">
-                <strong>Default classes:</strong> <r:content />
-              </r:yield>
-            </small>
-          </p>
-        </div>
-        <div class="col-lg">
-          <p class="mb-0">
-            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Featurettes button text:</span></r:edit_mode_only>
-            <p>
-              <r:editable_region name="{$componentReadMoreButtonText}">Read More</r:editable_region>
-            </p>
-          </p>
-          <p class="text-muted mb-0 mt-1">
-            <small>
-              <strong>Default button text:</strong> Read More
-            </small>
-          </p>
-        </div>
-      </div>
-    </r:if>
-  </section>
-</r:edit_mode_only>
 
-<r:comment><!-- We need to reset our variables so that when another component gets called after this, it doesn’t get injected with unexpected values. --></r:comment>
-<r:partial name="includes/wvu-component-variables-reset" theme="University Relations: WVU Design System" />
+  <r:edit_mode_only>
+    <a class="text-white p-1 rounded-sm d-inline-block btn btn-sm btn-wvu-neutral--black wvu-grow-shadow wvu-z-index-content position-absolute mt-n4 ml-1" data-toggle="collapse" href="#editpanel-<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="editpanel-<r:var name="componentName" />"><small class="d-block"><i class="far fa-edit"></i> Edit <span class="text-capitalize"><r:var name="baseComponentName" /></span> Styles</small></a>
+    <section class="px-2 px-md-5 pt-2 pb-3 mb-0 text-light bg-wvu-neutral--black position-relative collapse multi-collapse" id="editpanel-<r:var name="componentName" />">
+      <p class="mb-0">
+        <span class="d-inline-block badge badge-secondary">Utility classes:</span> <div class="text-monospace "><r:editable_region name="{$componentClasses}" scope="{$componentScope}" type="simple" /></div>
+      </p>
+      <p class="mt-1">
+        <small>
+          <r:yield name="{$defaultComponentClasses}">
+            <strong class="text-muted">Default classes:</strong> <pre class="text-muted"><r:content /></pre>
+          </r:yield>
+        </small>
+      </p>
+      <p class="mb-0 mt-1">
+        <small><strong class="text-muted">Label for background image:</strong></small> <span class="badge badge-pill badge-secondary"><r:page:slug />-<r:var name="componentName" />-background</span>
+      </p>
+      <a class="text-wvu-accent--orange" data-toggle="collapse" href="#multiCollapseExample<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="multiCollapseExample<r:var name="componentName" />">Hints</a>
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="multiCollapseExample<r:var name="componentName" />">
+            <ul class="text-monospace">
+              <li>bg-* (wvu-accent--light-blue)</li>
+              <li>text-center</li>
+              <li>text-* (wvu-blue)</li>
+              <li>wvu-bg-blend-mode-lighten</li>
+              <li>wvu-bg-blend-mode-luminosity--* (10, 20, ... 80, 90)</li>
+              <li>wvu-bg-pattern-* (blue, gold, grid, grid-transparent, grid-zoomed, grid-zoomed-transparent, confetti-gold-blue, confetti-gold-blue-white)</li>
+              <li>wvu-bg-position-* (center, top, bottom)</li>
+              <li>wvu-bg-size-cover</li>
+              <li>wvu-bg-topo-* (light, dark)</li>
+              <li>wvu-bg-vignetting--* (10, 20, ... 80, 90)</li>
+            </ul>
+            <p class="helvetica-neue">For a complete list, see our <a class="text-wvu-accent--orange" href="https://designsystem.sandbox.wvu.edu/utilities">utilities</a>.</p>
+          </div>
+        </div>
+      </div>
+      <r:if v1="{$baseComponentName}" v2="featurettes" op="=">
+        <div class="row">
+          <div class="col-lg">
+            <p class="mb-0">
+              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for items:</span></r:edit_mode_only>
+              <p>
+                <r:editable_region name="{$itemClasses}" type="simple"></r:editable_region>
+              </p>
+            </p>
+            <p class="text-muted mb-0 mt-1">
+              <small>
+                <r:yield name="{$defaultItemClasses}">
+                  <strong>Default classes:</strong> <r:content />
+                </r:yield>
+              </small>
+            </p>
+          </div>
+          <div class="col-lg">
+            <p class="mb-0">
+              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item headers:</span></r:edit_mode_only>
+              <p>
+                <r:editable_region name="{$itemHeaderClasses}" type="simple"></r:editable_region>
+              </p>
+            </p>
+            <p class="text-muted mb-0 mt-1">
+              <small>
+                <r:yield name="{$defaultItemHeaderClasses}">
+                  <strong>Default classes:</strong> <r:content />
+                </r:yield>
+              </small>
+            </p>
+          </div>
+          <div class="col-lg">
+            <p class="mb-0">
+              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item body copy:</span></r:edit_mode_only>
+              <p>
+                <r:editable_region name="{$itemBodyClasses}" type="simple"></r:editable_region>
+              </p>
+            </p>
+            <p class="text-muted mb-0 mt-1">
+              <small>
+                <r:yield name="{$defaultItemBodyClasses}">
+                  <strong>Default classes:</strong> <r:content />
+                </r:yield>
+              </small>
+            </p>
+          </div>
+          <div class="col-lg">
+            <p class="mb-0">
+              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for buttons:</span></r:edit_mode_only>
+              <p>
+                <r:editable_region name="{$itemButtonClasses}" type="simple"></r:editable_region>
+              </p>
+            </p>
+            <p class="text-muted mb-0 mt-1">
+              <small>
+                <r:yield name="{$defaultItemButtonClasses}">
+                  <strong>Default classes:</strong> <r:content />
+                </r:yield>
+              </small>
+            </p>
+          </div>
+          <div class="col-lg">
+            <p class="mb-0">
+              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Featurettes button text:</span></r:edit_mode_only>
+              <p>
+                <r:editable_region name="{$componentReadMoreButtonText}" type="simple">Read More</r:editable_region>
+              </p>
+            </p>
+            <p class="text-muted mb-0 mt-1">
+              <small>
+                <strong>Default button text:</strong> Read More
+              </small>
+            </p>
+          </div>
+        </div>
+      </r:if>
+    </section>
+  </r:edit_mode_only>
+
+  <r:comment><!-- We need to reset our variables so that when another component gets called after this, it doesn’t get injected with unexpected values. --></r:comment>
+  <r:partial name="includes/wvu-component-variables-reset" theme="University Relations: WVU Design System" />

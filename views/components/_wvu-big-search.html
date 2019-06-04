@@ -46,12 +46,12 @@
       <div class="col-md-6 mx-auto">
         <div class="row mb-2">
           <div class="col-md-12">
-            <form aria-label="big-search" class="form-inline w-100" action="<r:page:data name="search_action" />" method="get" role="search">
-              <label for="bq">
-                <span class="sr-only">Search</span>
+            <form aria-labelledby="<r:var name="componentName" />-label" class="form-inline w-100" action="<r:page:data name="search_action" />" method="get" role="search">
+              <label for="bq" class="sr-only">
+                Search
               </label>
               <div class="input-group shadow-sm w-100">
-                <input id="bq" class="form-control p-3 h1" name="cquery" maxlength="256" placeholder="Type in your search term." type="search" aria-label="Search" />
+                <input id="bq" class="form-control p-3 h1" name="cquery" maxlength="256" placeholder="Type in your search term." type="search" aria-label="Search: <r:page:content name="{$componentHeader}" />" />
                 <div class="input-group-append">
                   <button class="btn btn-primary px-3 px-lg-4" name="submit" type="submit" value="Search">
                     <span class="fas fa-search h4 mb-0">
