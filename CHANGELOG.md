@@ -1,10 +1,45 @@
 # Change Log
 
-## [v0.6.1](https://github.com/wvuweb/wvu-design-system/tree/v0.6.1) (2019-05-31)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.6.0...v0.6.1)
+## [v0.7.0](https://github.com/wvuweb/wvu-design-system/tree/v0.7.0) (2019-06-04)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.6.1...v0.7.0)
+
+**Implemented enhancements:**
+
+- Editable region component should have footer [\#136](https://github.com/wvuweb/wvu-design-system/issues/136)
+- Need to be able to change link color in footer. [\#132](https://github.com/wvuweb/wvu-design-system/issues/132)
+- Icons for directory should be on the link, not a separate i tag [\#123](https://github.com/wvuweb/wvu-design-system/issues/123)
+- Make blog article and blog index have "main" selected by default on their respective templates. [\#122](https://github.com/wvuweb/wvu-design-system/issues/122)
+- If no thumbnail on blog featurette, text should go full width [\#117](https://github.com/wvuweb/wvu-design-system/issues/117)
+- Link color on twitter widget needs to be editable [\#116](https://github.com/wvuweb/wvu-design-system/issues/116)
+- Link decoration should be underline by default. [\#112](https://github.com/wvuweb/wvu-design-system/issues/112)
+- Finish "Themes" section on Design System website [\#72](https://github.com/wvuweb/wvu-design-system/issues/72)
 
 **Fixed bugs:**
 
+- Big Search input needs aria-label [\#127](https://github.com/wvuweb/wvu-design-system/issues/127)
+- Quicklinks in search dropdown needs an aria-label [\#126](https://github.com/wvuweb/wvu-design-system/issues/126)
+- Default form content on login block lacks labels [\#125](https://github.com/wvuweb/wvu-design-system/issues/125)
+- Blog article component needs aria-label [\#121](https://github.com/wvuweb/wvu-design-system/issues/121)
+- Photo gallery links need title attribute to match link [\#119](https://github.com/wvuweb/wvu-design-system/issues/119)
+- Make co-brand logo have alt text that is not the same as adjacent link text \(for accessibility\) [\#115](https://github.com/wvuweb/wvu-design-system/issues/115)
+- Add title attribute to linked images in featurettes [\#114](https://github.com/wvuweb/wvu-design-system/issues/114)
+- Only apply ARIA-Labelledby to \<section\> and \<main\> elements if they are not within another component [\#113](https://github.com/wvuweb/wvu-design-system/issues/113)
+- If component within component, do not use \<section\> or \<main\>, use \<div\> [\#111](https://github.com/wvuweb/wvu-design-system/issues/111)
+- Primary link color and code color not accessible [\#110](https://github.com/wvuweb/wvu-design-system/issues/110)
+- Add ARIA labels to main header, backpage header, breadcrumbs [\#109](https://github.com/wvuweb/wvu-design-system/issues/109)
+- Add id for wvu-main-content to is mainchecker utility [\#108](https://github.com/wvuweb/wvu-design-system/issues/108)
+
+## [v0.6.1](https://github.com/wvuweb/wvu-design-system/tree/v0.6.1) (2019-05-31)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.6.0...v0.6.1)
+
+**Implemented enhancements:**
+
+- Add a profiles featurette sans contact info [\#101](https://github.com/wvuweb/wvu-design-system/issues/101)
+- Create a backpage option with the sidebar on the right. [\#93](https://github.com/wvuweb/wvu-design-system/issues/93)
+
+**Fixed bugs:**
+
+- Show if hidden option not working on featurettes [\#107](https://github.com/wvuweb/wvu-design-system/issues/107)
 - BG for featurettes custom panels not getting reset [\#106](https://github.com/wvuweb/wvu-design-system/issues/106)
 - Fix error template. [\#105](https://github.com/wvuweb/wvu-design-system/issues/105)
 
