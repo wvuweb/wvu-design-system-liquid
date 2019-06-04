@@ -35,6 +35,7 @@
         <r:editable_region name="{$componentHeaderLabel}" scope="{$componentScope}"><span class="wvu-shout text-wvu-gold text-uppercase">Label pre</span> <span class="text-uppercase">Label Post</span></r:editable_region>
       </p>
     </r:if>
+    <r:comment><!-- This is where you can add utility classes that will apply to the heading. --></r:comment>
     <r:edit_mode_only>
       <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
         <pre class="mb-0 text-white"><r:editable_region name="{$headerClasses}" type="simple" /></pre>
@@ -43,9 +44,11 @@
     </r:edit_mode_only>
     <r:comment><!-- Apply classes to the header. If supplied by user, use those. If not use default. --></r:comment>
     <h1 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
+    <r:comment><!-- If user has toggled the “Header has subhead?” option in their page data, display a subhead region. --></r:comment>
     <r:if v1="{$header_subhead}" v2="1" op="=">
       <div class="row">
         <div class="col-md-8">
+          <r:comment><!-- This is where you can add utility classes that will apply to the subhead. --></r:comment>
           <r:edit_mode_only>
             <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
               <pre class="mb-0 text-white"><r:editable_region name="{$subheadClasses}" type="simple" /></pre>

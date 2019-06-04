@@ -6,6 +6,10 @@
   @include wvu-bg-tint($wvu-tint-opacity);
 }
 
+.wvu-bg-tint--10, {
+  @include wvu-bg-tint(10);
+}
+
 // Example usage:
 // <section class="wvu-bg-tint">
 //   ...

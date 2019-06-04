@@ -66,7 +66,7 @@
 </r:set_var>
 
 <r:set_var name="itemReadMoreButtonTextChecker">
-  <r:page:unless_has_content_for region="{$itemReadMoreButtonText}">More Info</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
+  <r:page:unless_has_content_for region="{$componentReadMoreButtonText}">More Info</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
 <r:comment><!-- Grab the button text so we can evaluate whether to display the button (if user has entered “none” then we don’t display the button). --></r:comment>
@@ -99,7 +99,7 @@
                   <small class="d-block"><r:page:content name="wvu-backpage-header-1__label" /></small>
                 </p>
               </r:page:if_has_content_for>
-              <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> class="<r:var name="itemHeaderClassesChecker" />" id="<r:page:slug />-<r:var name="componentName" />-<r:page:id />"><a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:page:first_non_blank_attr names="alternate_name,name" /></a></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
+              <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> id="<r:page:slug />-<r:var name="componentName" />-<r:page:id />"><a class="<r:var name="itemHeaderClassesChecker" />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:page:first_non_blank_attr names="alternate_name,name" /></a></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
               <r:page:if_has_content_for region="wvu-backpage-header-1__subhead">
                 <p class="helvetica-neue-light">
                   <small class="d-block"><r:page:content name="wvu-backpage-header-1__subhead" /></small>

@@ -40,6 +40,7 @@
       <table class="table">
         <tbody>
           <r:root>
+            <r:comment><!-- Loop through each page in the site, grab the info we need, spit it out into a table row. --></r:comment>
             <r:descendants:each by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
               <tr class="border-bottom border-light">
                 <td class="py-2 w-25">

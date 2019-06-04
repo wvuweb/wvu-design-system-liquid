@@ -18,6 +18,7 @@
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
 <!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if><r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container">
+    <r:comment><!-- If the user has supplied the ID of a page whose children contain our agenda info, loop through its child pages and grab the info we need. --></r:comment>
     <r:if expr="{{ NOT(BLANK(componentFeaturettesID)) }}">
       <r:get_page id="{$componentFeaturettesID}">
         <r:children:each>
@@ -38,6 +39,7 @@
         </r:children:each>
       </r:get_page>
     </r:if>
+    <r:comment><!-- If the user has not supplied the ID of a page whose children contain our agenda info, loop through the child pages of the current page and grab the info we need. --></r:comment>
     <r:if expr="{{ BLANK(componentFeaturettesID) }}">
       <table class="table">
         <r:children:each>
