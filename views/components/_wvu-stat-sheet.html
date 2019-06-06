@@ -15,9 +15,9 @@
 <r:set_var name="defaultStatClasses">wvu-<r:var name="componentName" />-default-stat-classes</r:set_var>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
-<r:content_for name="{$defaultComponentClasses}">mb-0 wvu-overflow-hidden wvu-background-size-cover bg-wvu-neutral--black wvu-bg-vignetting--80</r:content_for>
+<r:content_for name="{$defaultComponentClasses}">mb-0 wvu-overflow-hidden text-white bg-wvu-neutral--black wvu-bg-blend-mode-luminosity--80</r:content_for>
 <r:content_for name="{$defaultHeaderClasses}">display-3 wvu-shout</r:content_for>
-<r:content_for name="{$defaultStatClasses}">bg-wvu-gold text-black py-5 px-3</r:content_for>
+<r:content_for name="{$defaultStatClasses}">bg-wvu-gold text-wvu-neutral--black py-5 px-3</r:content_for>
 
 <r:comment><!-- Components do not display on live sites unless set to “Is active” in the slot’s custom data. But we need to make the component active no matter what in Edit Mode so the user can test it. You can see the “if” statement in the component’s outer HTML container that checks. --></r:comment>
 <r:edit_mode_only>

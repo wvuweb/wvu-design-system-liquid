@@ -2,7 +2,7 @@
 //==================================================
 // Utility that adds a gold bar to a header element (can be top, bottom and/or centered).
 
-.wvu-bar {
+.wvu-bar, %wvu-bar {
   @include wvu-bar($wvu-bar-color, top);
   &.wvu-bar--bottom {
     @include wvu-bar($wvu-bar-color, bottom);

@@ -11,11 +11,11 @@
 <r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
-<r:content_for name="{$defaultComponentClasses}">bg-light</r:content_for>
+<r:content_for name="{$defaultComponentClasses}">py-4 bg-light</r:content_for>
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><footer class="py-4 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
+<!-- Markup --><footer class="<r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container">
     <div class="row">
       <div class="col-6">
@@ -39,9 +39,7 @@
 
       </div>
       <div class="col-3">
-        <r:if expr="{{ NOT(BLANK(masthead_link_2_address)) }}">
-          <a href="#"><i class="fab fa-facebook text-white"></i></i></a> <a href="#"><i class="fab fa-twitter text-white"></a> <a href="#"><i class="fab fa-youtube text-white"></i></a>
-        </r:if>
+
       </div>
     </div> <!-- /.wvu-contact -->
     <div class="row">

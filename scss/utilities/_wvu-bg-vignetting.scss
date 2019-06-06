@@ -21,7 +21,7 @@ $i: 90;
 
 // If the subject of your image is on the left, shift the vignetting to the right to allow the viewer to focus on the subject.
 
-.wvu-bg-vignetting--right {
+.wvu-bg-vignetting--right, %wvu-bg-vignetting--right {
   @include wvu-bg-vignetting($wvu-vignetting-opacity, right);
 }
 

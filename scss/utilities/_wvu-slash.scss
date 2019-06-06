@@ -100,19 +100,19 @@ $i: 1;
 //==================================================
 // Adds gold, white, or blue WVU-branded slashes to list items of an element.
 
-.wvu-ul-slashes {
+.wvu-ul-slashes, %wvu-ul-slashes {
   @include wvu-slashes($wvu-gold);
 }
 
-.wvu-ul-slashes--gold {
+.wvu-ul-slashes--gold, %wvu-ul-slashes--gold {
   @include wvu-slashes($wvu-gold);
 }
 
-.wvu-ul-slashes--blue {
+.wvu-ul-slashes--blue, %wvu-ul-slashes--blue {
   @include wvu-slashes($wvu-blue);
 }
 
-.wvu-ul-slashes--white {
+.wvu-ul-slashes--white, %wvu-ul-slashes--white {
   @include wvu-slashes($wvu-neutral--white);
 }
 
@@ -125,7 +125,7 @@ $i: 1;
 //==================================================
 // Adds a forward slash before each item in a list. Used mainly for breadcrumbs.
 
-.wvu-slash-list {
+.wvu-slash-list, %wvu-slash-list {
   @include wvu-slash-list();
 }
 

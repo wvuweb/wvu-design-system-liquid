@@ -2,7 +2,7 @@
 //==================================================
 // When using a display header, you usually don’t want it extending too long. Use this utility to limit header’s width.
 
-.wvu-header-max-width {
+.wvu-header-max-width, %wvu-header-max-width {
   @include wvu-header-max-width();
 }
 
@@ -15,7 +15,7 @@
 //==================================================
 // Use this utility to set a max width for paragraphs to improve legibility.
 
-.wvu-p-max-width {
+.wvu-p-max-width, %wvu-p-max-width {
   max-width: $wvu-p-measure $global-important;
 }
 
@@ -28,7 +28,7 @@
 //==================================================
 // If you have a header, particularly one that uses WVU Shout, sometimes you want the top line to be gold and the bottom white. Just apply this utility.
 
-.wvu-text-first-line-gold {
+.wvu-text-first-line-gold, %wvu-text-first-line-gold {
   @include wvu-first-line-gold();
 }
 
@@ -67,39 +67,39 @@
 
 // NOTE: You must include the fonts.com script for the web fonts you see here.
 
-.wvu-shout {
+.wvu-shout, %wvu-shout {
   @include wvu-shout();
 }
 
-.helvetica-neue {
+.helvetica-neue, %helvetica-neue {
   @include helvetica-neue();
 }
 
-.helvetica-neue-bold {
+.helvetica-neue-bold, %helvetica-neue-bold {
   @include helvetica-neue-bold();
 }
 
-.helvetica-neue-light {
+.helvetica-neue-light, %helvetica-neue-light {
   @include helvetica-neue-light();
 }
 
-.helvetica-neue-condensed-black {
+.helvetica-neue-condensed-black, %helvetica-neue-condensed-black {
   @include wvu-shout();
 }
 
-.iowan-old-style {
+.iowan-old-style, %iowan-old-style {
   @include iowan-old-style();
 }
 
-.iowan-old-style-italic {
+.iowan-old-style-italic, %iowan-old-style-italic {
   @include iowan-old-style-italic();
 }
 
-.iowan-old-style-black {
+.iowan-old-style-black, %iowan-old-style-black {
   @include iowan-old-style-black();
 }
 
-.iowan-old-style-black-italic {
+.iowan-old-style-black-italic, %iowan-old-style-black-italic {
   @include iowan-old-style-black-italic();
 }
 
@@ -112,7 +112,7 @@
 //==================================================
 // This utility is good for elements that are all caps and uses Iowan Old Style. It gives your text a more formal look.
 
-.wvu-text-letter-spacing {
+.wvu-text-letter-spacing, %wvu-text-letter-spacing {
   @include wvu-text-letter-spacing();
 }
 
