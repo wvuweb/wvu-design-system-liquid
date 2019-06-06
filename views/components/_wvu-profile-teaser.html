@@ -51,27 +51,29 @@
         </r:editable_region>
       </div>
       <div class="col-md-3">
-        <div class="wvu-bg-tint--10">
-          <div class="wvu-z-index-content p-3">
-            <r:editable_region name="{$componentPostscript}" scope="{$componentScope}">
-              <h2 class="wvu-shout">Also See:</h2>
-              <ul class="wvu-ul-slashes wvu-ul-slashes--gold">
-                <li>
-                  <a href="#">Related Link 1</a>
-                </li>
-                <li>
-                  <a href="#">Related Link 2</a>
-                </li>
-                <li>
-                  <a href="#">Related Link 3</a>
-                </li>
-                <li>
-                  <a href="#">Related Link 4</a>
-                </li>
-              </ul>
-            </r:editable_region>
+        <r:page:if_has_content_for region="{$componentPostscript}" always_show_in_edit_mode="true">
+          <div class="wvu-bg-tint--10">
+            <div class="wvu-z-index-content p-3">
+              <r:editable_region name="{$componentPostscript}" scope="{$componentScope}">
+                <h2 class="wvu-shout">Also See:</h2>
+                <ul class="wvu-ul-slashes wvu-ul-slashes--gold">
+                  <li>
+                    <a href="#">Related Link 1</a>
+                  </li>
+                  <li>
+                    <a href="#">Related Link 2</a>
+                  </li>
+                  <li>
+                    <a href="#">Related Link 3</a>
+                  </li>
+                  <li>
+                    <a href="#">Related Link 4</a>
+                  </li>
+                </ul>
+              </r:editable_region>
+            </div>
           </div>
-        </div>
+        </r:page:if_has_content_for>
       </div>
     </div>
   </div>
