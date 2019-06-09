@@ -17,6 +17,7 @@
     "fontfaceobserver": "2.1.0",
     "magnific-popup": "1.1.0",
     "node-sass": "^4.12.0",
+    "responsive-nav": "https://github.com/zeroedin/responsive-nav.js.git#1.1.1",
     "twitter-fetcher": "17.0.3"
   },
   "devDependencies": {

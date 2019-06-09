@@ -17,13 +17,13 @@ gulp.task('move-js-files', function () {
   gulp.src([
     './node_modules/twitter-fetcher/js/twitterFetcher_min.js',
     './node_modules/fontfaceobserver/fontfaceobserver.js',
-    './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js'
+    './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+    './node_modules/responsive-nav/client/dist/responsive-nav.js'
   ], { base: './node_modules' })
   .pipe(rename(function (file) {
-    // this removes extraneous directories on the file path
-    // eg.  node_modules/package/file/path/filename.ext  => package/filename.ext
+    // this removes the last parent directory of the relative file path
     if (file.dirname.split('/').length > 1){
-      file.dirname = path.dirname(file.dirname);
+      file.dirname = file.dirname.split('/')[0]
     }
   }))
   .pipe(gulp.dest('./javascripts/vendor'))
