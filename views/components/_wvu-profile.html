@@ -20,6 +20,9 @@
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">py-5</r:content_for>
 
+<r:comment><!-- Since there is no header to hook into to label this section, we need to apply an ARIA-Label. This tells our “is main checker” utility to apply the label. --></r:comment>
+<r:set_var name="componentNeedsARIALabel" value="true" />
+
 <r:comment><!-- Components do not display on live sites unless set to “Is active” in the slot’s custom data. But we need to make the component active no matter what in Edit Mode so the user can test it. You can see the “if” statement in the component’s outer HTML container that checks. --></r:comment>
 <r:edit_mode_only>
   <r:set_var name="componentIsEditModeOnly" value="0" />
