@@ -46,7 +46,7 @@
             <div class="row mb-5">
               <div class="col-md-3 mr-ml-auto mb-1 text-center">
                 <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
-                  <a href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="rounded-circle shadow text-center" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
+                  <img class="rounded-circle shadow text-center" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />">
                 </r:if>
               </div>
               <div class="col-md-8">
