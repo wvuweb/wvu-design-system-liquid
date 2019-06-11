@@ -1,11 +1,39 @@
 # Change Log
 
+## [v1.0.0](https://github.com/wvuweb/wvu-design-system/tree/v1.0.0) (2019-06-11)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.7.0...v1.0.0)
+
+**Implemented enhancements:**
+
+- HTML code in profiles partial, featurettes profiles does not seem to want to update. [\#144](https://github.com/wvuweb/wvu-design-system/issues/144)
+- Ability to toggle off component styler [\#137](https://github.com/wvuweb/wvu-design-system/issues/137)
+- Add section on Super Theme tutorial explaining how to test with Hammer VM [\#102](https://github.com/wvuweb/wvu-design-system/issues/102)
+- Create Super-Theme specific mock\_data.yml file. [\#42](https://github.com/wvuweb/wvu-design-system/issues/42)
+- Add bg position classes to all elements. [\#34](https://github.com/wvuweb/wvu-design-system/issues/34)
+- Absolute URLs for images on demo site [\#30](https://github.com/wvuweb/wvu-design-system/issues/30)
+- Add some basic styles. [\#11](https://github.com/wvuweb/wvu-design-system/issues/11)
+
+**Fixed bugs:**
+
+- Subhead for directory listing calls wrong editable region [\#146](https://github.com/wvuweb/wvu-design-system/issues/146)
+- Make default content in log in component accessible [\#143](https://github.com/wvuweb/wvu-design-system/issues/143)
+- Add aria label to profile component [\#142](https://github.com/wvuweb/wvu-design-system/issues/142)
+- Add aria-label to event agenda [\#141](https://github.com/wvuweb/wvu-design-system/issues/141)
+- Add aria-labelledby to big search results [\#140](https://github.com/wvuweb/wvu-design-system/issues/140)
+- Add aria-label to components that are not \<main\> and do not have a header/label to hook into... [\#131](https://github.com/wvuweb/wvu-design-system/issues/131)
+- Make sure all components are fully accessible prior to launch. [\#2](https://github.com/wvuweb/wvu-design-system/issues/2)
+
+**Closed issues:**
+
+- Use placeholder selectors when declaring classes [\#124](https://github.com/wvuweb/wvu-design-system/issues/124)
+
 ## [v0.7.0](https://github.com/wvuweb/wvu-design-system/tree/v0.7.0) (2019-06-04)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.6.1...v0.7.0)
 
 **Implemented enhancements:**
 
 - Editable region component should have footer [\#136](https://github.com/wvuweb/wvu-design-system/issues/136)
+- Ability to display headline only, no button for blog featurettes [\#133](https://github.com/wvuweb/wvu-design-system/issues/133)
 - Need to be able to change link color in footer. [\#132](https://github.com/wvuweb/wvu-design-system/issues/132)
 - Icons for directory should be on the link, not a separate i tag [\#123](https://github.com/wvuweb/wvu-design-system/issues/123)
 - Make blog article and blog index have "main" selected by default on their respective templates. [\#122](https://github.com/wvuweb/wvu-design-system/issues/122)
@@ -16,6 +44,7 @@
 
 **Fixed bugs:**
 
+- Scope for sitewide editable region component not working [\#135](https://github.com/wvuweb/wvu-design-system/issues/135)
 - Big Search input needs aria-label [\#127](https://github.com/wvuweb/wvu-design-system/issues/127)
 - Quicklinks in search dropdown needs an aria-label [\#126](https://github.com/wvuweb/wvu-design-system/issues/126)
 - Default form content on login block lacks labels [\#125](https://github.com/wvuweb/wvu-design-system/issues/125)
