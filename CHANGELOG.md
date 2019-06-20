@@ -1,5 +1,15 @@
 # Change Log
 
+## [v1.0.1](https://github.com/wvuweb/wvu-design-system/tree/v1.0.1) (2019-06-20)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.1...v1.0.1)
+
+**Fixed bugs:**
+
+- Mock data file referencing wrong theme [\#150](https://github.com/wvuweb/wvu-design-system/issues/150)
+
+## [v1.0.1](https://github.com/wvuweb/wvu-design-system/tree/v1.0.1) (2019-06-20)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.0...v1.0.1)
+
 ## [v1.0.0](https://github.com/wvuweb/wvu-design-system/tree/v1.0.0) (2019-06-11)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.7.0...v1.0.0)
 
