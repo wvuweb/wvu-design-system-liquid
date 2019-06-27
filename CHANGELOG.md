@@ -7,6 +7,10 @@
 
 - Mock data file referencing wrong theme [\#150](https://github.com/wvuweb/wvu-design-system/issues/150)
 
+**Closed issues:**
+
+- Bring back global header background image from SuperTheme2 [\#153](https://github.com/wvuweb/wvu-design-system/issues/153)
+
 ## [v1.0.1](https://github.com/wvuweb/wvu-design-system/tree/v1.0.1) (2019-06-20)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.0...v1.0.1)
 
