@@ -1,2 +1,2 @@
 <r:comment><!-- Loop through files, find any that are labeled with the page slug + the component name e.g. home-hero-1-background, then use it as a background image --></r:comment>
-<r:files:each labels="{$bgurl}" labels_match="all" limit="1" types="image" random="true">style="background-image: url(https://<r:site:domain /><r:file:image_url size="1780x1780" /><r:set_var name="bgalt"><r:file:alt_text /></r:set_var>)"</r:files:each>
+<r:files:each labels="{$bgurl}" labels_match="all" limit="1" types="image" random="true">style="background-image: url(<r:file:image_url size="1780x1780" /><r:set_var name="bgalt"><r:file:alt_text /></r:set_var>)"</r:files:each>
