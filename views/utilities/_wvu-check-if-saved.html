@@ -1,0 +1,20 @@
+<r:set_var name="isSaved" default="false" />
+
+<r:comment><!-- Perform the following task 10 times, one for each of the 10 slots in a Super Theme page. --></r:comment>
+<r:loop:each times="10">
+
+  <r:comment><!--  --></r:comment>
+  <r:set_var name="slotName">
+    slot_<r:item />
+  </r:set_var>
+
+  <r:set_var name="slotNameValue">
+    <r:page:data name="{$slotName}" />
+  </r:set_var>
+
+  <r:comment><!-- If custom data for slotName exists, but there is no value entered, the page settings have been saved. Set isSaved to true. --></r:comment>
+  <r:if v1="{$slotNameValue}" v2="" op="=" >
+    <r:set_var name="isSaved" value="true" />
+  </r:if>
+
+</r:loop:each>

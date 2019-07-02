@@ -1797,3 +1797,10 @@ custom_data_attributes:
 
 <!-- Slots 01 - 10 -->
 <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
+
+<!-- If page properties haven’t been saved yet, include the default component for this template. -->
+<r:partial name="utilities/wvu-check-if-saved" theme="University Relations: WVU Design System" />
+<r:if v1="{$isSaved}" v2="false" op="=">
+  <r:set_var name="instanceNumber" value="1" />
+  <r:partial name="components/wvu-profiles" theme="University Relations: WVU Design System" />
+</r:if>
