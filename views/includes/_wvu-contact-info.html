@@ -26,7 +26,7 @@
         <a class="d-block pl-3" href="{$componentOfficeURL}"><r:page:content name="{$componentOffice}" /></a>
       </r:page:if_has_content_for>
       <r:page:unless_has_content_for region="{$componentOfficeURL}">
-        <r:page:content name="{$componentOffice}" />
+        <span class="d-block pl-3"><r:page:content name="{$componentOffice}" /></span>
       </r:page:unless_has_content_for>
     <r:edit_mode_only>
       <r:editable_region name="{$componentOffice}" scope="{$componentScope}" type="simple" />
