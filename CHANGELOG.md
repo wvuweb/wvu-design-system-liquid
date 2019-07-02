@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.0.3](https://github.com/wvuweb/wvu-design-system/tree/1.0.3) (2019-07-02)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.2...1.0.3)
+
+**Implemented enhancements:**
+
+- Default components do not display unless page properties are saved. [\#156](https://github.com/wvuweb/wvu-design-system/issues/156)
+
 ## [v1.0.2](https://github.com/wvuweb/wvu-design-system/tree/v1.0.2) (2019-06-27)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.1...v1.0.2)
 
@@ -21,6 +28,7 @@
 
 - HTML code in profiles partial, featurettes profiles does not seem to want to update. [\#144](https://github.com/wvuweb/wvu-design-system/issues/144)
 - Ability to toggle off component styler [\#137](https://github.com/wvuweb/wvu-design-system/issues/137)
+- Make blog article and blog index have "main" selected by default on their respective templates. [\#122](https://github.com/wvuweb/wvu-design-system/issues/122)
 - Add section on Super Theme tutorial explaining how to test with Hammer VM [\#102](https://github.com/wvuweb/wvu-design-system/issues/102)
 - Create Super-Theme specific mock\_data.yml file. [\#42](https://github.com/wvuweb/wvu-design-system/issues/42)
 - Add bg position classes to all elements. [\#34](https://github.com/wvuweb/wvu-design-system/issues/34)
@@ -50,7 +58,6 @@
 - Ability to display headline only, no button for blog featurettes [\#133](https://github.com/wvuweb/wvu-design-system/issues/133)
 - Need to be able to change link color in footer. [\#132](https://github.com/wvuweb/wvu-design-system/issues/132)
 - Icons for directory should be on the link, not a separate i tag [\#123](https://github.com/wvuweb/wvu-design-system/issues/123)
-- Make blog article and blog index have "main" selected by default on their respective templates. [\#122](https://github.com/wvuweb/wvu-design-system/issues/122)
 - If no thumbnail on blog featurette, text should go full width [\#117](https://github.com/wvuweb/wvu-design-system/issues/117)
 - Link color on twitter widget needs to be editable [\#116](https://github.com/wvuweb/wvu-design-system/issues/116)
 - Link decoration should be underline by default. [\#112](https://github.com/wvuweb/wvu-design-system/issues/112)
@@ -136,7 +143,6 @@
 - For Gallery component, allow users to manipulate options such as "order by" [\#55](https://github.com/wvuweb/wvu-design-system/issues/55)
 - Create hosted CSS and JS files on static. [\#43](https://github.com/wvuweb/wvu-design-system/issues/43)
 - Create option for non-square thumbnail for all components. [\#41](https://github.com/wvuweb/wvu-design-system/issues/41)
-- New layout for Components page [\#29](https://github.com/wvuweb/wvu-design-system/issues/29)
 
 **Closed issues:**
 
