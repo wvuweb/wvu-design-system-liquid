@@ -2,7 +2,7 @@
 //==================================================
 // Adds a gold, white, or blue WVU-branded slash to a text element.
 
-@mixin wvu-slash($color, $width, $position, $is-important: $global-important) {
+@mixin wvu-slash($color, $width, $height, $position, $is-important: $global-important) {
   position: relative $is-important;
   z-index: 0 $is-important;
   &:before {
@@ -11,8 +11,8 @@
     position: absolute $is-important;
     right: 0;
     left: -.5em;
-    height: $wvu-slash-height;
-    max-height: 15rem;
+    height: $wvu-slash-height-tall;
+    max-height: 15rem $is-important;
     top: -25%;
     width: $wvu-slash-width;
     opacity: 1 $is-important;
@@ -20,6 +20,12 @@
     -ms-transform: skewX(149deg) $is-important; /* IE 9 */
     -webkit-transform: skewX(149deg) $is-important; /* Safari */
     transform: skewX(149deg) $is-important;
+  }
+  @if $height == 'static' {
+    &:before {
+      height: $wvu-slash-height $is-important;
+      top: -.25em $is-important;
+    }
   }
   @if $color == 'white' {
     &:before {
