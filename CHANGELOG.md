@@ -1,5 +1,19 @@
 # Change Log
 
+## [1.0.5](https://github.com/wvuweb/wvu-design-system/tree/1.0.5) (2019-07-03)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.4...1.0.5)
+
+**Implemented enhancements:**
+
+- Ditch word-break property in wvu-shout mixin [\#157](https://github.com/wvuweb/wvu-design-system/issues/157)
+- Need another 'slash' option. [\#149](https://github.com/wvuweb/wvu-design-system/issues/149)
+- Make utility for transparent slash that can go behind text. [\#148](https://github.com/wvuweb/wvu-design-system/issues/148)
+
+**Fixed bugs:**
+
+- Certain component stylers don't work until page properties are saved. [\#160](https://github.com/wvuweb/wvu-design-system/issues/160)
+- Breadcrumb component styler editable region is below breadcrumbs [\#159](https://github.com/wvuweb/wvu-design-system/issues/159)
+
 ## [v1.0.4](https://github.com/wvuweb/wvu-design-system/tree/v1.0.4) (2019-07-02)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.3...v1.0.4)
 
