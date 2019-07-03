@@ -1,7 +1,7 @@
 # Change Log
 
-## [1.0.4](https://github.com/wvuweb/wvu-design-system/tree/1.0.4) (2019-07-02)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.3...1.0.4)
+## [v1.0.4](https://github.com/wvuweb/wvu-design-system/tree/v1.0.4) (2019-07-02)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.3...v1.0.4)
 
 **Implemented enhancements:**
 
