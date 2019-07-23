@@ -1,8 +1,3 @@
-<r:comment><!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name --></r:comment>
-<r:set_var name="itemLabels">
-  <r:page:slug />-<r:var name="componentName" />
-</r:set_var>
-
 <r:if v1="{$componentLimit}" v2="1" op="=">
   <r:set_var name="columnClasses">
     col-sm-6 col-md-4
@@ -39,48 +34,44 @@
   </r:set_var>
 </r:if>
 
-<r:root>
-  <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
-    and $loopOrder to: "asc" or "desc";
-    and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
-  <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}" random="{$componentIsRandom}">
-    <r:set_var name="itemCount">
-      <r:count />
+<r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
+
+<r:set_var name="itemClassesChecker">
+  <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />
+</r:set_var>
+
+<div class="row">
+  <r:comment><!-- Grab all of the items in the loop. --></r:comment>
+  <r:loop:each times="{$componentLimit}">
+    <r:set_var name="bgurl">
+      <r:var name="bgPrefix" />-panel-<r:index />-background
     </r:set_var>
-    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:if v1="{$itemCount}" v2="2" op="="> d-flex justify-content-center</r:if>"></r:if>
-      <r:comment><!-- Grab all of the items in the loop. --></r:comment>
-      <r:each limit="{$limit}">
-        <r:set_var name="bgurl">
-          <r:var name="bgPrefix" />-panel-<r:index />-background
-        </r:set_var>
-        <r:set_var name="componentPanelPhoto">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__photo</r:set_var>
-        <r:set_var name="componentPanelHeader">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__header</r:set_var>
-        <r:set_var name="componentPanelMain">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__main</r:set_var>
-        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /></r:if> <r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
-          <div class="card shadow">
-            <r:page:if_has_content_for region="{$componentPanelPhoto}" always_show_in_edit_mode="true">
-              <r:editable_region name="{$componentPanelPhoto}" scope="{$componentScope}">
-                <img class="card-img-top" src="http://placehold.it/960x640" alt="Placeholder">
-              </r:editable_region>
-            </r:page:if_has_content_for>
-            <div class="card-body bg-white">
-              <r:page:if_has_content_for region="{$componentPanelHeader}" always_show_in_edit_mode="true">
-                <r:editable_region name="{$componentPanelHeader}" scope="{$componentScope}">
-                  <h3 class="card-title iowan-old-style-italic mb-1">Panel Header</h3>
-                </r:editable_region>
-              </r:page:if_has_content_for>
-              <r:page:if_has_content_for region="{$componentPanelMain}" always_show_in_edit_mode="true">
-                <r:editable_region name="{$componentPanelMain}" scope="{$componentScope}">
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-                  <a href="#" class="btn btn-primary">Read More</a>
-                </r:editable_region>
-              </r:page:if_has_content_for>
-            </div>
-          </div>
+    <r:set_var name="componentPanelPhoto">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__photo</r:set_var>
+    <r:set_var name="componentPanelHeader">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__header</r:set_var>
+    <r:set_var name="componentPanelMain">wvu-featurettes_panel_<r:var name="componentInstance" />-<r:item />__main</r:set_var>
+    <div class="<r:var name="itemClassesChecker" /> <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if>" <r:partial name="utilities/wvu-bg-styler" />>
+      <div class="card shadow">
+        <r:page:if_has_content_for region="{$componentPanelPhoto}" always_show_in_edit_mode="true">
+          <r:editable_region name="{$componentPanelPhoto}" scope="{$componentScope}">
+            <img class="card-img-top" src="http://placehold.it/960x640" alt="Placeholder">
+          </r:editable_region>
+        </r:page:if_has_content_for>
+        <div class="card-body bg-white">
+          <r:page:if_has_content_for region="{$componentPanelHeader}" always_show_in_edit_mode="true">
+            <r:editable_region name="{$componentPanelHeader}" scope="{$componentScope}">
+              <h3 class="card-title iowan-old-style-italic mb-1">Panel Header</h3>
+            </r:editable_region>
+          </r:page:if_has_content_for>
+          <r:page:if_has_content_for region="{$componentPanelMain}" always_show_in_edit_mode="true">
+            <r:editable_region name="{$componentPanelMain}" scope="{$componentScope}">
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </r:editable_region>
+          </r:page:if_has_content_for>
         </div>
-      </r:each>
-    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
-  </r:descendants>
-</r:root>
+      </div>
+    </div>
+  </r:loop:each>
+</div>

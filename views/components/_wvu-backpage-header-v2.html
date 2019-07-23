@@ -43,7 +43,7 @@
       </small>
     </r:edit_mode_only>
     <r:comment><!-- Apply classes to the header. If supplied by user, use those. If not use default. --></r:comment>
-    <h1 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:if expr="{{ NOT(BLANK(classes_wvu_backpage_header__h1)) }}"><r:site:data name="classes_wvu_backpage_header__h1" /></r:if><r:if expr="{{ BLANK(classes_wvu_backpage_header__h1) }}"><r:yield name="{$defaultHeaderClasses}" /></r:if></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
+    <h1 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}" /></r:if></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
     <r:comment><!-- If user has toggled the “Header has subhead?” option in their page data, display a subhead region. --></r:comment>
     <r:if v1="{$header_subhead}" v2="1" op="=">
       <div class="row">
