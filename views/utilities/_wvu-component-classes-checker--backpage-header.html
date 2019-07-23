@@ -1,0 +1,13 @@
+<r:comment><!-- Output content from a component classes editable region. This region is contained in the background styler on each component. --></r:comment>
+<r:page:if_has_content_for region="{$componentClasses}">
+  <r:page:content name="{$componentClasses}" />
+</r:page:if_has_content_for>
+<r:comment><!-- If there is no content in the component classes region, output the default component classes, which are defined in the component partial. --></r:comment>
+<r:page:unless_has_content_for region="{$componentClasses}">
+  <r:if expr="{{ NOT(BLANK(classes_wvu_backpage_header)) }}">
+    <r:site:data name="classes_wvu_backpage_header" />
+  </r:if>
+  <r:if expr="{{ BLANK(classes_wvu_backpage_header) }}">
+    <r:yield name="{$defaultComponentClasses}" />
+  </r:if>
+</r:page:unless_has_content_for>
