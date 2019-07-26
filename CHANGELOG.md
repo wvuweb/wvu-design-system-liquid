@@ -1,7 +1,14 @@
 # Change Log
 
-## [1.0.6](https://github.com/wvuweb/wvu-design-system/tree/1.0.6) (2019-07-23)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.5...1.0.6)
+## [v1.0.7](https://github.com/wvuweb/wvu-design-system/tree/v1.0.7) (2019-07-26)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.6...v1.0.7)
+
+**Fixed bugs:**
+
+- Header background utilities and bg image stopped working on production [\#170](https://github.com/wvuweb/wvu-design-system/issues/170)
+
+## [v1.0.6](https://github.com/wvuweb/wvu-design-system/tree/v1.0.6) (2019-07-23)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.5...v1.0.6)
 
 **Fixed bugs:**
 
