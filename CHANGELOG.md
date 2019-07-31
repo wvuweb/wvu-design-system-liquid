@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.0.8](https://github.com/wvuweb/wvu-design-system/tree/v1.0.8) (2019-07-31)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.7...v1.0.8)
+
+**Implemented enhancements:**
+
+- Featurettes Cards w/Overlay need different grid classes [\#174](https://github.com/wvuweb/wvu-design-system/issues/174)
+
 ## [v1.0.7](https://github.com/wvuweb/wvu-design-system/tree/v1.0.7) (2019-07-26)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.6...v1.0.7)
 
