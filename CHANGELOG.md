@@ -1,5 +1,17 @@
 # Change Log
 
+## [v1.0.9](https://github.com/wvuweb/wvu-design-system/tree/v1.0.9) (2019-08-09)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.8...v1.0.9)
+
+**Fixed bugs:**
+
+- Utility classes for items do not work in featurettes component. [\#173](https://github.com/wvuweb/wvu-design-system/issues/173)
+
+**Closed issues:**
+
+- MountaineerTRAK link needs updated to Handshake in footer component [\#183](https://github.com/wvuweb/wvu-design-system/issues/183)
+- Enable header background image labels for 2nd level/child pages [\#177](https://github.com/wvuweb/wvu-design-system/issues/177)
+
 ## [v1.0.8](https://github.com/wvuweb/wvu-design-system/tree/v1.0.8) (2019-07-31)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.7...v1.0.8)
 
@@ -230,6 +242,7 @@
 - Adde lede text option to component dropdown in custom data [\#80](https://github.com/wvuweb/wvu-design-system/issues/80)
 - Add labels to all editable regions. [\#47](https://github.com/wvuweb/wvu-design-system/issues/47)
 - Auto-populate meta data in \<head\> [\#46](https://github.com/wvuweb/wvu-design-system/issues/46)
+- Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
 
 ## [v0.2.0](https://github.com/wvuweb/wvu-design-system/tree/v0.2.0) (2019-05-21)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v.0.1.0...v0.2.0)
@@ -282,7 +295,6 @@
 - Build CleanSlate version of masthead with all options [\#56](https://github.com/wvuweb/wvu-design-system/issues/56)
 - Create demo version of masthead component [\#54](https://github.com/wvuweb/wvu-design-system/issues/54)
 - Make a stat sheet component... [\#53](https://github.com/wvuweb/wvu-design-system/issues/53)
-- Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
 - Headings for each section type on utilities and components pages [\#40](https://github.com/wvuweb/wvu-design-system/issues/40)
 - Focus Indicator [\#27](https://github.com/wvuweb/wvu-design-system/issues/27)
 - Document slash modifiers for positions. [\#19](https://github.com/wvuweb/wvu-design-system/issues/19)
