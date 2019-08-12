@@ -43,3 +43,12 @@ img {
   a + h6, button + h6, img + h6, ol + h6, ul + h6, div + h6, p + h6, pre + h6, table + h6, blockquote + h6, fieldset + h6, figure + h6, figcaption + h6, h5 + h6 { margin-top: $spacer * 2; }
   a + .lead, button + .lead, ol + .lead, ul + .lead, div + .lead, p + .lead, pre + .lead, table + .lead, blockquote + .lead, fieldset + .lead, h1 .lead, h2 .lead, h3 .lead, h4 .lead, h5 .lead, h6 .lead { margin-top: $spacer * 1.5;}
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include helvetica-neue-bold($is-important: null); // Disable !important in this instance.
+}
