@@ -1,5 +1,24 @@
 # Change Log
 
+## [1.0.10](https://github.com/wvuweb/wvu-design-system/tree/1.0.10) (2019-08-13)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.9...1.0.10)
+
+**Implemented enhancements:**
+
+- Default header styles should use Helvetica Neue Bold [\#175](https://github.com/wvuweb/wvu-design-system/issues/175)
+- Make note that you can’t click on the video component unless you hover over the bottom of the editable region. [\#172](https://github.com/wvuweb/wvu-design-system/issues/172)
+- Video Feature missing from components dropdown in Super Theme [\#171](https://github.com/wvuweb/wvu-design-system/issues/171)
+- Need a custom data slot for header's utility classes [\#152](https://github.com/wvuweb/wvu-design-system/issues/152)
+
+**Fixed bugs:**
+
+- "Is Edit Mode Only" not working for editable region component... [\#187](https://github.com/wvuweb/wvu-design-system/issues/187)
+
+**Closed issues:**
+
+- Expand documentation for Profiles component [\#184](https://github.com/wvuweb/wvu-design-system/issues/184)
+- apply\_link positioning in masthead needs corrected [\#182](https://github.com/wvuweb/wvu-design-system/issues/182)
+
 ## [v1.0.9](https://github.com/wvuweb/wvu-design-system/tree/v1.0.9) (2019-08-09)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.8...v1.0.9)
 
@@ -242,7 +261,6 @@
 - Adde lede text option to component dropdown in custom data [\#80](https://github.com/wvuweb/wvu-design-system/issues/80)
 - Add labels to all editable regions. [\#47](https://github.com/wvuweb/wvu-design-system/issues/47)
 - Auto-populate meta data in \<head\> [\#46](https://github.com/wvuweb/wvu-design-system/issues/46)
-- Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
 
 ## [v0.2.0](https://github.com/wvuweb/wvu-design-system/tree/v0.2.0) (2019-05-21)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v.0.1.0...v0.2.0)
@@ -295,6 +313,7 @@
 - Build CleanSlate version of masthead with all options [\#56](https://github.com/wvuweb/wvu-design-system/issues/56)
 - Create demo version of masthead component [\#54](https://github.com/wvuweb/wvu-design-system/issues/54)
 - Make a stat sheet component... [\#53](https://github.com/wvuweb/wvu-design-system/issues/53)
+- Make photo optional on Featurettes Card Columns. [\#45](https://github.com/wvuweb/wvu-design-system/issues/45)
 - Headings for each section type on utilities and components pages [\#40](https://github.com/wvuweb/wvu-design-system/issues/40)
 - Focus Indicator [\#27](https://github.com/wvuweb/wvu-design-system/issues/27)
 - Document slash modifiers for positions. [\#19](https://github.com/wvuweb/wvu-design-system/issues/19)
