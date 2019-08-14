@@ -13,7 +13,7 @@ custom_site_attributes:
   - apply_link_3_url
   - classes_wvu_backpage_header
   - classes_wvu_backpage_header__h1
-  - classes_wvu-breadcrumbs
+  - classes_wvu_breadcrumbs
   - classes_wvu-footer-links
   - co_brand_subtitle
   - default_content_01
