@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.0.12](https://github.com/wvuweb/wvu-design-system/tree/v1.0.12) (2019-08-14)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.11...v1.0.12)
+
+**Implemented enhancements:**
+
+- Ability to style breadcrumb links [\#158](https://github.com/wvuweb/wvu-design-system/issues/158)
+
+**Fixed bugs:**
+
+- In wvu-backpage-header-v2, have wrong default header classes. [\#189](https://github.com/wvuweb/wvu-design-system/issues/189)
+
 ## [v1.0.11](https://github.com/wvuweb/wvu-design-system/tree/v1.0.11) (2019-08-14)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.10...v1.0.11)
 
@@ -94,6 +105,7 @@
 **Fixed bugs:**
 
 - Profile page template address overlap [\#155](https://github.com/wvuweb/wvu-design-system/issues/155)
+- Mock data file referencing wrong theme [\#150](https://github.com/wvuweb/wvu-design-system/issues/150)
 
 ## [v1.0.3](https://github.com/wvuweb/wvu-design-system/tree/v1.0.3) (2019-07-02)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.2...v1.0.3)
@@ -104,10 +116,6 @@
 
 ## [v1.0.2](https://github.com/wvuweb/wvu-design-system/tree/v1.0.2) (2019-06-27)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.1...v1.0.2)
-
-**Fixed bugs:**
-
-- Mock data file referencing wrong theme [\#150](https://github.com/wvuweb/wvu-design-system/issues/150)
 
 **Closed issues:**
 
@@ -173,7 +181,6 @@
 - Primary link color and code color not accessible [\#110](https://github.com/wvuweb/wvu-design-system/issues/110)
 - Add ARIA labels to main header, backpage header, breadcrumbs [\#109](https://github.com/wvuweb/wvu-design-system/issues/109)
 - Add id for wvu-main-content to is mainchecker utility [\#108](https://github.com/wvuweb/wvu-design-system/issues/108)
-- Show if hidden option not working on featurettes [\#107](https://github.com/wvuweb/wvu-design-system/issues/107)
 
 ## [v0.6.1](https://github.com/wvuweb/wvu-design-system/tree/v0.6.1) (2019-05-31)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.6.0...v0.6.1)
@@ -185,6 +192,7 @@
 
 **Fixed bugs:**
 
+- Show if hidden option not working on featurettes [\#107](https://github.com/wvuweb/wvu-design-system/issues/107)
 - BG for featurettes custom panels not getting reset [\#106](https://github.com/wvuweb/wvu-design-system/issues/106)
 - Fix error template. [\#105](https://github.com/wvuweb/wvu-design-system/issues/105)
 
