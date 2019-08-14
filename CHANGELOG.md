@@ -1,7 +1,23 @@
 # Change Log
 
-## [1.0.10](https://github.com/wvuweb/wvu-design-system/tree/1.0.10) (2019-08-13)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.9...1.0.10)
+## [v1.0.11](https://github.com/wvuweb/wvu-design-system/tree/v1.0.11) (2019-08-14)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.10...v1.0.11)
+
+**Implemented enhancements:**
+
+- Improve Implementation Notes for featurettes... [\#168](https://github.com/wvuweb/wvu-design-system/issues/168)
+
+**Fixed bugs:**
+
+- Profile images not pulling to Profiles component [\#185](https://github.com/wvuweb/wvu-design-system/issues/185)
+
+**Closed issues:**
+
+- Expand documentation on modifying description in Profiles Component [\#188](https://github.com/wvuweb/wvu-design-system/issues/188)
+- \_wvu-action-hero-two-column Component styling [\#181](https://github.com/wvuweb/wvu-design-system/issues/181)
+
+## [v1.0.10](https://github.com/wvuweb/wvu-design-system/tree/v1.0.10) (2019-08-13)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.9...v1.0.10)
 
 **Implemented enhancements:**
 
@@ -157,6 +173,7 @@
 - Primary link color and code color not accessible [\#110](https://github.com/wvuweb/wvu-design-system/issues/110)
 - Add ARIA labels to main header, backpage header, breadcrumbs [\#109](https://github.com/wvuweb/wvu-design-system/issues/109)
 - Add id for wvu-main-content to is mainchecker utility [\#108](https://github.com/wvuweb/wvu-design-system/issues/108)
+- Show if hidden option not working on featurettes [\#107](https://github.com/wvuweb/wvu-design-system/issues/107)
 
 ## [v0.6.1](https://github.com/wvuweb/wvu-design-system/tree/v0.6.1) (2019-05-31)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.6.0...v0.6.1)
@@ -168,7 +185,6 @@
 
 **Fixed bugs:**
 
-- Show if hidden option not working on featurettes [\#107](https://github.com/wvuweb/wvu-design-system/issues/107)
 - BG for featurettes custom panels not getting reset [\#106](https://github.com/wvuweb/wvu-design-system/issues/106)
 - Fix error template. [\#105](https://github.com/wvuweb/wvu-design-system/issues/105)
 
