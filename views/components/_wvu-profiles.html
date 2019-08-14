@@ -24,20 +24,20 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if>py-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if> <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container wvu-z-index-content">
-    <div class="mb-4">
-      <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
+    <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
+      <div class="mb-4">
         <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header</span></r:edit_mode_only>
         <r:comment><!-- For the h2, apply an ID that will tell screanreaders to use this element as the label for the section. --></r:comment>
         <r:editable_region name="{$componentHeader}" scope="{$componentScope}">
           <h2 id="<r:var name="componentName" />-label" class="display-3 wvu-shout">Profiles Headline</h2>
           <p class="h3 helvetica-neue-light">Subhead goes here.</p>
         </r:editable_region>
-      </r:page:if_has_content_for>
-    </div>
+      </div>
+    </r:page:if_has_content_for>
     <div class="row">
-      <div class="col-md-8 mx-auto">
+      <div class="col-md-8<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="> mx-auto</r:if>">
         <r:root>
           <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
             and $loopOrder to: "asc" or "desc";
@@ -85,7 +85,6 @@
                 </r:page:if_has_content_for>
                 <p class="mt-2">
                   <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
-                  <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
                 </p>
                 <p class="mb-0 mt-2">
                   <a class="btn btn-primary btn-sm" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>">View Profile<span class="sr-only">: <r:page:name /></span></a>
