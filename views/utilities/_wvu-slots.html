@@ -100,6 +100,7 @@
   <r:set_var name="featurettesStyle"><r:page:data name="{$slotFeaturettesStyle}" /></r:set_var>
   <r:set_var name="featurettesID"><r:page:data name="{$slotFeaturettesID}" /></r:set_var>
   <r:set_var name="hasSubnav"><r:page:data name="{$slotHasSubnav}" /></r:set_var>
+  <r:set_var name="isRandom"><r:page:data name="{$slotIsRandom}" /></r:set_var>
   <r:set_var name="limit"><r:page:data name="{$slotLimit}" /></r:set_var>
   <r:set_var name="loopBy"><r:page:data name="{$slotLoopBy}" /></r:set_var>
   <r:set_var name="loopLabelsMatch"><r:page:data name="{$slotLoopLabelsMatch}" /></r:set_var>
@@ -119,7 +120,7 @@
   <r:if v1="{$isRandom}" v2="1" op="=">
     <r:set_var name="isRandom">true</r:set_var>
   </r:if>
-  <r:if v1="{$isRandom}" v2="1" op="!=">
+  <r:if v1="{$isRandom}" v2="true" op="!=">
     <r:set_var name="isRandom">false</r:set_var>
   </r:if>
 
