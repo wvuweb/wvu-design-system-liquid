@@ -1,11 +1,17 @@
 # Change Log
 
+## [v1.0.16](https://github.com/wvuweb/wvu-design-system/tree/v1.0.16) (2019-09-09)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.15...v1.0.16)
+
+**Implemented enhancements:**
+
+- Make it so the "Is main?" toggle works with the plain Editable Region component. [\#194](https://github.com/wvuweb/wvu-design-system/issues/194)
+
 ## [v1.0.15](https://github.com/wvuweb/wvu-design-system/tree/v1.0.15) (2019-09-09)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.14...v1.0.15)
 
 **Implemented enhancements:**
 
-- Make it so the "Is main?" toggle works with the plain Editable Region component. [\#194](https://github.com/wvuweb/wvu-design-system/issues/194)
 - Add screenshots to templates in Themes section [\#130](https://github.com/wvuweb/wvu-design-system/issues/130)
 - Refine demo sites [\#129](https://github.com/wvuweb/wvu-design-system/issues/129)
 
