@@ -14,11 +14,15 @@
   <r:set_var name="componentIsEditModeOnly" value="0" />
 </r:edit_mode_only>
 
+<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><r:if v1="{$componentIsMain}" v2="1" op="="><main></r:if></r:if>
+
 <r:if v1="{$componentIsEditModeOnly}" v2="1" op="="><div class="d-none"></r:if>
 <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
 <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Editable Region</span></r:edit_mode_only>
 <r:editable_region name="{$componentMain}" scope="{$componentScope}" />
 <r:if v1="{$componentIsEditModeOnly}" v2="1" op="="></div></r:if>
+
+<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="="><r:if v1="{$componentIsMain}" v2="1" op="="></main></r:if></r:if>
 
 <r:comment><!-- We need to reset our variables so that when another component gets called after this, it doesn’t get injected with unexpected values. --></r:comment>
 <r:partial name="includes/wvu-component-variables-reset" theme="University Relations: WVU Design System" />
