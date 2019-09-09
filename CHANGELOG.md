@@ -1,5 +1,14 @@
 # Change Log
 
+## [v1.0.15](https://github.com/wvuweb/wvu-design-system/tree/v1.0.15) (2019-09-09)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.14...v1.0.15)
+
+**Implemented enhancements:**
+
+- Make it so the "Is main?" toggle works with the plain Editable Region component. [\#194](https://github.com/wvuweb/wvu-design-system/issues/194)
+- Add screenshots to templates in Themes section [\#130](https://github.com/wvuweb/wvu-design-system/issues/130)
+- Refine demo sites [\#129](https://github.com/wvuweb/wvu-design-system/issues/129)
+
 ## [v1.0.14](https://github.com/wvuweb/wvu-design-system/tree/v1.0.14) (2019-08-28)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.13...v1.0.14)
 
@@ -285,7 +294,6 @@
 - Make Action Hero inner container width dependent on display context... [\#91](https://github.com/wvuweb/wvu-design-system/issues/91)
 - If only 5 featurette items, make all fit on one line [\#89](https://github.com/wvuweb/wvu-design-system/issues/89)
 - Add item classe checker to featurettes with editable regions. [\#84](https://github.com/wvuweb/wvu-design-system/issues/84)
-- Make profiles title pull from header subhead [\#81](https://github.com/wvuweb/wvu-design-system/issues/81)
 - Add a label to each component showing which version of the core theme files it was introduced/is compatible with. [\#79](https://github.com/wvuweb/wvu-design-system/issues/79)
 - Create an optional editable region name override. [\#38](https://github.com/wvuweb/wvu-design-system/issues/38)
 - Create a Log In component. [\#6](https://github.com/wvuweb/wvu-design-system/issues/6)
@@ -301,6 +309,7 @@
 
 - Fix padding on nav when nav has dropdowns. [\#83](https://github.com/wvuweb/wvu-design-system/issues/83)
 - Slashes for unordered lists stopped working. [\#82](https://github.com/wvuweb/wvu-design-system/issues/82)
+- Make profiles title pull from header subhead [\#81](https://github.com/wvuweb/wvu-design-system/issues/81)
 - Adde lede text option to component dropdown in custom data [\#80](https://github.com/wvuweb/wvu-design-system/issues/80)
 - Add labels to all editable regions. [\#47](https://github.com/wvuweb/wvu-design-system/issues/47)
 - Auto-populate meta data in \<head\> [\#46](https://github.com/wvuweb/wvu-design-system/issues/46)
