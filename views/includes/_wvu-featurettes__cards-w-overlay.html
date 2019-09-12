@@ -49,7 +49,6 @@
 <r:set_var name="itemClassesChecker">
   <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />
 </r:set_var>
-
 <r:set_var name="itemHeaderClassesChecker">
   <r:page:unless_has_content_for region="{$itemHeaderClasses}"><r:yield name="{$defaultItemHeaderClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemHeaderClasses}" />
 </r:set_var>
