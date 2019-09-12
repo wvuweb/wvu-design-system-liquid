@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.0.17](https://github.com/wvuweb/wvu-design-system/tree/v1.0.17) (2019-09-12)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.16...v1.0.17)
+
+**Implemented enhancements:**
+
+- Add ability to add utilities to the row containing featurettes... [\#196](https://github.com/wvuweb/wvu-design-system/issues/196)
+
 ## [v1.0.16](https://github.com/wvuweb/wvu-design-system/tree/v1.0.16) (2019-09-09)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.15...v1.0.16)
 
