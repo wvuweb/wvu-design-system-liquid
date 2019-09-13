@@ -18,7 +18,7 @@
     "magnific-popup": "1.1.0",
     "node-sass": "^4.12.0",
     "responsive-nav": "https://github.com/zeroedin/responsive-nav.js.git#1.1.1",
-    "twitter-fetcher": "17.0.3"
+    "twitter-fetcher": "^18.0.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
