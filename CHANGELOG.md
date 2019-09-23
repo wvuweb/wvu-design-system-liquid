@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.0.18](https://github.com/wvuweb/wvu-design-system/tree/v1.0.18) (2019-09-23)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.17...v1.0.18)
+
+**Closed issues:**
+
+- Change breakpoint for Featurettes with editable regions and 4 items. [\#201](https://github.com/wvuweb/wvu-design-system/issues/201)
+
 ## [v1.0.17](https://github.com/wvuweb/wvu-design-system/tree/v1.0.17) (2019-09-12)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.16...v1.0.17)
 
