@@ -3,58 +3,60 @@
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
-<r:set_var name="columnClasses">
-  col-sm-6 col-md-3
-</r:set_var>
-<r:if v1="{$componentLimit}" v2="1" op="=">
-  <r:if v1="{$componentAlign}" v2="left" op="=">
+<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-3
+  </r:set_var>
+  <r:if v1="{$componentLimit}" v2="1" op="=">
+    <r:if v1="{$componentAlign}" v2="left" op="=">
+      <r:set_var name="columnClasses">
+        col-sm-6 mr-sm-auto
+      </r:set_var>
+    </r:if>
+    <r:if v1="{$componentAlign}" v2="middle" op="=">
+      <r:set_var name="columnClasses">
+        col-sm-6 mx-sm-auto
+      </r:set_var>
+    </r:if>
+    <r:if v1="{$componentAlign}" v2="right" op="=">
+      <r:set_var name="columnClasses">
+        col-sm-6 ml-sm-auto
+      </r:set_var>
+    </r:if>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="2" op="=">
     <r:set_var name="columnClasses">
-      col-sm-6 mr-sm-auto
+      col-sm-6 col-md-4
     </r:set_var>
   </r:if>
-  <r:if v1="{$componentAlign}" v2="middle" op="=">
+  <r:if v1="{$componentLimit}" v2="3" op="=">
     <r:set_var name="columnClasses">
-      col-sm-6 mx-sm-auto
+      col-sm-6 col-md
     </r:set_var>
   </r:if>
-  <r:if v1="{$componentAlign}" v2="right" op="=">
+  <r:if v1="{$componentLimit}" v2="4" op="=">
     <r:set_var name="columnClasses">
-      col-sm-6 ml-sm-auto
+      col-sm-6 col-md
     </r:set_var>
   </r:if>
-</r:if>
-<r:if v1="{$componentLimit}" v2="2" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="3" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="4" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="5" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4 col-lg-3 col-xl
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="6" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="9" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
+  <r:if v1="{$componentLimit}" v2="5" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4 col-lg-3 col-xl
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="6" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="9" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
 </r:if>
 
-<r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
+<r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
 <r:content_for name="{$defaultItemHeaderClasses}">helvetica-neue-light mb-0 h5</r:content_for>
 <r:content_for name="{$defaultItemBodyClasses}">helvetica-neue-light</r:content_for>
 
@@ -82,7 +84,7 @@
         <r:set_var name="bgurl">
           <r:var name="bgPrefix" />-panel-<r:index />-background
         </r:set_var>
-        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if><r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
+        <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
           <div class="mt-3">
             <p class="wvu-quote iowan-old-style h4">
               <r:page:content name="wvu-profile-1__quote" />

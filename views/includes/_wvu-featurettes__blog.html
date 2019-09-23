@@ -3,52 +3,56 @@
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
-<r:set_var name="columnClasses">
-  col-sm-6 col-md-3
-</r:set_var>
+<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
 
-<r:if v1="{$componentLimit}" v2="1" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="2" op="=">
   <r:set_var name="columnClasses">
     col-sm-6 col-md-3
   </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="3" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="4" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="5" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4 col-lg-3
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="6" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="9" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!=">
-  <r:set_var name="columnClasses">
-    col-sm-12 col-md-12
-  </r:set_var>
+
+  <r:if v1="{$componentLimit}" v2="1" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="2" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-3
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="3" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="4" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="5" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4 col-lg-3
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="6" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="9" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!=">
+    <r:set_var name="columnClasses">
+      col-sm-12 col-md-12
+    </r:set_var>
+  </r:if>
+
 </r:if>
 
-<r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
+<r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
 <r:content_for name="{$defaultItemHeaderClasses}">h3 iowan-old-style-italic mb-1</r:content_for>
 <r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
 <r:content_for name="{$defaultItemButtonClasses}">btn-primary btn-sm</r:content_for>
@@ -79,7 +83,7 @@
 </r:set_var>
 
 <r:get_page id="{$componentFeaturettesID}">
-  <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row d-flex justify-content-center"></r:if>
+  <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row d-flex justify-content-center <r:var name="rowClassesChecker" />"></r:if>
     <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
       and $loopOrder to: "asc" or "desc";
       and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
@@ -97,7 +101,7 @@
           <r:set_var name="bgurl">
             <r:var name="bgPrefix" />-panel-<r:index />-background
           </r:set_var>
-          <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if><r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
+          <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
             <div class="mt-3<r:if expr="{{ NOT(BLANK(thumbnail_url)) }}"><r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"> row</r:if></r:if>">
               <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
                 <div class="mb-1<r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"> col-md-4</r:if>">

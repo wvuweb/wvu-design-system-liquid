@@ -3,47 +3,49 @@
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
-<r:comment><!-- Set the columnClasses variable. These change based on how many items are meant to display as featurettes. They will be added to the individuals items. --></r:comment>
-<r:set_var name="columnClasses">
-  col-sm-6 col-md-3
-</r:set_var>
-<r:if v1="{$componentLimit}" v2="1" op="=">
+<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
+  <r:comment><!-- Set the columnClasses variable. These change based on how many items are meant to display as featurettes. They will be added to the individuals items. --></r:comment>
   <r:set_var name="columnClasses">
-    col
+    col-sm-6 col-md-3
   </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="2" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="3" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="4" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="5" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4 col-lg-3 col-xl
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="6" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
-</r:if>
-<r:if v1="{$componentLimit}" v2="9" op="=">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-4
-  </r:set_var>
+  <r:if v1="{$componentLimit}" v2="1" op="=">
+    <r:set_var name="columnClasses">
+      col
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="2" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="3" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="4" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="5" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4 col-lg-3 col-xl
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="6" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="9" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
 </r:if>
 
-<r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
+<r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
 <r:content_for name="{$defaultRowClasses}"></r:content_for>
 <r:content_for name="{$defaultItemHeaderClasses}">h3 iowan-old-style-italic mb-1</r:content_for>
 <r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
@@ -84,7 +86,7 @@
         <r:set_var name="bgurl">
           <r:var name="bgPrefix" />-panel-<r:index />-background
         </r:set_var>
-        <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if><r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
+        <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
           <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
             <div class="mb-1">
               <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>

@@ -1,4 +1,45 @@
-<r:content_for name="{$defaultItemClasses}">mb-3 mb-md-0</r:content_for>
+<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
+  <r:set_var name="columnClasses">
+    col-sm-6 col-md-3
+  </r:set_var>
+  <r:if v1="{$componentLimit}" v2="1" op="=">
+    <r:set_var name="columnClasses">
+      col
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="2" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="3" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="4" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="5" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4 col-lg-3 col-xl
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="6" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
+  <r:if v1="{$componentLimit}" v2="9" op="=">
+    <r:set_var name="columnClasses">
+      col-sm-6 col-md-4
+    </r:set_var>
+  </r:if>
+</r:if>
+
+<r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
 <r:content_for name="{$defaultItemHeaderClasses}">h3 iowan-old-style-italic mb-1</r:content_for>
 <r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
 
@@ -18,48 +59,10 @@
   <r:comment><!-- Grab all of the items in the loop. --></r:comment>
   <r:loop:each times="{$componentLimit}">
     <r:set_var name="componentPanel">featurettes_<r:var name="componentInstance" />_panel_<r:item /></r:set_var>
-    <r:set_var name="columnClasses">
-      col-sm-6 col-md-3
-    </r:set_var>
-    <r:if v1="{$componentLimit}" v2="1" op="=">
-      <r:set_var name="columnClasses">
-        col
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="2" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="3" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="4" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="5" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md-4 col-lg-3 col-xl
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="6" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md-4
-      </r:set_var>
-    </r:if>
-    <r:if v1="{$componentLimit}" v2="9" op="=">
-      <r:set_var name="columnClasses">
-        col-sm-6 col-md-4
-      </r:set_var>
-    </r:if>
     <r:set_var name="bgurl">
       <r:var name="bgPrefix" />-panel-<r:index />-background
     </r:set_var>
-    <div class="<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><r:var name="columnClasses" /> </r:if><r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
+    <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
       <r:comment><!-- This is where component inception happens. Temporarily store our parent component’s values; loop through the page’s slots to see if any components are targeting this inception point, and if so display that component; then “pop” the parent’s values back into the original variables. --></r:comment>
       <r:partial name="includes/wvu-component-variables-temp" theme="University Relations: WVU Design System" />
       <r:set_var name="componentDisplayContext" value="{$componentPanel}" />
