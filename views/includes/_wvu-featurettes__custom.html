@@ -39,9 +39,14 @@
   </r:if>
 </r:if>
 
+<r:content_for name="{$defaultRowClasses}">justify-content-center</r:content_for>
 <r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
 <r:content_for name="{$defaultItemHeaderClasses}">h3 iowan-old-style-italic mb-1</r:content_for>
 <r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
+
+<r:set_var name="rowClassesChecker">
+  <r:page:unless_has_content_for region="{$rowClasses}"><r:yield name="{$defaultRowClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$rowClasses}" />
+</r:set_var>
 
 <r:set_var name="itemClassesChecker">
   <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />
@@ -55,7 +60,7 @@
   <r:page:unless_has_content_for region="{$itemBodyClasses}"><r:yield name="{$defaultItemBodyClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemBodyClasses}" />
 </r:set_var>
 
-<div class="row">
+<div class="row <r:var name="rowClassesChecker" />">
   <r:comment><!-- Grab all of the items in the loop. --></r:comment>
   <r:loop:each times="{$componentLimit}">
     <r:set_var name="componentPanel">featurettes_<r:var name="componentInstance" />_panel_<r:item /></r:set_var>

@@ -41,10 +41,15 @@
   </r:if>
 </r:if>
 
+<r:content_for name="{$defaultRowClasses}">justify-content-center</r:content_for>
 <r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
 <r:content_for name="{$defaultItemHeaderClasses}">h3 iowan-old-style-italic mb-1</r:content_for>
 <r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
 <r:content_for name="{$defaultItemButtonClasses}">btn-primary btn-sm</r:content_for>
+
+<r:set_var name="rowClassesChecker">
+  <r:page:unless_has_content_for region="{$rowClasses}"><r:yield name="{$defaultRowClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$rowClasses}" />
+</r:set_var>
 
 <r:set_var name="itemClassesChecker">
   <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />
@@ -76,7 +81,7 @@
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}" random="{$componentIsRandom}">
-    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:if v1="{$componentLimit}" v2="2" op="="> d-flex justify-content-center</r:if>"></r:if>
+    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:var name="rowClassesChecker" />"></r:if>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
         <r:set_var name="bgurl">

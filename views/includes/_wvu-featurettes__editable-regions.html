@@ -39,11 +39,12 @@
   </r:if>
 </r:if>
 
+<r:content_for name="{$defaultRowClasses}">justify-content-center</r:content_for>
+<r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
+
 <r:set_var name="rowClassesChecker">
   <r:page:unless_has_content_for region="{$rowClasses}"><r:yield name="{$defaultRowClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$rowClasses}" />
 </r:set_var>
-
-<r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
 
 <r:set_var name="itemClassesChecker">
   <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />

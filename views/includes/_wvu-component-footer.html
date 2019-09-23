@@ -45,23 +45,22 @@
       </div>
       <r:if v1="{$baseComponentName}" v2="featurettes" op="=">
         <div class="row">
-          <r:if v1="{$componentFeaturettesStyle}" v2="editable-regions" op="=">
-            <div class="col-lg">
-              <p class="mb-0">
-                <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for row:</span></r:edit_mode_only>
-                <p>
-                  <r:editable_region name="{$rowClasses}" type="simple"></r:editable_region>
-                </p>
+
+          <div class="col-lg">
+            <p class="mb-0">
+              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for row:</span></r:edit_mode_only>
+              <p>
+                <r:editable_region name="{$rowClasses}" type="simple"></r:editable_region>
               </p>
-              <p class="text-muted mb-0 mt-1">
-                <small>
-                  <r:yield name="{$defaultRowClasses}">
-                    <strong>Default classes:</strong> <r:content />
-                  </r:yield>
-                </small>
-              </p>
-            </div>
-          </r:if>
+            </p>
+            <p class="text-muted mb-0 mt-1">
+              <small>
+                <r:yield name="{$defaultRowClasses}">
+                  <strong>Default classes:</strong> <r:content />
+                </r:yield>
+              </small>
+            </p>
+          </div>
           <div class="col-lg">
             <p class="mb-0">
               <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for items:</span></r:edit_mode_only>
