@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.0.20](https://github.com/wvuweb/wvu-design-system/tree/v1.0.20) (2019-09-23)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.19...v1.0.20)
+
+**Fixed bugs:**
+
+- In featurette items, background styler references local theme... [\#203](https://github.com/wvuweb/wvu-design-system/issues/203)
+
 ## [v1.0.19](https://github.com/wvuweb/wvu-design-system/tree/v1.0.19) (2019-09-23)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.18...v1.0.19)
 
