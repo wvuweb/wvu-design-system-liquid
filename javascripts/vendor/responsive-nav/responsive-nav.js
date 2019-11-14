@@ -15,7 +15,7 @@
   var responsiveNav = function(el, options) {
 
     var computed = !!window.getComputedStyle;
-    
+
     /**
      * getComputedStyle polyfill for old browsers
      */
@@ -38,24 +38,24 @@
       };
     }
     /* exported checkPassiveEventSupport, addEvent, removeEvent, getChildren, setAttributes, addClass, removeClass, forEach, hasClass, toggleFocus */
-    
-    
+
+
     /**
      * Check support for passive event listeners
      *
      * @return {bool} Returns whether {passive: true} can be used
      */
-    
+
     var checkPassiveEventSupport = function () {
         var supported = false;
-    
+
       try {
         var opts = {
           get passive() {
             supported = true;
           }
         };
-    
+
         if ("addEventListener" in window) {
           window.addEventListener("test", null, opts);
           window.removeEventListener("test", null, opts);
@@ -65,7 +65,7 @@
       }
       return supported;
     };
-    
+
     /**
      * Add Event
      * fn arg can be an object or a function, thanks to handleEvent
@@ -79,7 +79,7 @@
     var addEvent = function (el, evt, fn, bubble) {
       // set passive events if this is supported
       var options = checkPassiveEventSupport ? {passive: true, capture: bubble} : bubble;
-    
+
       if ("addEventListener" in el) {
         // BBOS6 doesn't support handleEvent, catch and polyfill
         try {
@@ -106,8 +106,8 @@
         }
       }
     };
-    
-    
+
+
     /**
      * Remove Event
      *
@@ -139,7 +139,7 @@
         }
       }
     };
-    
+
     /**
      * Get the children of any element
      *
@@ -160,7 +160,7 @@
       }
       return children;
     };
-    
+
     /**
      * Sets multiple attributes at once
      *
@@ -172,7 +172,7 @@
         el.setAttribute(key, attrs[key]);
       }
     };
-    
+
     /**
      * Adds a class to any element
      *
@@ -182,7 +182,7 @@
     var addClass = function (el, cls) {
       el.classList.add(cls);
     };
-    
+
     /**
      * Remove a class from any element
      *
@@ -192,7 +192,7 @@
     var removeClass = function (el, cls) {
       el.classList.remove(cls);
     };
-    
+
     /**
      * forEach method that passes back the stuff we need
      *
@@ -205,7 +205,7 @@
         callback.call(scope, i, array[i]);
       }
     };
-    
+
     /**
      * Checks if an element has certain class
      *
@@ -216,18 +216,18 @@
     var hasClass = function (el, cls) {
       return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
     };
-    
+
     /**
      * Sets or removes .focus class on an element.
      */
     var toggleFocus = function () {
       var self = this;
       var menuItems = opts.menuItems;
-    
+
       // Move up through the ancestors of the current link until we hit 'menu-items' class.
       // That's top level ul-element class name.
       while ( -1 === self.className.indexOf( menuItems ) ) {
-    
+
         // On li elements toggle the class .focus.
         if ( "li" === self.tagName.toLowerCase() ) {
           if ( -1 !== self.className.indexOf("focus") ) {
