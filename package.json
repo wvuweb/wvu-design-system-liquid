@@ -12,6 +12,11 @@
   },
   "author": "May Day <may.day@mail.wvu.edu>",
   "license": "MIT",
+  "engineStrict": true,
+  "engines": {
+    "node": "^12.13.1",
+    "npm": "^6.12.1"
+  },
   "dependencies": {
     "bootstrap": "~4.3",
     "fontfaceobserver": "2.1.0",
