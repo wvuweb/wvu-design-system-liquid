@@ -4,7 +4,7 @@
   "description": "WVU Design System",
   "main": "gulpfile.js",
   "scripts": {
-    "postinstall": "gulp move-js-files"
+    "postinstall": "gulp moveJsFiles"
   },
   "repository": {
     "type": "git",
@@ -16,13 +16,11 @@
     "bootstrap": "~4.3",
     "fontfaceobserver": "2.1.0",
     "magnific-popup": "1.1.0",
-    "node-sass": "^4.12.0",
     "responsive-nav": "https://github.com/zeroedin/responsive-nav.js.git#1.1.1",
     "twitter-fetcher": "^18.0.2"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
+    "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "*"
   }
