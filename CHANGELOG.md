@@ -1,5 +1,24 @@
 # Change Log
 
+## [v1.0.21](https://github.com/wvuweb/wvu-design-system/tree/v1.0.21) (2019-12-03)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.20...v1.0.21)
+
+**Implemented enhancements:**
+
+- Make Edit button for components include the component instance number [\#220](https://github.com/wvuweb/wvu-design-system/issues/220)
+- On Profile tempalte, make thumbnail image bigger [\#219](https://github.com/wvuweb/wvu-design-system/issues/219)
+- On profile template, long emails overlap with the main content. [\#218](https://github.com/wvuweb/wvu-design-system/issues/218)
+- Move custom data attributes used on all templates to the config.yml file [\#204](https://github.com/wvuweb/wvu-design-system/issues/204)
+
+**Fixed bugs:**
+
+- Account for &nbsp; and blank spaces when content is contingent... [\#154](https://github.com/wvuweb/wvu-design-system/issues/154)
+
+**Closed issues:**
+
+- Ensure there is at least one page section that is set to \<main\> without the user having to save the page properties... [\#217](https://github.com/wvuweb/wvu-design-system/issues/217)
+- Question - How to add dropdown menus to primary navigation in Super Theme [\#215](https://github.com/wvuweb/wvu-design-system/issues/215)
+
 ## [v1.0.20](https://github.com/wvuweb/wvu-design-system/tree/v1.0.20) (2019-09-23)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.19...v1.0.20)
 
