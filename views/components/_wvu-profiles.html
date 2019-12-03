@@ -15,7 +15,7 @@
 <r:set_var name="componentHeader">wvu-profiles-<r:var name="componentInstance" />__header</r:set_var>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
-<r:content_for name="{$defaultComponentClasses}"></r:content_for>
+<r:content_for name="{$defaultComponentClasses}">py-5</r:content_for>
 
 <r:comment><!-- Components do not display on live sites unless set to “Is active” in the slot’s custom data. But we need to make the component active no matter what in Edit Mode so the user can test it. You can see the “if” statement in the component’s outer HTML container that checks. --></r:comment>
 <r:edit_mode_only>
