@@ -33,22 +33,26 @@
 <!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if><r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container wvu-z-index-content">
     <div class="row">
-      <div class="col-md-3 mb-1">
+      <div class="col-md-6 col-lg-5 col-xl-4 mb-1">
         <div class="col-8 col-xl-10 mr-auto">
-          <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
-            <img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />" alt="thumbnail_alt" />
-          </r:if>
-          <r:if expr="{{ BLANK(thumbnail_url_sq) }}">
-            <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
-              <img class="shadow" src="<r:page:data name="thumbnail_url" />" alt="thumbnail_alt" />
-            </r:if>
-          </r:if>
+          <div class="row">
+            <div class="col-xl-10 mr-xl-auto">
+              <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
+                <img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />" alt="thumbnail_alt" />
+              </r:if>
+              <r:if expr="{{ BLANK(thumbnail_url_sq) }}">
+                <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
+                  <img class="shadow" src="<r:page:data name="thumbnail_url" />" alt="thumbnail_alt" />
+                </r:if>
+              </r:if>
+            </div>
+          </div>
           <p class="my-3">
             <r:partial name="includes/wvu-contact-info" theme="University Relations: WVU Design System" />
           </p>
         </div>
       </div>
-      <div class="col-md-8 mr-md-auto">
+      <div class="col-md-6 col-lg-7 col-xl-8">
         <r:if v1="{$backpage_header}" v2="1" op="=">
           <r:page:if_has_content_for region="wvu-backpage-header-1__label" always_show_in_edit_mode="true">
             <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
