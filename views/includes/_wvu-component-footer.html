@@ -8,7 +8,7 @@
         <r:set_var name="componentClasses" value="wvu-breadcrumbs-1-classes" />
       </r:if>
     </r:if>
-    <a class="text-white p-1 rounded-sm d-inline-block btn btn-sm btn-wvu-neutral--black wvu-grow-shadow wvu-z-index-content position-absolute mt-n4 ml-1" data-toggle="collapse" href="#editpanel-<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="editpanel-<r:var name="componentName" />"><small class="d-block"><i class="far fa-edit"></i> Edit <span class="text-capitalize"><r:var name="baseComponentName" /></span> Styles</small></a>
+    <a class="text-white p-1 rounded-sm d-inline-block btn btn-sm btn-wvu-neutral--black wvu-grow-shadow wvu-z-index-content position-absolute mt-n4 ml-1" data-toggle="collapse" href="#editpanel-<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="editpanel-<r:var name="componentName" />"><small class="d-block"><i class="far fa-edit"></i> Edit <span class="text-capitalize"><r:var name="baseComponentName" /> <r:var name="instanceNumber" /></span> Styles</small></a>
     <section class="px-2 px-md-5 pt-2 pb-3 mb-0 text-light bg-wvu-neutral--black position-relative collapse multi-collapse" id="editpanel-<r:var name="componentName" />">
       <p class="mb-0">
         <span class="d-inline-block badge badge-secondary">Utility classes:</span> <div class="text-monospace wvu-z-index-max position-relative"><r:editable_region name="{$componentClasses}" scope="{$componentScope}" type="simple" /></div>
