@@ -80,8 +80,7 @@ custom_data_attributes:
       - [Subnav, subnav]
       - [Twitter Widget, twitter-widget]
       - [Video Feature, video-feature]
-    include_blank: false
-    default: backpage
+    include_blank: true
   - slot_1_custom:
     title: If custom, name of partial
   - slot_1_is_edit_mode_only:
@@ -259,7 +258,6 @@ custom_data_attributes:
       - [Twitter Widget, twitter-widget]
       - [Video Feature, video-feature]
     include_blank: true
-    default: subnav
   - slot_2_custom:
     title: If custom, name of partial
   - slot_2_is_edit_mode_only:
@@ -301,7 +299,7 @@ custom_data_attributes:
       - [Featurettes 6 Panel 3, featurettes_6_panel_3]
       - [Sidebar 6, sidebar_6]
     include_blank: false
-    default: sidebar_1
+    default: as_full_width_block
   - slot_2_is_main:
     type: checkbox
     title: Is Main
