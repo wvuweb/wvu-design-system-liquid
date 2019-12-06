@@ -64,6 +64,7 @@
     <r:partial name="utilities/wvu-slots--site" theme="University Relations: WVU Design System" />
 
     <r:if value1="{$has_standard_footer}" value2="false" operator="!=">
+      <r:set_var name="instanceNumber" value="1" />
       <r:partial name="components/wvu-footer" theme="University Relations: WVU Design System" />
     </r:if>
 
