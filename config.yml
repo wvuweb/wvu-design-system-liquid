@@ -1824,6 +1824,7 @@ custom_site_attributes:
   - default_content_02
   - default_content_03
   - disable_component_styler
+  - disable_primary_nav
   - facebook_url
   - flickr_url
   - github_url
