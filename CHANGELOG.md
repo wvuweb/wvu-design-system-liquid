@@ -1,11 +1,28 @@
 # Change Log
 
+## [v1.1.1](https://github.com/wvuweb/wvu-design-system/tree/v1.1.1) (2019-12-06)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.0...v1.1.1)
+
+**Implemented enhancements:**
+
+- Note in documentation that the Profiles Index component functions just as the Featurettes component does... [\#207](https://github.com/wvuweb/wvu-design-system/issues/207)
+- Primary Nav: Option to Disable Nav Bar [\#164](https://github.com/wvuweb/wvu-design-system/issues/164)
+
+**Fixed bugs:**
+
+- Error on footer Edit button [\#221](https://github.com/wvuweb/wvu-design-system/issues/221)
+- Unable to change page template after page is created with default [\#197](https://github.com/wvuweb/wvu-design-system/issues/197)
+
+**Closed issues:**
+
+- Replace social media links in footer with icons [\#222](https://github.com/wvuweb/wvu-design-system/issues/222)
+- Using the profile component, the email address overlaps the bio text on medium-width screens [\#200](https://github.com/wvuweb/wvu-design-system/issues/200)
+
 ## [v1.1.0](https://github.com/wvuweb/wvu-design-system/tree/v1.1.0) (2019-12-03)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.21...v1.1.0)
 
 **Implemented enhancements:**
 
-- Update fontawesome version in default.html [\#216](https://github.com/wvuweb/wvu-design-system/issues/216)
 - Create more visual hierarchy in the custom data attributes window [\#210](https://github.com/wvuweb/wvu-design-system/issues/210)
 - No default component classes assigned for Profiles component. [\#206](https://github.com/wvuweb/wvu-design-system/issues/206)
 
@@ -240,6 +257,7 @@
 
 **Fixed bugs:**
 
+- Subhead for directory listing calls wrong editable region [\#146](https://github.com/wvuweb/wvu-design-system/issues/146)
 - Make default content in log in component accessible [\#143](https://github.com/wvuweb/wvu-design-system/issues/143)
 - Add aria label to profile component [\#142](https://github.com/wvuweb/wvu-design-system/issues/142)
 - Add aria-label to event agenda [\#141](https://github.com/wvuweb/wvu-design-system/issues/141)
@@ -268,7 +286,6 @@
 
 **Fixed bugs:**
 
-- Subhead for directory listing calls wrong editable region [\#146](https://github.com/wvuweb/wvu-design-system/issues/146)
 - Scope for sitewide editable region component not working [\#135](https://github.com/wvuweb/wvu-design-system/issues/135)
 - Big Search input needs aria-label [\#127](https://github.com/wvuweb/wvu-design-system/issues/127)
 - Quicklinks in search dropdown needs an aria-label [\#126](https://github.com/wvuweb/wvu-design-system/issues/126)
