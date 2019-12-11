@@ -10,6 +10,7 @@ var rename = require('gulp-rename');
 // File paths
 var files = {
   scssSrc: ['./scss/*.scss', '!./scss/_*.scss'],
+  scssWatchPath: './scss/**/*.scss',
   scssDest: './stylesheets',
   jsDevDependenciesBase: './node_modules',
   jsDevDependenciesSrc: [
@@ -19,7 +20,7 @@ var files = {
     './node_modules/responsive-nav/client/dist/responsive-nav.js'
   ],
   jsDevDependenciesDest: './javascripts/vendor'
-}
+};
 
 // This task moves JS files from our `node_modules` folder to the
 // root `javascripts/vendor` folder.
@@ -41,14 +42,13 @@ function moveJsFiles () {
 function sassTask () {
   return src(files.scssSrc)
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(dest(files.scssDest)
-  );
+    .pipe(dest(files.scssDest));
 }
 
 // Watch Task
 // Watches our Sass for changes
 function watchTask () {
-  watch(files.scssSrc,
+  watch(files.scssWatchPath,
     series(sassTask)
   );
 }
