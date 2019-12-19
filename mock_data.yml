@@ -340,13 +340,6 @@ site:
   name: "My Site Title Name"
   domain: "designsystem.sandbox.wvu.edu"
   data:
-    has_alternate_logo: null # Options: null | *slug* to a logo image.
-    has_co_brand: "STEM Center" # Options: true | false | string
-    co_brand_subtitle: "Master of Science"
-    masthead_color: "blue" # Options: blue | gold
-    masthead_title: "My Site Name"
-    masthead_college_link_title: null # Options: null | string (eg: "Davis College")
-    masthead_college_link_address: "https://universityrelations.wvu.edu/"
     apply_link_1: "Apply Now"
     apply_link_1_url: "https://admissions.wvu.edu/how-to-apply"
     apply_link_2: "Visit WVU"
@@ -355,7 +348,7 @@ site:
     apply_link_3_url: "https://admissions.wvu.edu/request-information"
     classes_wvu_backpage_header__h1: ""
     classes_wvu-footer-links: ""
-    co_brand_subtitle: ""
+    co_brand_subtitle: null # Options: null | string (eg: "Master of Science")
     default_content_01: ""
     default_content_02: ""
     default_content_03: ""
@@ -364,21 +357,21 @@ site:
     flickr_url: "#"
     github_url: "#"
     google_site_verification: ""
-    has_alternate_logo: ""
-    has_co_brand: ""
+    has_alternate_logo: null # Options: null | *slug* to a logo image, eg /files/path/to/image.jpg
+    has_co_brand: null # Options: null | string
     has_standard_footer: ""
     hide_instructions: ""
     instagram_url: "#"
     is_demo_site: ""
     jquery_defer: ""
     linkedin_url: "#"
-    masthead_college_link_address: ""
-    masthead_college_link_title: ""
-    masthead_color: ""
+    masthead_college_link_address: null # Options: null | string (eg: https://davis.wvu.edu/)
+    masthead_college_link_title: null # Options: null | string (eg: "Davis College")
+    masthead_color: "blue" # Options: blue | gold
     masthead_link_2_address: ""
     masthead_link_2_title: ""
     masthead_logo_url: ""
-    masthead_title: ""
+    masthead_title: null # Options: null | string
     nav_dropdowns: true # Options: null | true
     syndication_url: "#"
     show_apply_links: ""
