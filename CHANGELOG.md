@@ -1,5 +1,18 @@
 # Change Log
 
+## [v1.1.2](https://github.com/wvuweb/wvu-design-system/tree/v1.1.2) (2020-01-15)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.1...v1.1.2)
+
+**Fixed bugs:**
+
+- Masthead should contain "West Virginia University" in addition to the site title [\#227](https://github.com/wvuweb/wvu-design-system/issues/227)
+- Gulp v4 not compiling Sass files in subdirectories of the scss folder. [\#223](https://github.com/wvuweb/wvu-design-system/issues/223)
+
+**Closed issues:**
+
+- Fix dropdown menus on mobile [\#231](https://github.com/wvuweb/wvu-design-system/issues/231)
+- Update site to include how Featurettes ID are obtained for blog articles [\#226](https://github.com/wvuweb/wvu-design-system/issues/226)
+
 ## [v1.1.1](https://github.com/wvuweb/wvu-design-system/tree/v1.1.1) (2019-12-06)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.0...v1.1.1)
 
@@ -439,7 +452,6 @@
 **Fixed bugs:**
 
 - Blog Articles sidebar is broke. [\#73](https://github.com/wvuweb/wvu-design-system/issues/73)
-- Masthead Gold not working on Demo site. [\#57](https://github.com/wvuweb/wvu-design-system/issues/57)
 
 ## [v0.0.4](https://github.com/wvuweb/wvu-design-system/tree/v0.0.4) (2019-05-15)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v0.0.3...v0.0.4)
