@@ -17,7 +17,7 @@ var files = {
     './node_modules/twitter-fetcher/js/twitterFetcher_min.js',
     './node_modules/fontfaceobserver/fontfaceobserver.js',
     './node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
-    './node_modules/responsive-nav/client/dist/responsive-nav.js'
+    './node_modules/responsive-nav/responsive-nav.js'
   ],
   jsDevDependenciesDest: './javascripts/vendor'
 };

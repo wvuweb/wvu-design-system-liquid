@@ -177,6 +177,41 @@
         for (var i = 0; i < array.length; i++) {
           callback.call(scope, i, array[i]);
         }
+      },
+	  
+      /**
+       * Checks if an element has certain class
+       *
+       * @param  {element}  element
+       * @param  {string}   class name
+       * @return {Boolean}
+       */
+      hasClass = function (el, cls) {
+        return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
+      },
+	  
+      /**
+       * Sets or removes .focus class on an element.
+       */
+      toggleFocus = function () {
+        var self = this,
+		menuItems = opts.menuItems;
+
+        // Move up through the ancestors of the current link until we hit 'menu-items' class. That's top level ul-element class name.
+        while ( -1 === self.className.indexOf( menuItems ) ) {
+
+          // On li elements toggle the class .focus.
+          if ( 'li' === self.tagName.toLowerCase() ) {
+            if ( -1 !== self.className.indexOf( 'focus' ) ) {
+              self.className = self.className.replace( ' focus', '' );
+            } else {
+              self.className += ' focus';
+            }
+          }
+
+          self = self.parentElement;
+        }
+		
       };
 
     var nav,
@@ -186,7 +221,8 @@
       htmlEl = document.documentElement,
       hasAnimFinished,
       isMobile,
-      navOpen;
+      navOpen,
+      dropdownButton;
 
     var ResponsiveNav = function (el, options) {
         var i;
@@ -206,9 +242,17 @@
           navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
           navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
           jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+          enableFocus: false,               // Boolean: Do we add 'focus' class in nav elements
+          enableDropdown: false,            // Boolean: Do we use multi level dropdown
+          menuItems: "menu-items",          // String: Class that is added only to top ul element
+          subMenu: "sub-menu",              // String: Class that is added to sub menu ul elements
+          openDropdown: "Open sub menu",    // String: Label for opening sub menu
+          closeDropdown: "Close sub menu",  // String: Label for closing sub menu
           init: function(){},               // Function: Init callback
           open: function(){},               // Function: Open callback
-          close: function(){}               // Function: Close callback
+          close: function(){},              // Function: Close callback
+          resizeMobile: function(){},       // Function: Resize callback for "mobile"     
+          resizeDesktop: function(){}       // Function: Resize callback for "desktop"
         };
 
         // User defined options
@@ -275,6 +319,18 @@
         } else {
           navToggle.removeAttribute("aria-hidden");
         }
+		
+		if(opts.enableDropdown) {
+		  var self = this;
+          forEach(dropdownButton, function (i, el) {
+            removeEvent(el, "touchstart", self, false);
+            removeEvent(el, "touchend", self, false);
+            removeEvent(el, "mouseup", self, false);
+            removeEvent(el, "keyup", self, false);
+            removeEvent(el, "click", self, false);
+          });
+	    }
+		
       },
 
       /**
@@ -301,6 +357,8 @@
           addClass(navToggle, "active");
           nav.style.position = opts.openPos;
           setAttributes(nav, {"aria-hidden": "false"});
+		  setAttributes(nav, {"aria-expanded": "true"});
+		  setAttributes(navToggle, {"aria-expanded": "true"});
           navOpen = true;
           opts.open();
         }
@@ -316,6 +374,8 @@
           removeClass(htmlEl, opts.navActiveClass);
           removeClass(navToggle, "active");
           setAttributes(nav, {"aria-hidden": "true"});
+		  setAttributes(nav, {"aria-expanded": "false"});
+		  setAttributes(navToggle, {"aria-expanded": "false"});
 
           // If animations are enabled, wait until they finish
           if (opts.animate) {
@@ -323,11 +383,28 @@
             setTimeout(function () {
               nav.style.position = "absolute";
               hasAnimFinished = true;
+			  
+              if(opts.enableDropdown) {
+                removeClass(nav, "dropdown-active");
+                forEach(dropdownButton, function (i, el) {
+                  removeClass(el, "toggled");
+                  removeClass(el.nextSibling, "toggled"); // Remove class from sub-menu ul element.
+                });                 
+              }
+			  
             }, opts.transition + 10);
 
           // Animations aren't enabled, we can do these immediately
           } else {
             nav.style.position = "absolute";
+			
+            if(opts.enableDropdown) {
+              removeClass(nav, "dropdown-active");
+              forEach(dropdownButton, function (i, el) {
+                removeClass(el, "toggled");
+                removeClass(el.nextSibling, "toggled"); // Remove class from sub-menu ul element.
+              });                 
+            }
           }
 
           navOpen = false;
@@ -346,22 +423,36 @@
 
           isMobile = true;
           setAttributes(navToggle, {"aria-hidden": "false"});
+		  setAttributes(nav, {"aria-expanded": "false"});
+		  setAttributes(navToggle, {"aria-expanded": "false"});
 
           // If the navigation is hidden
           if (nav.className.match(/(^|\s)closed(\s|$)/)) {
             setAttributes(nav, {"aria-hidden": "true"});
             nav.style.position = "absolute";
           }
+		  
+          // If the navigation is not hidden
+          if (!nav.className.match(/(^|\s)closed(\s|$)/)) {
+		    setAttributes(nav, {"aria-expanded": "true"});
+		    setAttributes(navToggle, {"aria-expanded": "true"});
+          }
 
           this._createStyles();
           this._calcHeight();
+		  opts.resizeMobile();
+		  
         } else {
 
           isMobile = false;
           setAttributes(navToggle, {"aria-hidden": "true"});
           setAttributes(nav, {"aria-hidden": "false"});
+		  nav.removeAttribute("aria-expanded");
+		  navToggle.removeAttribute("aria-expanded");
           nav.style.position = opts.openPos;
           this._removeStyles();
+		  opts.resizeDesktop();
+		  
         }
       },
 
@@ -414,6 +505,10 @@
         this._createToggle();
         this._transitions();
         this.resize();
+		
+		// Enable more accessible dropdown menu
+        this._createFocus();
+        this._createDropdown();
 
         /**
          * On IE8 the resize event triggers too early for some reason
@@ -575,13 +670,29 @@
         if (!isMobile) {
           return;
         }
+		
+        // Get event.target, the old IE way
+        var thisEvent = e || window.event,
+          targetEl = thisEvent.target || thisEvent.srcElement,
+          isDropdownTapped = false;
+		  
+        // Was it sub-navigation toggle or the main toggle?
+        if (hasClass(targetEl, "dropdown-toggle") && opts.enableDropdown) isDropdownTapped = true;
 
         // If the user isn't scrolling
         if (!this.touchHasMoved) {
 
           // If the event type is touch
           if (e.type === "touchend") {
-            this.toggle();
+            
+			// If sub-navigation toggle was tapped
+            if (isDropdownTapped) {
+              this._toggleDropdown(targetEl);
+
+            // If the main toggle was tapped
+            } else {
+              this.toggle();
+            }
             return;
 
           // Event type was click, not touch
@@ -590,7 +701,11 @@
 
             // If it isn't a right click, do toggling
             if (!(evt.which === 3 || evt.button === 2)) {
-              this.toggle();
+              if (isDropdownTapped) {
+                this._toggleDropdown(targetEl);
+              } else {
+                this.toggle();
+              }
             }
           }
         }
@@ -603,9 +718,17 @@
        * @param  {event} event
        */
       _onKeyUp: function (e) {
-        var evt = e || window.event;
+        var evt = e || window.event,
+          targetEl = e.target,
+          isDropdownTapped = false;
+		  
+        if (hasClass(targetEl, "dropdown-toggle") && opts.enableDropdown) isDropdownTapped = true;
         if (evt.keyCode === 13) {
-          this.toggle();
+         if (isDropdownTapped) {
+            this._toggleDropdown(targetEl);
+          } else {
+            this.toggle();
+          }
         }
       },
 
@@ -615,7 +738,7 @@
       _transitions: function () {
         if (opts.animate) {
           var objStyle = nav.style,
-            transition = "max-height " + opts.transition + "ms";
+            transition = "max-height " + opts.transition + "ms, visibility " + opts.transition +  "ms linear";
 
           objStyle.WebkitTransition =
           objStyle.MozTransition =
@@ -643,7 +766,133 @@
         }
 
         innerStyles = "";
-      }
+      },
+	  
+      /**
+       * Creates 'focus' class on nav elements
+       */
+      _createFocus: function () {
+		
+		// Bail if focus is not enabled.
+	    if(!opts.enableFocus) {
+		  return;
+		}
+		  
+        // Get all the link elements within the menu.
+        var menu = nav.getElementsByTagName( 'ul' )[0],
+        links = menu.getElementsByTagName( 'a' ),
+		len,
+		i;
+		  
+        // Each time a menu link is focused or blurred, toggle focus.
+        for ( i = 0, len = links.length; i < len; i++ ) {
+          links[i].addEventListener( 'focus', toggleFocus, true );
+          links[i].addEventListener( 'blur', toggleFocus, true );
+        }
+	   
+	  },
+	  
+      /**
+       * Enable multi-level dropdown
+       */
+      _createDropdown: function () {
+		  
+        // Bail if multiple level dropdown is not enabled.
+        if(!opts.enableDropdown) {
+          return;	
+        }
+		
+        var self = this;
+		  
+        // Get submenus
+        var menu = nav.getElementsByTagName( 'ul' )[0],
+        subMenus = nav.getElementsByClassName( opts.subMenu ),
+        i,
+        len;
+		
+       // Add .multiple-level-nav class to nav
+       addClass(nav, 'multiple-level-nav');
+		
+       // Set menu items with sub menus to aria-haspopup="true" and add toggle button before sub menu.
+       for (i = 0, len = subMenus.length; i < len; i++) {
+         subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
+         subMenus[i].insertAdjacentHTML( 'beforebegin', '<button class="dropdown-toggle" aria-expanded="false">' + opts.openDropdown + '</button>' );
+       }
+		
+       // Select all dropdown buttons
+       dropdownButton = nav.querySelectorAll( '.dropdown-toggle' );
+		
+       // For each dropdown Button element add click event
+       forEach( dropdownButton, function( i, el ) {
+          addEvent(el, "touchstart", self, false);
+          addEvent(el, "touchend", self, false);
+          addEvent(el, "mouseup", self, false);
+          addEvent(el, "keyup", self, false);
+          addEvent(el, "click", self, false);
+       });
+	
+      },
+	  
+      /**
+       * Toggles sub-navigations open/closed
+       *
+       * @param  {element} The toggle that was tapped
+       */
+      _toggleDropdown: function (targetEl) {
+
+        // Enable active class to let the navigation expand over
+        // the calculated max height
+        //addClass(nav, "dropdown-active");
+		
+        // Change dropdown button text on every click
+        if( targetEl.innerHTML === opts.openDropdown ) {
+          targetEl.innerHTML = opts.closeDropdown;
+        } else {
+          targetEl.innerHTML = opts.openDropdown;
+        }
+
+        // Check if the sub-navigation is inside another sub-nav
+        var parentEl = targetEl.parentNode,
+          isInsideSub = hasClass(parentEl.parentNode.parentNode, "dropdown");
+
+        // Toggle dropdown button
+        if( !hasClass( targetEl, 'toggled' ) ) {
+					
+          // Add .toggled class
+          addClass( targetEl, 'toggled' );
+					
+          // Set aria-expanded to true
+          targetEl.setAttribute( 'aria-expanded', 'true' );
+					
+          // Get next element meaning UL with .sub-menu class
+          var nextElement = targetEl.nextElementSibling;
+					
+          // Add 'toggled' class to sub-menu element
+          addClass( nextElement, 'toggled' );
+					
+          // Add 'dropdown-active' class to nav when dropdown is toggled
+          addClass( nav, 'dropdown-active' );
+						
+        } else {
+					
+          // Remove .toggled class
+          removeClass( targetEl, 'toggled' );
+					
+          // Set aria-expanded to false
+          targetEl.setAttribute( 'aria-expanded', 'false' );
+					
+          // Get next element meaning UL with .sub-menu
+          var nextElement = targetEl.nextElementSibling;
+					
+          // Remove 'toggled' class from sub-menu element
+          removeClass( nextElement, 'toggled' );
+					
+          // Remove 'dropdown-active' class to nav when dropdown is toggled
+          removeClass( nav, 'dropdown-active' );
+					
+        }
+		
+      },
 
     };
 
