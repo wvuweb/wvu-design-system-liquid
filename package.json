@@ -4,7 +4,7 @@
   "description": "WVU Design System",
   "main": "gulpfile.js",
   "scripts": {
-    "postinstall": "gulp moveJsFiles"
+    "prepare": "gulp moveJsFiles"
   },
   "repository": {
     "type": "git",
