@@ -89,7 +89,7 @@ $i: 1;
     }
     &.wvu-slash--#{$i}-up {
       &:before {
-        top: calc(-25% + -(#{$i} * #{$spacer})) $global-important;
+        top: calc(-25% - (#{$i} * #{$spacer})) $global-important;
       }
     }
     &.wvu-slash--#{$i}-down {
