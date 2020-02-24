@@ -135,6 +135,7 @@
       background-image: url($wvu-topo-map-black);
       background-position: center;
       background-size: cover;
+      opacity: $wvu-topo-map-opacity;
       bottom: 0;
       content: '';
       left: 0;
@@ -151,6 +152,7 @@
       background-image: url($wvu-topo-map-white);
       background-position: center;
       background-size: cover;
+      opacity: $wvu-topo-map-opacity;
       bottom: 0;
       content: '';
       left: 0;
