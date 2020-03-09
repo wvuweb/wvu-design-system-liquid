@@ -13,15 +13,13 @@
       <p class="mb-0">
         <span class="d-inline-block badge badge-secondary">Utility classes:</span> <div class="text-monospace wvu-z-index-max position-relative"><r:editable_region name="{$componentClasses}" scope="{$componentScope}" type="simple" /></div>
       </p>
-      <p class="mt-1">
-        <small>
-          <r:yield name="{$defaultComponentClasses}">
-            <strong class="text-muted">Default classes:</strong> <pre class="text-muted"><r:content /></pre>
-          </r:yield>
-        </small>
+      <p class="mt-1 small">
+        <r:yield name="{$defaultComponentClasses}">
+          <strong class="text-muted">Default classes:</strong> <pre class="text-muted"><r:content /></pre>
+        </r:yield>
       </p>
       <p class="mb-0 mt-1">
-        <small><strong class="text-muted">Label for background image:</strong></small> <span class="badge badge-pill badge-secondary"><r:page:slug />-<r:var name="componentName" />-background</span>
+        <strong class="text-muted small">Label for background image:</strong> <span class="badge badge-pill badge-secondary"><r:page:slug />-<r:var name="componentName" />-background</span>
       </p>
       <a class="text-wvu-accent--orange" data-toggle="collapse" href="#multiCollapseExample<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="multiCollapseExample<r:var name="componentName" />">Hints</a>
       <div class="row">
@@ -53,12 +51,10 @@
                 <r:editable_region name="{$rowClasses}" type="simple"></r:editable_region>
               </p>
             </p>
-            <p class="text-muted mb-0 mt-1">
-              <small>
-                <r:yield name="{$defaultRowClasses}">
-                  <strong>Default classes:</strong> <r:content />
-                </r:yield>
-              </small>
+            <p class="text-muted mb-0 mt-1 small">
+              <r:yield name="{$defaultRowClasses}">
+                <strong>Default classes:</strong> <r:content />
+              </r:yield>
             </p>
           </div>
           <div class="col-lg">
@@ -68,12 +64,10 @@
                 <r:editable_region name="{$itemClasses}" type="simple"></r:editable_region>
               </p>
             </p>
-            <p class="text-muted mb-0 mt-1">
-              <small>
-                <r:yield name="{$defaultItemClasses}">
-                  <strong>Default classes:</strong> <r:content />
-                </r:yield>
-              </small>
+            <p class="text-muted mb-0 mt-1 small">
+              <r:yield name="{$defaultItemClasses}">
+                <strong>Default classes:</strong> <r:content />
+              </r:yield>
             </p>
           </div>
           <div class="col-lg">
@@ -83,12 +77,10 @@
                 <r:editable_region name="{$itemHeaderClasses}" type="simple"></r:editable_region>
               </p>
             </p>
-            <p class="text-muted mb-0 mt-1">
-              <small>
-                <r:yield name="{$defaultItemHeaderClasses}">
-                  <strong>Default classes:</strong> <r:content />
-                </r:yield>
-              </small>
+            <p class="text-muted mb-0 mt-1 small">
+              <r:yield name="{$defaultItemHeaderClasses}">
+                <strong>Default classes:</strong> <r:content />
+              </r:yield>
             </p>
           </div>
           <div class="col-lg">
@@ -98,12 +90,10 @@
                 <r:editable_region name="{$itemBodyClasses}" type="simple"></r:editable_region>
               </p>
             </p>
-            <p class="text-muted mb-0 mt-1">
-              <small>
-                <r:yield name="{$defaultItemBodyClasses}">
-                  <strong>Default classes:</strong> <r:content />
-                </r:yield>
-              </small>
+            <p class="text-muted mb-0 mt-1 small">
+              <r:yield name="{$defaultItemBodyClasses}">
+                <strong>Default classes:</strong> <r:content />
+              </r:yield>
             </p>
           </div>
           <div class="col-lg">
@@ -113,12 +103,10 @@
                 <r:editable_region name="{$itemButtonClasses}" type="simple"></r:editable_region>
               </p>
             </p>
-            <p class="text-muted mb-0 mt-1">
-              <small>
-                <r:yield name="{$defaultItemButtonClasses}">
-                  <strong>Default classes:</strong> <r:content />
-                </r:yield>
-              </small>
+            <p class="text-muted mb-0 mt-1 small">
+              <r:yield name="{$defaultItemButtonClasses}">
+                <strong>Default classes:</strong> <r:content />
+              </r:yield>
             </p>
           </div>
           <div class="col-lg">
@@ -128,10 +116,8 @@
                 <r:editable_region name="{$componentReadMoreButtonText}" type="simple">Read More</r:editable_region>
               </p>
             </p>
-            <p class="text-muted mb-0 mt-1">
-              <small>
-                <strong>Default button text:</strong> Read More
-              </small>
+            <p class="text-muted mb-0 mt-1 small">
+              <strong>Default button text:</strong> Read More
             </p>
           </div>
         </div>

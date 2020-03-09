@@ -3,12 +3,10 @@
     <p class="mb-0">
       <span class="d-inline-block badge badge-secondary">Utility classes:</span> <div class="text-monospace "><r:editable_region name="{$componentClasses}" type="simple" scope="site" /></div>
     </p>
-    <p class="mb-0 mt-1">
-      <small>
-        <r:yield name="{$defaultComponentClasses}">
-          <strong class="text-muted">Default classes:</strong> <pre class="text-muted mb-0"><r:content /></pre>
-        </r:yield>
-      </small>
+    <p class="mb-0 mt-1 small">
+      <r:yield name="{$defaultComponentClasses}">
+        <strong class="text-muted">Default classes:</strong> <pre class="text-muted mb-0"><r:content /></pre>
+      </r:yield>
     </p>
     <a class="text-wvu-accent--orange" data-toggle="collapse" href="#multiCollapseExample<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="multiCollapseExample<r:var name="componentName" />">Hints</a>
     <div class="row">
