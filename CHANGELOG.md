@@ -1,5 +1,36 @@
 # Change Log
 
+## [1.1.3](https://github.com/wvuweb/wvu-design-system/tree/1.1.3) (2020-03-09)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.2...1.1.3)
+
+**Implemented enhancements:**
+
+- Update Bootstrap to v4.4.1 [\#224](https://github.com/wvuweb/wvu-design-system/issues/224)
+- Update Twitter Fetcher to use v18.0.3. [\#212](https://github.com/wvuweb/wvu-design-system/issues/212)
+
+**Fixed bugs:**
+
+- Profile page Office location icon different in other pages [\#238](https://github.com/wvuweb/wvu-design-system/issues/238)
+- syntax error in \_wvu-slash.scss [\#237](https://github.com/wvuweb/wvu-design-system/issues/237)
+- Remove the \<small\> tag from everywhere except copyright notice in the footer. [\#236](https://github.com/wvuweb/wvu-design-system/issues/236)
+
+**Closed issues:**
+
+- Correct spelling of wvu-accent--"yellor" to yellow in \_wvu.variables.scss [\#242](https://github.com/wvuweb/wvu-design-system/issues/242)
+- Add quote marks to titles and fix smart apostrophes in Super Theme custom data for major template [\#241](https://github.com/wvuweb/wvu-design-system/issues/241)
+- Instagram URL not pulling into social media component [\#235](https://github.com/wvuweb/wvu-design-system/issues/235)
+- Link text to West Virginia University in footer [\#234](https://github.com/wvuweb/wvu-design-system/issues/234)
+- blog\_index.rss comment mentions Stash [\#233](https://github.com/wvuweb/wvu-design-system/issues/233)
+- Update correct HEX value for Pantone 432C [\#229](https://github.com/wvuweb/wvu-design-system/issues/229)
+
+**Merged pull requests:**
+
+- fix http links to https for topo maps [\#247](https://github.com/wvuweb/wvu-design-system/pull/247) ([zeroedin](https://github.com/zeroedin))
+- Fix engines setup in package.json [\#246](https://github.com/wvuweb/wvu-design-system/pull/246) ([zeroedin](https://github.com/zeroedin))
+- Switch topo map background from PNG to SVG [\#245](https://github.com/wvuweb/wvu-design-system/pull/245) ([zeroedin](https://github.com/zeroedin))
+- fix typo with .wvu-slash--\#{$i}--up mixin [\#240](https://github.com/wvuweb/wvu-design-system/pull/240) ([zeroedin](https://github.com/zeroedin))
+- Switch from postinstall to prepare [\#239](https://github.com/wvuweb/wvu-design-system/pull/239) ([zeroedin](https://github.com/zeroedin))
+
 ## [v1.1.2](https://github.com/wvuweb/wvu-design-system/tree/v1.1.2) (2020-01-15)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.1...v1.1.2)
 
