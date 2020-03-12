@@ -349,6 +349,7 @@ site:
     default_content_02: ""
     default_content_03: ""
     disable_component_styler: ""
+    emergency_alert_json_url: "" # Options: null | string (URL). Test via: https://gist.githubusercontent.com/wvuwebgist/3912fe763055eee51a20cf1f72f332d3/raw/bcae6d40d460fcb9ad1505e3f9ac9ee89439bf45/emergency-alert-test.json
     facebook_url: "#"
     flickr_url: "#"
     github_url: "#"

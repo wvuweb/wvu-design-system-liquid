@@ -1808,7 +1808,6 @@ custom_data_attributes:
     title: Show if hidden
 
 custom_site_attributes:
-  # For Google Search Console
   - apply_link_1
   - apply_link_1_url
   - apply_link_2
@@ -1825,6 +1824,7 @@ custom_site_attributes:
   - default_content_03
   - disable_component_styler
   - disable_primary_nav
+  - emergency_alert_json_url
   - facebook_url
   - flickr_url
   - github_url
