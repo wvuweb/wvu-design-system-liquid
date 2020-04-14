@@ -1,0 +1,20 @@
+<r:set_var name="componentSidebar">sidebar_<r:var name="componentInstance" /></r:set_var>
+<r:set_var name="componentSidebarPostscript">sidebar_<r:var name="componentInstance" />__postscript</r:set_var>
+
+<aside class="wvu-sidebar col-md-4" aria-label="<r:var name="componentSidebar" />">
+  <r:page:if_has_content_for name="{$componentSidebar}" always_show_in_edit_mode="true">
+    <div class="mb-3">
+      <r:editable_region name="{$componentSidebar}" />
+    </div>
+  </r:page:if_has_content_for>
+  <r:if v1="{$componentIfBackpageRemoveNav}" v2="1" op="!=">
+    <div class="mb-3">
+      <r:ancestor_menu start_depth="2" max_depth="3" ul_class="nav flex-column border-left border-muted pl-1 mb-3" li_class="nav-item" link_class="nav-link text-decoration-none" active_class="active" open_class="nav-secondary--open" />
+    </div>
+  </r:if>
+  <r:page:if_has_content_for name="{$componentSidebarPostscript}" always_show_in_edit_mode="true">
+    <div class="mb-3">
+      <r:editable_region name="{$componentSidebarPostscript}" />
+    </div>
+  </r:page:if_has_content_for>
+</aside>
