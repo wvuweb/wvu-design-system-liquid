@@ -1,7 +1,7 @@
-<r:comment><!-- Pull in instance number from a given “slot” if using Super Theme, else set it to “1” (this can also be overritten in your template if you need more than one instance of your component). We need to define an instance number in case we want to use the component more than once on a page. --></r:comment>
+<r:comment><!-- We need to define an instance number in case we want to use the component more than once on a page. We use the instance number to create editable region names unique to each instance of our component e.g. wvu-hero-1__main, wvu-hero-2__main. Else these regions will conflict. --></r:comment>
 <r:set_var name="componentInstance" value="{$instanceNumber}" default="1" />
 
-<r:comment><!-- Pull in scope from “slot” if using Super Theme, else set it to “page”. Can also be overwritten in template (the same goes for any other variables that accept values from a “slot”). --></r:comment>
+<r:comment><!-- Define the scope of this component’s editable regions, else set it to “page”. --></r:comment>
 <r:set_var name="componentScope" value="{$scope}" default="page" />
 
 <r:comment><!-- Unique name of component (combines base component name, which is defined in the component partial, with an instance number). We can use this when creating unique editable region names for our component, or for assigning a label to set as a background image to our component. --></r:comment>
@@ -30,7 +30,7 @@
 <r:set_var name="componentAlign" value="{$align}" />
 
 <r:comment><!-- Pull in value from “Where to display” dropdown in Super Theme. Gets used by certain components that can accept other components embedded within them. In these components, we loop through all slots and if the display context matches, we pull in that component. --></r:comment>
-<r:set_var name="componentDisplayContext" value="{$whereToDisplay}" default="as_full_width_block" />
+<r:set_var name="componentDisplayContext" value="as_full_width_block" />
 
 <r:comment><!-- Pull in value from a “Limit” text box in Super Theme. Gets used to define how many items are displayed in a featurettes component. --></r:comment>
 <r:set_var name="componentLimit" value="{$limit}" default="4" />
@@ -49,6 +49,12 @@
 
 <r:comment><!-- Pull in value from a “Gallery Loop By” dropdown in Super Theme. Gets used by a gallery partial to know what criteria should be evaluated when displaying items (Title, Filename). --></r:comment>
 <r:set_var name="componentShowHidden" value="{$showHidden}" default="false" />
+
+<r:comment><!-- Pull in value from a “Gallery Loop By” dropdown in Super Theme. Gets used by a gallery partial to know what criteria should be evaluated when displaying items (Title, Filename). --></r:comment>
+<r:set_var name="componentIfBackpageRemoveNav" value="{$ifBackpageRemoveNav}" default="false" />
+
+<r:comment><!-- Pull in value from a “Gallery Loop By” dropdown in Super Theme. Gets used by a gallery partial to know what criteria should be evaluated when displaying items (Title, Filename). --></r:comment>
+<r:set_var name="componentIfBackpageRemoveSidebar" value="{$ifBackpageRemoveSidebar}" default="false" />
 
 <r:comment><!-- Labels that will allow us to assign a background image to the component. --></r:comment>
 <r:set_var name="bgurl">
