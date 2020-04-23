@@ -1,13 +1,13 @@
 ---
 layout: default
+custom_data_attributes:
+  - ifBackpageRemoveNav:
+    type: checkbox
+    title: If backpage, remove nav
+  - ifBackpageRemoveSidebar:
+    type: checkbox
+    title: If backpage, remove sidebar
 ---
 
-<!-- Slots 01 - 10 -->
-<r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
-
-<r:if v1="{$componentIsUsed}" v2="1" op="!=">
-  <r:set_var name="instanceNumber" value="1" />
-  <r:set_var name="whereToDisplay" value="as_full_width_block" />
-  <r:set_var name="isMain" value="1" />
-  <r:partial name="components/wvu-faculty-profile" theme="University Relations: WVU Design System" />
-</r:if>
+<r:set_var name="isMain" value="1" />
+<r:partial name="components/wvu-faculty-profile" />
