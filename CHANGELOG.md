@@ -1,7 +1,7 @@
 # Change Log
 
-## [1.2.0](https://github.com/wvuweb/wvu-design-system/tree/1.2.0) (2020-04-23)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.3...1.2.0)
+## [v1.2.0](https://github.com/wvuweb/wvu-design-system/tree/v1.2.0) (2020-04-23)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.3...v1.2.0)
 
 **Implemented enhancements:**
 
@@ -174,6 +174,10 @@
 ## [v1.0.12](https://github.com/wvuweb/wvu-design-system/tree/v1.0.12) (2019-08-14)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.11...v1.0.12)
 
+**Implemented enhancements:**
+
+- Ability to style breadcrumb links [\#158](https://github.com/wvuweb/wvu-design-system/issues/158)
+
 **Fixed bugs:**
 
 - In wvu-backpage-header-v2, have wrong default header classes. [\#189](https://github.com/wvuweb/wvu-design-system/issues/189)
@@ -234,10 +238,6 @@
 
 ## [v1.0.7](https://github.com/wvuweb/wvu-design-system/tree/v1.0.7) (2019-07-26)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.6...v1.0.7)
-
-**Implemented enhancements:**
-
-- Ability to style breadcrumb links [\#158](https://github.com/wvuweb/wvu-design-system/issues/158)
 
 **Fixed bugs:**
 
