@@ -1,7 +1,19 @@
 # Change Log
 
-## [1.1.3](https://github.com/wvuweb/wvu-design-system/tree/1.1.3) (2020-03-09)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.2...1.1.3)
+## [1.2.0](https://github.com/wvuweb/wvu-design-system/tree/1.2.0) (2020-04-23)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.3...1.2.0)
+
+**Implemented enhancements:**
+
+- Add a partial to pull in alerts from emergency.wvu.edu [\#256](https://github.com/wvuweb/wvu-design-system/issues/256)
+- Make a new set of shared "static" components [\#255](https://github.com/wvuweb/wvu-design-system/issues/255)
+- Add "show sub-nav" data attribute to backpage component [\#252](https://github.com/wvuweb/wvu-design-system/issues/252)
+- Move "slots" data attributes from config.yml file to custom template [\#251](https://github.com/wvuweb/wvu-design-system/issues/251)
+- Make backpage, blog\_index, and profiles\_index static by default [\#250](https://github.com/wvuweb/wvu-design-system/issues/250)
+- Create "Custom" template that uses slots [\#249](https://github.com/wvuweb/wvu-design-system/issues/249)
+
+## [v1.1.3](https://github.com/wvuweb/wvu-design-system/tree/v1.1.3) (2020-03-09)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.1.2...v1.1.3)
 
 **Implemented enhancements:**
 
@@ -162,10 +174,6 @@
 ## [v1.0.12](https://github.com/wvuweb/wvu-design-system/tree/v1.0.12) (2019-08-14)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.11...v1.0.12)
 
-**Implemented enhancements:**
-
-- Ability to style breadcrumb links [\#158](https://github.com/wvuweb/wvu-design-system/issues/158)
-
 **Fixed bugs:**
 
 - In wvu-backpage-header-v2, have wrong default header classes. [\#189](https://github.com/wvuweb/wvu-design-system/issues/189)
@@ -226,6 +234,10 @@
 
 ## [v1.0.7](https://github.com/wvuweb/wvu-design-system/tree/v1.0.7) (2019-07-26)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.0.6...v1.0.7)
+
+**Implemented enhancements:**
+
+- Ability to style breadcrumb links [\#158](https://github.com/wvuweb/wvu-design-system/issues/158)
 
 **Fixed bugs:**
 
