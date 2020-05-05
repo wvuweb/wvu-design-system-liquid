@@ -9,9 +9,10 @@
     background-color: $color;
     content: '' $is-important;
     position: absolute $is-important;
-    right: 0;
-    left: -.5em;
+    right: auto;
+    left: auto;
     height: $wvu-slash-height-tall;
+    margin-left:-.5em;
     max-height: 15rem $is-important;
     top: -25%;
     width: $wvu-slash-width;
