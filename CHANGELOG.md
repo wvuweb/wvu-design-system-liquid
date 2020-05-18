@@ -1,7 +1,14 @@
 # Change Log
 
-## [1.2.2](https://github.com/wvuweb/wvu-design-system/tree/1.2.2) (2020-04-23)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.1...1.2.2)
+## [1.2.3](https://github.com/wvuweb/wvu-design-system/tree/1.2.3) (2020-04-30)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.2...1.2.3)
+
+**Fixed bugs:**
+
+- New templates reference local partials.... [\#259](https://github.com/wvuweb/wvu-design-system/issues/259)
+
+## [v1.2.2](https://github.com/wvuweb/wvu-design-system/tree/v1.2.2) (2020-04-23)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.1...v1.2.2)
 
 **Fixed bugs:**
 
