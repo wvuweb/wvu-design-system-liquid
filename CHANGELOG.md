@@ -1,7 +1,21 @@
 # Change Log
 
-## [1.2.3](https://github.com/wvuweb/wvu-design-system/tree/1.2.3) (2020-04-30)
-[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.2...1.2.3)
+## [v1.2.4](https://github.com/wvuweb/wvu-design-system/tree/v1.2.4) (2020-06-16)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.3...v1.2.4)
+
+**Implemented enhancements:**
+
+- Column for buttons in masthead visible on mobile even when no buttons [\#266](https://github.com/wvuweb/wvu-design-system/issues/266)
+
+**Fixed bugs:**
+
+- Unncessary code in Blog Featurettes causes weirdness [\#268](https://github.com/wvuweb/wvu-design-system/issues/268)
+- Aria label should be removed if component is main [\#264](https://github.com/wvuweb/wvu-design-system/issues/264)
+- Component "needs ARIA label" variable needs reset when variables get reset. [\#262](https://github.com/wvuweb/wvu-design-system/issues/262)
+- Container class doesn't get added to components in the Super Template... [\#261](https://github.com/wvuweb/wvu-design-system/issues/261)
+
+## [v1.2.3](https://github.com/wvuweb/wvu-design-system/tree/v1.2.3) (2020-04-30)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.2...v1.2.3)
 
 **Fixed bugs:**
 
