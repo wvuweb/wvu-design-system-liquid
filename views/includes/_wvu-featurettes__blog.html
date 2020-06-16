@@ -94,9 +94,6 @@
       and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
     <r:comment><!-- Grab all of the items in the loop. --></r:comment>
     <r:blog:articles limit="{$limit}" page="{$page}" tags="{$itemLabels}" tags_op="all" year="{$year}" month="{$month}" day="{$day}">
-      <r:set_var name="contentIndex">
-        <r:index />
-      </r:set_var>
       <r:set_var name="article_count" value="{count}" />
       <r:if_no_articles>
         <p>No blog posts found. Try again later, perhaps?</p>
