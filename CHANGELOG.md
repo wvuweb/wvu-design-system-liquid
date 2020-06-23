@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.2.5](https://github.com/wvuweb/wvu-design-system/tree/v1.2.5) (2020-06-23)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.4...v1.2.5)
+
+**Implemented enhancements:**
+
+- Add wvu-backpage-main class as a default class to the backpage component [\#269](https://github.com/wvuweb/wvu-design-system/issues/269)
+
+**Fixed bugs:**
+
+- Sitewide components do not display unless page properties re-saved... [\#270](https://github.com/wvuweb/wvu-design-system/issues/270)
+
 ## [v1.2.4](https://github.com/wvuweb/wvu-design-system/tree/v1.2.4) (2020-06-16)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.3...v1.2.4)
 
