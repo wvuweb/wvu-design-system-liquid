@@ -73,9 +73,7 @@
 
 // You can position the slash to the left or right using these modifer classes.
 
-$i: 1;
-
-@while $i < 5 {
+@for $i from 1 through 5 {
   .wvu-slash {
     &.wvu-slash--#{$i}-left {
       &:before {
@@ -97,7 +95,6 @@ $i: 1;
         top: calc(-25% + (#{$i} * #{$spacer})) $global-important;
       }
     }
-    $i: $i + 1;
   }
 }
 
