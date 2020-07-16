@@ -32,44 +32,47 @@
 
 <r:content_for name="page_js">
   <r:comment>
-    <!-- NOTE: Polyfill support for promise & fetch APIs: -->
+    <!-- NOTE: Polyfill support for promise, fetch, document & console APIs: -->
   </r:comment>
-  <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=Promise%2Cfetch"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=console,document,fetch,Promise"></script>
   <script>
+    'use strict';
     // IIFE
     ;(function () {
-      'use strict';
       var emergencyAlertUrl = "<r:site:data name='emergency_alert_json_url'/>";
       if (!emergencyAlertUrl) return; // If no URL is defined, stop execution.
 
       fetch(emergencyAlertUrl).then(function (response) {
-        return response.json(); // Converts response object to JSON
-      })
-      .then(function (data) { // Handle success:
-        if (data.emergency.status === true) { // If there is an emergency:
-          var emergencyEl = document.getElementById('emergency-banner');
-          emergencyEl.setAttribute('style', 'display: block; background: #fdda24; color: #333; padding: 2em; text-align: center;');
-          var emergencyEvents = document.getElementById('emergency-banner__events');
-          for (var i = 0; i < data.emergency.events.length; i++) {
-            // Title:
-            var titleValue = data.emergency.events[i].event.title;
-            var eventNode = '<p style="margin-bottom: 0; max-width: none;"><strong>' + titleValue + '</strong></p>';
-            emergencyEvents.insertAdjacentHTML('beforeend', eventNode);
-
-            // Updated at:
-            var dateTimeValue = data.emergency.events[i].event.updated_at;
-            var dateTimeValueFormatted = data.emergency.events[i].event.updated_at_formatted;
-            var timeNode = '<p style="font-size: .8rem; max-width: none;">Last Updated: <time datetime="' + dateTimeValue + '">' + dateTimeValueFormatted + '</time></p>';
-            emergencyEvents.insertAdjacentHTML('beforeend', timeNode);
-          }
-        } else {
-          return false; // No emergency.
+        if (response.ok) { // Successful API call (200-299 status code)
+          return response.json();
         }
+        return Promise.reject(response); // There was an error
       })
-      // Handle errors:
-      .catch(function (error) {
-        console.error('Oh no! There was an error: ' + error.message);
-      });
+        .then(function (data) { // Handle success:
+          if (data.emergency.status === true) { // If there is an emergency:
+            var emergencyEl = document.getElementById('emergency-banner');
+            emergencyEl.setAttribute('style', 'display: block; background: #fdda24; color: #333; padding: 2em; text-align: center;');
+            var emergencyEvents = document.getElementById('emergency-banner__events');
+            for (var i = 0; i < data.emergency.events.length; i++) {
+              // Title:
+              var titleValue = data.emergency.events[i].event.title;
+              var eventNode = '<p style="margin-bottom: 0; max-width: none;"><strong>' + titleValue + '</strong></p>';
+              emergencyEvents.insertAdjacentHTML('beforeend', eventNode);
+
+              // Updated at:
+              var dateTimeValue = data.emergency.events[i].event.updated_at;
+              var dateTimeValueFormatted = data.emergency.events[i].event.updated_at_formatted;
+              var timeNode = '<p style="font-size: .8rem; max-width: none;">Last Updated: <time datetime="' + dateTimeValue + '">' + dateTimeValueFormatted + '</time></p>';
+              emergencyEvents.insertAdjacentHTML('beforeend', timeNode);
+            }
+          } else {
+            return false; // No emergency.
+          }
+        })
+        // Handle errors:
+        .catch(function (error) {
+          console.error('Oh no! There was an error: ' + error.message);
+        });
     })();
   </script>
 </r:content_for>
