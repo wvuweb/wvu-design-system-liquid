@@ -29,26 +29,12 @@
   <r:set_var name="showHidden"><r:page:data name="{{ CONCAT(slotName, '_show_hidden') }}" /></r:set_var>
   <r:set_var name="slotCustomValue"><r:page:data name="{{ CONCAT(slotName, '_custom') }}" /></r:set_var>
 
-  <r:comment><!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. --></r:comment>
-  <r:if_equal x="{$showHidden}" y="1">
-    <r:set_var name="showHidden" value="true" />
-  </r:if_equal>
+ 
+  <r:set_var name="showHidden"><r:if_then_else test="{{ TO_BOOL(showHidden) }}" then="true" else="false" /></r:set_var>
+  <r:set_var name="isRandom"><r:if_then_else test="{{ TO_BOOL(isRandom) }}" then="true" else="false" /></r:set_var>
 
-  <r:comment><!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. --></r:comment>
 
-  <r:if_true value="{$isRandom}">
-    <r:set_var name="isRandom" value="true" />
-  </r:if_true>
-  <r:if_false value="{$isRandom}">
-    <r:set_var name="isRandom" value="false" />
-  </r:if_false>
-
-  <r:if v1="{$slotScope}" v2="1" op="=">
-    <r:set_var name="scope" value="site" />
-  </r:if>
-  <r:if v1="{$slotScope}" v2="1" op="!=">
-    <r:set_var name="scope" value="page" />
-  </r:if>
+  <r:set_var name="scope" test="{{ slotScope = '1' }}" then="site" else="page"/>
 
   <r:comment><!-- Get display context. If none, set to as_full_width_block. --></r:comment>
   <r:set_var name="displayChecker" value="{$whereToDisplay}" default="as_full_width_block" />
@@ -57,11 +43,11 @@
   <r:set_var name="slotsDisplayContext" value="{$componentDisplayContext}" default="as_full_width_block" />
 
   <r:comment><!-- If displayChecker and componentDisplayContext match, display the component. displayChecker will be as_full_width_block by default. componentDisplayContext will be set whenever the slots component is called. --></r:comment>
-  <r:if_equal v1="{$displayChecker}" v2="{$slotsDisplayContext}">
+  <r:if_equal x="{$displayChecker}" y="{$slotsDisplayContext}">
     <r:if_not_blank value="{$slotNameValue}">
 
       <r:comment><!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. --></r:comment>
-      <r:if_blank expr="{$slotCustomValue}">
+      <r:if_blank value="{$slotCustomValue}">
         <r:set_var name="partialName">components/wvu-<r:page:data name="{$slotName}" /></r:set_var>
         <r:partial name="{$partialName}" theme="University Relations: WVU Design System" />
       </r:if_blank>
