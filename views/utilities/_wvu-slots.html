@@ -39,9 +39,9 @@
   <r:if_true value="{$isRandom}">
     <r:set_var name="isRandom" value="true" />
   </r:if_true>
-  <r:if_not_true value="{$isRandom}">
+  <r:if_false value="{$isRandom}">
     <r:set_var name="isRandom" value="false" />
-  </r:if_not_true>
+  </r:if_false>
 
   <r:if v1="{$slotScope}" v2="1" op="=">
     <r:set_var name="scope" value="site" />
