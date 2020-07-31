@@ -30,24 +30,24 @@
   <r:set_var name="slotCustomValue"><r:page:data name="{{ CONCAT(slotName, '_custom') }}" /></r:set_var>
 
   <r:comment><!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. --></r:comment>
-  <r:if v1="{$showHidden}" v2="1" op="=">
-    <r:set_var name="showHidden">true</r:set_var>
-  </r:if>
+  <r:if_equal x="{$showHidden}" y="1">
+    <r:set_var name="showHidden" value="true" />
+  </r:if_equal>
 
   <r:comment><!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. --></r:comment>
 
   <r:if_true value="{$isRandom}">
-    <r:set_var name="isRandom">true</r:set_var>
+    <r:set_var name="isRandom" value="true" />
   </r:if_true>
   <r:if_not_true value="{$isRandom}">
-    <r:set_var name="isRandom">false</r:set_var>
+    <r:set_var name="isRandom" value="false" />
   </r:if_not_true>
 
   <r:if v1="{$slotScope}" v2="1" op="=">
-    <r:set_var name="scope">site</r:set_var>
+    <r:set_var name="scope" value="site" />
   </r:if>
   <r:if v1="{$slotScope}" v2="1" op="!=">
-    <r:set_var name="scope">page</r:set_var>
+    <r:set_var name="scope" value="page" />
   </r:if>
 
   <r:comment><!-- Get display context. If none, set to as_full_width_block. --></r:comment>
@@ -64,7 +64,7 @@
       <r:if_blank expr="{$slotCustomValue}">
         <r:set_var name="partialName">components/wvu-<r:page:data name="{$slotName}" />
         <r:partial name="{$partialName}" theme="University Relations: WVU Design System" />
-      </r:if>
+      </r:if_blank>
 
     </r:if_not_blank>
 
