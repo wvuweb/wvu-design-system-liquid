@@ -62,7 +62,7 @@
 
       <r:comment><!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. --></r:comment>
       <r:if_blank expr="{$slotCustomValue}">
-        <r:set_var name="partialName">components/wvu-<r:page:data name="{$slotName}" />
+        <r:set_var name="partialName">components/wvu-<r:page:data name="{$slotName}" ></r:set_var>
         <r:partial name="{$partialName}" theme="University Relations: WVU Design System" />
       </r:if_blank>
 
