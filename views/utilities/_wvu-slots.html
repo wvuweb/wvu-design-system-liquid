@@ -15,7 +15,7 @@
 
   <r:comment><!-- If displayChecker and componentDisplayContext match, display the component. displayChecker will be as_full_width_block by default. componentDisplayContext will be set whenever the slots component is called. --></r:comment>
   <r:if_equal x="{$displayChecker}" y="{$slotsDisplayContext}">
-    <r:if_true value="{{ NOT BLANK(slotNameValue) OR NOT BLANK(slotCustomValue) }}">
+    <r:if_true value="{{ NOT(BLANK(slotNameValue)) OR NOT(BLANK(slotCustomValue)) }}">
 
       <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Scope” value for this slot. The data in slot_{number}_scope will get pulled into each component to assign a scope for editable regions in the component. --></r:comment>
       <r:set_var name="slotScope" value="{{ CONCAT(slotName, '_scope') }}" />
