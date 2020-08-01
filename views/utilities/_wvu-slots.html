@@ -2,10 +2,9 @@
 <r:loop:each times="10">
 
   <r:comment><!-- Define the prefix... based on the slot number.... This will be used to define unique variable names for each property in each slot. --></r:comment>
-  <r:set_var name="slotName">
-    slot_<r:item />
-  </r:set_var>
+  <r:set_var name="slotName">slot_<r:item /></r:set_var>
   <r:set_var name="slotNameValue"><r:page:data name="{$slotName}" /></r:set_var>
+  <r:set_var name="slotCustomValue"><r:page:data name="{{ CONCAT(slotName, '_custom') }}" /></r:set_var>  
 
   <r:comment><!-- Get display context. If none, set to as_full_width_block. --></r:comment>
   <r:set_var name="displayChecker" value="{$whereToDisplay}" default="as_full_width_block" />
@@ -13,6 +12,7 @@
   <r:comment><!-- Get display context of slots component. If none, set to as_full_width_block. --></r:comment>
   <r:set_var name="slotsDisplayContext" value="{$componentDisplayContext}" default="as_full_width_block" />
  
+
   <r:comment><!-- If displayChecker and componentDisplayContext match, display the component. displayChecker will be as_full_width_block by default. componentDisplayContext will be set whenever the slots component is called. --></r:comment>
   <r:if_equal x="{$displayChecker}" y="{$slotsDisplayContext}">
     <r:if_true value="{{ NOT BLANK(slotNameValue) OR NOT BLANK(slotCustomValue) }}">
@@ -36,7 +36,6 @@
       <r:set_var name="instanceNumber"><r:page:data name="{{ CONCAT(slotName, '_number') }}" /></r:set_var>
       <r:set_var name="whereToDisplay"><r:page:data name="{{ CONCAT(slotName, '_where_to_display') }}" /></r:set_var>
       <r:set_var name="showHidden"><r:page:data name="{{ CONCAT(slotName, '_show_hidden') }}" /></r:set_var>
-      <r:set_var name="slotCustomValue"><r:page:data name="{{ CONCAT(slotName, '_custom') }}" /></r:set_var>  
       <r:set_var name="showHidden"><r:if_then_else test="{{ TO_BOOL(showHidden) }}" then="true" else="false" /></r:set_var>
       <r:set_var name="isRandom"><r:if_then_else test="{{ TO_BOOL(isRandom) }}" then="true" else="false" /></r:set_var>
       <r:set_var name="scope" test="{{ slotScope = '1' }}" then="site" else="page"/>
