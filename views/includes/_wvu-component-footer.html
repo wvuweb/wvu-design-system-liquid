@@ -1,13 +1,12 @@
-<r:if expr="{{ BLANK(disable_component_styler) }}">
+<r:if_blank value="{$disable_component_styler}">
   <r:edit_mode_only>
-    <r:partial name="utilities/wvu-check-if-saved" theme="University Relations: WVU Design System" />
-    <r:if v1="{$isSaved}" v2="false" op="=">
+    <r:if_false value="{page:data:exists}">
       <r:set_var name="instanceNumber" value="1" />
       <r:if v1="{$baseComponentName}" v2="breadcrumbs" op="=">
         <r:set_var name="componentName" value="breadcrumbs-1" />
         <r:set_var name="componentClasses" value="wvu-breadcrumbs-1-classes" />
       </r:if>
-    </r:if>
+    </r:if_false>
     <a class="text-white p-1 rounded-sm d-inline-block btn btn-sm btn-wvu-neutral--black wvu-grow-shadow wvu-z-index-content position-absolute mt-n4 ml-1" data-toggle="collapse" href="#editpanel-<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="editpanel-<r:var name="componentName" />"><small class="d-block"><i class="far fa-edit"></i> Edit <span class="text-capitalize"><r:var name="baseComponentName" /> <r:var name="instanceNumber" /></span> Styles</small></a>
     <section class="px-2 px-md-5 pt-2 pb-3 mb-0 text-light bg-wvu-neutral--black position-relative collapse multi-collapse" id="editpanel-<r:var name="componentName" />">
       <p class="mb-0">
@@ -124,7 +123,7 @@
       </r:if>
     </section>
   </r:edit_mode_only>
-</r:if>
+</r:if_blank>
 
 <r:comment><!-- We need to reset our variables so that when another component gets called after this, it doesn’t get injected with unexpected values. --></r:comment>
 <r:partial name="includes/wvu-component-variables-reset" theme="University Relations: WVU Design System" />

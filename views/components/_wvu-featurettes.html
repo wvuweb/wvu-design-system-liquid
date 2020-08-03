@@ -46,7 +46,7 @@
       includes/wvu-featurettes__<r:var name="componentFeaturettesStyle" />
     </r:set_var>
 
-    <r:comment><!-- Call a utility partial that loops through each papge in site and grabs content if the page label matches.--></r:comment>
+    <r:comment><!-- Call a utility partial that loops through each page in site and grabs content if the page label matches.--></r:comment>
     <r:partial name="{$featurettePartialName}" theme="University Relations: WVU Design System" />
 
     <r:page:if_has_content_for region="{$componentPostscript}" always_show_in_edit_mode="true">
