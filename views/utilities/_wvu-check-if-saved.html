@@ -13,8 +13,8 @@
   </r:set_var>
 
   <r:comment><!-- If custom data for slotName exists, but there is no value entered, the page settings have been saved. Set isSaved to true. --></r:comment>
-  <r:if v1="{$slotNameValue}" v2="" op="=" >
+  <r:if_equal x="{$slotNameValue}" y="">
     <r:set_var name="isSaved" value="true" />
-  </r:if>
+  </r:if_equal>
 
 </r:loop:each>
