@@ -6,6 +6,11 @@
   <r:set_var name="slotNameValue"><r:page:data name="{$slotName}" /></r:set_var>
   <r:set_var name="slotCustomValue"><r:page:data name="{{ CONCAT(slotName, '_custom') }}" /></r:set_var>  
 
+  <!-- 
+    Slot: <r:var name="slotName" />
+    Value: <r:var name="slotNameValue" />
+  -->
+
   <r:comment><!-- Get display context. If none, set to as_full_width_block. --></r:comment>
   <r:set_var name="displayChecker" value="{$whereToDisplay}" default="as_full_width_block" />
 
