@@ -4,7 +4,7 @@
   <r:comment><!-- Define the prefix... based on the slot number.... This will be used to define unique variable names for each property in each slot. --></r:comment>
   <r:set_var name="slotName">slot_<r:item /></r:set_var>
   <r:set_var name="slotNameValue"><r:page:data name="{$slotName}" /></r:set_var>
-  <r:set_var name="slotCustomValue"><r:page:data name="{{ CONCAT(slotName, '_custom') }}" /></r:set_var>  
+    
 
   <!-- 
     Slot: <r:var name="slotName" />
@@ -44,6 +44,8 @@
       <r:set_var name="showHidden"><r:if_then_else test="{{ TO_BOOL(showHidden) }}" then="true" else="false" /></r:set_var>
       <r:set_var name="isRandom"><r:if_then_else test="{{ TO_BOOL(isRandom) }}" then="true" else="false" /></r:set_var>
       <r:set_var name="scope" test="{{ slotScope = '1' }}" then="site" else="page"/>
+      <r:set_var name="slotCustom" value="{{ CONCAT(slotName, '_custom') }}" />
+      <r:set_var name="slotCustomValue"><r:page:data name="{$slotCustom}" /></r:set_var>
 
       <r:if_not_blank value="{$slotNameValue}">
         <r:comment><!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. --></r:comment>
@@ -53,7 +55,7 @@
         </r:if_blank>
       </r:if_not_blank>
 
-      <r:if_not_blank expr="{$slotCustomValue}">
+      <r:if_not_blank value="{$slotCustomValue}">
         <r:set_var name="partialName">
           components/<r:page:data name="{$slotCustom}" />
         </r:set_var>
