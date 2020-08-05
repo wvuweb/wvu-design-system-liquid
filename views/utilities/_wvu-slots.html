@@ -33,7 +33,7 @@
       <r:set_var name="whereToDisplay"><r:page:data name="{{ CONCAT(slotName, '_where_to_display') }}" /></r:set_var>
       <r:set_var name="showHidden"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_show_hidden')) }}" then="true" else="false" /></r:set_var>
       <r:set_var name="isRandom"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_is_random')) }}" then="true" else="false" /></r:set_var>
-      <r:set_var name="scope" test="{{ VAR(CONCAT(slotName, '_scope')) }}" then="site" else="page"/>
+      <r:set_var name="scope"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_scope')) }}" then="site" else="page"/></r:set_var>
 
       <r:if_not_blank value="{$slotNameValue}">
         <r:comment><!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. --></r:comment>
