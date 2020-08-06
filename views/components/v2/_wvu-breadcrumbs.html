@@ -11,15 +11,15 @@
   wvu-breadcrumbs-1-default-component-classes
 </r:set_var>
 
-<r:if expr="{{ NOT(BLANK(classes_wvu_breadcrumbs)) }}">
+<r:if_not_blank value="{$classes_wvu_breadcrumbs}">
   <r:content_for name="{$defaultComponentClasses}"><r:site:data name="classes_wvu_breadcrumbs" /></r:content_for>
-</r:if>
-<r:if expr="{{ BLANK(classes_wvu_breadcrumbs) }}">
+</r:if_not_blank>
+<r:if_blank value="{$classes_wvu_breadcrumbs}">
   <r:content_for name="{$defaultComponentClasses}"></r:content_for>
-</r:if>
+</r:if_blank>
 
 <r:set_var name="breadcrumbLinkClasses">
-  <r:page:if_has_content_for region="{$componentClasses}"><r:page:content name="{$componentClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentClasses}"><r:if expr="{{ NOT(BLANK(classes_wvu_breadcrumbs)) }}"><r:site:data name="classes_wvu_breadcrumbs" /></r:if><r:if expr="{{ BLANK(classes_wvu_breadcrumbs) }}"><r:yield name="{$defaultComponentClasses}" /></r:if></r:page:unless_has_content_for>
+  <r:page:if_has_content_for region="{$componentClasses}"><r:page:content name="{$componentClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentClasses}"><r:if_not_blank value="{$classes_wvu_breadcrumbs}"><r:site:data name="classes_wvu_breadcrumbs" /></r:if_not_blank><r:if_blank value="{$classes_wvu_breadcrumbs}"><r:yield name="{$defaultComponentClasses}" /></r:if_blank></r:page:unless_has_content_for>
 </r:set_var>
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
