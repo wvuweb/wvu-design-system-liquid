@@ -140,7 +140,7 @@
                 <r:if_not_blank value="{$apply_link_2}">
                   <a href="<r:site:data name="apply_link_2_url" />" class="mb-3 mb-lg-0 align-self-center btn mb-1 btn-wvu-accent--red mr-1"><r:site:data name="apply_link_2" /></a>
                 </r:if_not_blank>
-                <r:_not_blank value="{$apply_link_3}">
+                <r:if_not_blank value="{$apply_link_3}">
                   <a href="<r:site:data name="apply_link_3_url" />" class="mb-3 mb-lg-0 align-self-center btn mb-1 btn-wvu-accent--dark-green"><r:site:data name="apply_link_3" /></a>
                 </r:if_not_blank>
               </r:if_equal>
