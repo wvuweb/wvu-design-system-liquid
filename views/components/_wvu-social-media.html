@@ -63,7 +63,7 @@
           </r:if>
           <r:if expr="{{ NOT(BLANK(flickr_url)) }}">
             <li class="list-inline-item">
-              <a class="fab fa-flickr <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
+              <a class="fab fa-flickr <r:page:content name="{$linkClasses}" />" href="<r:site:data name="flickr_url" />">
                 <span class="sr-only">Flickr</span>
               </a>
             </li>
@@ -77,28 +77,28 @@
           </r:if>
           <r:if expr="{{ NOT(BLANK(linkedin_url)) }}">
             <li class="list-inline-item">
-              <a class="fab fa-linkedin <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
+              <a class="fab fa-linkedin <r:page:content name="{$linkClasses}" />" href="<r:site:data name="linkedin_url" />">
                 <span class="sr-only">LinkedIn</span>
               </a>
             </li>
           </r:if>
           <r:if expr="{{ NOT(BLANK(syndication_url)) }}">
             <li class="list-inline-item">
-              <a class="fas fa-rss <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
+              <a class="fas fa-rss <r:page:content name="{$linkClasses}" />" href="<r:site:data name="syndication_url" />">
                 <span class="sr-only">RSS</span>
               </a>
             </li>
           </r:if>
           <r:if expr="{{ NOT(BLANK(youtube_url)) }}">
             <li class="list-inline-item">
-              <a class="fab fa-youtube <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
+              <a class="fab fa-youtube <r:page:content name="{$linkClasses}" />" href="<r:site:data name="youtube_url" />">
                 <span class="sr-only">YouTube</span>
               </a>
             </li>
           </r:if>
           <r:if expr="{{ NOT(BLANK(github_url)) }}">
             <li class="list-inline-item">
-              <a class="fab fa-github <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
+              <a class="fab fa-github <r:page:content name="{$linkClasses}" />" href="<r:site:data name="github_url" />">
                 <span class="sr-only">Github</span>
               </a>
             </li>
