@@ -38,7 +38,7 @@
           <div class="row">
             <div class="col-xl-10 mr-xl-auto">
               <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
-                <img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />" alt="thumbnail_alt" />
+                <img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />" alt="<r:page:data name="thumbnail_alt" />" />
               </r:if>
               <r:if expr="{{ BLANK(thumbnail_url_sq) }}">
                 <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
