@@ -2,6 +2,6 @@
 <r:set_var name="baseComponentName" value="subnav" />
 
 <r:comment><!-- Pull in component name, instance number, scope, etc. We will use these bits to dynamically define things like editable region names. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
+<r:partial name="includes/wvu-component-variables" theme="{$design_system_theme_name}" />
 
 <r:ancestor_menu start_depth="2" max_depth="3" ul_class="nav flex-column border-left border-muted pl-1 mb-3" li_class="nav-item" link_class="nav-link text-decoration-none" active_class="active" open_class="nav-secondary--open" />

@@ -4,7 +4,7 @@
 <r:set_var name="baseComponentName" value="editable-region" />
 
 <r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
+<r:partial name="includes/wvu-component-variables" theme="{$design_system_theme_name}" />
 
 <r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
@@ -25,4 +25,4 @@
 <r:if_equal x="{$componentDisplayContext}" y="as_full_width_block"><r:if_true value="{$componentIsMain}"></main></r:if_true></r:if_equal>
 
 <r:comment><!-- We need to reset our variables so that when another component gets called after this, it doesn’t get injected with unexpected values. --></r:comment>
-<r:partial name="includes/wvu-component-variables-reset" theme="University Relations: WVU Design System" />
+<r:partial name="includes/wvu-component-variables-reset" theme="{$design_system_theme_name}" />

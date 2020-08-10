@@ -88,7 +88,7 @@
           <r:var name="bgPrefix" />-panel-<r:index />-background
         </r:set_var>
         <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
-        <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
+        <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
           <div class="card shadow">
             <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
               <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="card-img-top" src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>

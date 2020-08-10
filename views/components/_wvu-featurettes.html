@@ -4,7 +4,7 @@
 <r:set_var name="baseComponentName" value="featurettes" />
 
 <r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
+<r:partial name="includes/wvu-component-variables" theme="{$design_system_theme_name}" />
 
 <r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
 <r:set_var name="componentHeader">wvu-<r:var name="componentName" />__header</r:set_var>
@@ -26,7 +26,7 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if_equal x="{$componentDisplayContext}" y="as_full_width_block"><r:if_true value="{$componentIsMain}">id="wvu-main-content"</r:if_true></r:if_equal> class="<r:if_true value="{$componentIsEditModeOnly}">d-none </r:if_true><r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if_equal x="{$componentDisplayContext}" y="as_full_width_block"><r:if_true value="{$componentIsMain}">id="wvu-main-content"</r:if_true></r:if_equal> class="<r:if_true value="{$componentIsEditModeOnly}">d-none </r:if_true><r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
   <div class="<r:if expr="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}">container </r:if>wvu-z-index-content">
 
     <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
@@ -43,7 +43,7 @@
 
     <r:comment><!-- Define the name of the utility partial you want to call (blog, card-columns, cards, custom, default, etc.).--></r:comment>
     <r:comment><!-- Call a utility partial that loops through each page in site and grabs content if the page label matches.--></r:comment>
-    <r:partial name="{{ CONCAT('includes/wvu-featurettes__', componentFeaturettesStyle) }}" theme="University Relations: WVU Design System" />
+    <r:partial name="{{ CONCAT('includes/wvu-featurettes__', componentFeaturettesStyle) }}" theme="{$design_system_theme_name}" />
 
     <r:page:if_has_content_for region="{$componentPostscript}" always_show_in_edit_mode="true">
       <div class="mt-4 wvu-z-index-content mb-2">
@@ -57,7 +57,7 @@
 
   </div>
 <r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
-</<r:partial name="utilities/wvu-is-main-checker--end" theme="University Relations: WVU Design System" />><!-- End markup -->
+</<r:partial name="utilities/wvu-is-main-checker--end" theme="{$design_system_theme_name}" />><!-- End markup -->
 
 <r:comment><!-- Pull in partial that allows users to edit classes for component in CleanSlate editor --></r:comment>
-<r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
+<r:partial name="includes/wvu-component-footer" theme="{$design_system_theme_name}" />
