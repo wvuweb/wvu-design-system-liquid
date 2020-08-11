@@ -87,7 +87,7 @@
                   <r:if_not_blank value="{$description}"><r:page:data name="description" /></r:if_not_blank>
                 </p>
                 <p class="mb-0 mt-2">
-                  <a class="btn btn-primary btn-sm" href="<r:if_not_blank value="{$alternate_url}"><r:page:data name="alternate_url" /></r:if_not_blank><r:if_not_blank value="{$alternate_url}"><r:page:url /></r:if_not_blank>">View Profile<span class="sr-only">: <r:page:name /></span></a>
+                  <a class="btn btn-primary btn-sm" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />">View Profile<span class="sr-only">: <r:page:name /></span></a>
                 </p>
               </div>
             </div>
