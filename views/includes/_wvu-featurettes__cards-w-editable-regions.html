@@ -1,4 +1,4 @@
-<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
+<r:if_true value="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
   <r:if_equal x="{$componentLimit}" y="1">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
@@ -34,7 +34,7 @@
       col-sm-6 col-md-4
     </r:set_var>
   </r:if_equal>
-</r:if>
+</r:if_true>
 
 <r:content_for name="{$defaultRowClasses}">justify-content-center</r:content_for>
 <r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
