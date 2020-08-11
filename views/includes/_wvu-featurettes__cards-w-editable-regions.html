@@ -1,4 +1,4 @@
-<r:if_true value="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
+<r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext)  }}">
   <r:if_equal x="{$componentLimit}" y="1">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
