@@ -1,6 +1,6 @@
 <r:if_blank value="{$disable_component_styler}">
   <r:edit_mode_only>
-    <r:if_false value="{page:data:exists}">
+    <r:if_false value="{page:data_exists}">
       <r:set_var name="instanceNumber" value="1" />
       <r:if_equal x="{$baseComponentName}" y="breadcrumbs">
         <r:set_var name="componentName" value="breadcrumbs-1" />
