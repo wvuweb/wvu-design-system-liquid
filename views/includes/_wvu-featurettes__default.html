@@ -101,7 +101,7 @@
           <r:if_then_else test="{{ NOT(BLANK(description)) }}" then="{$description}" else="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
         </p>
         <r:if_not_equal x="{$buttonText}" y="none">
-          <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></r:if></a>
+          <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><r:if_not_blank value="{$link_text}"><r:page:data name="link_text" /></r:if_not_blank><r:if_blank value="{$link_text}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></r:if_blank></a>
         </r:if_not_equal>
       </div>
     </r:each>
