@@ -118,7 +118,7 @@
                   </p>
                 </r:if_not_blank>
                 <r:if_not_equal x="{$buttonText}" y="none">
-                  <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{article:path}">"><r:if_not_blank value="{$link_text}"><r:page:data name="link_text" /></r:if_not_blank><r:if_blank value="{$link_text}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:article:name /></span></r:if_blank></a>
+                  <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{article:path}" />"><r:if_not_blank value="{$link_text}"><r:page:data name="link_text" /></r:if_not_blank><r:if_blank value="{$link_text}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:article:name /></span></r:if_blank></a>
                 </r:if_not_equal>
               <r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"><r:if_not_blank value="{$thumbnail_url}"></div></r:if_not_blank></r:if_true>
             </div>
