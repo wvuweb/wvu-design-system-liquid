@@ -6,6 +6,7 @@
   <r:set_var name="slotNameValue"><r:page:data name="{$slotName}" /></r:set_var>
   <r:set_var name="slotCustom" value="{{ CONCAT(slotName, '_custom') }}" />
   <r:set_var name="slotCustomValue"><r:page:data name="{$slotCustom}" /></r:set_var>
+  <r:set_var name="whereToDisplay"><r:page:data name="{{ CONCAT(slotName, '_where_to_display') }}" /></r:set_var>
 
   <r:comment><!-- Get display context. If none, set to as_full_width_block. --></r:comment>
   <r:set_var name="displayChecker" value="{$whereToDisplay}" default="as_full_width_block" />
@@ -30,7 +31,6 @@
       <r:set_var name="galleryLoopBy"><r:page:data name="{{ CONCAT(slotName, '_gallery_loop_by') }}" /></r:set_var>
       <r:set_var name="isMain"><r:page:data name="{{ CONCAT(slotName, '_is_main') }}" /></r:set_var>
       <r:set_var name="instanceNumber"><r:page:data name="{{ CONCAT(slotName, '_number') }}" /></r:set_var>
-      <r:set_var name="whereToDisplay"><r:page:data name="{{ CONCAT(slotName, '_where_to_display') }}" /></r:set_var>
       <r:set_var name="showHidden"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_show_hidden')) = '1.0' }}" then="true" else="false" /></r:set_var>
       <r:set_var name="isRandom"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_is_random')) = '1.0' }}" then="true" else="false" /></r:set_var>
       <r:set_var name="scope"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_scope')) = '1.0' }}" then="site" else="page"/></r:set_var>
