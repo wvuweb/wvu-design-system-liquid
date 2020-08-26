@@ -15,7 +15,7 @@
 <r:content_for name="{$defaultComponentClasses}">py-5 </r:content_for>
 
 <r:comment><!-- Since there is no header to hook into to label this section, we need to apply an ARIA-Label. This tells our “is main checker” utility to apply the label. --></r:comment>
-<r:if_false value="{$componentIsMain}>
+<r:if_false value="{$componentIsMain}">
   <r:set_var name="componentNeedsARIALabel" value="true" />
 </r:if_false>
 
