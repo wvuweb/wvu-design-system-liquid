@@ -19,7 +19,7 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if>py-5 <r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if_true value="{$componentIsMain}">id="wvu-main-content"</r:if_true> class="<r:if_true value="{$componentIsEditModeOnly}">d-none </r:if_true>py-5 <r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
   <div class="container wvu-z-index-content">
 
     <r:comment><!-- NOTE: Set how many blog posts you'd like to show per page. Eg: default="10" --></r:comment>
@@ -56,13 +56,13 @@
                 <article class="mb-4" itemscope="" itemtype="http://schema.org/BlogPosting">
                   <h2 itemprop="headline"><a href="<r:article:path />"><r:article:name /></a></h2>
                   <p class="small d-block">
-                    <r:if v1="{$blogIsHidden}" v2="1" op="!=">
+                    <r:if_false value="{$blogIsHidden}">
                       <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                         <span itemprop="name">
                           <r:article:author_full_name /> |
                         </span> <!-- /.wvu-article__author -->
                       </span> <!-- /itemprop="author" -->
-                    </r:if>
+                    </r:if_false>
                     <time itemprop="datePublished" datetime="<r:date_format format="iso8601" value="{article:published_at}" />"><r:date_format format="%A, %B %d, %Y" value="{article:published_at}" /></time>
                   </p> <!-- /.wvu-article__meta -->
                   <div class="mb-2" itemprop="articleBody">
