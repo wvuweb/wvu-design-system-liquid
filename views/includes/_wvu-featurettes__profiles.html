@@ -97,7 +97,7 @@
           <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"><div class="row"></r:if_true>
             <r:if_not_blank value="{$thumbnail_url_sq}">
               <div class="mb-1<r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"> col-md-4 pr-0</r:if_true>">
-                <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url} />"><img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
+                <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
               </div>
             </r:if_not_blank>
             <r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"><div class="col-md-8"></r:if_true>
@@ -145,7 +145,7 @@
               </r:if_not_blank>
               <r:if_not_equal x="{$buttonText}" y="none">
                 <p class="mb-0 mt-2">
-                  <a aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" class="btn <r:var name="itemButtonClassesChecker" />" href="<r:if test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></a>
+                  <a aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" class="btn <r:var name="itemButtonClassesChecker" />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></a>
                 </p>
               </r:if_not_equal>
             <r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"></div></r:if_true>
