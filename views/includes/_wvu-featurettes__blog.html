@@ -3,54 +3,54 @@
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
-<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
+<r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}">
 
   <r:set_var name="columnClasses">
     col-sm-6 col-md-3
   </r:set_var>
 
-  <r:if v1="{$componentLimit}" v2="1" op="=">
+  <r:if_equal x="{$componentLimit}" y="1">
     <r:set_var name="columnClasses">
       col-sm-6
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="2" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="2">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-3
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="3" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="3">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="4" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="4">
     <r:set_var name="columnClasses">
       col-sm-6 col-md
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="5" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="5">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4 col-lg-3
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="6" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="6">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="9" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="9">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!=">
+  </r:if_equal>
+  <r:if_not_equal x="{$componentDisplayContext}" y="as_full_width_block">
     <r:set_var name="columnClasses">
       col-sm-12 col-md-12
     </r:set_var>
-  </r:if>
+  </r:if_not_equal>
 
-</r:if>
+</r:if_true>
 
 <r:content_for name="{$defaultRowClasses}">justify-content-center</r:content_for>
 <r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
@@ -104,27 +104,27 @@
             <r:var name="bgPrefix" />-panel-<r:index />-background
           </r:set_var>
           <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
-            <div class="mt-3<r:if expr="{{ NOT(BLANK(thumbnail_url)) }}"><r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"> row</r:if></r:if>">
-              <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
-                <div class="mb-1<r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"> col-md-4</r:if>">
-                  <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="shadow" src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
+            <div class="mt-3<r:if_not_blank value="{$thumbnail_url}"><r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"> row</r:if_true></r:if_not_blank>">
+              <r:if_not_blank value="{$thumbnail_url}">
+                <div class="mb-1<r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"> col-md-4</r:if_true>">
+                  <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><img class="shadow" src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
                 </div>
-              </r:if>
-              <r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"><r:if expr="{{ NOT(BLANK(thumbnail_url)) }}"><div class="col-md-8"></r:if></r:if>
-                <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> id="<r:page:slug />-<r:var name="componentName" />-<r:page:id />"><a class="<r:var name="itemHeaderClassesChecker" />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:article:name /></a></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
-                <r:if expr="{{ NOT(BLANK(description)) }}">
+              </r:if_not_blank>
+              <r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"><r:if_not_blank value="{$thumbnail_url}"><div class="col-md-8"></r:if_not_blank></r:if_true>
+                <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> id="<r:page:slug />-<r:var name="componentName" />-<r:page:id />"><a class="<r:var name="itemHeaderClassesChecker" />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{article:path}" />"><r:article:name /></a></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
+                <r:if_not_blank value="{$description}">
                   <p class="<r:var name="itemBodyClassesChecker" />">
                     <r:page:data name="description" />
                   </p>
-                </r:if>
-                <r:if v1="{$buttonText}" v2="none" op="!=">
-                  <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:article:path /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:article:name /></span></r:if></a>
-                </r:if>
-              <r:if expr="{{ contains(componentDisplayContext, 'featurettes') or contains(componentDisplayContext, 'sidebar') }}"><r:if expr="{{ NOT(BLANK(thumbnail_url)) }}"></div></r:if></r:if>
+                </r:if_not_blank>
+                <r:if_not_equal x="{$buttonText}" y="none">
+                  <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{article:path}">"><r:if_not_blank value="{$link_text}"><r:page:data name="link_text" /></r:if_not_blank><r:if_blank value="{$link_text}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:article:name /></span></r:if_blank></a>
+                </r:if_not_equal>
+              <r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"><r:if_not_blank value="{$thumbnail_url}"></div></r:if_not_blank></r:if_true>
             </div>
           </div>
         </r:each>
       </r:if_articles>
     </r:blog:articles>
-  <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
+    <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"></div></r:if_true>
 </r:get_page>
