@@ -5,6 +5,7 @@
   <r:set_var name="slotCustomValue"><r:site:data name="{{ CONCAT(slotName, '_custom') }}" /></r:set_var>
 
   <r:comment><!-- Get display context. If none, set to as_full_width_block --></r:comment>
+  <r:set_var name="whereToDisplay"><r:site:data name="{{ CONCAT(slotName, '_where_to_display') }}" /></r:set_var>
   <r:set_var name="displayChecker" value="{$whereToDisplay}" default="as_full_width_block" />
 
   <r:comment><!-- Get display context of slots component. If none, set to as_full_width_block --></r:comment>
@@ -23,7 +24,6 @@
       <r:set_var name="loopOrder"><r:site:data name="{{ CONCAT(slotName, '_loop_order') }}" /></r:set_var>
       <r:set_var name="isMain"><r:site:data name="{{ CONCAT(slotName, '_is_main') }}" /></r:set_var>
       <r:set_var name="instanceNumber"><r:site:data name="{{ CONCAT(slotName, '_number') }}" /></r:set_var>
-      <r:set_var name="whereToDisplay"><r:site:data name="{{ CONCAT(slotName, '_where_to_display') }}" /></r:set_var>
       <r:set_var name="showHidden"><r:site:data name="{{ CONCAT(slotName, '_show_hidden') }}" /></r:set_var>
       <r:set_var name="isRandom"><r:site:data name="{{ CONCAT(slotName, '_is_random') }}" /></r:set_var>
       <r:set_var name="scope">site</r:set_var>
