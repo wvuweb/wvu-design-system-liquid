@@ -41,11 +41,11 @@
 
     <header aria-label="masthead">
       <a class="sr-only sr-only-focusable" href="#wvu-main-content">Skip to main content</a>
-      <r:if expr="{{ NOT(BLANK(is_demo_site)) }}">
+      <r:if_not_blank value="{$is_demo_site}">
         <div class="p-3 bg-danger text-white text-center">
           This is a demo site. Some of the links won’t work. To see other templates in this theme, return to the <a href="https://designsystem.sandbox.wvu.edu/themes/<r:site:data name="is_demo_site" />" class="text-white"><span class="text-capitalize"><r:site:data name="is_demo_site" /></span> theme page</a>. To see other themes, return to the <a href="https://designsystem.sandbox.wvu.edu/themes" class="text-white">themes page</a>.
         </div>
-      </r:if>
+      </r:if_not_blank>
       <r:partial name="components/wvu-masthead" theme="{$design_system_theme_name}" />
       <r:if v1="{$disable_primary_nav}" v2="true" op="!=">
         <r:partial name="components/wvu-nav" theme="{$design_system_theme_name}" />
