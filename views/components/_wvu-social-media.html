@@ -22,7 +22,7 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if><r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if_true value="{$componentIsMain}">id="wvu-main-content"</r:if_true> class="<r:if_true value="{$componentIsEditModeOnly}">d-none </r:if_true><r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -47,62 +47,62 @@
               <pre class="mb-0 text-white"><r:editable_region name="{$linkClasses}" type="simple" /></pre>
             </small>
           </r:edit_mode_only>
-          <r:if expr="{{ NOT(BLANK(facebook_url)) }}">
+          <r:if_not_blank value="{$facebook_url}">
             <li class="list-inline-item">
               <a class="fab fa-facebook <r:page:content name="{$linkClasses}" />" href="<r:site:data name="facebook_url" />">
                 <span class="sr-only">Facebook</span>
               </a>
             </li>
-          </r:if>
-          <r:if expr="{{ NOT(BLANK(twitter_url)) }}">
+          </r:if_not_blank>
+          <r:if_not_blank value="{$twitter_url}">
             <li class="list-inline-item">
               <a class="fab fa-twitter <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
                 <span class="sr-only">Twitter</span>
               </a>
             </li>
-          </r:if>
-          <r:if expr="{{ NOT(BLANK(flickr_url)) }}">
+          </r:if_not_blank>
+          <r:if_not_blank value="{$flickr_url}">
             <li class="list-inline-item">
               <a class="fab fa-flickr <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
                 <span class="sr-only">Flickr</span>
               </a>
             </li>
-          </r:if>
-          <r:if expr="{{ NOT(BLANK(instagram_url)) }}">
+          </r:if_not_blank>
+          <r:if_not_blank value="{$instagram_url}">
             <li class="list-inline-item">
               <a class="fab fa-instagram <r:page:content name="{$linkClasses}" />" href="<r:site:data name="instagram_url" />">
                 <span class="sr-only">Instagram</span>
               </a>
             </li>
-          </r:if>
-          <r:if expr="{{ NOT(BLANK(linkedin_url)) }}">
+          </r:if_not_blank>
+          <r:if_not_blank value="{$linkedin_url}">
             <li class="list-inline-item">
               <a class="fab fa-linkedin <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
                 <span class="sr-only">LinkedIn</span>
               </a>
             </li>
-          </r:if>
-          <r:if expr="{{ NOT(BLANK(syndication_url)) }}">
+          </r:if_not_blank>
+          <r:if_not_blank value="{$syndication_url}">
             <li class="list-inline-item">
               <a class="fas fa-rss <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
                 <span class="sr-only">RSS</span>
               </a>
             </li>
-          </r:if>
-          <r:if expr="{{ NOT(BLANK(youtube_url)) }}">
+          </r:if_not_blank>
+          <r:if_not_blank value="{$youtube_url}">
             <li class="list-inline-item">
               <a class="fab fa-youtube <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
                 <span class="sr-only">YouTube</span>
               </a>
             </li>
-          </r:if>
-          <r:if expr="{{ NOT(BLANK(github_url)) }}">
+          </r:if_not_blank>
+          <r:if_not_blank value="{$github_url}">
             <li class="list-inline-item">
               <a class="fab fa-github <r:page:content name="{$linkClasses}" />" href="<r:site:data name="twitter_url" />">
                 <span class="sr-only">Github</span>
               </a>
             </li>
-          </r:if>
+          </r:if_not_blank>
         </ul>
       </div>
     </div>
