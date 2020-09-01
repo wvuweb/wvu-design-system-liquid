@@ -38,10 +38,11 @@
           <div class="row">
             <div class="col-xl-10 mr-xl-auto">
               <r:if_not_blank value="{$thumbnail_url_sq}">
-                <img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />" alt="thumbnail_alt" />
+                <img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />" alt="<r:page:data name="thumbnail_alt" />" />
               </r:if_not_blank>
-              <r:if_blank value="{$thumbnail_url_sq}">
-                <r:if_not_blank value="{$thumbnail_url}">
+              <r:if_blank expr="{$thumbnail_url_sq}">
+                <r:if_not_blank expr="{$thumbnail_url}">
+
                   <img class="shadow" src="<r:page:data name="thumbnail_url" />" alt="thumbnail_alt" />
                 </r:if_not_blank>
               </r:if_blank>
