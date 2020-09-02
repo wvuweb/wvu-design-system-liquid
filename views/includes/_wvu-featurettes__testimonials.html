@@ -3,58 +3,58 @@
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
-<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
+<r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}">
   <r:set_var name="columnClasses">
     col-sm-6 col-md-3
   </r:set_var>
-  <r:if v1="{$componentLimit}" v2="1" op="=">
-    <r:if v1="{$componentAlign}" v2="left" op="=">
+  <r:if_equal x="{$componentLimit}" y="1">
+    <r:if_equal x="{$componentAlign}" y="left">
       <r:set_var name="columnClasses">
         col-sm-6 mr-sm-auto
       </r:set_var>
-    </r:if>
-    <r:if v1="{$componentAlign}" v2="middle" op="=">
+    </r:if_equal>
+    <r:if_equal x="{$componentAlign}" y="middle">
       <r:set_var name="columnClasses">
         col-sm-6 mx-sm-auto
       </r:set_var>
-    </r:if>
-    <r:if v1="{$componentAlign}" v2="right" op="=">
+    </r:if_equal>
+    <r:if_equal x="{$componentAlign}" y="right">
       <r:set_var name="columnClasses">
         col-sm-6 ml-sm-auto
       </r:set_var>
-    </r:if>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="2" op="=">
+    </r:if_equal>
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="2">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="3" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="3">
     <r:set_var name="columnClasses">
       col-sm-6 col-md
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="4" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="4">
     <r:set_var name="columnClasses">
       col-sm-6 col-md
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="5" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="5">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4 col-lg-3 col-xl
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="6" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="6">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="9" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="9">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-</r:if>
+  </r:if_equal>
+</r:if_true>
 
 <r:content_for name="{$defaultRowClasses}">justify-content-center</r:content_for>
 <r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
@@ -82,7 +82,7 @@
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}" random="{$componentIsRandom}">
-    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:var name="rowClassesChecker" />"></r:if>
+    <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"><div class="row <r:var name="rowClassesChecker" />"></r:if_true>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
         <r:comment><!-- Define the label used to add a background image to a featurette item. --></r:comment>
@@ -94,11 +94,11 @@
             <p class="wvu-quote iowan-old-style h4">
               <r:page:content name="wvu-profile-1__quote" />
             </p>
-            <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
+            <r:if_not_blank value="{$thumbnail_url_sq}">
               <div class="mb-1">
-                <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="rounded-circle shadow text-center w-25" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
+                <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><img class="rounded-circle shadow text-center w-25" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
               </div>
-            </r:if>
+            </r:if_not_blank>
             <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> class="<r:var name="itemHeaderClassesChecker" />"><r:page:first_non_blank_attr names="alternate_name,name" /></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
             <r:page:if_has_content_for region="wvu-profile-1__profile-title">
               <p>
@@ -108,6 +108,6 @@
           </div>
         </div>
       </r:each>
-    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
+    <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"></div></r:if_true>
   </r:descendants>
 </r:root>

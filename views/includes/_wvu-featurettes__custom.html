@@ -1,43 +1,43 @@
-<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
+<r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}">
   <r:set_var name="columnClasses">
     col-sm-6 col-md-3
   </r:set_var>
-  <r:if v1="{$componentLimit}" v2="1" op="=">
+  <r:if_equal x="{$componentLimit}" y="1">
     <r:set_var name="columnClasses">
       col
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="2" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="2">
     <r:set_var name="columnClasses">
       col-sm-6 col-md
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="3" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="3">
     <r:set_var name="columnClasses">
       col-sm-6 col-md
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="4" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="4">
     <r:set_var name="columnClasses">
       col-sm-6 col-md
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="5" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="5">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4 col-lg-3 col-xl
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="6" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="6">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="9" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="9">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-</r:if>
+  </r:if_equal>
+</r:if_true>
 
 <r:content_for name="{$defaultRowClasses}">justify-content-center</r:content_for>
 <r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>

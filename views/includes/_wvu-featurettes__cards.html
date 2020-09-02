@@ -3,43 +3,43 @@
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
-<r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}">
-  <r:if v1="{$componentLimit}" v2="1" op="=">
+<r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}">
+  <r:if_equal x="{$componentLimit}" y="1">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="2" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="2">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="3" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="3">
     <r:set_var name="columnClasses">
       col-sm-6 col-md
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="4" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="4">
     <r:set_var name="columnClasses">
       col-sm-6 col-md
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="5" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="5">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4 col-lg-3 col-xl
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="6" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="6">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="9" op="=">
+  </r:if_equal>
+  <r:if_equal x="{$componentLimit}" y="9">
     <r:set_var name="columnClasses">
       col-sm-6 col-md-4
     </r:set_var>
-  </r:if>
-</r:if>
+  </r:if_equal>
+</r:if_true>
 
 <r:content_for name="{$defaultRowClasses}">justify-content-center</r:content_for>
 <r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
@@ -81,7 +81,7 @@
     and $loopOrder to: "asc" or "desc";
     and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}" random="{$componentIsRandom}">
-    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:var name="rowClassesChecker" />"></r:if>
+    <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"><div class="row <r:var name="rowClassesChecker" />"></r:if_true>
       <r:comment><!-- Grab all of the items in the loop. --></r:comment>
       <r:each limit="{$limit}">
         <r:set_var name="bgurl">
@@ -90,22 +90,21 @@
         <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
         <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
           <div class="card shadow">
-            <r:if expr="{{ NOT(BLANK(thumbnail_url)) }}">
-              <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><img class="card-img-top" src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
-            </r:if>
+            <r:if_not_blank value="{$thumbnail_url}">
+              <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><img class="card-img-top" src="<r:page:data name="thumbnail_url" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url" />/960x640.jpg, <r:page:data name="thumbnail_url" />/586x286.jpg, <r:page:data name="thumbnail_url" />/381x255.jpg, <r:page:data name="thumbnail_url" />/286x191.jpg, <r:page:data name="thumbnail_url" />/279x186.jpg, <r:page:data name="thumbnail_url" />/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="<r:page:data name="thumbnail_alt" />"></a>
+            </r:if_not_blank>
             <div class="card-body bg-white">
               <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> class="card-title <r:var name="itemHeaderClassesChecker" />" id="<r:page:slug />-<r:var name="componentName" />-<r:page:id />"><r:page:first_non_blank_attr names="alternate_name,name" /></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
               <p class="card-text <r:var name="itemBodyClassesChecker" />">
-                <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
-                <r:if expr="{{ BLANK(description) }}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</r:if>
+                <r:if_then_else test="{{ NOT(BLANK(description)) }}" then="{$description}" else="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
               </p>
-              <r:if v1="{$buttonText}" v2="none" op="!=">
-                <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>"><r:if expr="{{ NOT(BLANK(link_text)) }}"><r:page:data name="link_text" /></r:if><r:if expr="{{ BLANK(link_text) }}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></r:if></a>
-              </r:if>
+              <r:if_not_equal x="{$buttonText}" y="none">
+                <a class="btn <r:var name="itemButtonClassesChecker" />" aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><r:if_not_blank value="{$link_text}"><r:page:data name="link_text" /></r:if_not_blank><r:if_blank value="{$link_text}"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></r:if_blank></a>
+              </r:if_not_equal>
             </div>
           </div>
         </div>
       </r:each>
-    <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
+    <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"></div></r:if_true>
   </r:descendants>
 </r:root>
