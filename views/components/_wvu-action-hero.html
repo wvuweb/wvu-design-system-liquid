@@ -22,10 +22,10 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if> jumbotron jumbotron-fluid mb-0 wvu-overflow-hidden wvu-background-size-cover <r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if_true value="{$componentIsMain}">id="wvu-main-content"</r:if_true> class="<r:if_true value="{$componentIsEditModeOnly}">d-none </r:if_true> jumbotron jumbotron-fluid mb-0 wvu-overflow-hidden wvu-background-size-cover <r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
   <div class="container position-relative wvu-z-index-content">
     <div class="row">
-      <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="col-md-8 mx-auto"></r:if>
+      <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"><div class="col-md-8 mx-auto"></r:if_true>
         <r:comment><!-- This is where you can add utility classes that will apply to the hero’s heading. --></r:comment>
         <r:edit_mode_only>
           <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
@@ -44,7 +44,7 @@
           <p class="lead pb-2">This is a simple hero unit, a simple jumbotron-style component for calling
           extra attention to featured content or information.</p><a class="btn btn-wvu-blue btn-lg" href="#" role="button">Call to Action</a><p class="mt-2">Here is a <a href="#" class="text-wvu-accent--dark-blue">Secondary Call to Action</a></p>
         </r:editable_region>
-      <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"></div></r:if>
+      <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"></div></r:if_true>
     </div>
   </div>
 <r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
