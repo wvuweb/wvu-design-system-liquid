@@ -24,7 +24,7 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if> <r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if_true value="{$componentIsMain}">id="wvu-main-content"</r:if_true> class="<r:if_true value="{$componentIsEditModeOnly}">d-none </r:if_true> <r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
   <div class="container wvu-z-index-content">
     <r:page:if_has_content_for region="{$componentHeader}" always_show_in_edit_mode="true">
       <div class="mb-4">
@@ -45,9 +45,9 @@
           <r:descendants:each by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}">
             <div class="row mb-5">
               <div class="col-md-3 mr-ml-auto mb-1 text-center">
-                <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
+                <r:if_not_blank value="{$thumbnail_url_sq}">
                   <img class="rounded-circle shadow text-center" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />">
-                </r:if>
+                </r:if_not_blank>
               </div>
               <div class="col-md-8">
                 <h2 class="iowan-old-style-italic mb-0"><r:page:first_non_blank_attr names="alternate_name,name" /></h2>
@@ -84,10 +84,10 @@
                   </p>
                 </r:page:if_has_content_for>
                 <p class="mt-2">
-                  <r:if expr="{{ NOT(BLANK(description)) }}"><r:page:data name="description" /></r:if>
+                  <r:if_not_blank value="{$description}"><r:page:data name="description" /></r:if_not_blank>
                 </p>
                 <p class="mb-0 mt-2">
-                  <a class="btn btn-primary btn-sm" href="<r:if expr="{{ NOT(BLANK(alternate_url)) }}"><r:page:data name="alternate_url" /></r:if><r:if expr="{{ BLANK(alternate_url) }}"><r:page:url /></r:if>">View Profile<span class="sr-only">: <r:page:name /></span></a>
+                  <a class="btn btn-primary btn-sm" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />">View Profile<span class="sr-only">: <r:page:name /></span></a>
                 </p>
               </div>
             </div>
