@@ -103,7 +103,7 @@
           <r:set_var name="bgurl">
             <r:var name="bgPrefix" />-panel-<r:index />-background
           </r:set_var>
-          <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
+          <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
             <div class="mt-3<r:if_not_blank value="{$thumbnail_url}"><r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"> row</r:if_true></r:if_not_blank>">
               <r:if_not_blank value="{$thumbnail_url}">
                 <div class="mb-1<r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"> col-md-4</r:if_true>">

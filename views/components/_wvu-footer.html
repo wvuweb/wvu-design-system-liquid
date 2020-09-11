@@ -4,7 +4,7 @@
 <r:set_var name="baseComponentName" value="footer" />
 
 <r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="{$design_system_theme_name}" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
@@ -15,7 +15,7 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><footer class="<r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
+<!-- Markup --><footer class="<r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container">
     <div class="row">
       <div class="col-6">
@@ -80,4 +80,4 @@
 </footer><!-- End markup -->
 
 <r:comment><!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. --></r:comment>
-<r:partial name="includes/wvu-component-footer" theme="{$design_system_theme_name}" />
+<r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />

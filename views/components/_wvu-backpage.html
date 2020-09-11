@@ -4,7 +4,7 @@
 <r:set_var name="baseComponentName" value="backpage" />
 
 <r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="{$design_system_theme_name}" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
@@ -26,11 +26,11 @@
 
 <r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
 <r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="{$design_system_theme_name}" /> <r:if_true value="{$componentIsMain}">id="wvu-main-content"</r:if_true> class="<r:if_true value="{$componentIsEditModeOnly}">d-none </r:if_true><r:page:unless_has_content_for region="{$componentClasses}"> <r:yield name="{$defaultComponentClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$componentClasses}" />" <r:partial name="utilities/wvu-bg-styler" theme="{$design_system_theme_name}" />>
+<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if_true value="{$componentIsMain}">id="wvu-main-content"</r:if_true> class="<r:if_true value="{$componentIsEditModeOnly}">d-none </r:if_true><r:page:unless_has_content_for region="{$componentClasses}"> <r:yield name="{$defaultComponentClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$componentClasses}" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container wvu-z-index-content">
     <div class="row">
       <r:if_equal x="{$componentAlign}" y="right">
-        <r:partial name="components/wvu-sidebar" theme="{$design_system_theme_name}" />
+        <r:partial name="components/wvu-sidebar" theme="University Relations: WVU Design System" />
       </r:if_equal>
       <div class="col-md-8 mr-md-auto">
         <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
@@ -51,18 +51,18 @@
             but back to the drawing-board.</p>
         </r:editable_region>
         <r:comment><!-- This is where component inception happens. Temporarily store our parent component’s values; loop through the page’s slots to see if any components are targeting this inception point, and if so display that component; then “pop” the parent’s values back into the original variables. --></r:comment>
-        <r:partial name="includes/wvu-component-variables-temp" theme="{$design_system_theme_name}" />
+        <r:partial name="includes/wvu-component-variables-temp" theme="University Relations: WVU Design System" />
         <r:set_var name="componentDisplayContext" value="{$componentMain}" />
-        <r:partial name="utilities/wvu-slots" theme="{$design_system_theme_name}" />
-        <r:partial name="includes/wvu-component-variables-pop" theme="{$design_system_theme_name}" />
+        <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
+        <r:partial name="includes/wvu-component-variables-pop" theme="University Relations: WVU Design System" />
       </div>
       <r:if_not_equal x="{$componentAlign}" y="right">
-        <r:partial name="components/wvu-sidebar" theme="{$design_system_theme_name}" />
+        <r:partial name="components/wvu-sidebar" theme="University Relations: WVU Design System" />
       </r:if_not_equal>
     </div>
   </div><r:comment><!-- /.container --></r:comment>
 <r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
-</<r:partial name="utilities/wvu-is-main-checker--end" theme="{$design_system_theme_name}" />><!-- End markup -->
+</<r:partial name="utilities/wvu-is-main-checker--end" theme="University Relations: WVU Design System" />><!-- End markup -->
 
 <r:comment><!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. --></r:comment>
-<r:partial name="includes/wvu-component-footer" theme="{$design_system_theme_name}" />
+<r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />

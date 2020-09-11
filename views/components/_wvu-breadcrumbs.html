@@ -4,7 +4,7 @@
 <r:set_var name="baseComponentName" value="breadcrumbs" />
 
 <r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
-<r:partial name="includes/wvu-component-variables" theme="{$design_system_theme_name}" />
+<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
 <r:comment><!-- Suggestions for what utility classes to assign to this components’s container. These will also show up by default if the content editor does not apply her own. --></r:comment>
 <r:content_for name="{$defaultComponentClasses}">
@@ -13,7 +13,7 @@
 
 <r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
 <r:set_var name="componentClassesBreadcrumbs">
-  wvu-slash-list pl-0 <r:partial name="utilities/wvu-component-classes-checker" theme="{$design_system_theme_name}" />
+  wvu-slash-list pl-0 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />
 </r:set_var>
 
 <section class="wvu-breadcrumbs py-2 w-100 position-absolute <r:site:data name="classes_wvu-breadcrumbs" /> wvu-z-index-breadcrumbs" aria-label="<r:var name="baseComponentName" />-1">
@@ -23,4 +23,4 @@
 </section>
 
 <r:comment><!-- Pull in component instructions and allow user to edit classes for component in CleanSlate editor --></r:comment>
-<r:partial name="includes/wvu-component-footer" theme="{$design_system_theme_name}" />
+<r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />

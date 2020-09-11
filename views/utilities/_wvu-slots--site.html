@@ -31,7 +31,7 @@
       <r:if_not_blank value="{$slotNameValue}">
         <r:comment><!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. --></r:comment>
         <r:if_blank value="{$slotCustomValue}">
-          <r:partial name="{{ CONCAT('components/wvu-', slotNameValue) }}" theme="{$design_system_theme_name}" />
+          <r:partial name="{{ CONCAT('components/wvu-', slotNameValue) }}" theme="University Relations: WVU Design System" />
         </r:if_blank>
       </r:if_not_blank>
 
