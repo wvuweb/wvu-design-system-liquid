@@ -2,6 +2,9 @@
 name: WVU Design System
 description: WVU Design System Theme
 
+data:
+  design_system_theme_name: "University Relations: WVU Design System"
+
 ## Attributes, Data and Variables
 custom_data_attributes:
   - alternate_url:
