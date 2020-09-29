@@ -1,5 +1,27 @@
 # Change Log
 
+## [v1.2.6](https://github.com/wvuweb/wvu-design-system/tree/v1.2.6) (2020-09-29)
+[Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.5...v1.2.6)
+
+**Implemented enhancements:**
+
+- Use @for instead of @while for WVU Slash positition modifier classes [\#274](https://github.com/wvuweb/wvu-design-system/issues/274)
+- "Related Articles" and "Blog Archive" should be h2's in the \_wvu-blog-article.html component [\#272](https://github.com/wvuweb/wvu-design-system/issues/272)
+- Move $enable\_keywords out of the default layout [\#271](https://github.com/wvuweb/wvu-design-system/issues/271)
+- Implement pagination for profile index [\#248](https://github.com/wvuweb/wvu-design-system/issues/248)
+- Make the Stat Sheet component use an h2 by default. [\#276](https://github.com/wvuweb/wvu-design-system/pull/276) ([adamjohnson](https://github.com/adamjohnson))
+- Use @for instead of @while for `\_wvu-slash.scss`. [\#275](https://github.com/wvuweb/wvu-design-system/pull/275) ([adamjohnson](https://github.com/adamjohnson))
+
+**Fixed bugs:**
+
+- Wrong URLs for social media component [\#280](https://github.com/wvuweb/wvu-design-system/issues/280)
+- Profile template/component doesn't have configurable alt text for headshots [\#279](https://github.com/wvuweb/wvu-design-system/issues/279)
+- Header subhead for backpage header v2 doesn't work [\#260](https://github.com/wvuweb/wvu-design-system/issues/260)
+
+**Merged pull requests:**
+
+- Change Blog Article sidebar headings to h2 in place of h3's. [\#277](https://github.com/wvuweb/wvu-design-system/pull/277) ([adamjohnson](https://github.com/adamjohnson))
+
 ## [v1.2.5](https://github.com/wvuweb/wvu-design-system/tree/v1.2.5) (2020-06-23)
 [Full Changelog](https://github.com/wvuweb/wvu-design-system/compare/v1.2.4...v1.2.5)
 
