@@ -23,7 +23,7 @@
     <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Office</span></r:edit_mode_only>
     <span class="far fa-building position-absolute"></span>
       <r:page:if_has_content_for region="{$componentOfficeURL}">
-        <a class="d-block pl-3" href="{$componentOfficeURL}"><r:page:content name="{$componentOffice}" /></a>
+        <a class="d-block pl-3" href="<r:page:content name="{$componentOfficeURL}" />"><r:page:content name="{$componentOffice}" /></a>
       </r:page:if_has_content_for>
       <r:page:unless_has_content_for region="{$componentOfficeURL}">
         <span class="d-block pl-3"><r:page:content name="{$componentOffice}" /></span>
