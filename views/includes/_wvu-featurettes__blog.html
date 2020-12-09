@@ -1,4 +1,4 @@
-<r:comment><!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name --></r:comment>
+{% comment %}<!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name -->{% endcomment %}
 <r:set_var name="itemLabels">
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
@@ -82,17 +82,17 @@
   <r:page:unless_has_content_for region="{$componentReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
-<r:comment><!-- Grab the button text so we can evaluate whether to display the button (if user has entered “none” then we don’t display the button). --></r:comment>
+{% comment %}<!-- Grab the button text so we can evaluate whether to display the button (if user has entered “none” then we don’t display the button). -->{% endcomment %}
 <r:set_var name="buttonText">
   <r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
 <r:get_page id="{$componentFeaturettesID}">
   <r:if expr="{{ contains(componentDisplayContext, 'as_full_width_block') or contains(componentDisplayContext, 'wvu-backpage') }}"><div class="row <r:var name="rowClassesChecker" />"></r:if>
-    <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
+    {% comment %}<!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
       and $loopOrder to: "asc" or "desc";
-      and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
-    <r:comment><!-- Grab all of the items in the loop. --></r:comment>
+      and $loopLabelsMatch to: "any", "all", or "none". -->{% endcomment %}
+    {% comment %}<!-- Grab all of the items in the loop. -->{% endcomment %}
     <r:blog:articles limit="{$limit}" page="{$page}" tags="{$itemLabels}" tags_op="all" year="{$year}" month="{$month}" day="{$day}">
       <r:set_var name="article_count" value="{count}" />
       <r:if_no_articles>

@@ -1,87 +1,87 @@
-<r:comment><!-- Perform the following task 10 times, one for each of the 10 slots in a Super Theme page. --></r:comment>
+{% comment %}<!-- Perform the following task 10 times, one for each of the 10 slots in a Super Theme page. -->{% endcomment %}
 <r:loop:each times="10">
 
-  <r:comment><!-- Define the prefix... based on the slot number.... This will be used to define unique variable names for each property in each slot. --></r:comment>
+  {% comment %}<!-- Define the prefix... based on the slot number.... This will be used to define unique variable names for each property in each slot. -->{% endcomment %}
   <r:set_var name="slotName">
     slot_<r:item />
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store an “Is active” value for this slot. The data in slot_{number}_is_active will get pulled into each component and display the component only if set to “1”. The component will always be displayed in edit_mode. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store an “Is active” value for this slot. The data in slot_{number}_is_active will get pulled into each component and display the component only if set to “1”. The component will always be displayed in edit_mode. -->{% endcomment %}
   <r:set_var name="slotIsEditModeOnly">
     <r:var name="slotName" />_is_edit_mode_only
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Scope” value for this slot. The data in slot_{number}_scope will get pulled into each component to assign a scope for editable regions in the component. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Scope” value for this slot. The data in slot_{number}_scope will get pulled into each component to assign a scope for editable regions in the component. -->{% endcomment %}
   <r:set_var name="slotScope">
     <r:var name="slotName" />_scope
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Show Hidden” value for this slot. The data in slot_{number}_show_hidden will get pulled into a featurettes component and, if checked, disaply items even if the page that corresponds to a given item is set to “Hide from nav” in its page properties. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Show Hidden” value for this slot. The data in slot_{number}_show_hidden will get pulled into a featurettes component and, if checked, disaply items even if the page that corresponds to a given item is set to “Hide from nav” in its page properties. -->{% endcomment %}
   <r:set_var name="slotShowHidden">
     <r:var name="slotName" />_show_hidden
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Instance” value for this slot. The data in slot_{number}_number will get pulled into each component and be used when defining editable region names in order to make each component (and its editable regions) unique. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Instance” value for this slot. The data in slot_{number}_number will get pulled into each component and be used when defining editable region names in order to make each component (and its editable regions) unique. -->{% endcomment %}
   <r:set_var name="slotInstance">
     <r:var name="slotName" />_number
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Is Main” value for this slot. The data in slot_{number}_is_main will get pulled into each component and, if checked, toggle the components outer HTML from “section” to “main”. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Is Main” value for this slot. The data in slot_{number}_is_main will get pulled into each component and, if checked, toggle the components outer HTML from “section” to “main”. -->{% endcomment %}
   <r:set_var name="slotIsMain">
     <r:var name="slotName" />_is_main
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Is random” value for this slot. The data in slot_{number}_is_random will get pulled into a featurettes component and, if checked, display the featurette items in a random order. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Is random” value for this slot. The data in slot_{number}_is_random will get pulled into a featurettes component and, if checked, display the featurette items in a random order. -->{% endcomment %}
   <r:set_var name="slotIsRandom">
     <r:var name="slotName" />_is_random
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Align” value for this slot. The data in slot_{number}_align will get pulled into a hero component and align the content to the left, center, or right. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Align” value for this slot. The data in slot_{number}_align will get pulled into a hero component and align the content to the left, center, or right. -->{% endcomment %}
   <r:set_var name="slotAlign">
     <r:var name="slotName" />_align
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Featurettes Style” value for this slot. The data in slot_{number}_featurettes_style will get pulled into a featurettes component and grab an include that matches the style (profiles, blog posts, cards, etc.). --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Featurettes Style” value for this slot. The data in slot_{number}_featurettes_style will get pulled into a featurettes component and grab an include that matches the style (profiles, blog posts, cards, etc.). -->{% endcomment %}
   <r:set_var name="slotFeaturettesStyle">
     <r:var name="slotName" />_featurettes_style
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Featurettes ID” value for this slot. The data in slot_{number}_featurettes_id will get pulled into a blog featurette and cycle through blog articles of a blog index with the provided ID. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Featurettes ID” value for this slot. The data in slot_{number}_featurettes_id will get pulled into a blog featurette and cycle through blog articles of a blog index with the provided ID. -->{% endcomment %}
   <r:set_var name="slotFeaturettesID">
     <r:var name="slotName" />_featurettes_id
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Limit” value for this slot. The data in slot_{number}_limit will get pulled into a featurettes component and limit the number of items to the specified number. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Limit” value for this slot. The data in slot_{number}_limit will get pulled into a featurettes component and limit the number of items to the specified number. -->{% endcomment %}
   <r:set_var name="slotLimit">
     <r:var name="slotName" />_limit
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Loop By” value for this slot. The data in slot_{number}_loop_by will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Loop By” value for this slot. The data in slot_{number}_loop_by will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). -->{% endcomment %}
   <r:set_var name="slotLoopBy">
     <r:var name="slotName" />_loop_by
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Loop Labels Match” value for this slot. The data in slot_{number}_loop_labels_match will get pulled into a featurettes component and tell the component to only display items that match either none, all, or any of the labels in an “itemLabels” value for this slot. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Loop Labels Match” value for this slot. The data in slot_{number}_loop_labels_match will get pulled into a featurettes component and tell the component to only display items that match either none, all, or any of the labels in an “itemLabels” value for this slot. -->{% endcomment %}
   <r:set_var name="slotLoopLabelsMatch">
     <r:var name="slotName" />_loop_labels_match
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Loop Order” value for this slot. The data in slot_{number}_loop_order will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Loop Order” value for this slot. The data in slot_{number}_loop_order will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). -->{% endcomment %}
   <r:set_var name="slotLoopOrder">
     <r:var name="slotName" />_loop_order
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Loop By” value for this slot. The data in slot_{number}_loop_by will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Loop By” value for this slot. The data in slot_{number}_loop_by will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). -->{% endcomment %}
   <r:set_var name="slotGalleryLoopBy">
     <r:var name="slotName" />_gallery_loop_by
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Custom” value for this slot. The data in slot_{number}_custom will be used below to determine if a custom partial should be used instead of a shared partial. If the user fills out this field, we will display a partial with the provided partial name. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Custom” value for this slot. The data in slot_{number}_custom will be used below to determine if a custom partial should be used instead of a shared partial. If the user fills out this field, we will display a partial with the provided partial name. -->{% endcomment %}
   <r:set_var name="slotCustom">
     <r:var name="slotName" />_custom
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Where to Display” value for this slot. The data in slot_{number}_where_to_display will get pulled into a either a backpage, sidebar, or featurettes component and, if it matches the display context of a component in another slot, will display the component in that slot. --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Where to Display” value for this slot. The data in slot_{number}_where_to_display will get pulled into a either a backpage, sidebar, or featurettes component and, if it matches the display context of a component in another slot, will display the component in that slot. -->{% endcomment %}
   <r:set_var name="slotWhereToDisplay">
     <r:var name="slotName" />_where_to_display
   </r:set_var>
@@ -94,17 +94,17 @@
     <r:page:data name="{$slotCustom}" />
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Loop Order” value for this slot. The data in slot_{number}_loop_order will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Loop Order” value for this slot. The data in slot_{number}_loop_order will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). -->{% endcomment %}
   <r:set_var name="slotIfBackpageRemoveNav">
     <r:var name="slotName" />_backpage_remove_nav
   </r:set_var>
 
-  <r:comment><!-- Define the name of the custom data attribute that will be used to store a “Loop Order” value for this slot. The data in slot_{number}_loop_order will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). --></r:comment>
+  {% comment %}<!-- Define the name of the custom data attribute that will be used to store a “Loop Order” value for this slot. The data in slot_{number}_loop_order will get pulled into a featurettes component and tell the component the criteria by which to order the items (sort_order, name, etc.). -->{% endcomment %}
   <r:set_var name="slotIfBackpageRemoveSidebar">
     <r:var name="slotName" />_backpage_remove_sidebar
   </r:set_var>
 
-  <r:comment><!-- Create a new set of variables that grab the data stored in each of the custom data attribtes we just created for this slot. We can then send the data along to each component when that component is specified in a slot, in order to perform certain functions. --></r:comment>
+  {% comment %}<!-- Create a new set of variables that grab the data stored in each of the custom data attribtes we just created for this slot. We can then send the data along to each component when that component is specified in a slot, in order to perform certain functions. -->{% endcomment %}
   <r:set_var name="isEditModeOnly"><r:page:data name="{$slotIsEditModeOnly}" /></r:set_var>
   <r:set_var name="align"><r:page:data name="{$slotAlign}" /></r:set_var>
   <r:set_var name="featurettesStyle"><r:page:data name="{$slotFeaturettesStyle}" /></r:set_var>
@@ -123,12 +123,12 @@
   <r:set_var name="ifBackpageRemoveNav"><r:page:data name="{$slotIfBackpageRemoveNav}" /></r:set_var>
   <r:set_var name="ifBackpageRemoveSidebar"><r:page:data name="{$slotIfBackpageRemoveSidebar}" /></r:set_var>
 
-  <r:comment><!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. --></r:comment>
+  {% comment %}<!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. -->{% endcomment %}
   <r:if v1="{$showHidden}" v2="1" op="=">
     <r:set_var name="showHidden">true</r:set_var>
   </r:if>
 
-  <r:comment><!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. --></r:comment>
+  {% comment %}<!-- Show hidden parameter gets a value of 1 or 0, but needs a value of “true” or “false” to be used in an r:each tag in a featurettes component. Convert it here. -->{% endcomment %}
   <r:if v1="{$isRandom}" v2="1" op="=">
     <r:set_var name="isRandom">true</r:set_var>
   </r:if>
@@ -136,7 +136,7 @@
     <r:set_var name="isRandom">false</r:set_var>
   </r:if>
 
-  <r:comment><!--  --></r:comment>
+  {% comment %}<!--  -->{% endcomment %}
   <r:if v1="{$slotScope}" v2="1" op="=">
     <r:set_var name="scope">site</r:set_var>
   </r:if>
@@ -146,7 +146,7 @@
 
   <r:if expr="{{ NOT(BLANK(slotNameValue)) }}">
 
-    <r:comment><!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. --></r:comment>
+    {% comment %}<!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. -->{% endcomment %}
     <r:if expr="{{ BLANK(slotCustomValue) }}">
       <r:set_var name="partialName">
         components/<r:page:data name="{$slotName}" />

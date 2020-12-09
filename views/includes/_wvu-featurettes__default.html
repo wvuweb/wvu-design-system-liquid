@@ -1,10 +1,10 @@
-<r:comment><!-- This is the label that will be used to pull in content to the featurettes component. The component pulls from from pages labeled with the slug of the page upon which you want it to display, along with the component name (base name plus instance number e.g. if this component should display on the Home page, label the pages you want to pull data from with “home-featurettes-1”). --></r:comment>
+{% comment %}<!-- This is the label that will be used to pull in content to the featurettes component. The component pulls from from pages labeled with the slug of the page upon which you want it to display, along with the component name (base name plus instance number e.g. if this component should display on the Home page, label the pages you want to pull data from with “home-featurettes-1”). -->{% endcomment %}
 <r:set_var name="itemLabels">
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
 
 <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}">
-  <r:comment><!-- Set the columnClasses variable. These change based on how many items are meant to display as featurettes. They will be added to the individuals items. --></r:comment>
+  {% comment %}<!-- Set the columnClasses variable. These change based on how many items are meant to display as featurettes. They will be added to the individuals items. -->{% endcomment %}
   <r:set_var name="columnClasses">
     col-sm-6 col-md-3
   </r:set_var>
@@ -75,15 +75,15 @@
   <r:page:unless_has_content_for region="{$componentReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
-<r:comment><!-- Grab the button text so we can evaluate whether to display the button (if user has entered “none” then we don’t display the button). --></r:comment>
+{% comment %}<!-- Grab the button text so we can evaluate whether to display the button (if user has entered “none” then we don’t display the button). -->{% endcomment %}
 <r:set_var name="buttonText">
   <r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
 <r:root>
-  <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
+  {% comment %}<!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
     and $loopOrder to: "asc" or "desc";
-    and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
+    and $loopLabelsMatch to: "any", "all", or "none". -->{% endcomment %}
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}" random="{$componentIsRandom}">
     <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"><div class="row <r:var name="rowClassesChecker" />"></r:if_true>
     <r:each limit="{$limit}">

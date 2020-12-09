@@ -1,24 +1,24 @@
-<r:comment><!-- Perform the following task 10 times, one for each of the 10 slots in a Super Theme page. --></r:comment>
+{% comment %}<!-- Perform the following task 10 times, one for each of the 10 slots in a Super Theme page. -->{% endcomment %}
 <r:loop:each times="10">
 
-  <r:comment><!-- Define the prefix... based on the slot number.... This will be used to define unique variable names for each property in each slot. --></r:comment>
+  {% comment %}<!-- Define the prefix... based on the slot number.... This will be used to define unique variable names for each property in each slot. -->{% endcomment %}
   <r:set_var name="slotName">slot_<r:item /></r:set_var>
   <r:set_var name="slotNameValue"><r:page:data name="{$slotName}" /></r:set_var>
   <r:set_var name="slotCustom" value="{{ CONCAT(slotName, '_custom') }}" />
   <r:set_var name="slotCustomValue"><r:page:data name="{$slotCustom}" /></r:set_var>
   <r:set_var name="whereToDisplay"><r:page:data name="{{ CONCAT(slotName, '_where_to_display') }}" /></r:set_var>
 
-  <r:comment><!-- Get display context. If none, set to as_full_width_block. --></r:comment>
+  {% comment %}<!-- Get display context. If none, set to as_full_width_block. -->{% endcomment %}
   <r:set_var name="displayChecker" value="{$whereToDisplay}" default="as_full_width_block" />
 
-  <r:comment><!-- Get display context of slots component. If none, set to as_full_width_block. --></r:comment>
+  {% comment %}<!-- Get display context of slots component. If none, set to as_full_width_block. -->{% endcomment %}
   <r:set_var name="slotsDisplayContext" value="{$componentDisplayContext}" default="as_full_width_block" />
  
-  <r:comment><!-- If displayChecker and componentDisplayContext match, display the component. displayChecker will be as_full_width_block by default. componentDisplayContext will be set whenever the slots component is called. --></r:comment>
+  {% comment %}<!-- If displayChecker and componentDisplayContext match, display the component. displayChecker will be as_full_width_block by default. componentDisplayContext will be set whenever the slots component is called. -->{% endcomment %}
   <r:if_equal x="{$displayChecker}" y="{$slotsDisplayContext}">
     <r:if_true value="{{ NOT(BLANK(slotNameValue)) OR NOT(BLANK(slotCustomValue)) }}">
 
-      <r:comment><!-- Create a new set of variables that grab the data stored in each of the custom data attribtes we just created for this slot. We can then send the data along to each component when that component is specified in a slot, in order to perform certain functions. --></r:comment>
+      {% comment %}<!-- Create a new set of variables that grab the data stored in each of the custom data attribtes we just created for this slot. We can then send the data along to each component when that component is specified in a slot, in order to perform certain functions. -->{% endcomment %}
       <r:set_var name="isEditModeOnly"><r:page:data name="{{ CONCAT(slotName, '_is_edit_mode_only') }}" /></r:set_var>
       <r:set_var name="align"><r:page:data name="{{ CONCAT(slotName, '_align') }}" /></r:set_var>
       <r:set_var name="featurettesStyle"><r:page:data name="{{ CONCAT(slotName, '_featurettes_style') }}" /></r:set_var>
@@ -36,7 +36,7 @@
       <r:set_var name="scope"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_scope')) = '1.0' }}" then="site" else="page"/></r:set_var>
 
       <r:if_not_blank value="{$slotNameValue}">
-        <r:comment><!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. --></r:comment>
+        {% comment %}<!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. -->{% endcomment %}
         <r:if_blank value="{$slotCustomValue}">
           <r:partial name="{{ CONCAT('components/wvu-', slotNameValue) }}" theme="University Relations: WVU Design System" />
         </r:if_blank>

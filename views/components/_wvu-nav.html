@@ -5,16 +5,16 @@
       Open Menu
     </button>
     <div class="wvu-nav nav-collapse ml-lg-n1" id="wvu-nav">
-      <r:comment>
+      {% comment %}
         <!-- NOTE: If nav depth is greater than 1, show the dropdown caret (has_children_class) & `+` on mobile (sub_ul_class). -->
-      </r:comment>
+      {% endcomment %}
       <r:if_not_blank value="{$nav_dropdowns}">
         <r:site_menu max_depth="2" ul_class="wvu-nav__items menu-items navbar-nav mr-auto" link_class="nav-link px-2 px-lg-1" has_children_class="dropdown" sub_ul_class="sub-menu small bg-wvu-neutral--black px-1 mx-n1" />
       </r:if_not_blank>
 
-      <r:comment>
+      {% comment %}
         <!-- NOTE: If nav depth is equal to 1, do NOT show the dropdown caret (has_children_class). -->
-      </r:comment>
+      {% endcomment %}
       <r:if_blank value="{$nav_dropdowns}">
         <r:site_menu max_depth="1" ul_class="wvu-nav__items menu-items navbar-nav mr-auto" link_class="nav-link px-2 px-lg-1" />
       </r:if_blank>

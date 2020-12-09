@@ -1,4 +1,4 @@
-<r:comment><!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name --></r:comment>
+{% comment %}<!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name -->{% endcomment %}
 <r:set_var name="itemLabels">
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
@@ -78,14 +78,14 @@
 </r:set_var>
 
 <r:root>
-  <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
+  {% comment %}<!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
     and $loopOrder to: "asc" or "desc";
-    and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
+    and $loopLabelsMatch to: "any", "all", or "none". -->{% endcomment %}
   <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}" random="{$componentIsRandom}">
     <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"><div class="row <r:var name="rowClassesChecker" />"></r:if_true>
-      <r:comment><!-- Grab all of the items in the loop. --></r:comment>
+      {% comment %}<!-- Grab all of the items in the loop. -->{% endcomment %}
       <r:each limit="{$limit}">
-        <r:comment><!-- Define the label used to add a background image to a featurette item. --></r:comment>
+        {% comment %}<!-- Define the label used to add a background image to a featurette item. -->{% endcomment %}
         <r:set_var name="bgurl">
           <r:var name="bgPrefix" />-panel-<r:index />-background
         </r:set_var>

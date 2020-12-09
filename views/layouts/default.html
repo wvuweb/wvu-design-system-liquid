@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <r:comment><!-- meta charset gets set automatically by CleanSlate --></r:comment>
+    {% comment %}<!-- meta charset gets set automatically by CleanSlate -->{% endcomment %}
     <r:page:if_site_default>
       <title><r:site:name /> at West Virginia University</title>
       <link rel="canonical" href="https://<r:site:domain />">
@@ -60,7 +60,7 @@
       </r:if_not_equal>
     </header>
 
-    <r:comment><!-- What are layouts and <r:yield />? https://goo.gl/DFAsPv --></r:comment>
+    {% comment %}<!-- What are layouts and <r:yield />? https://goo.gl/DFAsPv -->{% endcomment %}
     <r:yield />
 
     <r:if_not_equal x="{$has_standard_footer}" y="false">
@@ -77,11 +77,11 @@
       </r:edit_mode_only>
     </r:if_equal>
 
-    <r:comment>
+    {% comment %}
       <!-- Helvetica Neue Light, Bold, & Condensed Black + Iowan Old Style, Italic, Black, & Black Italic web font from fonts.com. -->
       <!-- Valid for *.wvu.edu, *.wvutech.edu, *.potomacstatecollege.edu & localhost. -->
       <!-- Email web_services@mail.wvu.edu to get your domain added to this list. -->
-    </r:comment>
+    {% endcomment %}
     <script src="https://fast.fonts.net/jsapi/36d8cd92-7cc7-499b-b169-0eed9d670283.js"></script>
 
     <!-- Optional JavaScript -->

@@ -1,8 +1,8 @@
-<r:comment><!-- Output content from a component classes editable region. This region is contained in the background styler on each component. --></r:comment>
+{% comment %}<!-- Output content from a component classes editable region. This region is contained in the background styler on each component. -->{% endcomment %}
 <r:page:if_has_content_for region="{$componentClasses}">
   <r:page:content name="{$componentClasses}" />
 </r:page:if_has_content_for>
-<r:comment><!-- If there is no content in the component classes region, output the default component classes, which are defined in the component partial. --></r:comment>
+{% comment %}<!-- If there is no content in the component classes region, output the default component classes, which are defined in the component partial. -->{% endcomment %}
 <r:page:unless_has_content_for region="{$componentClasses}">
   <r:yield name="{$defaultComponentClasses}" />
 </r:page:unless_has_content_for>

@@ -1,4 +1,4 @@
-<r:comment><!-- Checks to see if site data has been entered for various social media accounts. If true, output the social media icon. The content of the site data attribute is the URL of the social media account. --></r:comment>
+{% comment %}<!-- Checks to see if site data has been entered for various social media accounts. If true, output the social media icon. The content of the site data attribute is the URL of the social media account. -->{% endcomment %}
 <r:if expr="{{ NOT(BLANK(facebook_url)) }}">
   <a class="fab fa-facebook-square text-light" href="<r:site:data name="facebook_url" />">
     <span class="sr-only">Follow us on Facebook</span>

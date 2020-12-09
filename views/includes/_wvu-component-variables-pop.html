@@ -1,4 +1,4 @@
-<r:comment><!-- We want to store the values of the variables in the original base component. That way we can reassign the values in case we call a component within a component (that might change the values). --></r:comment>
+{% comment %}<!-- We want to store the values of the variables in the original base component. That way we can reassign the values in case we call a component within a component (that might change the values). -->{% endcomment %}
 <r:set_var name="baseComponentName" value="{$componentBaseComponentNameTemp}" />
 <r:set_var name="componentInstance" value="{$componentInstanceTemp}" />
 <r:set_var name="componentScope" value="{$componentScopeTemp}" />

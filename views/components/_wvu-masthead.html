@@ -3,9 +3,9 @@
   <div class="container">
     <div class="row">
       <div class="align-self-center col">
-        <r:comment><!-- Ignore the following section. It is used for the WVU Design System documentation site. --></r:comment>
+        {% comment %}<!-- Ignore the following section. It is used for the WVU Design System documentation site. -->{% endcomment %}
         <r:if_equal x="{page:template:name}" y="component-examples">
-          <r:comment><!-- If we have an alternate logo but no co-brand, just display the logo. If both, display lockup and alternate logo as the co-brand. --></r:comment>
+          {% comment %}<!-- If we have an alternate logo but no co-brand, just display the logo. If both, display lockup and alternate logo as the co-brand. -->{% endcomment %}
           <r:page:if_has_content_for region="{$itemAlternateLogo}">
             <r:page:unless_has_content_for region="{$itemHasCoBrand}">
               <a class="d-block position-relative my-3 text-center text-lg-left text-decoration-none" href="/">
@@ -42,9 +42,9 @@
             </a>
           </r:page:unless_has_content_for>
         </r:if_equal>
-        <r:comment><!-- Stop ignoring. --></r:comment>
+        {% comment %}<!-- Stop ignoring. -->{% endcomment %}
         <r:if_not_equal x="{page:template:name}" y="component-examples">
-          <r:comment><!-- If we have an alternate logo but no co-brand, just display the logo. If both, display lockup and alternate logo as the co-brand. --></r:comment>
+          {% comment %}<!-- If we have an alternate logo but no co-brand, just display the logo. If both, display lockup and alternate logo as the co-brand. -->{% endcomment %}
           <r:if_not_blank value="{$has_alternate_logo}">
             <r:if_blank value="{$has_co_brand}">
               <a class="d-block position-relative my-3 text-decoration-none" href="/">

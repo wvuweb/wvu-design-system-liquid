@@ -125,5 +125,5 @@
   </r:edit_mode_only>
 </r:if_blank>
 
-<r:comment><!-- We need to reset our variables so that when another component gets called after this, it doesn’t get injected with unexpected values. --></r:comment>
+{% comment %}<!-- We need to reset our variables so that when another component gets called after this, it doesn’t get injected with unexpected values. -->{% endcomment %}
 <r:partial name="includes/wvu-component-variables-reset" theme="University Relations: WVU Design System" />

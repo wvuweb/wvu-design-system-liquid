@@ -1,4 +1,4 @@
-<r:comment><!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name --></r:comment>
+{% comment %}<!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name -->{% endcomment %}
 <r:set_var name="itemLabels">
   <r:page:slug />-<r:var name="componentName" />
 </r:set_var>
@@ -64,24 +64,24 @@
   <r:page:unless_has_content_for region="{$componentReadMoreButtonText}">Read More</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
-<r:comment><!-- Grab the button text so we can evaluate whether to display the button (if user has entered “none” then we don’t display the button). --></r:comment>
+{% comment %}<!-- Grab the button text so we can evaluate whether to display the button (if user has entered “none” then we don’t display the button). -->{% endcomment %}
 <r:set_var name="buttonText">
   <r:page:content name="{$componentReadMoreButtonText}" />
 </r:set_var>
 
 <div class="card-columns">
   <r:root>
-    <r:comment><!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
+    {% comment %}<!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
       and $loopOrder to: "asc" or "desc";
-      and $loopLabelsMatch to: "any", "all", or "none". --></r:comment>
+      and $loopLabelsMatch to: "any", "all", or "none". -->{% endcomment %}
     <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}" random="{$componentIsRandom}">
       <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"><div class="row"></r:if_true>
-        <r:comment><!-- Grab all of the items in the loop. --></r:comment>
+        {% comment %}<!-- Grab all of the items in the loop. -->{% endcomment %}
         <r:each limit="{$limit}">
         <r:set_var name="bgurl">
           <r:var name="bgPrefix" />-panel-<r:index />-background
         </r:set_var>
-        <r:comment><!-- Hide the first item in edit mode so that the template above displays in its place. --></r:comment>
+        {% comment %}<!-- Hide the first item in edit mode so that the template above displays in its place. -->{% endcomment %}
         <div class="<r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"><r:var name="columnClasses" /> </r:if_true><r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" />>
           <div class="card mb-1 shadow-sm">
             <r:if_not_blank value="{$thumbnail_url}">

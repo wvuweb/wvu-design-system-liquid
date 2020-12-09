@@ -1,28 +1,28 @@
-<r:comment><!-- For a detailed look at the concepts behind a shared partial, see https://designsystem.sandbox.wvu.edu/tutorials/the-anatomy-of-a-shared-partial. --></r:comment>
+{% comment %}<!-- For a detailed look at the concepts behind a shared partial, see https://designsystem.sandbox.wvu.edu/tutorials/the-anatomy-of-a-shared-partial. -->{% endcomment %}
 
-<r:comment><!-- Define a base name for this component. We can use this later to dynamically create editable region names --></r:comment>
+{% comment %}<!-- Define a base name for this component. We can use this later to dynamically create editable region names -->{% endcomment %}
 <r:set_var name="baseComponentName" value="quicklinks" />
 
-<r:comment><!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. --></r:comment>
+{% comment %}<!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. -->{% endcomment %}
 <r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
 
-<r:comment><!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. --></r:comment>
+{% comment %}<!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. -->{% endcomment %}
 <r:set_var name="componentHeader">wvu-<r:var name="componentName" />__header</r:set_var>
 <r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
 <r:set_var name="componentPostscript">wvu-<r:var name="componentName" />__postscript</r:set_var>
 <r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
 
-<r:comment><!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. --></r:comment>
+{% comment %}<!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. -->{% endcomment %}
 <r:content_for name="{$defaultComponentClasses}">py-5 text-wvu-blue wvu-bg-pattern-gold</r:content_for>
 <r:content_for name="{$defaultHeaderClasses}">wvu-shout</r:content_for>
 
-<r:comment><!-- Components do not display on live sites unless set to “Is active” in the slot’s custom data. But we need to make the component active no matter what in Edit Mode so the user can test it. You can see the “if” statement in the component’s outer HTML container that checks. --></r:comment>
+{% comment %}<!-- Components do not display on live sites unless set to “Is active” in the slot’s custom data. But we need to make the component active no matter what in Edit Mode so the user can test it. You can see the “if” statement in the component’s outer HTML container that checks. -->{% endcomment %}
 <r:edit_mode_only>
   <r:set_var name="componentIsEditModeOnly" value="0" />
 </r:edit_mode_only>
 
-<r:comment><!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. --></r:comment>
-<r:comment><!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. --></r:comment>
+{% comment %}<!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. -->{% endcomment %}
+{% comment %}<!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. -->{% endcomment %}
 <!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if v1="{$componentIsMain}" v2="1" op="=">id="wvu-main-content"</r:if> class="<r:if v1="{$componentIsEditModeOnly}" v2="1" op="=">d-none </r:if><r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
   <div class="container wvu-z-index-content">
     <div class="row">
@@ -34,15 +34,15 @@
           </small>
           <span class="d-inline-block badge badge-primary mb-1">Header</span>
         </r:edit_mode_only>
-        <r:comment><!-- For the h2, apply an ID that will tell screanreaders to use this element as the label for the section. Also apply classes to the header. If supplied by user, use those. If not use default. --></r:comment>
+        {% comment %}<!-- For the h2, apply an ID that will tell screanreaders to use this element as the label for the section. Also apply classes to the header. If supplied by user, use those. If not use default. -->{% endcomment %}
         <h2 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
           <r:editable_region name="{$componentHeader}" scope="{$componentScope}" type="simple">Quicklinks</r:editable_region>
         </h2>
       </div>
       <div class="col-lg-8">
-        <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
+        {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
         <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Quicklinks</span></r:edit_mode_only>
-        <r:comment><!-- Editable region for main content. --></r:comment>
+        {% comment %}<!-- Editable region for main content. -->{% endcomment %}
         <r:editable_region name="{$componentMain}" scope="{$componentScope}">
           <ul class="list-unstyled wvu-column-count-3">
             <li>
@@ -106,7 +106,7 @@
     <r:page:if_has_content_for region="{$componentPostscript}" always_show_in_edit_mode="true">
       <div class="mt-2 wvu-z-index-content">
         <div class="wvu-z-index-content mb-2">
-          <r:comment><!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). --></r:comment>
+          {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
           <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Postscript</span></r:edit_mode_only>
           <r:editable_region name="{$componentPostscript}" scope="{$componentScope}">
             <p class="mb-0">View <a class="text-wvu-blue" href="#">all quicklinks</a>.</p>
@@ -115,8 +115,8 @@
       </div>
     </r:page:if_has_content_for>
   </div>
-<r:comment><!-- A utility to decide whether to add a closing main or section tag. --></r:comment>
+{% comment %}<!-- A utility to decide whether to add a closing main or section tag. -->{% endcomment %}
 </<r:partial name="utilities/wvu-is-main-checker--end" theme="University Relations: WVU Design System" />><!-- End markup -->
 
-<r:comment><!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. --></r:comment>
+{% comment %}<!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. -->{% endcomment %}
 <r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />

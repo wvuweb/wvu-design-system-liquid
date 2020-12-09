@@ -1,4 +1,4 @@
-<r:comment>
+{% comment %}
   <!--
     NOTE: This partial displays alerts from emergency.wvu.edu on your site
       when there is an active alert. To enable this functionality, add *one*
@@ -20,7 +20,7 @@
     NOTE: If you're using this at Tech or PSC, be sure to override/change the
       $emergencySiteUrl variable below to your respective Emergency site.
    -->
-</r:comment>
+{% endcomment %}
 
 <r:set_var name="emergencySiteUrl" value="{$emergencySiteUrl}" default="emergency.wvu.edu" />
 
@@ -31,9 +31,9 @@
 </section>
 
 <r:content_for name="page_js">
-  <r:comment>
+  {% comment %}
     <!-- NOTE: Polyfill support for promise, fetch, document & console APIs: -->
-  </r:comment>
+  {% endcomment %}
   <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=console,document,fetch,Promise"></script>
   <script>
     'use strict';

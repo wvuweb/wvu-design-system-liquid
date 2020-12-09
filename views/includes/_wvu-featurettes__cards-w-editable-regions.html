@@ -48,7 +48,7 @@
 </r:set_var>
 
 <div class="row <r:var name="rowClassesChecker" />">
-  <r:comment><!-- Grab all of the items in the loop. --></r:comment>
+  {% comment %}<!-- Grab all of the items in the loop. -->{% endcomment %}
   <r:loop:each times="{$componentLimit}">
     <r:set_var name="bgurl">
       <r:var name="bgPrefix" />-panel-<r:index />-background
