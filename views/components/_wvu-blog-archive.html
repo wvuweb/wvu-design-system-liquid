@@ -1,2 +1,8 @@
-<r:blog:archive:monthly ul_class="nav flex-column border-left border-muted pl-1 mb-3" count_class="badge badge-wvu-neutral--dark-gray text-white" />
-<a class="fas fa-rss-square text-wvu-accent--burnt-orange" href="<r:page:url format="rss" />"> <span class="text-primary">Articles RSS Feed</span></a>
+{%- if blog.months_archive.size > 0 %}
+<ul class="nav flex-column border-left border-muted pl-1 mb-3">
+  {%- for entry in blog.months_archive -%}
+    <li><a href="{{ blog.path | append: '/' | append: entry[0] }}">{{ entry[0] | date: "%B %Y" }}</a> <span class="badge badge-wvu-neutral--dark-gray text-white">({{ entry[1] }})</span></li>
+  {%- endfor -%}
+</ul>
+{%- endif %}
+<a class="fas fa-rss-square text-wvu-accent--burnt-orange" href="{{ page.url | append: '.rss' }}"> <span class="text-primary">Articles RSS Feed</span></a>
