@@ -1,64 +1,83 @@
-{% comment %}<!-- For a detailed look at the concepts behind a shared partial, see https://designsystem.sandbox.wvu.edu/tutorials/the-anatomy-of-a-shared-partial. -->{% endcomment %}
+<!-- Component: v2/wvu-backpage-header -->
+{% define_component component %}
+  {
+    "baseName": "backpage-header",
+    "defaultComponentClasses": "{{ site.data['classes_wvu_backpage_header'] | default: 'pb-3 bg-wvu-neutral--dark-gray text-white wvu-bg-vignetting wvu-bg-blend-mode-luminosity--80 wvu-background-position-center' }}",
+    "defaultHeaderClasses": "{{ site.data['classes_wvu_backpage_header__h1'] | default: 'display-4 helvetica-neue-bold mb-0' }}",
+    "defaultSubheadClasses": "lead mb-0 mt-1",
+    "mainTagClasses": null
+  }
+{% enddefine_component %}
 
-{% comment %}<!-- Define a base name for this component. We can use this later to dynamically create editable region names -->{% endcomment %}
-<r:set_var name="baseComponentName" value="backpage-header" />
+{% liquid 
+  assign componentHeaderLabel = 'wvu-backpage-header-1__label'
+  assign componentSubhead = 'wvu-backpage-header-1__subhead'
+  assign subheadClasses = 'wvu-backpage-header-1-subhead-classes'
+  assign defaultSubheadClasses = 'lead mb-0 mt-1'
 
-{% comment %}<!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. -->{% endcomment %}
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
+  assign bgTag1 = 'backpage-header-background'
+  assign bgTag2 = page.slug | append: '-backpage-header-1-background'
 
-{% comment %}<!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. -->{% endcomment %}
-<r:set_var name="componentHeader">wvu-<r:var name="componentName" />__header</r:set_var>
-<r:set_var name="componentHeaderLabel">wvu-<r:var name="componentName" />__label</r:set_var>
-<r:set_var name="componentSubhead">wvu-<r:var name="componentName" />__subhead</r:set_var>
-<r:set_var name="headerClasses">wvu-<r:var name="componentName" />-header-classes</r:set_var>
-<r:set_var name="subheadClasses">wvu-<r:var name="componentName" />-subhead-classes</r:set_var>
+  assign bg1 = site | first_random_image_tagged_with: label: bgTag1 | image_url: size: '1780x580' | css_background_image
+  assign bg2 = site | first_random_image_tagged_with: label: bgTag2 | image_url: size: '1780x1780' | css_background_image
 
-{% comment %}<!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. -->{% endcomment %}
-<r:content_for name="{$defaultComponentClasses}"><r:if_then_else test="{{ NOT(BLANK(classes_wvu_backpage_header)) }}" then="{$classes_wvu_backpage_header}" else="pb-3 bg-wvu-neutral--dark-gray text-white wvu-bg-vignetting wvu-bg-blend-mode-luminosity--80 wvu-background-position-center" /></r:content_for>
-<r:content_for name="{$defaultSubheadClasses}">lead mb-0 mt-1</r:content_for>
-<r:content_for name="{$defaultHeaderClasses}"><r:if_then_else test="{{ NOT(BLANK(classes_wvu_backpage_header__h1)) }}" then="{$classes_wvu_backpage_header__h1}" else="display-4 helvetica-neue-bold mb-0" /></r:content_for>
+  assign styleVal = ''
 
-{% comment %}<!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. -->{% endcomment %}
-{% comment %}<!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. -->{% endcomment %}
-<!-- Markup --><div class="wvu-overflow-hidden pt-5 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" style="<r:files:each labels="backpage-header-background" limit="1" types="image" random="true">background-image: url(<r:file:image_url size="1780x580" />);<r:set_var name="bgalt"><r:file:alt_text /></r:set_var></r:files:each> <r:files:each labels="{$bgurl}" labels_match="all" limit="1" types="image" random="true">background-image: url(<r:file:image_url size="1780x1780" /><r:set_var name="bgalt"><r:file:alt_text /></r:set_var>)"</r:files:each>">
+  if bg1
+    assign styleVal = bg1 | append: '; '
+  endif
+
+  if bg2
+    assign styleVal = styleVal | append: bg2
+  endif
+
+  if styleVal != blank
+    assign styleAttr = styleVal | prepend: 'style="' | append: '"'
+  endif
+
+  assign mainTagClasses = page.content[component.region_names.classes] | default: site.data['classes_wvu_backpage_header'] | default: component.defaultComponentClasses
+%}
+
+<div class="wvu-overflow-hidden pt-5 {{ mainTagClasses }}" {{ styleAttr }} ></div>
   <div class="container position-relative wvu-z-index-content">
-    <r:if_true value="{$header_label}">
+    {% if page.data.header_label == '1' %}
       <p class="text-uppercase helvetica-neue-light mb-1">
         {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
-        <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Label</span></r:edit_mode_only>
-        <r:editable_region name="{$componentHeaderLabel}" scope="{$componentScope}"><span class="wvu-shout text-wvu-gold text-uppercase">Label pre</span> <span class="text-uppercase">Label Post</span></r:editable_region>
+        {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Label</span>{% endif %}
+        {% editable_region_block name: componentHeaderLabel, scope: component.scope %}
+          <span class="wvu-shout text-wvu-gold text-uppercase">Label pre</span> <span class="text-uppercase">Label Post</span>
+        {% endeditable_region_block %}
       </p>
-    </r:if_true>
+    {% endif %}
     {% comment %}<!-- This is where you can add utility classes that will apply to the heading. -->{% endcomment %}
-    <r:edit_mode_only>
+    {% if edit_mode %}
       <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
-        <pre class="mb-0 text-white"><r:editable_region name="{$headerClasses}" type="simple" /></pre>
-        <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultHeaderClasses}"><r:content /></r:yield></pre>
+        <pre class="mb-0 text-white">{% editable_region name: component.region_names.headerClasses, type: "simple" %}</pre>
+        <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted">{{ component.defaultHeaderClasses }}</pre>
       </small>
-    </r:edit_mode_only>
+    {% endif %}
     {% comment %}<!-- Apply classes to the header. If supplied by user, use those. If not use default. -->{% endcomment %}
-    <h1 id="<r:var name="componentName" />-label" class="<r:page:if_has_content_for region="{$headerClasses}"><r:page:content name="{$headerClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$headerClasses}"><r:yield name="{$defaultHeaderClasses}" /></r:page:unless_has_content_for>"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
+    <h1 id="{{ component.baseName }}-label" class="{{ page.content[component.region_names.headerClasses] | default: site.data['classes_wvu_backpage_header__h1'] | default: component.defaultHeaderClasses }}">{{ page.alternate_name | default: page.name }}</h1>
     {% comment %}<!-- If user has toggled the “Header has subhead?” option in their page data, display a subhead region. -->{% endcomment %}
-    <r:if_true value="{$header_subhead}">
+    {% if page.data.header_subhead == '1' %}
       <div class="row">
         <div class="col-md-8">
           {% comment %}<!-- This is where you can add utility classes that will apply to the subhead. -->{% endcomment %}
-          <r:edit_mode_only>
+          {% if edit_mode %}
             <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
-              <pre class="mb-0 text-white"><r:editable_region name="{$subheadClasses}" type="simple" /></pre>
-              <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted"><r:yield name="{$defaultSubheadClasses}"><r:content /></r:yield></pre>
+              <pre class="mb-0 text-white">{% editable_region name: subheadClasses, type: "simple" %}</pre>
+              <strong class="text-muted">Default classes:</strong> <pre class="mb-0 text-muted">{{ defaultSubheadClasses }}</pre>
             </small>
             {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
-            <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Subhead / Title</span></r:edit_mode_only>
-          </r:edit_mode_only>
-          <p class="<r:page:if_has_content_for region="{$subheadClasses}"><r:page:content name="{$subheadClasses}" /></r:page:if_has_content_for><r:page:unless_has_content_for region="{$subheadClasses}"><r:yield name="{$defaultSubheadClasses}"><r:content /></r:yield></r:page:unless_has_content_for>">
-            <r:editable_region name="{$componentSubhead}" scope="{$componentScope}" type="simple">Subhead goes here.</r:editable_region>
+            {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Subhead / Title</span>{% endif %}
+          {% endif %}
+          <p class="{{ page.content[subheadClasses] | default: defaultSubheadClasses }}">
+            {% editable_region name: componentSubhead, scope: component.scope, type: "simple", placeholder: 'Subhead goes here.' %}
           </p>
         </div>
       </div>
-    </r:if_true>
+    {% endif %}
   </div>
 </div><!-- End markup -->
 
-{% comment %}<!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. -->{% endcomment %}
-<r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
+{% render "includes/wvu-component-footer" component: component %}
