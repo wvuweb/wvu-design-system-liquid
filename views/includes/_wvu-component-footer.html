@@ -1,129 +1,125 @@
-<r:if_blank value="{$disable_component_styler}">
-  <r:edit_mode_only>
-    <r:if_false value="{page:data_exists}">
-      <r:set_var name="instanceNumber" value="1" />
-      <r:if_equal x="{$baseComponentName}" y="breadcrumbs">
-        <r:set_var name="componentName" value="breadcrumbs-1" />
-        <r:set_var name="componentClasses" value="wvu-breadcrumbs-1-classes" />
-      </r:if_equal>
-    </r:if_false>
-    <a class="text-white p-1 rounded-sm d-inline-block btn btn-sm btn-wvu-neutral--black wvu-grow-shadow wvu-z-index-content position-absolute mt-n4 ml-1" data-toggle="collapse" href="#editpanel-<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="editpanel-<r:var name="componentName" />"><small class="d-block"><i class="far fa-edit"></i> Edit <span class="text-capitalize"><r:var name="baseComponentName" /> <r:var name="instanceNumber" /></span> Styles</small></a>
-    <section class="px-2 px-md-5 pt-2 pb-3 mb-0 text-light bg-wvu-neutral--black position-relative collapse multi-collapse" id="editpanel-<r:var name="componentName" />">
-      <p class="mb-0">
-        <span class="d-inline-block badge badge-secondary">Utility classes:</span> <div class="text-monospace wvu-z-index-max position-relative"><r:editable_region name="{$componentClasses}" scope="{$componentScope}" type="simple" /></div>
-      </p>
-      <p class="mt-1 small">
-        <r:yield name="{$defaultComponentClasses}">
-          <strong class="text-muted">Default classes:</strong> <pre class="text-muted"><r:content /></pre>
-        </r:yield>
-      </p>
-      <p class="mb-0 mt-1">
-        <strong class="text-muted small">Label for background image:</strong> <span class="badge badge-pill badge-secondary"><r:page:slug />-<r:var name="componentName" />-background</span>
-      </p>
-      <a class="text-wvu-accent--orange" data-toggle="collapse" href="#multiCollapseExample<r:var name="componentName" />" role="button" aria-expanded="false" aria-controls="multiCollapseExample<r:var name="componentName" />">Hints</a>
-      <div class="row">
-        <div class="col">
-          <div class="collapse multi-collapse" id="multiCollapseExample<r:var name="componentName" />">
-            <ul class="text-monospace">
-              <li>bg-* (wvu-accent--light-blue)</li>
-              <li>text-center</li>
-              <li>text-* (wvu-blue)</li>
-              <li>wvu-bg-blend-mode-lighten</li>
-              <li>wvu-bg-blend-mode-luminosity--* (10, 20, ... 80, 90)</li>
-              <li>wvu-bg-pattern-* (blue, gold, grid, grid-transparent, grid-zoomed, grid-zoomed-transparent, confetti-gold-blue, confetti-gold-blue-white)</li>
-              <li>wvu-bg-position-* (center, top, bottom)</li>
-              <li>wvu-bg-size-cover</li>
-              <li>wvu-bg-topo-* (light, dark)</li>
-              <li>wvu-bg-vignetting--* (10, 20, ... 80, 90)</li>
-            </ul>
-            <p class="helvetica-neue">For a complete list, see our <a class="text-wvu-accent--orange" href="https://designsystem.sandbox.wvu.edu/utilities">utilities</a>.</p>
-          </div>
+{% if site.data.disable_component_styler == blank and edit_mode %}
+  <!-- Component Styler -->
+  {% unless page.data_saved? %}
+    {% assign instanceNumber = '1' %}
+    {% if component.baseName == "breadcrumbs" %}
+      {% assign component.name = "breadcrumbs-1" %}
+      {% assign component.classes = "wvu-breadcrumbs-1-classes" %}
+    {% endif %}
+  {% endunless %}
+  <a class="text-white p-1 rounded-sm d-inline-block btn btn-sm btn-wvu-neutral--black wvu-grow-shadow wvu-z-index-content position-absolute mt-n4 ml-1" data-toggle="collapse" href="#editpanel-{{ component.name }}" role="button" aria-expanded="false" aria-controls="editpanel-{{ component.name }}"><small class="d-block"><i class="far fa-edit"></i> Edit <span class="text-capitalize">{{ component.baseName }}</span> Styles</small></a>
+  <section class="px-2 px-md-5 pt-2 pb-3 mb-0 text-light bg-wvu-neutral--black position-relative collapse multi-collapse" id="editpanel-{{ component.name }}">
+    <p class="mb-0">
+      <!-- Region Name: {{component.region_names.classes}} -->
+      <span class="d-inline-block badge badge-secondary">Utility classes:</span> <div class="text-monospace wvu-z-index-max position-relative">{% editable_region name: component.region_names.classes, scope: component.scope, type: "simple" %}</div>
+    </p>
+    <p class="mt-1">
+      {% if component.defaultComponentClasses != blank %}
+      <small>
+        <strong class="text-muted">Default classes:</strong> <pre class="text-muted">{{ component.defaultComponentClasses }}</pre>
+      </small>
+      {% endif %}
+    </p>
+    <p class="mb-0 mt-1">
+      <small><strong class="text-muted">Label for background image:</strong></small> <span class="badge badge-pill badge-secondary">{{ page.slug }}-{{ component.name }}-background</span>
+    </p>
+    <a class="text-wvu-accent--orange" data-toggle="collapse" href="#multiCollapseExample{{ component.name }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample{{ component.name }}">Hints</a>
+    <div class="row">
+      <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample{{ component.name }}">
+          <ul class="text-monospace">
+            <li>bg-* (wvu-accent--light-blue)</li>
+            <li>text-center</li>
+            <li>text-* (wvu-blue)</li>
+            <li>wvu-bg-blend-mode-lighten</li>
+            <li>wvu-bg-blend-mode-luminosity--* (10, 20, ... 80, 90)</li>
+            <li>wvu-bg-pattern-* (blue, gold, grid, grid-transparent, grid-zoomed, grid-zoomed-transparent, confetti-gold-blue, confetti-gold-blue-white)</li>
+            <li>wvu-bg-position-* (center, top, bottom)</li>
+            <li>wvu-bg-size-cover</li>
+            <li>wvu-bg-topo-* (light, dark)</li>
+            <li>wvu-bg-vignetting--* (10, 20, ... 80, 90)</li>
+          </ul>
+          <p class="helvetica-neue">For a complete list, see our <a class="text-wvu-accent--orange" href="https://designsystem.sandbox.wvu.edu/utilities">utilities</a>.</p>
         </div>
       </div>
-      <r:if_equal x="{$baseComponentName}" y="featurettes">
-        <div class="row">
-
-          <div class="col-lg">
-            <p class="mb-0">
-              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for row:</span></r:edit_mode_only>
-              <p>
-                <r:editable_region name="{$rowClasses}" type="simple"></r:editable_region>
-              </p>
+    </div>
+    {% if component.baseName == 'featurettes' %}
+      <!-- TODO: All these region names are set in views/includes/_wvu-component-variables.html -->
+      <div class="row">
+        <div class="col-lg">
+          <p class="mb-0">
+            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Utility classes for items:</span>{% endif %}
+            <p>
+              {% editable_region name: component.region_names.itemClasses, type: "simple" %}
             </p>
-            <p class="text-muted mb-0 mt-1 small">
-              <r:yield name="{$defaultRowClasses}">
-                <strong>Default classes:</strong> <r:content />
-              </r:yield>
-            </p>
-          </div>
-          <div class="col-lg">
-            <p class="mb-0">
-              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for items:</span></r:edit_mode_only>
-              <p>
-                <r:editable_region name="{$itemClasses}" type="simple"></r:editable_region>
-              </p>
-            </p>
-            <p class="text-muted mb-0 mt-1 small">
-              <r:yield name="{$defaultItemClasses}">
-                <strong>Default classes:</strong> <r:content />
-              </r:yield>
-            </p>
-          </div>
-          <div class="col-lg">
-            <p class="mb-0">
-              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item headers:</span></r:edit_mode_only>
-              <p>
-                <r:editable_region name="{$itemHeaderClasses}" type="simple"></r:editable_region>
-              </p>
-            </p>
-            <p class="text-muted mb-0 mt-1 small">
-              <r:yield name="{$defaultItemHeaderClasses}">
-                <strong>Default classes:</strong> <r:content />
-              </r:yield>
-            </p>
-          </div>
-          <div class="col-lg">
-            <p class="mb-0">
-              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for item body copy:</span></r:edit_mode_only>
-              <p>
-                <r:editable_region name="{$itemBodyClasses}" type="simple"></r:editable_region>
-              </p>
-            </p>
-            <p class="text-muted mb-0 mt-1 small">
-              <r:yield name="{$defaultItemBodyClasses}">
-                <strong>Default classes:</strong> <r:content />
-              </r:yield>
-            </p>
-          </div>
-          <div class="col-lg">
-            <p class="mb-0">
-              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for buttons:</span></r:edit_mode_only>
-              <p>
-                <r:editable_region name="{$itemButtonClasses}" type="simple"></r:editable_region>
-              </p>
-            </p>
-            <p class="text-muted mb-0 mt-1 small">
-              <r:yield name="{$defaultItemButtonClasses}">
-                <strong>Default classes:</strong> <r:content />
-              </r:yield>
-            </p>
-          </div>
-          <div class="col-lg">
-            <p class="mb-0">
-              <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Featurettes button text:</span></r:edit_mode_only>
-              <p>
-                <r:editable_region name="{$componentReadMoreButtonText}" type="simple">Read More</r:editable_region>
-              </p>
-            </p>
-            <p class="text-muted mb-0 mt-1 small">
-              <strong>Default button text:</strong> Read More
-            </p>
-          </div>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            {% if component.defaultItemClasses != blank %}
+            <small>
+              <strong>Default classes:</strong> {{ component.defaultItemClasses }}
+            </small>
+            {% endif %}
+          </p>
         </div>
-      </r:if_equal>
-    </section>
-  </r:edit_mode_only>
-</r:if_blank>
-
-{% comment %}<!-- We need to reset our variables so that when another component gets called after this, it doesn’t get injected with unexpected values. -->{% endcomment %}
-<r:partial name="includes/wvu-component-variables-reset" theme="University Relations: WVU Design System" />
+        <div class="col-lg">
+          <p class="mb-0">
+            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Utility classes for item headers:</span>{% endif %}
+            <p>
+              {% editable_region name: component.region_names.itemHeaderClasses, type: "simple" %}
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            {% if component.defaultItemHeaderClasses != blank %}
+            <small>
+              <strong>Default classes:</strong> {{ component.defaultItemHeaderClasses }}
+            </small>
+            {% endif %}
+          </p>
+        </div>
+        <div class="col-lg">
+          <p class="mb-0">
+            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Utility classes for item body copy:</span>{% endif %}
+            <p>
+              {% editable_region name: component.region_names.itemBodyClasses, type: "simple" %}
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            {% if component.defaultItemBodyClasses != blank %}
+            <small>
+              <strong>Default classes:</strong> {{ component.defaultItemBodyClasses }}
+            </small>
+            {% endif %}
+          </p>
+        </div>
+        <div class="col-lg">
+          <p class="mb-0">
+            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Utility classes for buttons:</span>{% endif %}
+            <p>
+              {% editable_region name: component.region_names.itemButtonClasses, type: "simple" %}
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            {% if component.defaultItemButtonClasses != blank %}
+            <small> 
+              <strong>Default classes:</strong> {{ component.defaultItemButtonClasses }}
+            </small>
+            {% endif %}
+          </p>
+        </div>
+        <div class="col-lg">
+          <p class="mb-0">
+            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Featurettes button text:</span>{% endif %}
+            <p>
+              {% editable_region name: component.region_names.readMoreButtonText, type: "simple" placeholder="Read More" %}
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1">
+            <small>
+              <strong>Default button text:</strong> Read More
+            </small>
+          </p>
+        </div>
+      </div>
+    {% endif %}
+  </section>
+{% endif %}
