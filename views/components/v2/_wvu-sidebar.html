@@ -1,20 +1,24 @@
-<r:set_var name="componentSidebar">wvu-sidebar-<r:var name="componentInstance" /></r:set_var>
-<r:set_var name="componentSidebarPostscript">wvu-sidebar-<r:var name="componentInstance" />__postscript</r:set_var>
+<!-- wvu-sidebar -->
+{%- liquid
+  assign inumber = component.number | default: 1
+  assign componentSidebar = "wvu-sidebar-" | append: inumber
+  assign componentSidebarPostscript = "wvu-sidebar-" | append: inumber | append: "__postscript"
+-%}
 
-<aside class="wvu-sidebar col-md-4" aria-label="<r:var name="componentSidebar" />">
-  <r:page:if_has_content_for region="{$componentSidebar}" always_show_in_edit_mode="true">
+<aside class="wvu-sidebar col-md-3 mt-4 mt-md-0" aria-label="{{ componentSidebar }}">
+  {% if edit_mode or page.content[componentSidebar] != blank %}
     <div class="mb-3">
-      <r:editable_region name="{$componentSidebar}" />
+      {% editable_region name: componentSidebar %}
     </div>
-  </r:page:if_has_content_for>
-  <r:if_false x="{$componentIfBackpageRemoveNav}" y="1">
+  {% endif %}
+  {% if site.data.componentIfBackpageRemoveNav != '1' %}
     <div class="mb-3">
-      <r:ancestor_menu start_depth="2" max_depth="3" ul_class="nav flex-column border-left border-muted pl-1 mb-3" li_class="nav-item" link_class="nav-link text-decoration-none" active_class="active" open_class="nav-secondary--open" />
+      {% ancestor_menu start_depth: 2, max_depth: 3, ul_class: "nav flex-column border-left border-muted pl-1 mb-3", li_class: "nav-item", link_class: "nav-link text-decoration-none", active_class: "active", open_class: "nav-secondary--open" %}
     </div>
-  </r:if_false>
-  <r:page:if_has_content_for region="{$componentSidebarPostscript}" always_show_in_edit_mode="true">
+  {% endif %}
+  {% if edit_mode or page.content[componentSidebarPostscript] != blank %}
     <div class="mb-3">
-      <r:editable_region name="{$componentSidebarPostscript}" />
+      {% editable_region name: componentSidebarPostscript %}
     </div>
-  </r:page:if_has_content_for>
+  {% endif %}
 </aside>
