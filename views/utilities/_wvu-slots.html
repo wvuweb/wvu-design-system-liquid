@@ -1,53 +1,30 @@
-{% comment %}<!-- Perform the following task 10 times, one for each of the 10 slots in a Super Theme page. -->{% endcomment %}
-<r:loop:each times="10">
+<!-- Processing Slots - {{ forContext }} -->
+{% if slots == blank and forContext != blank %}
+  {% assign slots = page.slots | where: 'where_to_display', forContext %}
+{% endif %}
 
-  {% comment %}<!-- Define the prefix... based on the slot number.... This will be used to define unique variable names for each property in each slot. -->{% endcomment %}
-  <r:set_var name="slotName">slot_<r:item /></r:set_var>
-  <r:set_var name="slotNameValue"><r:page:data name="{$slotName}" /></r:set_var>
-  <r:set_var name="slotCustom" value="{{ CONCAT(slotName, '_custom') }}" />
-  <r:set_var name="slotCustomValue"><r:page:data name="{$slotCustom}" /></r:set_var>
-  <r:set_var name="whereToDisplay"><r:page:data name="{{ CONCAT(slotName, '_where_to_display') }}" /></r:set_var>
-
-  {% comment %}<!-- Get display context. If none, set to as_full_width_block. -->{% endcomment %}
-  <r:set_var name="displayChecker" value="{$whereToDisplay}" default="as_full_width_block" />
-
-  {% comment %}<!-- Get display context of slots component. If none, set to as_full_width_block. -->{% endcomment %}
-  <r:set_var name="slotsDisplayContext" value="{$componentDisplayContext}" default="as_full_width_block" />
- 
-  {% comment %}<!-- If displayChecker and componentDisplayContext match, display the component. displayChecker will be as_full_width_block by default. componentDisplayContext will be set whenever the slots component is called. -->{% endcomment %}
-  <r:if_equal x="{$displayChecker}" y="{$slotsDisplayContext}">
-    <r:if_true value="{{ NOT(BLANK(slotNameValue)) OR NOT(BLANK(slotCustomValue)) }}">
-
-      {% comment %}<!-- Create a new set of variables that grab the data stored in each of the custom data attribtes we just created for this slot. We can then send the data along to each component when that component is specified in a slot, in order to perform certain functions. -->{% endcomment %}
-      <r:set_var name="isEditModeOnly"><r:page:data name="{{ CONCAT(slotName, '_is_edit_mode_only') }}" /></r:set_var>
-      <r:set_var name="align"><r:page:data name="{{ CONCAT(slotName, '_align') }}" /></r:set_var>
-      <r:set_var name="featurettesStyle"><r:page:data name="{{ CONCAT(slotName, '_featurettes_style') }}" /></r:set_var>
-      <r:set_var name="featurettesID"><r:page:data name="{{ CONCAT(slotName, '_featurettes_id') }}" /></r:set_var>
-      <r:set_var name="hasSubnav"><r:page:data name="{$slotHasSubnav}" /></r:set_var>
-      <r:set_var name="limit"><r:page:data name="{{ CONCAT(slotName, '_limit') }}" /></r:set_var>
-      <r:set_var name="loopBy"><r:page:data name="{{ CONCAT(slotName, '_loop_by') }}" /></r:set_var>
-      <r:set_var name="loopLabelsMatch"><r:page:data name="{{ CONCAT(slotName, '_loop_labels_match') }}" /></r:set_var>
-      <r:set_var name="loopOrder"><r:page:data name="{{ CONCAT(slotName, '_loop_order') }}" /></r:set_var>
-      <r:set_var name="galleryLoopBy"><r:page:data name="{{ CONCAT(slotName, '_gallery_loop_by') }}" /></r:set_var>
-      <r:set_var name="isMain"><r:page:data name="{{ CONCAT(slotName, '_is_main') }}" /></r:set_var>
-      <r:set_var name="instanceNumber"><r:page:data name="{{ CONCAT(slotName, '_number') }}" /></r:set_var>
-      <r:set_var name="showHidden"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_show_hidden')) = '1.0' }}" then="true" else="false" /></r:set_var>
-      <r:set_var name="isRandom"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_is_random')) = '1.0' }}" then="true" else="false" /></r:set_var>
-      <r:set_var name="scope"><r:if_then_else test="{{ VAR(CONCAT(slotName, '_scope')) = '1.0' }}" then="site" else="page"/></r:set_var>
-
-      <r:if_not_blank value="{$slotNameValue}">
-        {% comment %}<!-- Check to see if the user wants to use a custom pattern (not in Super Theme). If so, pull partial from local components folder instead. -->{% endcomment %}
-        <r:if_blank value="{$slotCustomValue}">
-          <r:partial name="{{ CONCAT('components/wvu-', slotNameValue) }}" theme="University Relations: WVU Design System" />
-        </r:if_blank>
-      </r:if_not_blank>
-
-      <r:if_not_blank value="{$slotCustomValue}">
-        <r:partial name="{{ CONCAT('components/', slotCustomValue) }}" />
-      </r:if_not_blank>
-
-    </r:if_true>
-    
-  </r:if_equal>
-
-</r:loop:each>
+{% for slot in slots %}
+  {% if slot.value != blank and slot.custom == blank %}
+    {% case slot.value %}
+      {% when 'action-hero' %}{% render "components/wvu-action-hero" slot: slot %}
+      {% when 'action-hero-two-column' %}{% render "components/wvu-action-hero-two-column" slot: slot %}
+      {% when 'backpage' %}{% render "components/wvu-backpage" slot: slot %}
+      {% when 'blog-index' %}{% render "components/wvu-blog-index" slot: slot %}
+      {% when 'blog-article' %}{% render "components/wvu-blog-article" slot: slot %}
+      {% when 'blog-archive' %}{% render "components/wvu-blog-archive" slot: slot %}
+      {% when 'editable-region' %}{% render "components/wvu-editable-region" slot: slot %}
+      {% when 'featurettes' %}{% render "components/wvu-featurettes" slot: slot %}
+      {% when 'hero' %}{% render "components/wvu-hero" slot: slot %}
+      {% when 'photo-gallery' %}{% render "components/wvu-photo-gallery" slot: slot %}
+      {% when 'profile' %}{% render "components/wvu-profile" slot: slot %}
+      {% when 'profiles' %}{% render "components/wvu-profiles" slot: slot %}
+      {% when 'social-media' %}{% render "components/wvu-social-media" slot: slot %}
+      {% when 'subnav' %}{% render "components/wvu-subnav" slot: slot %}
+      {% when 'video-feature' %}{% render "components/wvu-video-feature" slot: slot %}
+      {% else %}ERROR: Unsupported component '{{ slot.value }}'
+    {% endcase %}
+  {% elsif slot.custom != blank %}
+    {% comment %}TODO: Implement custom component partial support {% endcomment %}
+    ERROR: Custom component partials are not yet supported
+  {% endif %}
+{% endfor %}
