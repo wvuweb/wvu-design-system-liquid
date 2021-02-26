@@ -5,19 +5,13 @@
       Open Menu
     </button>
     <div class="wvu-nav nav-collapse ml-lg-n1" id="wvu-nav">
-      {% comment %}
-        <!-- NOTE: If nav depth is greater than 1, show the dropdown caret (has_children_class) & `+` on mobile (sub_ul_class). -->
-      {% endcomment %}
-      <r:if_not_blank value="{$nav_dropdowns}">
-        <r:site_menu max_depth="2" ul_class="wvu-nav__items menu-items navbar-nav mr-auto" link_class="nav-link px-2 px-lg-1" has_children_class="dropdown" sub_ul_class="sub-menu small bg-wvu-neutral--black px-1 mx-n1" />
-      </r:if_not_blank>
-
-      {% comment %}
-        <!-- NOTE: If nav depth is equal to 1, do NOT show the dropdown caret (has_children_class). -->
-      {% endcomment %}
-      <r:if_blank value="{$nav_dropdowns}">
-        <r:site_menu max_depth="1" ul_class="wvu-nav__items menu-items navbar-nav mr-auto" link_class="nav-link px-2 px-lg-1" />
-      </r:if_blank>
+      {% if site.data.nav_dropdowns != blank %}
+        {% comment %} NOTE: If nav depth is greater than 1, show the dropdown caret (has_children_class) & `+` on mobile (sub_ul_class). {% endcomment %}
+        {% site_menu max_depth: "2" ul_class: "wvu-nav__items menu-items navbar-nav mr-auto" link_class: "nav-link px-2 px-lg-1" has_children_class: "dropdown" sub_ul_class: "sub-menu small bg-wvu-neutral--black px-1 mx-n1" %}
+      {% else %}
+        {% comment %} NOTE: If nav depth is equal to 1, do NOT show the dropdown caret (has_children_class). {% endcomment %}
+        {% site_menu max_depth: "1" ul_class: "wvu-nav__items menu-items navbar-nav mr-auto" link_class: "nav-link px-2 px-lg-1" %}
+      {% endif %}
     </div> <!-- /.nav-collapse -->
     <button class="bg-transparent border-0 fas fa-search text-white py-2 px-2 py-lg-0 px-lg-0" type="button" data-toggle="collapse" data-target="#wvuNavSearchCollapse" aria-expanded="false" aria-controls="wvuNavSearchCollapse"><span class="sr-only">Toggle Search</span></button>
   </div> <!-- /.container -->
@@ -51,7 +45,7 @@
                       Would you like to search this site specifically, or all WVU websites?
                     </legend>
                     <div class="d-inline-block pr-2">
-                      <input id="form-search__sitesearch" type="radio" name="as_sitesearch" value="<r:site:domain />" checked="checked" />
+                      <input id="form-search__sitesearch" type="radio" name="as_sitesearch" value="{{ site.domain }}" checked="checked" />
                       <label class="d-inline-block" for="form-search__sitesearch">Search this site</label>
                     </div>
                     <div class="d-inline-block">
@@ -63,11 +57,12 @@
               </form>
             </div>
           </div>
-          <r:page:if_has_content_for region="search-content" always_show_in_edit_mode="true">
+          {% if page.content['search-content'] != blank or edit_mode %}
             <div class="mt-4">
-              <r:editable_region name="search-content" scope="site" />
+              <!-- Region: search-content -->
+              {% editable_region name: "search-content" scope: "site" %}
             </div>
-          </r:page:if_has_content_for>
+          {% endif %}
         </div>
       </div>
     </div>
