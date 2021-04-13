@@ -36,7 +36,7 @@
 
     {%- assign bgStyler = bgLabel | background_styler %}
 
-    <div class="{{ itemClasses }}" {{ bgStyler }}>
+    <div class="{{columnClasses}} {{ itemClasses }}" {{ bgStyler }}>
       {%- if edit_mode or page.content[componentPanelPhoto] != blank %}
         <div class="mb-1">
           {% editable_region_block name: componentPanelPhoto, scope: component.scope %}
