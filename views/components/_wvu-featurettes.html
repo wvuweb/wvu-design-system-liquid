@@ -13,11 +13,6 @@
   }
 {%- enddefine_component %}
 
-
-<r:set_var name="bgPrefix">
-  <r:page:slug />-<r:var name="componentName" />
-</r:set_var>
-
 {% capture component_content %}
   <div class="{% if component.full_width_or_backpage? %}container {% endif %}wvu-z-index-content">
     {%- if edit_mode or page.content[component.region_names.header] != blank %}
