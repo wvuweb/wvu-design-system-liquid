@@ -9,7 +9,8 @@
     "defaultItemHeaderClasses": "",
     "defaultItemBodyClasses": null,
     "defaultItemButtonClasses": "",
-    "mainTagClasses": null
+    "mainTagClasses": null,
+    "limit": 50
   }
 {%- enddefine_component %}
 
@@ -30,6 +31,7 @@
     {% comment %} Render the appropriate featurette style partial {% endcomment %}
     {%- case component.featurettesStyle %}
       {% when 'editable-regions' %}{% render "includes/wvu-featurettes__editable-regions" component: component %}
+      {% when 'cards' %}{% render "includes/wvu-featurettes__cards" component: component %}
       {% when 'cards-w-editable-regions' %}{% render "includes/wvu-featurettes__cards-w-editable-regions" component: component %}   
       {% when 'default' %}{% render "includes/wvu-featurettes__default" component: component %}
       {% else %}ERROR: Unsupported component featurette style '{{ component.featurettesStyle }}'
