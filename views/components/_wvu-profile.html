@@ -1,90 +1,77 @@
-{% comment %}<!-- For a detailed look at the concepts behind a shared partial, see https://designsystem.sandbox.wvu.edu/tutorials/the-anatomy-of-a-shared-partial. -->{% endcomment %}
+{% define_component component %}
+  {
+    "baseName": "profile",
+    "needsARIALabel": true,
+    "defaultComponentClasses": "py-5",
+    "defaultItemClasses": "mb-3 mb-md-0",
+    "defaultHeaderClasses": "mb-4",
+    "defaultItemHeaderClasses": "px-2 py-1 wvu-shout h6 text-white mb-0",
+    "defaultItemBodyClasses": null,
+    "defaultItemButtonClasses": "iowan-old-style",
+    "mainTagClasses": null
+  }
+{% enddefine_component %}
 
-{% comment %}<!-- Define a base name for this component. We can use this later to dynamically create editable region names -->{% endcomment %}
-<r:set_var name="baseComponentName" value="profile" />
+{% parse_json rNames %}
+  {
+    "main": "wvu-{{ component.name }}__main",
+    "profileTitle": "wvu-{{ component.name }}__profile-title",
+    "phone": "wvu-{{ component.name }}__phone",
+    "email": "wvu-{{ component.name }}__email",
+    "office": "wvu-{{ component.name }}__office",
+    "officeURL": "wvu-{{ component.name }}__office-url",
+    "website": "wvu-{{ component.name }}__website",
+    "quote": "wvu-{{ component.name }}__quote",
+    "headerLabel": "wvu-{{ component.name }}__header-label"
+  }
+{% endparse_json %}
 
-{% comment %}<!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. -->{% endcomment %}
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
-
-{% comment %}<!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. -->{% endcomment %}
-<r:set_var name="componentMain">wvu-<r:var name="componentName" />__main</r:set_var>
-<r:set_var name="componentProfileTitle">wvu-<r:var name="componentName" />__profile-title</r:set_var>
-<r:set_var name="componentPhone">wvu-<r:var name="componentName" />__phone</r:set_var>
-<r:set_var name="componentEmail">wvu-<r:var name="componentName" />__email</r:set_var>
-<r:set_var name="componentOffice">wvu-<r:var name="componentName" />__office</r:set_var>
-<r:set_var name="componentOfficeURL">wvu-<r:var name="componentName" />__office-url</r:set_var>
-<r:set_var name="componentWebsite">wvu-<r:var name="componentName" />__website</r:set_var>
-<r:set_var name="componentQuote">wvu-<r:var name="componentName" />__quote</r:set_var>
-<r:set_var name="componentHeaderLabel">wvu-<r:var name="componentName" />__header-label</r:set_var>
-
-{% comment %}<!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. -->{% endcomment %}
-<r:content_for name="{$defaultComponentClasses}">py-5</r:content_for>
-
-{% comment %}<!-- Since there is no header to hook into to label this section, we need to apply an ARIA-Label. This tells our “is main checker” utility to apply the label. -->{% endcomment %}
-<r:set_var name="componentNeedsARIALabel" value="true" />
-
-{% comment %}<!-- Components do not display on live sites unless set to “Is active” in the slot’s custom data. But we need to make the component active no matter what in Edit Mode so the user can test it. You can see the “if” statement in the component’s outer HTML container that checks. -->{% endcomment %}
-<r:edit_mode_only>
-  <r:set_var name="componentIsEditModeOnly" value="0" />
-</r:edit_mode_only>
-
-{% comment %}<!-- Add an openin markup tag. This is used by the demo site to auto-generate code that the user can copy into their own theme. -->{% endcomment %}
-{% comment %}<!-- This component’s outer container also contains utilities for evaluating whether the component should get a section or a main tag, what classes to apply to the outer container, and a background styler, defined by uploading an image and labeling it with the page slug and component name. -->{% endcomment %}
-<!-- Markup --><<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" /> <r:if_true value="{$componentIsMain}">id="wvu-main-content"</r:if_true> class="<r:if_true value="{$componentIsEditModeOnly}">d-none </r:if_true><r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
+{% capture component_content %}
   <div class="container wvu-z-index-content">
     <div class="row">
       <div class="col-md-6 col-lg-5 col-xl-4 mb-1">
         <div class="col-8 col-xl-10 mr-auto">
           <div class="row">
             <div class="col-xl-10 mr-xl-auto">
-              <r:if_not_blank value="{$thumbnail_url_sq}">
-                <img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />" alt="<r:page:data name="thumbnail_alt" />" />
-              </r:if_not_blank>
-              <r:if_blank expr="{$thumbnail_url_sq}">
-                <r:if_not_blank expr="{$thumbnail_url}">
-
-                  <img class="shadow" src="<r:page:data name="thumbnail_url" />" alt="thumbnail_alt" />
-                </r:if_not_blank>
-              </r:if_blank>
+              {% if page.data.thumbnail_url_sq != blank %}
+                <img class="rounded-circle shadow" src="{{ page.data.thumbnail_url_sq }}" alt="{{ page.data.thumbnail_alt }}" />
+              {% elsif page.data.thumbnail_url != blank %}
+                <img class="shadow" src="{{ page.data.thumbnail_url }}" alt="{{ page.data.thumbnail_alt }}" />
+              {% endif %}
             </div>
           </div>
           <p class="my-3">
-            <r:partial name="includes/wvu-contact-info" theme="University Relations: WVU Design System" />
+            {% render "includes/wvu-contact-info" component: component, regionNames: rNames %}
           </p>
         </div>
       </div>
       <div class="col-md-6 col-lg-7 col-xl-8">
-        <r:if_equal x="{$backpage_header}" y="1">
-          <r:page:if_has_content_for region="wvu-backpage-header-1__label" always_show_in_edit_mode="true">
-            {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
-            <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Header Label</span></r:edit_mode_only>
+        {% if page.data.backpage_header == '1' %}
+          {% if edit_mode or page.content['wvu-backpage-header-1__label'] != blank %}
+            {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Header Label</span>{% endif %}
             <p class="helvetica-neue-light h5 text-uppercase">
-              <r:editable_region name="wvu-backpage-header-1__label" scope="{$componentScope}" type="simple" />
+              {% editable_region name: "wvu-backpage-header-1__label" scope: component.scope, type: "simple" %}
             </p>
-          </r:page:if_has_content_for>
+          {% endif %}
           {% comment %}<!-- For the h1, apply an ID that will tell screanreaders to use this element as the label for the section. -->{% endcomment %}
-          <h1 id="<r:var name="componentName" />-label"><r:page:first_non_blank_attr names="alternate_name, name" /></h1>
-          <r:page:if_has_content_for region="wvu-backpage-header-1__subhead" always_show_in_edit_mode="true">
-            {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
-            <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Title / Subhead</span></r:edit_mode_only>
+          <h1 id="{{ component.name }}-label">{{ page.alternate_name | default: page.name }}</h1>
+          {% if edit_mode or page.content['wvu-backpage-header-1__subhead'] != blank %}
+            {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Title / Subhead</span>{% endif %}
             <p class="helvetica-neue-light h5">
-              <r:editable_region name="wvu-backpage-header-1__subhead" scope="{$componentScope}" type="simple" />
+              {% editable_region name: "wvu-backpage-header-1__subhead" scope: component.scope, type: "simple" %}
             </p>
-          </r:page:if_has_content_for>
-        </r:if_equal>
-        <r:page:if_has_content_for region="{$componentQuote}" always_show_in_edit_mode="true">
-          {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
-          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Quote</span></r:edit_mode_only>
+          {% endif %}
+        {% endif %}
+        {% if edit_mode or page.content[rNames.quote] != blank %}
+          {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Quote</span>{% endif %}
           <p class="iowan-old-style-black-italic h3 mt-3">
-            <r:editable_region name="{$componentQuote}" scope="{$componentScope}" type="simple" />
+            {% editable_region name: rNames.quote scope: component.scope, type: "simple" %}
           </p>
-        </r:page:if_has_content_for>
-        <r:page:if_has_content_for region="{$componentMain}" always_show_in_edit_mode="true">
-          {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
-          <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Main</span></r:edit_mode_only>
+        {% endif %}
+        {% if edit_mode or page.content[rNames.main] != blank %}
+          {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Main</span>{% endif %}
           <div class="mt-3">
-            {% comment %}<!-- Editable region for main content. -->{% endcomment %}
-            <r:editable_region name="{$componentMain}" scope="{$componentScope}">
+            {% editable_region_block name: rNames.main, scope: component.scope %}
               <p>Synergize productive mindfulness marketing computer development html roi
                 feedback team website. Blue money that jerk from finance really threw me
                 under the bus onward and upward, productize the deliverables and focus
@@ -100,14 +87,15 @@
                 new ways to evolve our design language we've got to manage that low hanging
                 fruit. My capacity is full i don't want to drain the whole swamp, i just
                 want to shoot some alligators. Open door policy ramp up.</p>
-            </r:editable_region>
+            {% endeditable_region_block %}
           </div>
-        </r:page:if_has_content_for>
+        {% endif %}
       </div>
     </div>
   </div>
-{% comment %}<!-- A utility to decide whether to add a closing main or section tag. -->{% endcomment %}
-</<r:partial name="utilities/wvu-is-main-checker" theme="University Relations: WVU Design System" />>
+{% endcapture %}
+
+{% render "utilities/wvu-component-tag" component: component, content: component_content %}
 
 {% comment %}<!-- Pull in partial that contains the component styler. This lets the user add classes to the component using the CleanSlate editor. -->{% endcomment %}
-<r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
+{% render "includes/wvu-component-footer" component: component %}

@@ -1,57 +1,62 @@
-<r:page:if_has_content_for region="{$componentPhone}" always_show_in_edit_mode="true">
+{% comment %}
+  Expected Variables:
+    regionNames - Hash containing names of editable regions used in this partial
+    component - Contains the details about compoent which called this partial
+{% endcomment %}
+
+{% if edit_mode or page.content[regionNames.phone] != blank %}
   <span class="d-block position-relative">
-    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Phone</span></r:edit_mode_only>
+    {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Phone</span>{% endif %}
     <span class="fas fa-phone position-absolute"></span>
-    <a class="d-block pl-3<r:edit_mode_only> d-none</r:edit_mode_only>" href="tel:<r:page:content name="{$componentPhone}" />"><r:page:content name="{$componentPhone}" /></a>
-    <r:edit_mode_only>
-      <r:editable_region name="{$componentPhone}" scope="{$componentScope}" type="simple" />
-    </r:edit_mode_only>
+    <a class="d-block pl-3{% if edit_mode %} d-none{% endif %}" href="tel:{{ page.content[regionNames.phone] }}">{{ page.content[regionNames.phone] }}</a>
+    {% if edit_mode %}
+      {% editable_region name: regionNames.phone, scope: component.scope, type: "simple" %}
+    {% endif %}
   </span>
-</r:page:if_has_content_for>
-<r:page:if_has_content_for region="{$componentEmail}" always_show_in_edit_mode="true">
+{% endif %}
+{% if edit_mode or page.content[regionNames.email] != blank %}
   <span class="d-block position-relative">
-    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Email</span></r:edit_mode_only>
+    {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Email</span>{% endif %}
     <span class="far fa-envelope position-absolute"></span>
-    <a class="d-block pl-3" href="mailto:<r:page:content name="{$componentEmail}" />"><r:page:content name="{$componentEmail}" /></a>
-    <r:edit_mode_only>
-      <r:editable_region name="{$componentEmail}" scope="{$componentScope}" type="simple" />
-    </r:edit_mode_only>
+    <a class="d-block pl-3" href="mailto:{{ page.content[regionNames.email] }}">{{ page.content[regionNames.email] }}</a>
+    {% if edit_mode %}
+      {% editable_region name: regionNames.email, scope: component.scope, type: "simple" %}
+    {% endif %}
   </span>
-</r:page:if_has_content_for>
-<r:page:if_has_content_for region="{$componentOffice}" always_show_in_edit_mode="true">
+{% endif %}
+{% if edit_mode or page.content[regionNames.office] != blank %}
   <span class="d-block position-relative">
-    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Office</span></r:edit_mode_only>
+    {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Office</span>{% endif %}
     <span class="far fa-building position-absolute"></span>
-      <r:page:if_has_content_for region="{$componentOfficeURL}">
-        <a class="d-block pl-3" href="<r:page:content name="{$componentOfficeURL}" />"><r:page:content name="{$componentOffice}" /></a>
-      </r:page:if_has_content_for>
-      <r:page:unless_has_content_for region="{$componentOfficeURL}">
-        <span class="d-block pl-3"><r:page:content name="{$componentOffice}" /></span>
-      </r:page:unless_has_content_for>
-    <r:edit_mode_only>
-      <r:editable_region name="{$componentOffice}" scope="{$componentScope}" type="simple" />
-    </r:edit_mode_only>
-    <r:page:if_has_content_for region="{$componentOfficeURL}" always_show_in_edit_mode="true">
-      <r:edit_mode_only>
+      {% if page.content[regionNames.officeURL] != blank %}
+        <a class="d-block pl-3" href="{{ page.content[regionNames.officeURL] }}">{{ page.content[regionNames.office] }}</a>
+      {% else %}
+        <span class="d-block pl-3">{{ page.content[regionNames.office] }}</span>
+      {% endif %}
+    {% if edit_mode %}
+      {% editable_region name: regionNames.office, scope: component.scope, type: "simple" %}
+    {% endif %}
+    {% if edit_mode or page.content[regionNames.officeURL] != blank %}
+      {% if edit_mode %}
         <span class="d-inline-block badge badge-primary mb-1">Office URL</span>
-        <r:editable_region name="{$componentOfficeURL}" scope="{$componentScope}" type="simple" />
-      </r:edit_mode_only>
-    </r:page:if_has_content_for>
+        {% editable_region name: regionNames.officeURL, scope: component.scope, type: "simple" %}
+      {% endif %}
+    {% endif %}
   </span>
-</r:page:if_has_content_for>
-<r:page:if_has_content_for region="{$componentWebsite}" always_show_in_edit_mode="true">
+{% endif %}
+{% if edit_mode or page.content[regionNames.website] != blank %}
   <span class="d-block position-relative">
-    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Website</span></r:edit_mode_only>
+    {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Website</span>{% endif %}
     <span class="fas fa-link position-absolute"></span>
-    <a class="d-block pl-3" href="<r:page:content name="{$componentWebsite}" />">Website<span class="sr-only">: <r:page:name /></span></a>
-    <r:edit_mode_only>
-      <r:editable_region name="{$componentWebsite}" scope="{$componentScope}" type="simple" />
-    </r:edit_mode_only>
+    <a class="d-block pl-3" href="{{ page.content[regionNames.website] }}">Website<span class="sr-only">: {{ page.name }}</span></a>
+    {% if edit_mode %}
+      {% editable_region name: regionNames.website, scope: component.scope, type: "simple" %}
+    {% endif %}
   </span>
-</r:page:if_has_content_for>
-<r:page:if_has_content_for region="{$componentDownload}" always_show_in_edit_mode="true">
+{% endif %}
+{% if edit_mode or page.content[regionNames.download] != blank %}
   <span class="d-block position-relative">
-    <r:edit_mode_only><span class="d-inline-block badge badge-primary mb-1">Download</span></r:edit_mode_only>
-    <span class="far fa-file-pdf position-absolute"></span> <span class="d-block pl-3"><r:editable_region name="{$componentDownload}" scope="{$componentScope}" /></span>
+    {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Download</span>{% endif %}
+    <span class="far fa-file-pdf position-absolute"></span> <span class="d-block pl-3"><{% editable_region name: regionNames.download, scope: component.scope %}</span>
   </span>
-</r:page:if_has_content_for>
+{% endif %}
