@@ -1,5 +1,5 @@
 <!-- Component: v2/wvu-backpage-header -->
-{% define_component component %}
+{%- define_component component -%}
   {
     "baseName": "backpage-header",
     "defaultComponentClasses": "{{ site.data['classes_wvu_backpage_header'] | default: 'pb-3 bg-wvu-neutral--dark-gray text-white wvu-bg-vignetting wvu-bg-blend-mode-luminosity--80 wvu-background-position-center' }}",
@@ -7,9 +7,9 @@
     "defaultSubheadClasses": "lead mb-0 mt-1",
     "mainTagClasses": null
   }
-{% enddefine_component %}
+{%- enddefine_component -%}
 
-{% liquid 
+{%- liquid 
   assign componentHeaderLabel = 'wvu-backpage-header-1__label'
   assign componentSubhead = 'wvu-backpage-header-1__subhead'
   assign subheadClasses = 'wvu-backpage-header-1-subhead-classes'
@@ -38,7 +38,7 @@
   assign mainTagClasses = page.content[component.region_names.classes] | default: site.data['classes_wvu_backpage_header'] | default: component.defaultComponentClasses
 %}
 
-<div class="wvu-overflow-hidden pt-5 {{ mainTagClasses }}" {{ styleAttr }} ></div>
+<div class="wvu-overflow-hidden pt-5 {{ mainTagClasses }}" {{ styleAttr }} >
   <div class="container position-relative wvu-z-index-content">
     {% if page.data.header_label == '1' %}
       <p class="text-uppercase helvetica-neue-light mb-1">
@@ -57,7 +57,7 @@
       </small>
     {% endif %}
     {% comment %}<!-- Apply classes to the header. If supplied by user, use those. If not use default. -->{% endcomment %}
-    <h1 id="{{ component.baseName }}-label" class="{{ page.content[component.region_names.headerClasses] | default: site.data['classes_wvu_backpage_header__h1'] | default: component.defaultHeaderClasses }}">{{ page.alternate_name | default: page.name }}</h1>
+    <h1 id="{{ component.name }}-label" class="{{ page.content[component.region_names.headerClasses] | default: site.data['classes_wvu_backpage_header__h1'] | default: component.defaultHeaderClasses }}">{{ page.alternate_name | default: page.name }}</h1>
     {% comment %}<!-- If user has toggled the “Header has subhead?” option in their page data, display a subhead region. -->{% endcomment %}
     {% if page.data.header_subhead == '1' %}
       <div class="row">
