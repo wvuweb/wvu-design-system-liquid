@@ -27,10 +27,10 @@
   <r:loop:each times="{$componentLimit}">
     {% capture componentPanel %}featurettes_{{ component.number }}_panel_{{ item }}{% endcapture %}
     {% capture bgLabel %}{{ component.featurettesBgPrefix }}-panel-{{ forloop.index }}-background{% endcapture %}
+    {% assign featureSlots = page.slots | where: 'where_to_display', componentPanel %}
     <div class="{{ itemClasses }}" {{ bgStyler }}>
-      {% comment %}<!-- This is where component inception happens. Temporarily store our parent component’s values; loop through the page’s slots to see if any components are targeting this inception point, and if so display that component; then “pop” the parent’s values back into the original variables. -->{% endcomment %}
-      <r:set_var name="componentDisplayContext" value="{$componentPanel}" />
-      <r:partial name="utilities/wvu-slots" theme="University Relations: WVU Design System" />
+      {% comment %} This is where component inception happens. {% endcomment %}
+      {% render "utilities/wvu-slots" slots: featureSlots %}
     </div>
   {% endfor %}
 </div>

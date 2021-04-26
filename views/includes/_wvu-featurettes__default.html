@@ -26,24 +26,6 @@
   assign items = root.descendants | filter_pages: by: component.loopBy, sort: component.loopOrder, tags: component.itemLabels, tags_match: component.loopLabelsMatch, hidden: component.showHidden, random: component.random, limit: component.limit
 -%}
 
-{% for item in items.all %}
-{% capture bgLabel %}{{ component.featurettesBgPrefix }}-panel-{{ forloop.index }}-background{% endcapture %}
-{% assign bgStyler = bgLabel | background_styler %}
-
-{% liquid 
-  if item.content[component.region_names.header] != blank
-    assign htag = 'h3'
-  else
-    assign htag = 'h2'
-  endif
-
-  if item.data.alternate_url != blank
-    assign link_href =  item.data.alternate_url
-  else
-    assign link_href = item.url
-  endif
-%}
-
 {% capture loopContent %}
   {% for item in items.all %}
     {% capture bgLabel %}{{ component.featurettesBgPrefix }}-panel-{{ forloop.index }}-background{% endcapture %}
@@ -93,7 +75,7 @@
 {% endcapture %}
 
 {% if component.full_width_or_backpage? %}
-<div class="row {{ rowClasses }}">{{ loopContent }}</div>
+  <div class="row {{ rowClasses }}">{{ loopContent }}</div>
 {% else %}
-{{ loopContent }}
+  {{ loopContent }}
 {% endif %}
