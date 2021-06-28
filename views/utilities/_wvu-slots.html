@@ -26,7 +26,6 @@
       {% else %}ERROR: Unsupported component '{{ slot.value }}'
     {% endcase %}
   {% elsif slot.custom != blank %}
-    {% comment %}TODO: Implement custom component partial support {% endcomment %}
-    ERROR: Custom component partials are not yet supported
+    {% render "utilities/custom_components" slot: slot %}
   {% endif %}
 {% endfor %}
