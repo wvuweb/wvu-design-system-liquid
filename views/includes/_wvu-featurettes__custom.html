@@ -1,9 +1,9 @@
-<!-- Featurette: default -->
+<!-- Featurette: custom -->
 {%- liquid
   if component.full_width_or_backpage?
     case component.limit
       when 1
-        assign columnClasses = 'col' 
+        assign columnClasses = 'col'
       when 2 or 3 or 4
         assign columnClasses = 'col-sm-6 col-md'
       when 5
@@ -15,22 +15,33 @@
     endcase
   endif
 
-  assign itemClasses = page.content[component.region_names.itemClasses] | default: component.defaultItemClasses
-  assign rowClasses = page.content[component.region_names.rowClasses] | default: 'justify-content-center'
-  assign itemHeaderClasses = page.content[component.region_names.itemHeaderClasses] | default: 'h3 iowan-old-style-italic mb-1'
-  assign itemBodyClasses = page.content[component.region_names.itemBodyClasses] | default: ''
+  if page.content[component.region_names.rowClasses] != blank
+    assign rowClasses = page.content[component.region_names.rowClasses]
+  else
+    assign rowClasses = component.defaultRowClasses
+  endif
+
+  if page.content[component.region_names.itemClasses] != blank
+    assign itemClasses = page.content[component.region_names.itemClasses]
+  else
+    assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses
+    assign itemClasses = defaultItemClasses
+  endif
 -%}
 
 <div class="row {{ rowClasses }}">
-  {% comment %}<!-- Grab all of the items in the loop. -->{% endcomment %}
-  {% for item in (1..component.limit) %}
-  <r:loop:each times="{$componentLimit}">
-    {% capture componentPanel %}featurettes_{{ component.number }}_panel_{{ item }}{% endcapture %}
-    {% capture bgLabel %}{{ component.featurettesBgPrefix }}-panel-{{ forloop.index }}-background{% endcapture %}
-    {% assign featureSlots = page.slots | where: 'where_to_display', componentPanel %}
-    <div class="{{ itemClasses }}" {{ bgStyler }}>
-      {% comment %} This is where component inception happens. {% endcomment %}
-      {% render "utilities/wvu-slots" slots: featureSlots %}
+  {% for i in (1..component.limit) %}
+    {%- capture bgLabel %}{{ component.featurettesBgPrefix }}-panel-{{ forloop.index }}-background{% endcapture %}
+    {%- capture componentPanel %}wvu-featurettes_panel_{{ component.number }}-{{ i }}__photo{% endcapture %}
+
+    {%- assign bgStyler = bgLabel | background_styler %}
+
+    <div class="{{columnClasses}} {{ itemClasses }}" {{ bgStyler }}>
+      {% editable_region_block name: componentPanel, scope: component.scope %}
+        <img class="card-img-top mb-1" src="https://via.placeholder.com/960x640" alt="Placeholder">
+        <h3 class="mb-1">Featurette Item</h3>
+        <p>Featurette content.</p>
+      {% endeditable_region_block %}
     </div>
   {% endfor %}
 </div>

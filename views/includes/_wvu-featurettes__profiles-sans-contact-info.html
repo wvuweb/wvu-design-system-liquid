@@ -1,132 +1,87 @@
-{% comment %}<!-- Pull in content from pages labeled with the slug of the page you want it to show on and the component name -->{% endcomment %}
-<r:set_var name="itemLabels">
-  <r:page:slug />-<r:var name="componentName" />
-</r:set_var>
+<!-- Featurette: profiles-sans-contact-info -->
+{%- liquid
+  if component.full_width_or_backpage?
+    case component.limit
+      when 1
+        assign columnClasses = 'col-sm-6'
+      when 4
+        assign columnClasses = 'col-sm-6 col-md'
+      when 5
+        assign columnClasses = 'col-sm-6 col-md-4 col-lg-3 col-xl'
+      when 6 or 9
+        assign columnClasses = 'col-sm-6 col-md-4'
+      else
+        assign columnClasses = 'col-sm-6 col-md-3'
+    endcase
+  endif
 
-<r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}">
-  <r:set_var name="columnClasses">
-    col-sm-6 col-md-3
-  </r:set_var>
+  assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses
+  assign itemClasses = page.content[component.region_names.itemClasses] | default: defaultItemClasses
+  assign rowClasses = page.content[component.region_names.rowClasses] | default: 'justify-content-center'
+  assign itemHeaderClasses = page.content[component.region_names.itemHeaderClasses] | default: 'h3 iowan-old-style-italic mb-1'
+  assign itemBodyClasses = page.content[component.region_names.itemBodyClasses] | default: 'mt-1'
+  assign itemButtonClasses = page.content[component.region_names.itemButtonClasses] | default: 'btn btn-primary btn-sm'
+  assign itemReadMoreButtonText = page.content[component.region_names.readMoreButtonText] | default: 'View Profile'
 
-  <r:if v1="{$componentLimit}" v2="1" op="=">
-    <r:set_var name="columnClasses">
-      col-sm-6
-    </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="2" op="=">
-    <r:set_var name="columnClasses">
-      col-sm-6 col-md-3
-    </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="3" op="=">
-    <r:set_var name="columnClasses">
-      col-sm-6 col-md-3
-    </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="4" op="=">
-    <r:set_var name="columnClasses">
-      col-sm-6 col-md
-    </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="5" op="=">
-    <r:set_var name="columnClasses">
-      col-sm-6 col-md-4 col-lg-3 col-xl
-    </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="6" op="=">
-    <r:set_var name="columnClasses">
-      col-sm-6 col-md-4
-    </r:set_var>
-  </r:if>
-  <r:if v1="{$componentLimit}" v2="9" op="=">
-    <r:set_var name="columnClasses">
-      col-sm-6 col-md-4
-    </r:set_var>
-  </r:if>
-  <r:if v1="{$componentDisplayContext}" v2="as_full_width_block" op="!=">
-    <r:set_var name="columnClasses">
-      col-sm-12 col-md-12
-    </r:set_var>
-  </r:if>
-</r:if_true>
+  assign root = site.root_page
+  assign items = root.descendants | filter_pages: by: component.loopBy, sort: component.loopOrder, tags: component.itemLabels, tags_match: component.loopLabelsMatch, hidden: component.showHidden, random: component.random, limit: component.limit
+-%}
 
-<r:content_for name="{$defaultRowClasses}">justify-content-center</r:content_for>
-<r:content_for name="{$defaultItemClasses}"><r:var name="columnClasses" /> mb-3 mb-md-0</r:content_for>
-<r:content_for name="{$defaultItemHeaderClasses}">iowan-old-style-italic mb-0</r:content_for>
-<r:content_for name="{$defaultItemBodyClasses}"></r:content_for>
-<r:content_for name="{$defaultItemButtonClasses}">btn-primary btn-sm</r:content_for>
+{% capture loopContent %}
+  {% for item in items.all %}
+    {% capture bgLabel %}{{ component.featurettesBgPrefix }}-panel-{{ forloop.index }}-background{% endcapture %}
+    {% assign bgStyler = bgLabel | background_styler %}
 
-<r:set_var name="rowClassesChecker">
-  <r:page:unless_has_content_for region="{$rowClasses}"><r:yield name="{$defaultRowClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$rowClasses}" />
-</r:set_var>
+    {% liquid
+      if item.content[component.region_names.header] != blank
+        assign htag = 'h3'
+      else
+        assign htag = 'h2'
+      endif
 
-<r:set_var name="itemClassesChecker">
-  <r:page:unless_has_content_for region="{$itemClasses}"><r:yield name="{$defaultItemClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemClasses}" />
-</r:set_var>
+      if item.data.alternate_url != blank
+        assign link_href = item.data.alternate_url
+      else
+        assign link_href = item.url
+      endif
+    %}
 
-<r:set_var name="itemHeaderClassesChecker">
-  <r:page:unless_has_content_for region="{$itemHeaderClasses}"><r:yield name="{$defaultItemHeaderClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemHeaderClasses}" />
-</r:set_var>
+    {% capture htag_id %}{{ item.slug }}-{{ component.name }}-{{ item.id }} {% endcapture %}
 
-<r:set_var name="itemButtonClassesChecker">
-  <r:page:unless_has_content_for region="{$itemButtonClasses}"><r:yield name="{$defaultItemButtonClasses}" /> </r:page:unless_has_content_for><r:page:content name="{$itemButtonClasses}" />
-</r:set_var>
-
-<r:set_var name="itemReadMoreButtonTextChecker">
-  <r:page:unless_has_content_for region="{$componentReadMoreButtonText}">More Info</r:page:unless_has_content_for><r:page:content name="{$componentReadMoreButtonText}" />
-</r:set_var>
-
-{% comment %}<!-- Grab the button text so we can evaluate whether to display the button (if user has entered “none” then we don’t display the button). -->{% endcomment %}
-<r:set_var name="buttonText">
-  <r:page:content name="{$componentReadMoreButtonText}" />
-</r:set_var>
-
-<r:root>
-  {% comment %}<!-- You can set $loopBy to: "name", "slug", "created_at", "updated_at", "sort_order", "template_name", "published_at", "title", "alternate_name", "meta_description", "content_updated_at";
-    and $loopOrder to: "asc" or "desc";
-    and $loopLabelsMatch to: "any", "all", or "none". -->{% endcomment %}
-  <r:descendants by="{$componentLoopBy}" order="{$componentLoopOrder}" labels="{$itemLabels}" labels_match="{$componentLoopLabelsMatch}" hidden="{$componentShowHidden}" random="{$componentIsRandom}">
-    <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"><div class="row <r:var name="rowClassesChecker" />"></r:if_true>
-      {% comment %}<!-- Grab all of the items in the loop. -->{% endcomment %}
-      <r:each limit="{$limit}">
-        {% comment %}<!-- Define the label used to add a background image to a featurette item. -->{% endcomment %}
-        <r:set_var name="bgurl">
-          <r:var name="bgPrefix" />-panel-<r:index />-background
-        </r:set_var>
-        <div class="<r:var name="itemClassesChecker" />" <r:partial name="utilities/wvu-bg-styler" theme="University Relations: WVU Design System" />>
-          <r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"><div class="row"></r:if_true>
-            <r:if expr="{{ NOT(BLANK(thumbnail_url_sq)) }}">
-              <div class="mb-1<r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"> col-md-4 pr-0</r:if_true>">
-                <a title="<r:var name="itemReadMoreButtonTextChecker" />: <r:page:name />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><img class="rounded-circle shadow" src="<r:page:data name="thumbnail_url_sq" />/381x255.jpg" srcset="<r:page:data name="thumbnail_url_sq" />/960x640.jpg 960w, <r:page:data name="thumbnail_url_sq" />/586x286.jpg 586w, <r:page:data name="thumbnail_url_sq" />/381x255.jpg 381w, <r:page:data name="thumbnail_url_sq" />/286x191.jpg 281w, <r:page:data name="thumbnail_url_sq" />/279x186.jpg, <r:page:data name="thumbnail_url_sq" />/217x145.jpg" sizes="(min-width: 1200px) 279px, (min-width: 768px) 586px, 960px" alt="<r:page:data name="thumbnail_alt" />"></a>
-              </div>
-            </r:if>
-            <r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"><div class="col-md-8"></r:if_true>
-              <r:page:if_has_content_for region="wvu-backpage-header-1__label">
-                <p class="text-uppercase helvetica-neue-light mb-1">
-                  <small class="d-block"><r:page:content name="wvu-backpage-header-1__label" /></small>
-                </p>
-              </r:page:if_has_content_for>
-              <<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for> id="<r:page:slug />-<r:var name="componentName" />-<r:page:id />"><a class="<r:var name="itemHeaderClassesChecker" />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><r:page:first_non_blank_attr names="alternate_name,name" /></a></<r:page:if_has_content_for region="{$componentHeader}">h3</r:page:if_has_content_for><r:page:unless_has_content_for region="{$componentHeader}">h2</r:page:unless_has_content_for>>
-              <r:page:if_has_content_for region="wvu-backpage-header-1__subhead">
-                <p class="helvetica-neue-light">
-                  <small class="d-block"><r:page:content name="wvu-backpage-header-1__subhead" /></small>
-                </p>
-              </r:page:if_has_content_for>
-              <r:if_not_blank value="{$description}">
-                <p class="<r:var name="itemBodyClassesChecker" />">
-                  <r:page:data name="description" />
-                </p>
-              </r:if_not_blank>
-              </p>
-              <r:if_not_equal x="{$buttonText}" y="none">
-                <p class="mb-0 mt-2">
-                  <a aria-labelledby="<r:page:slug />-<r:var name="componentName" />-<r:page:id />" class="btn <r:var name="itemButtonClassesChecker" />" href="<r:if_then_else test="{{ NOT(BLANK(alternate_url)) }}" then="{$alternate_url}" else="{page:url}" />"><r:var name="itemReadMoreButtonTextChecker" /><span class="sr-only">: <r:page:name /></span></a>
-                </p>
-              </r:if_not_equal>
-            <r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"></div></r:if_true>
-          <r:if_true value="{{ CONTAINS(LIST('featurettes', 'sidebar'), componentDisplayContext) }}"></div></r:if_true>
+    <div class="{{ itemClasses }}" {{ bgStyler }}>
+      {% if item.data.thumbnail_url_sq != blank %}
+        <div class="row mb-1">
+          <div class="col-6 mx-auto col-sm-4 col-md-6">
+            <a title="{{ itemReadMoreButtonText }}: {{ item.name }}" href="{{ link_href }}"><img class="rounded-circle shadow" src="{{ item.data.thumbnail_url_sq }}/381x381.jpg" srcset="{{ item.data.thumbnail_url_sq }}/960x960.jpg, {{ item.data.thumbnail_url_sq }}/586x586.jpg, {{ item.data.thumbnail_url_sq }}/381x381.jpg, {{ item.data.thumbnail_url_sq }}/286x286.jpg, {{ item.data.thumbnail_url_sq }}/279x279.jpg, {{ item.data.thumbnail_url_sq }}/217x217.jpg" sizes="960px, (min-width: 768px) 586px" alt="{{ item.data.thumbnail_alt  }}"></a>
+          </div>
         </div>
-      </r:each>
-    <r:if_true value="{{ CONTAINS(LIST('as_full_width_block', 'wvu-backpage'), componentDisplayContext) }}"></div></r:if_true>
-  </r:descendants>
-</r:root>
+      {% endif %}
+
+      <{{ htag }} class="card-title {{ itemHeaderClasses }}" id="{{ htag_id }}">{{ item.alternate_name | default: item.name }}</{{ htag }}>
+      {% if item.content.wvu-backpage-header-1__subhead != blank %}
+        <p class="helvetica-neue-light small">{{ item.content.wvu-backpage-header-1__subhead }}</p>
+      {% endif %}
+      <p class="{{ itemBodyClasses }}">
+        {% if item.data.description != blank %}
+          {{ item.data.description }}
+        {% else %}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        {% endif %}
+      </p>
+      {% if itemReadMoreButtonText != 'none' %}
+        {% if item.data.link_text != blank %}
+          {% assign link_text = item.data.link_text %}
+        {% else %}
+          {% capture link_text %}{{ itemReadMoreButtonText }}<span class="sr-only">: {{ item.name }}</span>{% endcapture %}
+        {% endif %}
+        <a class="{{ itemButtonClasses }}" aria-labelledby="{{ htag_id }}" href="{{ link_href }}">{{ link_text }}</a>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endcapture %}
+
+{% if component.full_width_or_backpage? %}
+  <div class="row {{ rowClasses }}">{{ loopContent }}</div>
+{% else %}
+  {{ loopContent }}
+{% endif %}

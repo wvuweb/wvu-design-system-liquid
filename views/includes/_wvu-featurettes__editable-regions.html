@@ -22,7 +22,8 @@
   if page.content[component.region_names.itemClasses] != blank
     assign itemClasses = page.content[component.region_names.itemClasses]
   else
-    assign itemClasses = component.defaultItemClasses
+    assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses
+    assign itemClasses = defaultItemClasses
   endif
 -%}
 
@@ -39,11 +40,11 @@
       {%- if edit_mode or page.content[componentPanelPhoto] != blank %}
         <div class="mb-1">
           {% editable_region_block name: componentPanelPhoto, scope: component.scope %}
-            <img src="http://placehold.it/960x640" alt="Placeholder" />
+            <img class="card-img-top" src="https://via.placeholder.com/960x640" alt="Placeholder">
           {% endeditable_region_block %}
         </div>
       {%- endif %}
-      {%- if edit_mode or page.content[componentPanelHeader] != blank %} 
+      {%- if edit_mode or page.content[componentPanelHeader] != blank %}
         {% editable_region_block name: componentPanelHeader, scope: component.scope %}
           <h3 class="iowan-old-style-italic mb-1">Panel Header</h3>
         {% endeditable_region_block %}

@@ -3,7 +3,7 @@
   if component.full_width_or_backpage?
     case component.limit
       when 1
-        assign columnClasses = 'col' 
+        assign columnClasses = 'col'
       when 2 or 6 or 9
         assign columnClasses = 'col-sm-6 col-md-4'
       when 3 or 4
@@ -15,11 +15,12 @@
     endcase
   endif
 
-  assign itemClasses = page.content[component.region_names.itemClasses] | default: component.defaultItemClasses
+  assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses
+  assign itemClasses = page.content[component.region_names.itemClasses] | default: defaultItemClasses
   assign rowClasses = page.content[component.region_names.rowClasses] | default: 'justify-content-center'
   assign itemHeaderClasses = page.content[component.region_names.itemHeaderClasses] | default: 'h3 iowan-old-style-italic mb-1'
   assign itemBodyClasses = page.content[component.region_names.itemBodyClasses] | default: ''
-  assign itemButtonClasses = page.content[component.region_names.itemButtonClasses] | default: 'btn-primary btn-sm'
+  assign itemButtonClasses = page.content[component.region_names.itemButtonClasses] | default: 'btn btn-primary btn-sm'
   assign itemReadMoreButtonText = page.content[component.region_names.readMoreButtonText] | default: 'Read More'
 
   assign root = site.root_page
@@ -31,7 +32,7 @@
     {% capture bgLabel %}{{ component.featurettesBgPrefix }}-panel-{{ forloop.index }}-background{% endcapture %}
     {% assign bgStyler = bgLabel | background_styler %}
 
-    {% liquid 
+    {% liquid
       if item.content[component.region_names.header] != blank
         assign htag = 'h3'
       else
@@ -39,7 +40,7 @@
       endif
 
       if item.data.alternate_url != blank
-        assign link_href =  item.data.alternate_url
+        assign link_href = item.data.alternate_url
       else
         assign link_href = item.url
       endif
@@ -49,7 +50,7 @@
 
     <div class="{{ itemClasses }}" {{ bgStyler }}>
       {% if item.data.thumbnail_url != blank %}
-        <div class="mb-1"></div>
+        <div class="mb-1">
           <a title="{{ itemReadMoreButtonText }}: {{ item.name }}" href="{{ link_href }}"><img class="card-img-top" src="{{ item.data.thumbnail_url }}/381x255.jpg" srcset="{{ item.data.thumbnail_url }}/960x640.jpg, {{ item.data.thumbnail_url }}/586x286.jpg, {{ item.data.thumbnail_url }}/381x255.jpg, {{ item.data.thumbnail_url }}/286x191.jpg, {{ item.data.thumbnail_url }}/279x186.jpg, {{ item.data.thumbnail_url }}/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="{{ item.data.thumbnail_alt  }}"></a>
         </div>
       {% endif %}
