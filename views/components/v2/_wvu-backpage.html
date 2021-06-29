@@ -12,11 +12,13 @@
   }
 {% enddefine_component %}
 
+{% assign sidebarNumber = component.number %}
+
 {% capture component_content %}
   <div class="container wvu-z-index-content">
     <div class="row">
       {% if component.align == 'right' and page.data.ifBackpageRemoveSidebar != '1' %}
-        {% render "components/wvu-sidebar" component: component %}
+        {% render "components/v2/wvu-sidebar" component: component %}
       {% endif %}
       <div class="col-md-8 mr-md-auto">
         {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Main Content</span>{% endif %}
@@ -36,7 +38,7 @@
         {% endeditable_region_block %}
       </div>
       {% if component.align != 'right' and page.data.ifBackpageRemoveSidebar != '1' %}
-        {% render "components/wvu-sidebar" component: component %}
+        {% render "components/v2/wvu-sidebar" component: component, number: sidebarNumber %}
       {% endif %}
     </div>
   </div>
