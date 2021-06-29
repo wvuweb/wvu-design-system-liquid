@@ -26,12 +26,19 @@
         {% endeditable_region_block %}
       </div>
     {%- endif %}
-    
+
     {% comment %} Render the appropriate featurette style partial {% endcomment %}
     {%- case component.featurettesStyle %}
       {% when 'editable-regions' %}{% render "includes/wvu-featurettes__editable-regions" component: component %}
+      {% when 'blog' %}{% render "includes/wvu-featurettes__blog" component: component %}
       {% when 'cards' %}{% render "includes/wvu-featurettes__cards" component: component %}
-      {% when 'cards-w-editable-regions' %}{% render "includes/wvu-featurettes__cards-w-editable-regions" component: component %}   
+      {% when 'card-columns' %}{% render "includes/wvu-featurettes__card-columns" component: component %}
+      {% when 'cards-w-editable-regions' %}{% render "includes/wvu-featurettes__cards-w-editable-regions" component: component %}
+      {% when 'cards-w-overlay' %}{% render "includes/wvu-featurettes__cards-w-overlay" component: component %}
+      {% when 'custom' %}{% render "includes/wvu-featurettes__custom" component: component %}
+      {% when 'profiles' %}{% render "includes/wvu-featurettes__profiles" component: component %}
+      {% when 'profiles-sans-contact-info' %}{% render "includes/wvu-featurettes__profiles-sans-contact-info" component: component %}
+      {% when 'testimonials' %}{% render "includes/wvu-featurettes__testimonials" component: component %}
       {% when 'default' %}{% render "includes/wvu-featurettes__default" component: component %}
       {% else %}ERROR: Unsupported component featurette style '{{ component.featurettesStyle }}'
     {%- endcase %}
