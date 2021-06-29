@@ -22,12 +22,12 @@
    -->
 {% endcomment %}
 
-<r:set_var name="emergencySiteUrl" value="{$emergencySiteUrl}" default="emergency.wvu.edu" />
+{% assign emergencySiteUrl = emergencySiteUrl | default: 'emergency.wvu.edu' %}
 
 <section aria-labelledby="campus-alert-label-1" id="emergency-banner" style="display: none;">
   <h2 id="campus-alert-label-1">Active Campus Alert</h2>
   <div id="emergency-banner__events"></div>
-  <p style="margin-bottom: 0; max-width: none;">For more information visit: <a href="https://<r:var name="emergencySiteUrl" />/" style="color: #0033a0;"><r:var name="emergencySiteUrl" /></a></p>
+  <p style="margin-bottom: 0; max-width: none;">For more information visit: <a href="https://{{ emergencySiteUrl }}/" style="color: #0033a0;">{{ emergencySiteUrl }}</a></p>
 </section>
 
 <r:content_for name="page_js">
@@ -39,7 +39,7 @@
     'use strict';
     // IIFE
     ;(function () {
-      var emergencyAlertUrl = "<r:site:data name='emergency_alert_json_url'/>";
+      var emergencyAlertUrl = "{{ site.data.emergency_alert_json_url }}";
       if (!emergencyAlertUrl) return; // If no URL is defined, stop execution.
 
       fetch(emergencyAlertUrl).then(function (response) {

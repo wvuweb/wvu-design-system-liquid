@@ -12,7 +12,7 @@
 {% capture component_content %}
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 mb-4 mb-md-0">
         {% comment %}<!-- This is where you can add utility classes that will apply to the hero’s heading. -->{% endcomment %}
         {% if edit_mode %}
           <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Header classes:
@@ -27,7 +27,7 @@
         <h2 id="{{ component.name }}-label" class="{{ page.content[component.region_names.headerClasses] | default: component.defaultHeaderClasses }}">Connect With Us</h2>
       </div>
       <div class="col-md-8 align-self-center">
-        <ul class="list-inline h1 text-right align-middle">
+        <ul class="list-inline float-right align-middle">
           {% comment %}<!-- This is where you can add utility classes that will apply to the social media links. -->{% endcomment %}
           {% if edit_mode %}
             <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Link classes:
@@ -36,57 +36,57 @@
           {% endif %}
           {% if site.data.facebook_url != blank %}
             <li class="list-inline-item">
-              <a class="fab fa-facebook {{ page.content[linkClassesRegion] }}" href="{{ site.data.facebook_url }}">
-                <span class="sr-only">Facebook</span>
+              <a class="bg-facebook h4 mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3 {{ page.content[linkClassesRegion] }}" href="{{ site.data.facebook_url }}">
+                <span class="fab fa-facebook position-absolute"></span><span class="sr-only">Facebook</span>
               </a>
             </li>
           {% endif %}
           {% if site.data.twitter_url != blank %}
             <li class="list-inline-item">
-              <a class="fab fa-twitter {{ page.content[linkClassesRegion] }}" href="{{ site.data.twitter_url }}">
-                <span class="sr-only">Twitter</span>
+              <a class="bg-twitter h4 mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3 {{ page.content[linkClassesRegion] }}" href="{{ site.data.twitter_url }}">
+                <span class="fab fa-twitter position-absolute"></span><span class="sr-only">Twitter</span>
               </a>
             </li>
           {% endif %}
           {% if site.data.flickr_url != blank %}
             <li class="list-inline-item">
-              <a class="fab fa-flickr {{ page.content[linkClassesRegion] }}" href="{{ site.data.flickr_url }}">
-                <span class="sr-only">Flickr</span>
+              <a class="bg-flickr h4 mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3 {{ page.content[linkClassesRegion] }}" href="{{ site.data.flickr_url }}">
+                <span class="fab fa-flickr position-absolute"></span><span class="sr-only">Flickr</span>
               </a>
             </li>
           {% endif %}
           {% if site.data.instagram_url != blank %}
             <li class="list-inline-item">
-              <a class="fab fa-instagram {{ page.content[linkClassesRegion] }}" href="{{ site.data.instagram_url }}">
-                <span class="sr-only">Instagram</span>
+              <a class="bg-instagram h4 mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3 {{ page.content[linkClassesRegion] }}" href="{{ site.data.instagram_url }}">
+                <span class="fab fa-instagram position-absolute"></span><span class="sr-only">Instagram</span>
               </a>
             </li>
           {% endif %}
           {% if site.data.linkedin_url != blank %}
             <li class="list-inline-item">
-              <a class="fab fa-linkedin {{ page.content[linkClassesRegion] }}" href="{{ site.data.linkedin_url }}">
-                <span class="sr-only">LinkedIn</span>
+              <a class="bg-linkedin h4 mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3 {{ page.content[linkClassesRegion] }}" href="{{ site.data.linkedin_url }}">
+                <span class="fab fa-linkedin position-absolute"></span><span class="sr-only">LinkedIn</span>
               </a>
             </li>
           {% endif %}
           {% if site.data.syndication_url != blank %}
             <li class="list-inline-item">
-              <a class="fas fa-rss {{ page.content[linkClassesRegion] }}" href="{{ site.data.syndication_url }}">
-                <span class="sr-only">RSS</span>
+              <a class="bg-syndication h4 mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3 {{ page.content[linkClassesRegion] }}" href="{{ site.data.syndication_url }}">
+                <span class="fas fa-rss position-absolute"></span><span class="sr-only">RSS</span>
               </a>
             </li>
           {% endif %}
           {% if site.data.youtube_url != blank %}
             <li class="list-inline-item">
-              <a class="fab fa-youtube {{ page.content[linkClassesRegion] }}" href="{{ site.data.youtube_url }}">
-                <span class="sr-only">YouTube</span>
+              <a class="bg-youtube h4 mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3 {{ page.content[linkClassesRegion] }}" href="{{ site.data.youtube_url }}">
+                <span class="fab fa-youtube position-absolute"></span><span class="sr-only">YouTube</span>
               </a>
             </li>
           {% endif %}
           {% if site.data.github_url != blank %}
             <li class="list-inline-item">
-              <a class="fab fa-github {{ page.content[linkClassesRegion] }}" href="{{ site.data.github_url }}">
-                <span class="sr-only">Github</span>
+              <a class="bg-github h4 mb-0 text-decoration-none d-flex align-items-center justify-content-center rounded-circle p-3 {{ page.content[linkClassesRegion] }}" href="{{ site.data.github_url }}">
+                <span class="fab fa-github position-absolute"></span><span class="sr-only">Github</span>
               </a>
             </li>
           {% endif %}
