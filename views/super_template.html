@@ -1,56 +1,130 @@
 ---
 layout: default
 custom_data_attributes:
+  - alternate_url:
+    title: Alternate URL
+  - backpage_header:
+    type: checkbox
+    title: Remove header
+  - blog_article_has_hero:
+    type: checkbox
+    title: If blog article, show hero
+  - blog_index_hide_author:
+    type: checkbox
+    title: Hide blog index author?
+  - breadcrumbs:
+    type: checkbox
+    title: Remove breadcrumbs
+  - description:
+    type: text
+    rows: 6
+    tile: Description
+    required: false
+    maxlength: 255
+  - header_label:
+    type: checkbox
+    title: Show header label
+  - header_subhead:
+    type: checkbox
+    title: Show header subhead
+  - link_text:
+    title: Link text
+  - search_action:
+    title: Search action
+  - content_keys:
+    title: Content Keys for Big Search
+  - enable_keywords:
+    type: checkbox
+    title: Enable keywords?
+  - thumbnail_alt:
+    title: Thumbnail Alt Text
+  - thumbnail_url:
+    title: Thumnbail URL
+  - thumbnail_url_sq:
+    title: Thumnbail URL Square
   - slot_1:
     type: select
     title: Slot 1
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
-    include_blank: true
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
+    include_blank: false
+    default: backpage
   - slot_1_custom:
     title: If custom, name of partial
   - slot_1_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_1_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: as_full_width_block
   - slot_1_is_main:
     type: checkbox
     title: Is Main
     default: 1
-  - slot_1_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_1_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_1_align:
     type: select
     title: Slot 1 Alignment
@@ -69,6 +143,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -149,51 +224,84 @@ custom_data_attributes:
     type: select
     title: Slot 2
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
     include_blank: true
+    default: subnav
   - slot_2_custom:
     title: If custom, name of partial
   - slot_2_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_2_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: sidebar_1
   - slot_2_is_main:
     type: checkbox
     title: Is Main
-  - slot_2_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_2_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_2_align:
     type: select
     title: Slot 2 Alignment
@@ -212,6 +320,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -292,51 +401,83 @@ custom_data_attributes:
     type: select
     title: Slot 3
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
     include_blank: true
   - slot_3_custom:
     title: If custom, name of partial
   - slot_3_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_3_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: as_full_width_block
   - slot_3_is_main:
     type: checkbox
     title: Is Main
-  - slot_3_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_3_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_3_align:
     type: select
     title: Slot 3 Alignment
@@ -355,6 +496,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -435,51 +577,83 @@ custom_data_attributes:
     type: select
     title: Slot 4
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
     include_blank: true
   - slot_4_custom:
     title: If custom, name of partial
   - slot_4_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_4_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: as_full_width_block
   - slot_4_is_main:
     type: checkbox
     title: Is Main
-  - slot_4_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_4_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_4_align:
     type: select
     title: Slot 4 Alignment
@@ -498,6 +672,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -578,51 +753,83 @@ custom_data_attributes:
     type: select
     title: Slot 5
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
     include_blank: true
   - slot_5_custom:
     title: If custom, name of partial
   - slot_5_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_5_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: as_full_width_block
   - slot_5_is_main:
     type: checkbox
     title: Is Main
-  - slot_5_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_5_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_5_align:
     type: select
     title: Slot 5 Alignment
@@ -641,6 +848,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -721,51 +929,83 @@ custom_data_attributes:
     type: select
     title: Slot 6
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
     include_blank: true
   - slot_6_custom:
     title: If custom, name of partial
   - slot_6_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_6_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: as_full_width_block
   - slot_6_is_main:
     type: checkbox
     title: Is Main
-  - slot_6_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_6_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_6_align:
     type: select
     title: Slot 6 Alignment
@@ -784,6 +1024,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -864,51 +1105,83 @@ custom_data_attributes:
     type: select
     title: Slot 7
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
     include_blank: true
   - slot_7_custom:
     title: If custom, name of partial
   - slot_7_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_7_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: as_full_width_block
   - slot_7_is_main:
     type: checkbox
     title: Is Main
-  - slot_7_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_7_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_7_align:
     type: select
     title: Slot 7 Alignment
@@ -927,6 +1200,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -1007,51 +1281,83 @@ custom_data_attributes:
     type: select
     title: Slot 8
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
     include_blank: true
   - slot_8_custom:
     title: If custom, name of partial
   - slot_8_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_8_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: as_full_width_block
   - slot_8_is_main:
     type: checkbox
     title: Is Main
-  - slot_8_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_8_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_8_align:
     type: select
     title: Slot 8 Alignment
@@ -1070,6 +1376,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -1150,51 +1457,83 @@ custom_data_attributes:
     type: select
     title: Slot 9
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
     include_blank: true
   - slot_9_custom:
     title: If custom, name of partial
   - slot_9_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_9_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: as_full_width_block
   - slot_9_is_main:
     type: checkbox
     title: Is Main
-  - slot_9_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_9_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_9_align:
     type: select
     title: Slot 9 Alignment
@@ -1213,6 +1552,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -1293,51 +1633,83 @@ custom_data_attributes:
     type: select
     title: Slot 10
     options:
-      - [Action Hero, wvu-action-hero]
-      - [Action Hero Card, wvu-action-hero-card]
-      - [Action Hero Two Column, wvu-action-hero-two-column]
-      - [Agenda Item, wvu-agenda-item]
-      - [Back Page, v2/wvu-backpage]
-      - [Big Search, wvu-big-search]
-      - [Big Search Results, wvu-big-search-results]
-      - [Blog Archive, wvu-blog-archive]
-      - [Blog Article, wvu-blog-article]
-      - [Blog Index, wvu-blog-index]
-      - [Contact Info, wvu-contact-info]
-      - [Directory, wvu-directory]
-      - [Editable Region, wvu-editable-region]
-      - [Event Agenda, wvu-event-agenda]
-      - [Faculty Profile, wvu-faculty-profile]
-      - [Featurettes, wvu-featurettes]
-      - [Featurettes Card Columns, wvu-featurettes-card-columns]
-      - [Full Bleed Photo, wvu-full-bleed-photo]
-      - [Hero, wvu-hero]
-      - [Lede Text, wvu-lede-text]
-      - [Log-In, wvu-log-in]
-      - [Photo Gallery, wvu-photo-gallery]
-      - [Profile, wvu-profile]
-      - [Profile Teaser, wvu-profile-teaser]
-      - [Profiles, wvu-profiles]
-      - [Quicklinks, wvu-quicklinks]
-      - [Social Media, wvu-social-media]
-      - [Stat Sheet, wvu-stat-sheet]
-      - [Twitter Widget, wvu-twitter-widget]
-      - [Video Feature, wvu-video-feature]
+      - [Action Hero, action-hero]
+      - [Action Hero Card, action-hero-card]
+      - [Action Hero Two Column, action-hero-two-column]
+      - [Agenda Item, agenda-item]
+      - [Back Page, backpage]
+      - [Big Search, big-search]
+      - [Big Search Results, big-search-results]
+      - [Blog Archive, blog-archive]
+      - [Blog Article, blog-article]
+      - [Blog Index, blog-index]
+      - [Contact Info, contact-info]
+      - [Directory, directory]
+      - [Editable Region, editable-region]
+      - [Event Agenda, event-agenda]
+      - [Faculty Profile, faculty-profile]
+      - [Featurettes, featurettes]
+      - [Featurettes Card Columns, featurettes-card-columns]
+      - [Full Bleed Photo, full-bleed-photo]
+      - [Hero, hero]
+      - [Lede Text, lede-text]
+      - [Log-In, log-in]
+      - [Photo Gallery, photo-gallery]
+      - [Profile, profile]
+      - [Profile Teaser, profile-teaser]
+      - [Profiles, profiles]
+      - [Quicklinks, quicklinks]
+      - [Social Media, social-media]
+      - [Stat Sheet, stat-sheet]
+      - [Subnav, subnav]
+      - [Twitter Widget, twitter-widget]
+      - [Video Feature, video-feature]
     include_blank: true
   - slot_10_custom:
     title: If custom, name of partial
   - slot_10_is_edit_mode_only:
     type: checkbox
     title: Is Edit Mode only
+  - slot_10_where_to_display:
+    title: Where to display
+    type: select
+    options:
+      - [As Full-Width Block, as_full_width_block]
+      - [Backpage Main 1, wvu-backpage-1__main]
+      - [Featurettes 1 Panel 1, featurettes_1_panel_1]
+      - [Featurettes 1 Panel 2, featurettes_1_panel_2]
+      - [Featurettes 1 Panel 3, featurettes_1_panel_3]
+      - [Sidebar 1, sidebar_1]
+      - [Backpage Main 2, wvu-backpage-2__main]
+      - [Featurettes 2 Panel 1, featurettes_2_panel_1]
+      - [Featurettes 2 Panel 2, featurettes_2_panel_2]
+      - [Featurettes 2 Panel 3, featurettes_2_panel_3]
+      - [Sidebar 2, sidebar_2]
+      - [Backpage Main 3, wvu-backpage-3__main]
+      - [Featurettes 3 Panel 1, featurettes_3_panel_1]
+      - [Featurettes 3 Panel 2, featurettes_3_panel_2]
+      - [Featurettes 3 Panel 3, featurettes_3_panel_3]
+      - [Sidebar 3, sidebar_3]
+      - [Backpage Main 4, wvu-backpage-4__main]
+      - [Featurettes 4 Panel 1, featurettes_4_panel_1]
+      - [Featurettes 4 Panel 2, featurettes_4_panel_2]
+      - [Featurettes 4 Panel 3, featurettes_4_panel_3]
+      - [Sidebar 4, sidebar_4]
+      - [Backpage Main 5, wvu-backpage-5__main]
+      - [Featurettes 5 Panel 1, featurettes_5_panel_1]
+      - [Featurettes 5 Panel 2, featurettes_5_panel_2]
+      - [Featurettes 5 Panel 3, featurettes_5_panel_3]
+      - [Sidebar 5, sidebar_5]
+      - [Backpage Main 6, wvu-backpage-6__main]
+      - [Featurettes 6 Panel 1, featurettes_6_panel_1]
+      - [Featurettes 6 Panel 2, featurettes_6_panel_2]
+      - [Featurettes 6 Panel 3, featurettes_6_panel_3]
+      - [Sidebar 6, sidebar_6]
+    include_blank: false
+    default: as_full_width_block
   - slot_10_is_main:
     type: checkbox
     title: Is Main
-  - slot_10_backpage_remove_nav:
-    type: checkbox
-    title: If backpage, remove nav
-  - slot_10_backpage_remove_sidebar:
-    type: checkbox
-    title: If backpage, remove sidebar
   - slot_10_align:
     type: select
     title: Slot 10 Alignment
@@ -1356,6 +1728,7 @@ custom_data_attributes:
       - [Cards, cards]
       - [Cards w/Editable Regions, cards-w-editable-regions]
       - [Cards w/Overlay, cards-w-overlay]
+      - [Custom, custom]
       - [Editable Regions, editable-regions]
       - [Majors, majors]
       - [Profiles, profiles]
@@ -1434,5 +1807,6 @@ custom_data_attributes:
     title: Show if hidden
 ---
 
-<!-- Slots 01 - 10 -->
-<r:partial name="utilities/v2/wvu-slots" theme="University Relations: WVU Design System" />
+{% assign slots = page.slots | where: 'where_to_display', 'as_full_width_block' %}
+
+{% render "utilities/v2/wvu-slots" slots: slots %}

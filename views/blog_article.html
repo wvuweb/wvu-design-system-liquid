@@ -1,6 +1,12 @@
 ---
 layout: default
 custom_data_attributes:
+  - blog_article_has_hero:
+    type: checkbox
+    title: Show hero?
+  - blog_article_hide_author:
+    type: checkbox
+    title: Hide author?
   - ifBackpageRemoveNav:
     type: checkbox
     title: If backpage, remove nav
@@ -9,5 +15,4 @@ custom_data_attributes:
     title: If backpage, remove sidebar
 ---
 
-<r:set_var name="isMain" value="1" />
-<r:partial name="components/wvu-blog-article" theme="University Relations: WVU Design System" />
+{% render "components/wvu-blog-article" number: 1 %}

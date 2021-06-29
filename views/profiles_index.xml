@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <profiles>
-  <r:get_page id="{$profiles_id}">
-    <r:children:each>
-      <r:set_var name="imgID"><r:select_html_attr css_selector="img" attr="data-asset-id"><r:page:content name="wvu-profile__photo" /></r:select_html_attr></r:set_var>
-      <profile>
-        <name><![CDATA[<r:page:first_non_blank_attr names="alternate_name,name" />]]></name>
-        <image_url><r:get_file id="{$imgID}"><r:file:download_url /></r:get_file></image_url>
-        <url><r:page:url /></url>
-        <job_title><![CDATA[<r:page:content name="wvu-profile__job-title" />]]></job_title>
-        <phone><r:page:content name="wvu-profile__phone" /></phone>
-        <email><![CDATA[<r:page:content name="wvu-profile__email-3" />]]></email>
-        <short_description><![CDATA[<r:page:content name="wvu-profile__short-description" />]]></short_description>
-        <quote><![CDATA[<r:page:content name="wvu-profile__quote" />]]></quote>
-      </profile>
-    </r:children:each>
-  </r:get_page>
+  {% assign profiles = site.pages | filter_pages: order: component.loopBy, sort: component.loopOrder, tags: component.itemLabels, tags_match: component.loopTagsMatch, hidden: component.showHidden %}
+  {% for profile in profiles.all %}
+    <profile>
+      <name><![CDATA[{{ page.alternate_name | default: page.name }}]]></name>
+      <image_url>{{ site.domain }}{{ profile.data.thumbnail_url }}</image_url>
+      <url>{{ page.url }}</url>
+      <job_title><![CDATA[{{ profile.content['wvu-backpage-header-1__subhead'] }}]]></job_title>
+      <phone>{{ profile.content['wvu-profile-1__phone'] }}</phone>
+      <email><![CDATA[{{ profile.content['wvu-profile-1__email'] }}]]></email>
+      <short_description><![CDATA[{{ profile.data.description }}" />]]></short_description>
+      <quote><![CDATA[<r:page:content name="wvu-profile-1__quote" />]]></quote>
+    </profile>
+  {% endfor %}
 </profiles>

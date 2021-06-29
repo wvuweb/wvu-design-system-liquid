@@ -2,8 +2,11 @@
 name: WVU Design System
 description: WVU Design System Theme
 
-data:
-  design_system_theme_name: "University Relations: WVU Design System"
+engine: liquid
+
+import_themes:
+  - git@github.com:wvuweb/wvu-design-system-liquid.git
+  - git@bitbucket.org:wvudigital/code-liquid.git
 
 ## Attributes, Data and Variables
 custom_data_attributes:
@@ -21,6 +24,7 @@ custom_data_attributes:
   - breadcrumbs:
     type: checkbox
     title: Remove breadcrumbs
+  - content_keys
   - description:
     type: text
     rows: 6
@@ -35,6 +39,7 @@ custom_data_attributes:
     title: Show header subhead
   - link_text:
     title: Link text
+  - search_action
   - thumbnail_alt:
     title: Thumbnail Alt Text
   - thumbnail_url:
@@ -60,6 +65,7 @@ custom_site_attributes:
   - disable_component_styler
   - disable_primary_nav
   - emergency_alert_json_url
+  - enable_keywords
   - facebook_url
   - flickr_url
   - github_url

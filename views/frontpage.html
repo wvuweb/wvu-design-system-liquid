@@ -2,14 +2,10 @@
 layout: default
 ---
 
-<r:set_var name="isMain" value="1" />
-<r:partial name="components/wvu-hero" theme="University Relations: WVU Design System" />
+{% render "components/wvu-hero" number: 1 %}
 
-<r:set_var name="featurettesStyle" value="editable-regions" />
-<r:partial name="components/wvu-featurettes" theme="University Relations: WVU Design System" />
+{% render "components/wvu-featurettes" number: 1 %}
 
-<r:partial name="components/wvu-action-hero" theme="University Relations: WVU Design System" />
+{% render "components/wvu-action-hero" number: 1 %}
 
-<r:set_var name="featurettesStyle" value="editable-regions" />
-<r:set_var name="instanceNumber" value="2" />
-<r:partial name="components/wvu-featurettes" theme="University Relations: WVU Design System" />
+{% render "components/wvu-featurettes" number: 2 %}

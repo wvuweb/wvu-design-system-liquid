@@ -2,80 +2,55 @@
 <html lang="en-US">
   <head>
     {% comment %}<!-- meta charset gets set automatically by CleanSlate -->{% endcomment %}
-    <r:page:if_site_default>
-      <title><r:site:name /> at West Virginia University</title>
-      <link rel="canonical" href="https://<r:site:domain />">
-    </r:page:if_site_default>
-    <r:page:unless_site_default>
-      <title><r:page:first_non_blank_attr names="alternate_name, name" /> | <r:site_name /> | West Virginia University</title>
-      <link rel="canonical" href="<r:page:url />" >
-    </r:page:unless_site_default>
-    <meta name="description" content="<r:page:meta_description />" />
+    {% if page.is_home_page? %}
+      <title>{{ site.name }} at West Virginia University</title>
+      <link rel="canonical" href="{{ site.url }}">
+    {% else %}
+      <title>{{ page.alternate_name | default: page.name }} | {{ site.name }} | West Virginia University</title>
+      <link rel="canonical" href="{{ page.url }}" >
+    {% endif %}
+    <meta name="description" content="{{ page.meta_description }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="<r:site:data name="google_site_verification" />" />
+    <meta name="google-site-verification" content="{{ site.data.google_site_verification }}" />
 
-    <meta property="og:title" content="<r:site_name /> | <r:page:first_non_blank_attr names="alternate_name, name" />" />
-    <meta property="og:description" content="<r:page:meta_description />" />
-    <r:set_var name="thumbnailurl">
-      <r:page:slug />-thumbnail
-    </r:set_var>
-    <r:files:each limit="1" labels="{$thumbnailurl}" types="image" random="true">
-      <meta property="og:image" content="https://<r:site:domain /><r:file:image_url size="1200x630" />" />
-      <meta name="twitter:image" content="https://<r:site:domain /><r:file:image_url size="1200x630" />" />
-    </r:files:each>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="<r:page:url />" />
+    {% render "utilities/social_meta_tags" %}
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="<r:site_name />">
-    <meta name="twitter:creator" content="<r:site:data name="twitter_handle" />">
-    <meta name="twitter:title" content="<r:page:first_non_blank_attr names="alternate_name, name" />">
-    <meta name="twitter:description" content="<r:page:meta_description />">
-
-    <r:include_stylesheet name="styles" />
+    {% link_stylesheet name: "styles" %}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
   </head>
 
-  <body class="<r:page:template:name /> page--<r:page:id /> page--<r:page:slug /> <r:edit_mode_only>page--edit-mode page--hide-instructions-<r:site:data name="hide_instructions" /></r:edit_mode_only>">
+  <body class="{{ page.template_name }} page--{{ page.id }} page--{{ page.slug }} {% if edit_mode %}page--edit-mode page--hide-instructions-{{ site.data.hide_instructions }}{% endif %}">
 
     <header aria-label="masthead">
       <a class="sr-only sr-only-focusable" href="#wvu-main-content">Skip to main content</a>
-      <r:if_not_blank value="{$is_demo_site}">
-        <div class="p-3 bg-danger text-white text-center">
-          This is a demo site. Some of the links won’t work. To see other templates in this theme, return to the <a href="https://designsystem.sandbox.wvu.edu/themes/<r:site:data name="is_demo_site" />" class="text-white"><span class="text-capitalize"><r:site:data name="is_demo_site" /></span> theme page</a>. To see other themes, return to the <a href="https://designsystem.sandbox.wvu.edu/themes" class="text-white">themes page</a>.
-        </div>
-      </r:if_not_blank>
-      <r:partial name="components/wvu-masthead" theme="University Relations: WVU Design System" />
-      <r:if_not_equal x="{$disable_primary_nav}" y="true">
-        <r:partial name="components/wvu-nav" theme="University Relations: WVU Design System" />
-      </r:if_not_equal>
-      <r:if_not_equal x="{page:template:name}" y="frontpage">
-        <r:if_not_equal x="{$breadcrumbs}" y="1">
-          <r:partial name="components/v2/wvu-breadcrumbs" theme="University Relations: WVU Design System" />
-        </r:if_not_equal>
-        <r:if_not_equal x="{$backpage_header}" y="1">
-          <r:partial name="components/v2/wvu-backpage-header" theme="University Relations: WVU Design System" />
-        </r:if_not_equal>
-      </r:if_not_equal>
+
+      {% render "components/wvu-masthead" %}
+      {% render "components/wvu-nav" %}
+      {% render "patterns/wvu-coronavirus-banner" %} {% comment %} From the "Code" theme {% endcomment %}
+
+      {% if page.template_name != 'frontpage' and page.template_name != 'blog_article' %}
+        {% if page.data.breadcrumbs != '1' %}
+          {% render "components/v2/wvu-breadcrumbs" %}
+        {% endif %}
+        {% if page.data.backpage_header != '1' %}
+          {% render "components/v2/wvu-backpage-header" %}
+        {% endif %}
+      {% endif %}
     </header>
 
-    {% comment %}<!-- What are layouts and <r:yield />? https://goo.gl/DFAsPv -->{% endcomment %}
-    <r:yield />
+    {{ __TEMPLATE_CONTENT__ }}
 
-    <r:if_not_equal x="{$has_standard_footer}" y="false">
-      <r:set_var name="instanceNumber" value="1" />
-      <r:partial name="components/wvu-footer" theme="University Relations: WVU Design System" />
-    </r:if_not_equal>
+    {% if site.data.has_standard_footer != 'false' %}
+      {% render "components/wvu-footer" scope: 'site' %}
+    {% endif %}
 
-    <r:if_equal x="{$enable_keywords}" y="1">
-      <r:edit_mode_only>
-        <div class="container py-4">
-          <h2>Keywords</h2>
-          <r:editable_region name="keywords" />
-        </div>
-      </r:edit_mode_only>
-    </r:if_equal>
+    {% if site.data.enable_keywords == 1 and edit_mode %}
+      <div class="container py-4">
+        <h2>Keywords</h2>
+        {% editable_region name: "keywords" %}
+      </div>
+    {% endif %}
 
     {% comment %}
       <!-- Helvetica Neue Light, Bold, & Condensed Black + Iowan Old Style, Italic, Black, & Black Italic web font from fonts.com. -->
@@ -90,11 +65,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <r:include_javascript name="vendor/responsive-nav/responsive-nav, responsive-nav-dropdown--custom, vendor/twitter-fetcher/twitterFetcher_min, vendor/fontfaceobserver/fontfaceobserver, fontfaceobserver__custom" />
+    {% link_javascript name: "vendor/responsive-nav/responsive-nav, responsive-nav-dropdown--custom, vendor/twitter-fetcher/twitterFetcher_min, vendor/fontfaceobserver/fontfaceobserver, fontfaceobserver__custom" %}
 
-    <r:yield name="page_js">
-      <r:content />
-    </r:yield>
+    {{ content_for.page_js }}
 
   </body>
 </html>
