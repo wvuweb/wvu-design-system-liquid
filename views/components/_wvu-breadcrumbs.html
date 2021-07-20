@@ -1,26 +1,20 @@
-{% comment %}<!-- For a detailed look at the concepts behind a shared partial, see https://designsystem.sandbox.wvu.edu/tutorials/the-anatomy-of-a-shared-partial. -->{% endcomment %}
+<!-- Component: v2/wvu-breadcrumbs -->
+{% define_component component %}
+  {
+    "baseName": "breadcrumbs",
+    "defaultComponentClasses": "{{ site.data.classes_wvu_breadcrumbs }}",
+    "defaultHeaderClasses": null,
+    "mainTagClasses": null
+  }
+{% enddefine_component %}
 
-{% comment %}<!-- Define a base name for this component. We can use this later to dynamically create editable region names -->{% endcomment %}
-<r:set_var name="baseComponentName" value="breadcrumbs" />
+{% assign breadcrumbLinkClasses = page.content[component.region_names.classes] | default: site.data.classes_wvu_breadcrumbs | default: component.defaultComponentClasses %}
+{% assign componentClassesBreadcrumbs = "wvu-slash-list pl-0" | append: " " | append: breadcrumbLinkClasses %}
 
-{% comment %}<!-- Pull in component name, instance number, scope, limit, featurettes style, etc. that determine how the component will function. This also defines editable region names for component classes, featurettes classes, etc. -->{% endcomment %}
-<r:partial name="includes/wvu-component-variables" theme="University Relations: WVU Design System" />
-
-{% comment %}<!-- Suggestions for what utility classes to assign to this components’s container. These will also show up by default if the content editor does not apply her own. -->{% endcomment %}
-<r:content_for name="{$defaultComponentClasses}">
-
-</r:content_for>
-
-{% comment %}<!-- Utility classes assigned to this components’s stylable elements by default if the content editor does not apply her own. -->{% endcomment %}
-<r:set_var name="componentClassesBreadcrumbs">
-  wvu-slash-list pl-0 <r:partial name="utilities/wvu-component-classes-checker" theme="University Relations: WVU Design System" />
-</r:set_var>
-
-<section class="wvu-breadcrumbs py-2 w-100 position-absolute <r:site:data name="classes_wvu-breadcrumbs" /> wvu-z-index-breadcrumbs" aria-label="<r:var name="baseComponentName" />-1">
+<section class="wvu-breadcrumbs py-2 w-100 position-absolute wvu-z-index-breadcrumbs {{ breadcrumbLinkClasses }}" aria-label="{{ component.baseName }}-1">
   <div class="container position-relative wvu-z-index-content small">
-    <r:breadcrumbs ul_class="{$componentClassesBreadcrumbs}" />
+    {% breadcrumbs ul_class: componentClassesBreadcrumbs, link_class: breadcrumbLinkClasses %}
   </div>
 </section>
 
-{% comment %}<!-- Pull in component instructions and allow user to edit classes for component in CleanSlate editor -->{% endcomment %}
-<r:partial name="includes/wvu-component-footer" theme="University Relations: WVU Design System" />
+{% render "includes/wvu-component-footer" component: component %}
