@@ -37,8 +37,10 @@
             but back to the drawing-board.</p>
         {% endeditable_region_block %}
       </div>
-      {% if component.align != 'right' and page.data.ifBackpageRemoveSidebar != '1' %}
-        {% render "components/v2/wvu-sidebar" component: component, number: sidebarNumber %}
+      {% if page.data.ifBackpageRemoveSidebar != '1' %}
+        {% if component.ifBackpageRemoveSidebar != '1' and component.align != 'right' %}
+          {% render "components/v2/wvu-sidebar" component: component, number: sidebarNumber %}
+        {% endif %}
       {% endif %}
     </div>
   </div>
