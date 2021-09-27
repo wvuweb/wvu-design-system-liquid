@@ -11,7 +11,7 @@
 <!-- Markup footer -->
 <footer class="{{ component.classes }}" {{ component.bgStyler }}>
   <div class="container">
-    <div class="row">
+    <div class="row small">
       <div class="col-6">
         {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
         {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Address</span>{% endif %}
@@ -36,38 +36,38 @@
 
       </div>
     </div>
-    <div class="row">
+    <div class="row small">
       <div class="col-md-6">
         {% assign link_class = site.data['classes_wvu-footer-links'] %}
         <ul class="list-unstyled">
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://about.wvu.edu/wvu-facts"><small class="d-block">Accreditations</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://webstandards.wvu.edu"><small class="d-block">Web Standards</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://www.wvu.edu/privacy"><small class="d-block">Privacy Notice</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="mailto:web_services@mail.wvu.edu"><small class="d-block">Questions or Comments?</small></a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://about.wvu.edu/wvu-facts">Accreditations</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://webstandards.wvu.edu">Web Standards</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://www.wvu.edu/privacy">Privacy Notice</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="mailto:web_services@mail.wvu.edu">Questions or Comments?</a></li>
         </ul>
         <p>
-          <small class="d-block">&copy; {{ 'now' | date: '%Y' }} <a class="{{ link_class }}" href="https://www.wvu.edu/">West Virginia University</a>. WVU is an EEO/Affirmative Action employer &mdash; Minority/Female/Disability/Veteran.
-          <span class="wvu-credits__last-edited">Last updated on {{ page.content_updated_at | default: page.created_at | date: "%B %-d, %Y" }}.</span></small>
+          &copy; {{ 'now' | date: '%Y' }} <a class="{{ link_class }}" href="https://www.wvu.edu/">West Virginia University</a>. WVU is an EEO/Affirmative Action employer &mdash; Minority/Female/Disability/Veteran.
+          <span class="wvu-credits__last-edited">Last updated on {{ page.content_updated_at | default: page.created_at | date: "%B %-d, %Y" }}.</span>
         </p>
       </div>
       <div class="col-md-6 text-md-right">
         <ul class="list-unstyled mb-0">
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://www.wvu.edu/SiteIndex/"><small class="d-block">A-Z Site Index</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://campusmap.wvu.edu"><small class="d-block">Campus Map</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://careers.wvu.edu/career-opportunities"><small class="d-block">WVU Careers</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://directory.wvu.edu"><small class="d-block">WVU Directory</small></a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://www.wvu.edu/SiteIndex/">A-Z Site Index</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://campusmap.wvu.edu">Campus Map</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://careers.wvu.edu/career-opportunities">WVU Careers</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://directory.wvu.edu">WVU Directory</a></li>
         </ul>
         <ul class="list-unstyled">
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://give.wvu.edu/"><small class="d-block">Give</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://careerservices.wvu.edu/students/handshake-login"><small class="d-block">Handshake</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://alert.wvu.edu/"><small class="d-block">WVU Alert</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://wvutoday.wvu.edu"><small class="d-block">WVU Today</small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://portal.wvu.edu"><small class="d-block">WVU Portal</small></a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://give.wvu.edu/">Give</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://careerservices.wvu.edu/students/handshake-login">Handshake</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://alert.wvu.edu/">WVU Alert</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://wvutoday.wvu.edu">WVU Today</a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://portal.wvu.edu">WVU Portal</a></li>
         </ul>
         <ul class="list-unstyled">
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://www.facebook.com/wvumountaineers"><small class="d-block"><span class="fab fa-facebook-square h5"></span><span class="sr-only">WVU on Facebook</span></small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://twitter.com/WestVirginiaU"><small class="d-block"><span class="fab fa-twitter-square h5"></span><span class="sr-only">WVU on Twitter</span></small></a></li>
-          <li class="list-inline-item"><a class="{{ link_class }}" href="https://www.youtube.com/user/westvirginiau"><small class="d-block"><span class="fab fa-youtube-square h5"></span><span class="sr-only">WVU on YouTube</span></small></a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://www.facebook.com/wvumountaineers"><span class="fab fa-facebook-square h5"></span><span class="sr-only">WVU on Facebook</span></a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://twitter.com/WestVirginiaU"><span class="fab fa-twitter-square h5"></span><span class="sr-only">WVU on Twitter</span></a></li>
+          <li class="list-inline-item"><a class="{{ link_class }}" href="https://www.youtube.com/user/westvirginiau"><span class="fab fa-youtube-square h5"></span><span class="sr-only">WVU on YouTube</span></a></li>
         </ul>
       </div>
     </div>
