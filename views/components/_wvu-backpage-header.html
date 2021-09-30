@@ -10,13 +10,13 @@
 {%- enddefine_component -%}
 
 {%- liquid
-  assign componentHeaderLabel = 'wvu-backpage-header-1__label'
-  assign componentSubhead = 'wvu-backpage-header-1__subhead'
-  assign subheadClasses = 'wvu-backpage-header-1-subhead-classes'
+  assign componentHeaderLabel = 'wvu-CNAME__label' | replace: 'CNAME', component.name
+  assign componentSubhead = 'wvu-CNAME__subhead' | replace: 'CNAME', component.name
+  assign subheadClasses = 'wvu-CNAME-subhead-classes' | replace: 'CNAME', component.name
   assign defaultSubheadClasses = 'lead mb-0 mt-1'
 
   assign bgTag1 = 'backpage-header-background'
-  assign bgTag2 = page.slug | append: '-backpage-header-1-background'
+  assign bgTag2 = 'SLUG-CNAME-background' | replace: 'SLUG', page.slug | replace: 'CNAME', component.name
 
   assign bg1 = site | first_random_image_tagged_with: label: bgTag1 | image_url: size: '1780x580' | css_background_image
   assign bg2 = site | first_random_image_tagged_with: label: bgTag2 | image_url: size: '1780x1780' | css_background_image
