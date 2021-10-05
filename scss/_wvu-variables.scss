@@ -87,7 +87,7 @@ $wvu-hero-font-color: white !default;
 $wvu-hero-title-typeface: $wvu-shout-font-family !default;
 $wvu-hero-vignetting-opacity: .85 !default;
 $wvu-typography-line-length: 45rem !default;
-$wvu-tint-opacity: .07 !default;
+$wvu-tint-opacity: .7 !default;
 $wvu-vignetting-opacity: .85 !default;
 
 $wvu-slash-width: .5em !default;
@@ -105,7 +105,7 @@ $wvu-grid-pattern-zoomed: "https://static.wvu.edu/global/images/patterns/wvu/bac
 $wvu-grid-pattern-zoomed-transparent: "https://static.wvu.edu/global/images/patterns/wvu/background__grid-zoomed-transparent--1.0.0.svg";
 $wvu-topo-map-black: "https://static.wvu.edu/global/images/patterns/wvu/background__topo-black--1.0.0.svg";
 $wvu-topo-map-white: "https://static.wvu.edu/global/images/patterns/wvu/background__topo-white--1.0.0.svg";
-$wvu-topo-map-opacity: 0.1 !default;
+$wvu-topo-map-opacity: 0.07 !default;
 
 // Make !important configurable
 $global-important: !important !default; // Set to `null` to remove !important from all CSS property values, except where explicitly defined otherwise in mixin @includes.
