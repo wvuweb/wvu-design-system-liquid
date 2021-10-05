@@ -80,13 +80,13 @@
           {% endif %}
         </p>
       {% endif %}
-      <p class="{{ itemBodyClasses }}">
-        {% if item.data.description != blank %}
+
+      {% if item.data.description != blank %}
+        <p class="{{ itemBodyClasses }}">
           {{ item.data.description }}
-        {% else %}
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        {% endif %}
-      </p>
+        </p>
+      {% endif %}
+
       {% if itemReadMoreButtonText != 'none' %}
         {% if item.data.link_text != blank %}
           {% assign link_text = item.data.link_text %}

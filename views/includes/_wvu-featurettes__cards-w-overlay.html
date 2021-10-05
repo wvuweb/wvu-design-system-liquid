@@ -59,13 +59,11 @@
           <div class="card-img-overlay">
             <div class="wvu-z-index-content">
               <{{ htag }} class="card-title {{ itemHeaderClasses }}" id="{{ htag_id }}">{{ item.alternate_name | default: item.name }}</{{ htag }}>
-              <p class="{{ itemBodyClasses }}">
-                {% if item.data.description != blank %}
+              {% if item.data.description != blank %}
+                <p class="{{ itemBodyClasses }}">
                   {{ item.data.description }}
-                {% else %}
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                {% endif %}
-              </p>
+                </p>
+              {% endif %}
             </div>
           </div>
         </div>
