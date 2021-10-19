@@ -52,7 +52,18 @@
       {% if item.data.thumbnail_url_sq != blank %}
         <div class="row mb-1">
           <div class="col-6 mx-auto col-sm-4 col-md-6">
-            <a title="{{ itemReadMoreButtonText }}: {{ item.name }}" href="{{ link_href }}"><img class="rounded-circle shadow" src="{{ item.data.thumbnail_url_sq }}/381x381.jpg" srcset="{{ item.data.thumbnail_url_sq }}/960x960.jpg, {{ item.data.thumbnail_url_sq }}/586x586.jpg, {{ item.data.thumbnail_url_sq }}/381x381.jpg, {{ item.data.thumbnail_url_sq }}/286x286.jpg, {{ item.data.thumbnail_url_sq }}/279x279.jpg, {{ item.data.thumbnail_url_sq }}/217x217.jpg" sizes="960px, (min-width: 768px) 586px" alt="{{ item.data.thumbnail_alt  }}"></a>
+
+            {% if itemReadMoreButtonText != 'none' %}
+              {% if item.data.link_text != blank %}
+                {% assign link_text = item.data.link_text %}
+              {% else %}
+                {% capture link_text %}{{ itemReadMoreButtonText }}<span class="sr-only">: {{ item.name }}</span>{% endcapture %}
+              {% endif %}
+              <a title="{{ itemReadMoreButtonText }}: {{ item.name }}" href="{{ link_href }}"><img class="rounded-circle shadow" src="{{ item.data.thumbnail_url_sq }}/381x381.jpg" srcset="{{ item.data.thumbnail_url_sq }}/960x960.jpg, {{ item.data.thumbnail_url_sq }}/586x586.jpg, {{ item.data.thumbnail_url_sq }}/381x381.jpg, {{ item.data.thumbnail_url_sq }}/286x286.jpg, {{ item.data.thumbnail_url_sq }}/279x279.jpg, {{ item.data.thumbnail_url_sq }}/217x217.jpg" sizes="960px, (min-width: 768px) 586px" alt="{{ item.data.thumbnail_alt  }}"></a>
+            {% else %}
+              <img class="rounded-circle shadow" src="{{ item.data.thumbnail_url_sq }}/381x381.jpg" srcset="{{ item.data.thumbnail_url_sq }}/960x960.jpg, {{ item.data.thumbnail_url_sq }}/586x586.jpg, {{ item.data.thumbnail_url_sq }}/381x381.jpg, {{ item.data.thumbnail_url_sq }}/286x286.jpg, {{ item.data.thumbnail_url_sq }}/279x279.jpg, {{ item.data.thumbnail_url_sq }}/217x217.jpg" sizes="960px, (min-width: 768px) 586px" alt="{{ item.data.thumbnail_alt  }}">
+            {% endif %}
+
           </div>
         </div>
       {% endif %}
