@@ -57,7 +57,7 @@
         <div class="container">
           {% if site.data.masthead_college_link_title != blank %}
             <div class="row justify-content-center justify-content-lg-start mb-2">
-              <span class="{% if site.data.masthead_color != 'gold' %}bg-wvu-gold{% else %}bg-wvu-blue{% endif %}px-2 py-1 align-self-top small"><a href="{{ site.data.masthead_college_link_address }}" class="text-decoration-none {% if site.data.masthead_color != 'gold' %}text-wvu-blue {% else %}text-white {% endif %}">{{ site.data.masthead_college_link_title }}</a></span>
+              <span class="{% if site.data.masthead_color != 'gold' %}bg-wvu-gold{% else %}bg-wvu-blue{% endif %} px-2 py-1 align-self-top small"><a href="{{ site.data.masthead_college_link_address }}" class="text-decoration-none {% if site.data.masthead_color != 'gold' %}text-wvu-blue {% else %}text-white {% endif %}">{{ site.data.masthead_college_link_title }}</a></span>
             </div>
           {% endif %}
           <div class="row align-content-center justify-content-center justify-content-lg-start{% if site.data.masthead_college_link_title == blank %} h-100 justify-content-lg-end{% endif %}">
