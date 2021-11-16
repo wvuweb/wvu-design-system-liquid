@@ -2,7 +2,6 @@
 {%- define_component component %}
   {
     "baseName": "lede-text",
-    "needsARIALabel": true,
     "defaultComponentClasses": "bg-light",
     "defaultHeaderClasses": "helvetica-neue-light text-center h3 mb-0",
     "mainTagClasses": null
@@ -13,6 +12,18 @@
   <div class="container py-5">
     <div class="row">
       <div class="col-md-8 mx-md-auto wvu-z-index-content">
+
+        {%- if edit_mode or page.content[component.region_names.header] != blank %}
+          <div class="wvu-z-index-content">
+            {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
+            {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Header</span>{% endif %}
+            {% comment %}<!-- For the h2, apply an ID that will tell screanreaders to use this element as the label for the section. Also apply classes to the header. If supplied by user, use those. If not use default. -->{% endcomment %}
+            {% editable_region_block name: component.region_names.header scope: component.scope %}
+              <h2 id="lede-text-1-label" class="display-3 wvu-shout sr-only">Lede Text Headline</h2>
+            {% endeditable_region_block %}
+          </div>
+        {%- endif %}
+
         {% if edit_mode %}
           <small class="wvu-z-index-content d-block mb-2 text-left text-muted p-1 bg-wvu-neutral--dark-gray">Lede text classes:
             <pre class="mb-0 text-white">{% editable_region name: component.region_names.headerClasses, type: "simple" %}</pre>
