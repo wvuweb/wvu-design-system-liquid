@@ -21,7 +21,13 @@
 
   assign root = site.root_page
   assign items = root.descendants | filter_pages: by: component.loopBy, sort: component.loopOrder, tags: component.itemLabels, tags_match: component.loopLabelsMatch, hidden: component.showHidden, random: component.random, limit: component.limit
-%}
+
+  if page.content[component.region_names.header] != blank
+    assign htag = 'h3'
+  else
+    assign htag = 'h2'
+  endif
+-%}
 
 {% capture loopContent %}
   {% for item in items.all %}
@@ -29,12 +35,6 @@
     {% assign bgStyler = bgLabel | background_styler %}
 
     {% liquid
-      if item.content[component.region_names.header] != blank
-        assign htag = 'h3'
-      else
-        assign htag = 'h2'
-      endif
-
       if item.data.alternate_url != blank
         assign link_href =  item.data.alternate_url
       else
