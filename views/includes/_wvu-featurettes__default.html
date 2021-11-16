@@ -46,7 +46,7 @@
       endif
     %}
 
-    {% capture htag_id %}{{ item.slug }}-{{ component.name }}-{{ item.id }} {% endcapture %}
+    {% capture htag_id %}{{ item.slug }}-{{ component.name }}-{{ item.id }}{% endcapture %}
 
     <div class="{{ itemClasses }}" {{ bgStyler }}>
       {% if item.data.thumbnail_url != blank %}

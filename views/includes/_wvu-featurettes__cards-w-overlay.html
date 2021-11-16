@@ -44,7 +44,7 @@
       endif
     %}
 
-    {% capture htag_id %}{{ item.slug }}-{{ component.name }}-{{ item.id }} {% endcapture %}
+    {% capture htag_id %}{{ item.slug }}-{{ component.name }}-{{ item.id }}{% endcapture %}
 
     <div class="{{ itemClasses }}">
       <a class="text-white" aria-labelledby="{{ htag_id }}" href="{{ link_href }}">
