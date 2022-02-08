@@ -7,6 +7,9 @@
       {% assign component.classes = "wvu-breadcrumbs-1-classes" %}
     {% endif %}
   {% endunless %}
+
+  {% assign ariaLabelRegionName = component.name | append: '-aria-label' %}
+
   <a class="text-white p-1 rounded-sm d-inline-block btn btn-sm btn-wvu-neutral--black wvu-grow-shadow wvu-z-index-content position-absolute mt-n4 ml-1" data-toggle="collapse" href="#editpanel-{{ component.name }}" role="button" aria-expanded="false" aria-controls="editpanel-{{ component.name }}"><small class="d-block"><i class="far fa-edit"></i> Edit <span class="text-capitalize">{{ component.baseName }}</span> Styles</small></a>
   <section class="px-2 px-md-5 pt-2 pb-3 mb-0 text-light bg-wvu-neutral--black position-relative collapse multi-collapse" id="editpanel-{{ component.name }}">
     <p class="mb-0">
@@ -20,8 +23,11 @@
       </small>
       {% endif %}
     </p>
-    <p class="mb-0 mt-1">
+    <p class="mt-1">
       <small><strong class="text-muted">Label for background image:</strong></small> <span class="badge badge-pill badge-secondary">{{ page.slug }}-{{ component.name }}-background</span>
+    </p>
+    <p class="mt-1">
+      <small><strong class="text-muted">Aria Label (if this component has no header): {% editable_region name: ariaLabelRegionName type: 'simple' scope: component.scope %}
     </p>
     <a class="text-wvu-accent--orange" data-toggle="collapse" href="#multiCollapseExample{{ component.name }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample{{ component.name }}">Hints</a>
     <div class="row">
@@ -100,7 +106,7 @@
           </p>
           <p class="text-muted mb-0 mt-1">
             {% if component.defaultItemButtonClasses != blank %}
-            <small> 
+            <small>
               <strong>Default classes:</strong> {{ component.defaultItemButtonClasses }}
             </small>
             {% endif %}
