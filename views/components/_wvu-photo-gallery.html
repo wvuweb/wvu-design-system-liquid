@@ -21,7 +21,7 @@
         {% endeditable_region_block %}
       </div>
     {% endif %}
-    <div class="row photos">
+    <div class="row js-wvu-lightbox-gallery">
       {% capture gallerypage %}{{ page.slug }}-gallery-{{ component.number }}{% endcapture %}
       {% assign images = site.files | filter_files: tags: gallerypage, types: 'image', order: component.galleryLoopBy, sort: component.loopOrder %}
       {% for image in images.all %}
@@ -43,7 +43,7 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
-  		$('.photos').magnificPopup({
+  		$('.js-wvu-lightbox-gallery').magnificPopup({
   		  delegate: 'a', // child items selector, by clicking on it popup will open
   		  type: 'image',
   		  gallery: {
