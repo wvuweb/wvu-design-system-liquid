@@ -22,7 +22,7 @@
       </div>
     {% endif %}
     <div class="row js-wvu-lightbox-gallery">
-      {% capture gallerypage %}{{ page.slug }}-gallery-{{ component.number }}{% endcapture %}
+      {% capture gallerypage %}{{ page.slug }}-gallery-{{ component.number }},{{ page.slug }}-{{ component.name }}{% endcapture %}
       {% assign images = site.files | filter_files: tags: gallerypage, types: 'image', order: component.galleryLoopBy, sort: component.loopOrder %}
       {% for image in images.all %}
         <div class="col-md-4 col-lg-3 mb-3">
