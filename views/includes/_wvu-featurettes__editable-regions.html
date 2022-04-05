@@ -23,7 +23,7 @@
     assign itemClasses = page.content[component.region_names.itemClasses]
   else
     assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses
-    assign itemClasses = defaultItemClasses
+    assign itemClasses = page.content[component.region_names.itemClasses] | default: defaultItemClasses
   endif
 -%}
 
@@ -36,7 +36,7 @@
 
     {%- assign bgStyler = bgLabel | background_styler %}
 
-    <div class="{{columnClasses}} {{ itemClasses }}" {{ bgStyler }}>
+    <div class="{{ itemClasses }}" {{ bgStyler }}>
       {%- if edit_mode or page.content[componentPanelPhoto] != blank %}
         <div class="mb-1">
           {% editable_region_block name: componentPanelPhoto, scope: component.scope %}
