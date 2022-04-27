@@ -59,6 +59,21 @@
       <div class="row">
         <div class="col-lg">
           <p class="mb-0">
+            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for row:</span></r:edit_mode_only>
+            <p>
+              {% editable_region name: component.region_names.rowClasses, type: "simple" %}
+            </p>
+          </p>
+          <p class="text-muted mb-0 mt-1 small">
+            {% if component.defaultRowClasses != blank %}
+            <small>
+              <strong>Default classes:</strong> {{ component.defaultRowClasses }}
+            </small>
+            {% endif %}
+          </p>
+        </div>
+        <div class="col-lg">
+          <p class="mb-0">
             {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Utility classes for items:</span>{% endif %}
             <p>
               {% editable_region name: component.region_names.itemClasses, type: "simple" %}
