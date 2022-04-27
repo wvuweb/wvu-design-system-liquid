@@ -62,10 +62,10 @@
 
           {% assign pagination = articles | blog_pagination %}
           {% if pagination.total_pages > 1 %}
-            <nav aria-label="Page navigation">
-              <li class="page-item {% if pagination.is_last_page %}disabled{% endif %}"><a class="page-link" href="{{ pagination.next_page_url }}">&larr; Older Articles</a></li>
-              <li class="page-item {% if pagination.is_first_page %}disabled{% endif %}"><a class="page-link" href="{{ pagination.prev_page_url }}">Newer Articles &rarr;</a></li>
-            </nav>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a type="button" href="{{ pagination.next_page_url }}" class="btn btn-secondary page-link{% if pagination.is_last_page %} disabled{% endif %}">Older Articles</a>
+              <a type="button" href="{{ pagination.prev_page_url }}" class="btn btn-secondary page-link{% if pagination.is_first_page %} disabled{% endif %}">Newer Articles</a>
+            </div>
           {% endif %}
         {% else %}
           <p>No blog posts found. Try again later, perhaps?</p>

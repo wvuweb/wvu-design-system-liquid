@@ -1,0 +1,82 @@
+<!-- Featurette: default -->
+{%- liquid
+  if component.full_width_or_backpage?
+    case component.limit
+      when 1
+        assign columnClasses = 'col'
+      when 2 or 6 or 9
+        assign columnClasses = 'col-sm-6 col-md-4'
+      when 3 or 4
+        assign columnClasses = 'col-sm-6 col-md'
+      when 5
+        assign columnClasses = 'col-sm-6 col-md-4 col-lg-3 col-xl'
+      else
+        assign columnClasses = 'col-sm-6 col-md-3'
+    endcase
+  endif
+
+  assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses
+  assign itemClasses = page.content[component.region_names.itemClasses] | default: defaultItemClasses
+  assign rowClasses = page.content[component.region_names.rowClasses] | default: 'justify-content-left'
+  assign itemHeaderClasses = page.content[component.region_names.itemHeaderClasses] | default: 'h3 iowan-old-style-italic mb-1'
+  assign itemBodyClasses = page.content[component.region_names.itemBodyClasses] | default: ''
+  assign itemButtonClasses = page.content[component.region_names.itemButtonClasses] | default: 'btn btn-primary btn-sm'
+  assign itemReadMoreButtonText = page.content[component.region_names.readMoreButtonText] | default: 'Read More'
+
+  assign root = site.root_page
+  assign items = root.descendants | filter_pages: by: component.loopBy, sort: component.loopOrder, tags: component.itemLabels, tags_match: component.loopLabelsMatch, hidden: component.showHidden, random: component.random, limit: component.limit
+
+  if page.content[component.region_names.header] != blank
+    assign htag = 'h3'
+  else
+    assign htag = 'h2'
+  endif
+-%}
+
+{% capture loopContent %}
+  {% for item in items.all %}
+    {% capture bgLabel %}{{ component.featurettesBgPrefix }}-panel-{{ forloop.index }}-background{% endcapture %}
+    {% assign bgStyler = bgLabel | background_styler %}
+
+    {% liquid
+      if item.data.alternate_url != blank
+        assign link_href = item.data.alternate_url
+      else
+        assign link_href = item.url
+      endif
+    %}
+
+    {% capture htag_id %}{{ item.slug }}-{{ component.name }}-{{ item.id }}{% endcapture %}
+
+    <div class="{{ itemClasses }}" {{ bgStyler }}>
+      {% if item.data.thumbnail_url != blank %}
+        <div class="mb-1">
+          <a title="{{ itemReadMoreButtonText }}: {{ item.name }}" href="{{ link_href }}"><img class="card-img-top" src="{{ item.data.thumbnail_url }}/381x255.jpg" srcset="{{ item.data.thumbnail_url }}/960x640.jpg, {{ item.data.thumbnail_url }}/586x286.jpg, {{ item.data.thumbnail_url }}/381x255.jpg, {{ item.data.thumbnail_url }}/286x191.jpg, {{ item.data.thumbnail_url }}/279x186.jpg, {{ item.data.thumbnail_url }}/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="{{ item.data.thumbnail_alt  }}"></a>
+        </div>
+      {% endif %}
+
+      <{{ htag }} class="card-title {{ itemHeaderClasses }}" id="{{ htag_id }}">{{ item.alternate_name | default: item.name }}</{{ htag }}>
+      <p class="{{ itemBodyClasses }}">
+        {% if item.data.description != blank %}
+          {{ item.data.description }}
+        {% else %}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        {% endif %}
+      </p>
+      {% if itemReadMoreButtonText != 'none' %}
+        {% if item.data.link_text != blank %}
+          {% assign link_text = item.data.link_text %}
+        {% else %}
+          {% capture link_text %}{{ itemReadMoreButtonText }}<span class="sr-only">: {{ item.name }}</span>{% endcapture %}
+        {% endif %}
+        <a class="{{ itemButtonClasses }}" href="{{ link_href }}">{{ link_text }}</a>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endcapture %}
+
+{% if component.full_width_or_backpage? %}
+  <div class="row {{ rowClasses }}">{{ loopContent }}</div>
+{% else %}
+  {{ loopContent }}
+{% endif %}

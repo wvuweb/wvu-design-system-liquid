@@ -1,0 +1,60 @@
+<!-- Component: wvu-featurettes -->
+{%- define_component component %}
+  {
+    "baseName": "featurettes",
+    "defaultComponentClasses": "py-5",
+    "defaultRowClasses": "justify-content-left",
+    "defaultItemClasses": "mb-3 mb-md-0",
+    "defaultHeaderClasses": "mb-4",
+    "defaultItemHeaderClasses": "",
+    "defaultItemBodyClasses": null,
+    "defaultItemButtonClasses": "",
+    "mainTagClasses": null
+  }
+{%- enddefine_component %}
+
+{% capture component_content %}
+  <div class="{% if component.full_width_or_backpage? %}container {% endif %}wvu-z-index-content">
+    {%- if edit_mode or page.content[component.region_names.header] != blank %}
+      <div class="wvu-z-index-content">
+        {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
+        {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Header</span>{% endif %}
+        {% comment %}<!-- For the h2, apply an ID that will tell screanreaders to use this element as the label for the section. Also apply classes to the header. If supplied by user, use those. If not use default. -->{% endcomment %}
+        {% editable_region_block name: component.region_names.header scope: component.scope %}
+          <h2 id="featurettes-*-label" class="display-3 wvu-shout">Featurettes Headline</h2>
+          <p class="h3 helvetica-neue-light mb-4">Subhead goes here.</p>
+        {% endeditable_region_block %}
+      </div>
+    {%- endif %}
+
+    {% comment %} Render the appropriate featurette style partial {% endcomment %}
+    {%- case component.featurettesStyle %}
+      {% when 'default' %}{% render "includes/wvu-featurettes__default" component: component %}
+      {% when 'editable-regions' %}{% render "includes/wvu-featurettes__editable-regions" component: component %}
+      {% when 'blog' %}{% render "includes/wvu-featurettes__blog" component: component %}
+      {% when 'cards' %}{% render "includes/wvu-featurettes__cards" component: component %}
+      {% when 'card-columns' %}{% render "includes/wvu-featurettes__card-columns" component: component %}
+      {% when 'cards-w-editable-regions' %}{% render "includes/wvu-featurettes__cards-w-editable-regions" component: component %}
+      {% when 'cards-w-overlay' %}{% render "includes/wvu-featurettes__cards-w-overlay" component: component %}
+      {% when 'custom' %}{% render "includes/wvu-featurettes__custom" component: component %}
+      {% when 'profiles' %}{% render "includes/wvu-featurettes__profiles" component: component %}
+      {% when 'profiles-sans-contact-info' %}{% render "includes/wvu-featurettes__profiles-sans-contact-info" component: component %}
+      {% when 'testimonials' %}{% render "includes/wvu-featurettes__testimonials" component: component %}
+      {% when 'video-regions' %}{% render "includes/wvu-featurettes__video-regions--v1" component: component %}
+      {% else %}ERROR: Unsupported component featurette style '{{ component.featurettesStyle }}'
+    {%- endcase %}
+
+    {%- if edit_mode or page.content[component.region_names.postscript] != blank %}
+      <div class="mt-4 wvu-z-index-content mb-2">
+        {% comment %}<!-- This is just a label for the editable region that follows in order to make it clear to content editors what the region is for (in case they delete content and forget). -->{% endcomment %}
+        {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Postscript</span>{% endif %}
+        {% editable_region_block name: component.region_names.postscript scope: component.scope %}
+          <p class="mb-0">Put additional info or <a href="#">links</a> here.</p>
+        {% endeditable_region_block %}
+      </div>
+    {%- endif %}
+  </div>
+{% endcapture %}
+
+{% render "utilities/wvu-component-tag" component: component, content: component_content %}
+{% render "includes/wvu-component-footer" component: component %}
