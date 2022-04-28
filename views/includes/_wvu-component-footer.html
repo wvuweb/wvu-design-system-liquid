@@ -32,7 +32,7 @@
       </p>
     {% endif %}
     <p class="mt-1">
-      <small><strong class="text-muted">Aria Label (if this component has no header): {% editable_region name: ariaLabelRegionName type: 'simple' scope: component.scope %}
+      <small><strong class="text-muted">Aria Label (if this component has no header): {% editable_region name: ariaLabelRegionName, type: 'simple', scope: component.scope %}
     </p>
     <a class="text-wvu-accent--orange" data-toggle="collapse" href="#multiCollapseExample{{ component.name }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample{{ component.name }}">Hints</a>
     <div class="row">
@@ -60,7 +60,7 @@
         <div class="col-lg text-white">
           <p class="mb-1 small">
             <r:edit_mode_only>Utility classes for row:</r:edit_mode_only>
-              {% editable_region name: component.region_names.rowClasses, type: "simple" %}
+              {% editable_region name: component.region_names.rowClasses, type: "simple", scope: component.scope %}
           </p>
           <p class="text-muted mb-0 mt-1 small">
             {% if component.defaultRowClasses != blank %}
@@ -71,7 +71,7 @@
         <div class="col-lg text-white">
           <p class="mb-1 small">
             {% if edit_mode %}Utility classes for items:{% endif %}
-            {% editable_region name: component.region_names.itemClasses, type: "simple" %}
+            {% editable_region name: component.region_names.itemClasses, type: "simple", scope: component.scope %}
           </p>
           <p class="text-muted mb-0 mt-1 small">
             {% if component.defaultItemClasses != blank %}
@@ -83,7 +83,7 @@
           <div class="col-lg text-white">
             <p class="mb-1 small">
               {% if edit_mode %}Utility classes for item headers:{% endif %}
-              {% editable_region name: component.region_names.itemHeaderClasses, type: "simple" %}
+              {% editable_region name: component.region_names.itemHeaderClasses, type: "simple", scope: component.scope %}
             </p>
             <p class="text-muted mb-0 mt-1 small">
               {% if component.defaultItemHeaderClasses != blank %}
@@ -94,7 +94,7 @@
           <div class="col-lg text-white">
             <p class="mb-1 small">
               {% if edit_mode %}Utility classes for item body copy:{% endif %}
-              {% editable_region name: component.region_names.itemBodyClasses, type: "simple" %}
+              {% editable_region name: component.region_names.itemBodyClasses, type: "simple", scope: component.scope %}
             </p>
             <p class="text-muted mb-0 mt-1 small">
               {% if component.defaultItemBodyClasses != blank %}
@@ -105,7 +105,7 @@
           <div class="col-lg text-white">
             <p class="mb-1 small">
               {% if edit_mode %}Utility classes for buttons:{% endif %}
-              {% editable_region name: component.region_names.itemButtonClasses, type: "simple" %}
+              {% editable_region name: component.region_names.itemButtonClasses, type: "simple", scope: component.scope %}
             </p>
             <p class="text-muted mb-0 mt-1 small">
               {% if component.defaultItemButtonClasses != blank %}
@@ -116,7 +116,7 @@
           <div class="col-lg text-white">
             <p class="mb-1 small">
               {% if edit_mode %}Featurettes button text:{% endif %}
-              {% editable_region name: component.region_names.readMoreButtonText, type: "simple" placeholder="Read More" %}
+              {% editable_region name: component.region_names.readMoreButtonText, type: "simple", scope: component.scope, placeholder="Read More" %}
             </p>
             <p class="text-muted mb-0 mt-1 small">
               <strong>Default button text:</strong> Read More
