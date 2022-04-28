@@ -56,95 +56,73 @@
     </div>
     {% if component.baseName == 'featurettes' %}
       <!-- TODO: All these region names are set in views/includes/_wvu-component-variables.html -->
-      <div class="row">
-        <div class="col-lg">
-          <p class="mb-0">
-            <r:edit_mode_only><span class="d-inline-block badge badge-secondary">Utility classes for row:</span></r:edit_mode_only>
-            <p>
+      <div class="row mt-3">
+        <div class="col-lg text-white">
+          <p class="mb-1 small">
+            <r:edit_mode_only>Utility classes for row:</r:edit_mode_only>
               {% editable_region name: component.region_names.rowClasses, type: "simple" %}
-            </p>
           </p>
           <p class="text-muted mb-0 mt-1 small">
             {% if component.defaultRowClasses != blank %}
-            <small>
               <strong>Default classes:</strong> {{ component.defaultRowClasses }}
-            </small>
             {% endif %}
           </p>
         </div>
-        <div class="col-lg">
-          <p class="mb-0">
-            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Utility classes for items:</span>{% endif %}
-            <p>
-              {% editable_region name: component.region_names.itemClasses, type: "simple" %}
-            </p>
+        <div class="col-lg text-white">
+          <p class="mb-1 small">
+            {% if edit_mode %}Utility classes for items:{% endif %}
+            {% editable_region name: component.region_names.itemClasses, type: "simple" %}
           </p>
-          <p class="text-muted mb-0 mt-1">
+          <p class="text-muted mb-0 mt-1 small">
             {% if component.defaultItemClasses != blank %}
-            <small>
               <strong>Default classes:</strong> {{ component.defaultItemClasses }}
-            </small>
             {% endif %}
           </p>
         </div>
-        <div class="col-lg">
-          <p class="mb-0">
-            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Utility classes for item headers:</span>{% endif %}
-            <p>
+        {% if component.featurettesStyle != 'editable-regions' and component.featurettesStyle != 'cards-w-editable-regions' and component.featurettesStyle != 'video-regions' %}
+          <div class="col-lg text-white">
+            <p class="mb-1 small">
+              {% if edit_mode %}Utility classes for item headers:{% endif %}
               {% editable_region name: component.region_names.itemHeaderClasses, type: "simple" %}
             </p>
-          </p>
-          <p class="text-muted mb-0 mt-1">
-            {% if component.defaultItemHeaderClasses != blank %}
-            <small>
-              <strong>Default classes:</strong> {{ component.defaultItemHeaderClasses }}
-            </small>
-            {% endif %}
-          </p>
-        </div>
-        <div class="col-lg">
-          <p class="mb-0">
-            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Utility classes for item body copy:</span>{% endif %}
-            <p>
+            <p class="text-muted mb-0 mt-1 small">
+              {% if component.defaultItemHeaderClasses != blank %}
+                <strong>Default classes:</strong> {{ component.defaultItemHeaderClasses }}
+              {% endif %}
+            </p>
+          </div>
+          <div class="col-lg text-white">
+            <p class="mb-1 small">
+              {% if edit_mode %}Utility classes for item body copy:{% endif %}
               {% editable_region name: component.region_names.itemBodyClasses, type: "simple" %}
             </p>
-          </p>
-          <p class="text-muted mb-0 mt-1">
-            {% if component.defaultItemBodyClasses != blank %}
-            <small>
-              <strong>Default classes:</strong> {{ component.defaultItemBodyClasses }}
-            </small>
-            {% endif %}
-          </p>
-        </div>
-        <div class="col-lg">
-          <p class="mb-0">
-            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Utility classes for buttons:</span>{% endif %}
-            <p>
+            <p class="text-muted mb-0 mt-1 small">
+              {% if component.defaultItemBodyClasses != blank %}
+                <strong>Default classes:</strong> {{ component.defaultItemBodyClasses }}
+              {% endif %}
+            </p>
+          </div>
+          <div class="col-lg text-white">
+            <p class="mb-1 small">
+              {% if edit_mode %}Utility classes for buttons:{% endif %}
               {% editable_region name: component.region_names.itemButtonClasses, type: "simple" %}
             </p>
-          </p>
-          <p class="text-muted mb-0 mt-1">
-            {% if component.defaultItemButtonClasses != blank %}
-            <small>
-              <strong>Default classes:</strong> {{ component.defaultItemButtonClasses }}
-            </small>
-            {% endif %}
-          </p>
-        </div>
-        <div class="col-lg">
-          <p class="mb-0">
-            {% if edit_mode %}<span class="d-inline-block badge badge-secondary">Featurettes button text:</span>{% endif %}
-            <p>
+            <p class="text-muted mb-0 mt-1 small">
+              {% if component.defaultItemButtonClasses != blank %}
+                <strong>Default classes:</strong> {{ component.defaultItemButtonClasses }}
+              {% endif %}
+            </p>
+          </div>
+          <div class="col-lg text-white">
+            <p class="mb-1 small">
+              {% if edit_mode %}Featurettes button text:{% endif %}
               {% editable_region name: component.region_names.readMoreButtonText, type: "simple" placeholder="Read More" %}
             </p>
-          </p>
-          <p class="text-muted mb-0 mt-1">
-            <small>
+            <p class="text-muted mb-0 mt-1 small">
               <strong>Default button text:</strong> Read More
-            </small>
-          </p>
-        </div>
+            </p>
+          </div>
+        {% endif %}
       </div>
     {% endif %}
   </section>
