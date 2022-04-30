@@ -1,0 +1,45 @@
+{% define_component component %}
+  {
+    "baseName": "facility",
+    "defaultComponentClasses": "py-5"
+  }
+{% enddefine_component %}
+
+{% assign sidebarNumber = component.number %}
+
+{% capture component_content %}
+  <div class="container wvu-z-index-content">
+    <div class="row">
+      {% if page.data.ifBackpageRemoveSidebar != '1' %}
+        {% if component.removeSidebar != '1' and component.align == 'right' %}
+          {% render "components/v2/wvu-sidebar" component: component %}
+        {% endif %}
+      {% endif %}
+      <div class="col-md-8 mr-md-auto">
+        {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Main Content</span>{% endif %}
+        {% editable_region_block name: component.region_names.main, scope: component.scope %}
+          <p class="lead mb-3 mt-0">Churning anomalies game plan. High performance keywords not enough bandwidth.
+            Can we parallel path. Viral engagement great plan! let me diarize this,
+            and we can synchronise ourselves at a later timepoint but are there any
+            leftovers in the kitchen? driving the initiative forward.</p>
+
+          <p>Build on a culture of contribution and inclusion that jerk from finance really
+            threw me under the bus, so five-year strategic plan blue sky thinking,
+            nor clear blue water ramp up upstream selling. Strategic staircase can
+            we align on lunch orders. I don't want to drain the whole swamp, i just
+            want to shoot some alligators meeting assassin we need distributors to
+            evangelize the new line to local markets, nor cloud strategy but data-point,
+            but back to the drawing-board.</p>
+        {% endeditable_region_block %}
+      </div>
+      {% if page.data.ifBackpageRemoveSidebar != '1' %}
+        {% if component.removeSidebar != '1' and component.align != 'right' %}
+          {% render "components/v2/wvu-sidebar" component: component, number: sidebarNumber %}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+{% endcapture %}
+
+{% render "utilities/wvu-component-tag" component: component, content: component_content %}
+{% render "includes/wvu-component-footer" component: component %}

@@ -1,0 +1,16 @@
+{% define_component component %}
+  {
+    "baseName": "map",
+  }
+{% enddefine_component %}
+
+{% assign componentMapRegionName = component.name | append: '-map' %}
+
+{% capture component_content %}
+  {% editable_region_block name: componentMapRegionName, scope: component.scope %}
+    Insert map here using the HTML snippet
+  {% endeditable_region_block %}
+{% endcapture %}
+
+{% render "utilities/wvu-component-tag" component: component, content: component_content %}
+{% render "includes/wvu-component-footer" component: component %}
