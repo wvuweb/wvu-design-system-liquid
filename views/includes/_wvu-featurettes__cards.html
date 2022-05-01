@@ -48,8 +48,16 @@
 
     <div class="{{ itemClasses }}" {{ bgStyler }}>
       <div class="card shadow">
+
         {% if item.data.thumbnail_url != blank %}
-          <a title="{{ itemReadMoreButtonText }}: {{ item.name }}" href="{{ link_href }}"><img class="card-img-top" src="{{ item.data.thumbnail_url }}/381x255.jpg" srcset="{{ item.data.thumbnail_url }}/960x640.jpg, {{ item.data.thumbnail_url }}/586x286.jpg, {{ item.data.thumbnail_url }}/381x255.jpg, {{ item.data.thumbnail_url }}/286x191.jpg, {{ item.data.thumbnail_url }}/279x186.jpg, {{ item.data.thumbnail_url }}/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="{{ item.data.thumbnail_alt  }}"></a>
+          {% assign pageThumbnailSrc = item.data.thumbnail_url %}
+          {% assign pageThumbnailSrcTruncated = pageThumbnailSrc | split: 'iles/d/' %}
+          {% if pageThumbnailSrcTruncated.size == 1 %}
+            {% assign pageThumbnailSrcTruncated = pageThumbnailSrcTruncated | split: 'iles/' %}
+          {% endif %}
+          {% assign fileId = pageThumbnailSrcTruncated[1] | split: '/' %}
+          {% assign newPageThumbnailSrc = 'https://' | append: site.domain | append: '/files/' | append: fileId[0] %}
+          <a title="{{ itemReadMoreButtonText }}: {{ item.name }}" href="{{ link_href }}"><img class="card-img-top" src="{{ newPageThumbnailSrc }}/381x255.jpg" srcset="{{ newPageThumbnailSrc }}/960x640.jpg, {{ newPageThumbnailSrc }}/586x286.jpg, {{ newPageThumbnailSrc }}/381x255.jpg, {{ newPageThumbnailSrc }}/286x191.jpg, {{ newPageThumbnailSrc }}/279x186.jpg, {{ newPageThumbnailSrc }}/217x145.jpg" sizes="960px, (min-width: 768px) 586px" alt="{{ item.data.thumbnail_alt  }}"></a>
         {% endif %}
 
         <div class="card-body bg-white">

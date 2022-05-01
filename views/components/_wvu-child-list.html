@@ -1,0 +1,37 @@
+<!-- Component: v2/wvu-backpage-header -->
+{% define_component component %}
+  {
+    "baseName": "child-list",
+    "needsARIALabel": true,
+    "defaultComponentClasses": "py-5 "
+  }
+{% enddefine_component %}
+
+{%- liquid
+  assign items = page.children | filter_pages: by: component.loopBy, sort: component.loopOrder, tags: component.itemLabels, tags_match: component.loopLabelsMatch, hidden: component.showHidden, random: component.random, limit: component.limit
+-%}
+
+{% capture component_content %}
+  <div class="container wvu-z-index-content">
+    <ul>
+      {% for item in items.all %}
+
+        {% liquid
+          if item.data.alternate_url != blank
+            assign link_href = item.data.alternate_url
+          else
+            assign link_href = item.url
+          endif
+        %}
+
+        <li>
+          <a href="{{ link_href }}">{{ item.alternate_name | default: item.name }}</a>
+        </li>
+
+      {% endfor %}
+    </ul>
+  </div><!-- /.container -->
+{% endcapture %}
+
+{% render "utilities/wvu-component-tag" component: component, content: component_content %}
+{% render "includes/wvu-component-footer" component: component %}
