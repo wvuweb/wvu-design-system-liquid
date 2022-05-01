@@ -8,7 +8,7 @@
 {% enddefine_component %}
 
 {%- liquid
-  assign items = page.children | filter_pages: by: component.loopBy, sort: component.loopOrder, tags: component.itemLabels, tags_match: component.loopLabelsMatch, hidden: component.showHidden, random: component.random, limit: component.limit
+  assign items = page.children | filter_pages: by: component.loopBy, sort: component.loopOrder, tags: component.itemLabels, tags_match: component.loopLabelsMatch, hidden: component.showHidden, random: component.random, limit: 200
 -%}
 
 {% capture component_content %}
