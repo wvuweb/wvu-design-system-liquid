@@ -11,6 +11,12 @@
       assign columnClasses = 'col-sm-6 col-md-3'
   endcase
 
+  if page.content[component.region_names.rowClasses] != blank
+    assign rowClasses = page.content[component.region_names.rowClasses]
+  else
+    assign rowClasses = component.defaultRowClasses
+  endif
+
   assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses
   assign itemClasses = page.content[component.region_names.itemClasses] | default: defaultItemClasses
 %}
