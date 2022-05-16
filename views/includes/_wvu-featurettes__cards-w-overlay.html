@@ -47,7 +47,7 @@
     {% capture htag_id %}{{ item.slug }}-{{ component.name }}-{{ item.id }}{% endcapture %}
 
     <div class="{{ itemClasses }}">
-      <a class="text-white" aria-labelledby="{{ htag_id }}" href="{{ link_href }}">
+      <a class="text-white" href="{{ link_href }}">
         <div class="card bg-dark text-white shadow wvu-bg-vignetting">
 
           {% if item.data.thumbnail_url != blank %}
