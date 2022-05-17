@@ -55,6 +55,52 @@
       </div>
     </div>
     {% if component.baseName == 'featurettes' %}
+
+      {% case component.limit %}
+        {% when 1 %}
+          {% case component.featurettesStyle %}
+            {% when 'blog' or 'profiles' %}{% assign columnClasses = 'col-sm-6' %}
+            {% when 'cards-w-overlay' or 'custom' or 'default' or 'editable-regions' %}{% assign columnClasses = 'col' %}
+            {% when 'cards' or 'cards-w-editable-regions' %}{% assign columnClasses = 'col-sm-6 col-md-4' %}
+            {% when 'testimonials' %}
+              {% case component.align %}
+                {% when 'middle' %}{% assign columnClasses = 'col-sm-6 mx-sm-auto' %}
+                {% when 'right' %}{% assign columnClasses = 'col-sm-6 ml-sm-auto' %}
+              {% else %}
+                {% assign columnClasses = 'col-sm-6 mr-sm-auto' %}
+              {% endcase %}
+          {% endcase %}
+        {% when 2 %}
+          {% case component.featurettesStyle %}
+            {% when 'cards-w-editable-regions' or 'cards-w-overlay' or 'cards' or 'default' or 'editable-regions' or 'testimonials' %}{% assign columnClasses = 'col-sm-6 col-md-4' %}
+            {% when 'custom' %}{% assign columnClasses = 'col-sm-6 col-md' %}
+          {% endcase %}
+        {% when 3 %}
+          {% case component.featurettesStyle %}
+            {% when 'blog' or 'card-columns' or 'cards-w-editable-regions' or 'cards-w-overlay' or 'cards' or 'custom' or 'default' or 'editable-regions' or 'testimonials' %}{% assign columnClasses = 'col-sm-6 col-md' %}
+          {% endcase %}
+        {% when 4 %}
+          {% assign columnClasses = 'col-sm-6 col-md' %}
+        {% when 5 %}
+          {% case component.featurettesStyle %}
+            {% when 'blog' or 'card-columns' %}{% assign columnClasses = 'col-sm-6 col-md-4 col-lg-3' %}
+            {% when 'cards-w-editable-regions' or 'cards-w-overlay' or 'cards' or 'custom' or 'default' or 'editable-regions' or 'profiles' or 'testimonials' %}{% assign columnClasses = 'col-sm-6 col-md-4 col-lg-3 col-xl' %}
+          {% endcase %}
+        {% when 6 %}
+          {% case component.featurettesStyle %}
+            {% when 'blog' or 'cards-w-editable-regions' or 'cards-w-overlay' or 'cards' or 'custom' or 'default' or 'editable-regions' or 'profiles' or 'testimonials' %}{% assign columnClasses = 'col-sm-6 col-md-4' %}
+          {% endcase %}
+        {% when 9 %}
+          {% case component.featurettesStyle %}
+            {% when 'blog' or 'cards-w-editable-regions' or 'cards-w-overlay' or 'cards' or 'custom' or 'default' or 'editable-regions' or 'profiles' or 'testimonials' %}{% assign columnClasses = 'col-sm-6 col-md-4' %}
+          {% endcase %}
+      {% else %}
+        {% when 'blog' or 'cards-w-editable-regions' or 'cards-w-overlay' or 'custom' or 'default' or 'editable-regions' or 'profiles' or 'testimonials' %}{% assign columnClasses = 'col-sm-6 col-md-3' %}
+        {% when 'card-columns' or 'cards' %}{% assign columnClasses = 'col-sm-6 col-md-4' %}
+      {% endcase %}
+
+      {% assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses %}
+
       <!-- TODO: All these region names are set in views/includes/_wvu-component-variables.html -->
       <div class="row mt-3">
         <div class="col-lg text-white">
