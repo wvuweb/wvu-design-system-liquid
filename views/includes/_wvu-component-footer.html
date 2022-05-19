@@ -94,9 +94,11 @@
           {% case component.featurettesStyle %}
             {% when 'blog' or 'cards-w-editable-regions' or 'cards-w-overlay' or 'cards' or 'custom' or 'default' or 'editable-regions' or 'profiles' or 'testimonials' %}{% assign columnClasses = 'col-sm-6 col-md-4' %}
           {% endcase %}
-      {% else %}
-        {% when 'blog' or 'cards-w-editable-regions' or 'cards-w-overlay' or 'custom' or 'default' or 'editable-regions' or 'profiles' or 'testimonials' %}{% assign columnClasses = 'col-sm-6 col-md-3' %}
-        {% when 'card-columns' or 'cards' %}{% assign columnClasses = 'col-sm-6 col-md-4' %}
+        {% else %}
+          {% case component.featurettesStyle %}
+            {% when 'blog' or 'cards-w-editable-regions' or 'cards-w-overlay' or 'custom' or 'default' or 'editable-regions' or 'profiles' or 'testimonials' %}{% assign columnClasses = 'col-sm-6 col-md-3' %}
+            {% when 'card-columns' or 'cards' %}{% assign columnClasses = 'col-sm-6 col-md-4' %}
+          {% endcase %}
       {% endcase %}
 
       {% assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses %}
