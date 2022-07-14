@@ -26,7 +26,7 @@
         {% for profile in profiles.all %}
           <div class="row mb-5">
             <div class="col-md-3 mr-ml-auto mb-1 text-center">
-              {% assign itemThumbnailSrc = item.data.thumbnail_url_sq | build_image_url: format: '960x640.jpg' %}
+              {% assign itemThumbnailSrc = profile.data.thumbnail_url_sq | build_image_url: format: '960x640.jpg' %}
               {% if itemThumbnailSrc != blank %}
                 <img class="rounded-circle shadow text-center" src="{{ itemThumbnailSrc }}" alt="{{ profile.data.thumbnail_alt }}">
               {% endif %}

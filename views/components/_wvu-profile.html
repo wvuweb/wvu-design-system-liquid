@@ -33,8 +33,8 @@
         <div class="col-8 col-xl-10 mr-auto">
           <div class="row">
             <div class="col-xl-10 mr-xl-auto">
-              {% assign itemThumbnailSrcSq = item.data.thumbnail_url_sq | build_image_url: format: '960x640.jpg' %}
-              {% assign itemThumbnailSrc = item.data.thumbnail_url | build_image_url: format: '960x640.jpg' %}
+              {% assign itemThumbnailSrcSq = page.data.thumbnail_url_sq | build_image_url: format: '960x640.jpg' %}
+              {% assign itemThumbnailSrc = page.data.thumbnail_url | build_image_url: format: '960x640.jpg' %}
               {% if itemThumbnailSrcSq != blank %}
                 <img class="rounded-circle shadow" src="{{ itemThumbnailSrcSq }}" alt="{{ page.data.thumbnail_alt }}" />
               {% elsif itemThumbnailSrc != blank %}
