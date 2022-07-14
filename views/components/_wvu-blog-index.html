@@ -31,9 +31,10 @@
             {% for article in articles.all %}
               <article class="mb-4" itemscope="" itemtype="http://schema.org/BlogPosting">
                 <div class="row">
-                  {% if article.data.thumbnail_url != blank %}
+                  {% assign itemThumbnailSrc = article.data.thumbnail_url | build_image_url: format: '960x640.jpg' %}
+                  {% if itemThumbnailSrc != blank %}
                     <div class="col-md-3">
-                      <a aria-hidden="true" href="{{ article.url }}"><img src="{{ article.data.thumbnail_url }}" alt="{{ article.data.thumbnail_alt }}" /></a>
+                      <a aria-hidden="true" href="{{ article.url }}"><img src="{{ itemThumbnailSrc }}" alt="{{ article.data.thumbnail_alt }}" /></a>
                     </div>
                   {% endif %}
                   <div class="col-md-9{% if article.data.thumbnail_url != blank %} mt-3 mt-md-0{% else %} ml-md-auto{% endif %}">
