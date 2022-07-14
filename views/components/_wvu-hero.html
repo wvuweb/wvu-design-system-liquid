@@ -9,10 +9,10 @@
 {% enddefine_component %}
 
 {%- liquid
-  if component.isMain == true
-    assign htag = 'h1'
-  else
+  if component.isMain != true
     assign htag = 'h2'
+  else
+    assign htag = 'h1'
   endif
 -%}
 
