@@ -43,9 +43,9 @@ custom_data_attributes:
   - thumbnail_alt:
     title: Thumbnail Alt Text
   - thumbnail_url:
-    title: Thumnbail URL
+    title: Thumbnail URL
   - thumbnail_url_sq:
-    title: Thumnbail URL Square
+    title: Thumbnail URL Square
 
 custom_site_attributes:
   - apply_link_1
