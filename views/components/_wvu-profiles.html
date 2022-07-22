@@ -30,7 +30,7 @@
               {% assign itemThumbnailSrc = profile.data.thumbnail_url | build_image_url: format: '960x640.jpg' %}
               {% if itemThumbnailSqSrc != blank %}
                 <img class="rounded-circle shadow text-center" src="{{ itemThumbnailSqSrc }}" alt="{{ profile.data.thumbnail_alt }}">
-              {% elsif itemThumbnailSqSrc != blank %}
+              {% elsif itemThumbnailSrc != blank %}
                 <img class="shadow text-center" src="{{ itemThumbnailSrc }}" alt="{{ profile.data.thumbnail_alt }}">
               {% endif %}
             </div>
