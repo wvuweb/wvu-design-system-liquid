@@ -9,7 +9,7 @@
 {%- enddefine_component %}
 
 {%- liquid
-  if component.main == true
+  if component.main == true and page.data.backpage_header == '1'
     assign htag = 'h1'
   else
     assign htag = 'h2'
