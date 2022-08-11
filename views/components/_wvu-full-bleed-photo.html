@@ -11,7 +11,7 @@
 {% enddefine_component %}
 
 {% comment %}<!-- Define editable region names using our component name (base component name + instance number) within namespaced labels. -->{% endcomment %}
-{%- liquid 
+{%- liquid
   assign captionRegion = 'wvu-CNAME__caption' | replace: 'CNAME', component.name
   assign captionClassesRegion = 'wvu-CNAME-caption-classes' | replace: 'CNAME', component.name
 %}
@@ -33,14 +33,14 @@
       {% endif %}
       {% if edit_mode %}<span class="d-inline-block badge badge-primary mb-1">Caption</span>{% endif %}
       {% assign klass = page.content[captionClassesRegion] | default: component.defaultCaptionClasses %}
-      <small class="{{ klass }}">
+      <p class="{{ klass }} small">
         {% editable_region_block name: captionRegion %}
           After I ran into Helen at a restaurant, I realized she was just office pretty
           we’re starting to formalize flexible opinions around our foundations let's
           prioritize the low-hanging fruit and minimize backwards overflow out of scope,
           but time vampire and knowledge process outsourcing.
         {% endeditable_region_block %}
-      </small>
+      </p>
     </figcaption>
   {% endif %}
 {% endcapture %}
