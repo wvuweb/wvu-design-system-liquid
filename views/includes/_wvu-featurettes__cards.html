@@ -47,7 +47,7 @@
     {% capture htag_id %}{{ item.slug }}-{{ component.name }}-{{ item.id }}{% endcapture %}
 
     <div class="{{ itemClasses }}" {{ bgStyler }}>
-      <div class="card shadow">
+      <div class="card shadow h-100">
 
         {% if item.data.thumbnail_url != blank %}
           {% assign pageThumbnailSrc = item.data.thumbnail_url %}
