@@ -10,8 +10,6 @@
 
 {% capture component_content %}
   <div class="container wvu-z-index-content">
-    {% comment %}<!-- NOTE: Set how many blog posts you'd like to show per page. Eg: default="10" -->{% endcomment %}
-    <r:set_var name="limit" value="{$limit}" default="10" />
 
     {% if edit_mode or page.content[component.region_names.main] != blank %}
       <div class="mb-4">
