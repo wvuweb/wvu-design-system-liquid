@@ -16,10 +16,7 @@
   assign defaultItemClasses = component.defaultItemClasses | append: ' ' | append: columnClasses
   assign itemClasses = page.content[component.region_names.itemClasses] | default: defaultItemClasses
   assign rowClasses = page.content[component.region_names.rowClasses] | default: 'justify-content-center'
-  assign itemHeaderClasses = page.content[component.region_names.itemHeaderClasses] | default: 'h3 iowan-old-style-italic mb-1'
-  assign itemBodyClasses = page.content[component.region_names.itemBodyClasses] | default: ''
-  assign itemButtonClasses = page.content[component.region_names.itemButtonClasses] | default: 'btn btn-primary btn-sm'
-  assign itemReadMoreButtonText = page.content[component.region_names.readMoreButtonText] | default: 'Read More'
+
 -%}
 
 <div class="row {{ rowClasses }}">
