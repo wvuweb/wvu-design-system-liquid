@@ -26,7 +26,7 @@
     {%- capture panelHeaderRegion %}wvu-featurettes_panel_{{ component.number }}-{{ index }}__header{% endcapture %}
     {%- capture panelMainRegion %}wvu-featurettes_panel_{{ component.number }}-{{ index }}__main{% endcapture %}
 
-    <div class="{{ itemClasses }} {% if component.full_width_or_backpage? %}{{ columnClasses }} {% endif %}" {{ bgStyler }}>
+    <div class="{{ itemClasses }}" {{ bgStyler }}>
       <div class="card shadow h-100">
         {%- if edit_mode or page.content[panelPhotoRegion] != blank %}
           {% editable_region_block name: panelPhotoRegion, scope: component.scope %}
